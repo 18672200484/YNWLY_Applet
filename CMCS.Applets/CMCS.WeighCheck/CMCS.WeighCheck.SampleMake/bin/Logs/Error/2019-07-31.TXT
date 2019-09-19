@@ -1,0 +1,30 @@
+
+异常时间：2019-07-31 10:27:03,581
+错误描述：Application_ThreadException
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00904: "MAKESTARTTIME": 标识符无效
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   在 OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   在 OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   在 Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   在 Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   在 Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteScalar()
+   在 SqlMapper.ExecuteScalarImpl[T](IDbConnection cnn, CommandDefinition& command) 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Common\CMCS.DapperDber\SqlMapper.cs:行号 3423
+   在 SqlMapper.ExecuteScalar[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Common\CMCS.DapperDber\SqlMapper.cs:行号 1260
+   在 CMCS.DapperDber.Dbs.BaseDber.Count[T](String condition, Object param) 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Common\CMCS.DapperDber\Dbs\BaseDber.cs:行号 386
+   在 CMCS.WeighCheck.SampleMake.Frms.JDYMake.FrmJDYMake_List.GetTotalCount(String sqlWhere, Object param) 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\Frms\JDYMake\FrmJDYMake_List.cs:行号 193
+   在 CMCS.WeighCheck.SampleMake.Frms.JDYMake.FrmJDYMake_List.BindData() 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\Frms\JDYMake\FrmJDYMake_List.cs:行号 88
+   在 CMCS.WeighCheck.SampleMake.Frms.JDYMake.FrmJDYMake_List.btnSearch_Click(Object sender, EventArgs e) 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\Frms\JDYMake\FrmJDYMake_List.cs:行号 104
+   在 CMCS.WeighCheck.SampleMake.Frms.JDYMake.FrmJDYMake_List.FrmJDYMake_List_Load(Object sender, EventArgs e) 位置 D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\Frms\JDYMake\FrmJDYMake_List.cs:行号 78
+   在 System.Windows.Forms.Form.OnLoad(EventArgs e)
+   在 System.Windows.Forms.Form.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.Form.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Form.WndProc(Message& m)
+   在 DevComponents.DotNetBar.Metro.MetroAppForm.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)

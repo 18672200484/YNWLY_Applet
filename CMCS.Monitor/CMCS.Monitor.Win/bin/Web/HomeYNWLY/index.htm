@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="../Resources/plugins/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
+    <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
+    <script type="text/javascript">
+
+        var canvas1;
+
+        window.onload = function () {
+            canvas1 = getCanvas1();
+
+            // 注册SVG元素脚本事件
+            initSvgElementEvent();
+            getMutualDataFast();
+
+            window.setInterval(getMutualDataFast, 3 * 1000);
+        };
+        // 获取 svgCanvas1 SVG jquery对象
+        function getCanvas1() {
+            return getSVGjQuery("svgCanvas1");
+        }
+
+        function getMutualDataFast() {
+            SetDeviceBreak("path1486", "#1磅");
+            SetDeviceBreak("path1486box", "#1磅");
+            SetDeviceBreak("path1310", "#2采样机");
+            SetDeviceBreak("path1310box", "#2采样机");
+            SetDeviceBreak("rect1583", "#3乙皮带");
+        }
+
+        function SetDeviceBreak(id,name) {
+            svgChangeColor(canvas1.find("*[id=" + id + "]"), "#ffff00");
+
+            canvas1.find("*[id=" + id + "]").animate({ opacity: 0.2 }, 1000);
+            canvas1.find("*[id=" + id + "]").animate({ opacity: 1 }, 2000);
+
+            //异常信息
+            canvas1.find("*[id=" + id + "]").unbind("click").bind("click", function () {
+                ShowBreakInfo(name);
+            });
+        }
+        function ShowBreakInfo(param, type) {
+            var res = HomeYNWLYV8Cef.GetHitchs(param);
+            LoadHitchs(eval(res));
+            ShowLayerFrom("异常信息", $("#breakDiv"), '800px', '200px');
+        }
+
+        // 加载异常信息
+        function LoadHitchs(datas) {
+            $("#breakDiv").empty();
+            var table = $("<table class=\"table\" border=\"1\">");
+            table.appendTo($("#breakDiv"));
+            //创建表头
+            var trTitle = $("<tr class=\"trTitle\"></tr>");
+            trTitle.appendTo(table);
+            var tdTitle = $("<td style=\"width: 180px;\">设备名称</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 160px;\">异常时间</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td>异常内容</td>");
+            tdTitle.appendTo(trTitle);
+
+            for (var i = 0; i < datas.length; i++) {
+                //创建内容
+                tr = $("<tr class=\"trContent\"></tr>");
+                tr.appendTo(table);
+                var td = $("<td>" + datas[i].MachineCode + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].HitchTime + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].HitchDescribe + "</td>");
+                td.appendTo(tr);
+            }
+            $("#breakDiv").append("</table>");
+        }
+
+         
+
+        function ShowStorageInfo(param,type) {
+            var res = HomeYNWLYV8Cef.getStorageInfo(param);
+            BindStorageInfo(eval(res));
+            ShowLayerFrom(type, $("#createtable"), '400px', '200px');
+        }
+
+        function ShowLayerFrom(strtitle, domObj,width,height) {
+            $.layer({
+                type: 1,
+                title: strtitle,
+                btns: 0,
+                area: [width, height],
+                border: [1, 0.3, '#000'],
+                page: {
+                    dom: domObj
+                }, close: function (index) {
+                    // 层右上角关闭按钮的点击事件触发回调函数
+                    //alert("close");
+                }, end: function () {
+                    // 层被彻底关闭后执行的回调函数
+                }
+            });
+        }
+        // 加载仓位状态信息
+        function BindStorageInfo(datas) {
+            var html = '';
+            html += "<table class=\"table\" border=\"1\">";
+            html += "<tr class=\"trTitle\"><td>仓位状态图</td><td>仓位信息</td></tr>";
+            
+            var per =  parseInt((parseFloat(datas[0].per) / 10)) * 10;
+            html += "<tr class=\"trContent\" >";
+            html += "<td rowspan=\"3\">";
+            html += "<div style=\"margin-left:50px;width:60px;height:79px;background-image:url(../../../Resources/freightspaceMax.png);background-position:" + per + "% 0%;\"></div>";
+            html += "</td>";
+            html += "<td>仓位名称：" + datas[0].name + "</td></tr>";
+            html += "<tr class=\"trContent\" ><td>料位：" + datas[0].per + "%</td></tr>";
+            html += "<tr class=\"trContent\" ><td>实时转速：" + datas[0].speed + "r/min</td></tr>";
+            html += "</table>";
+            $("#createtable").html(html);
+        }
+
+        // 注册SVG元素脚本事件
+        function initSvgElementEvent() {
+            //inkscape: label = "皮带采样机#2"
+            canvas1.find("*[id=_132229104]").bind("click", function () {
+                ShowStorageInfo('#1', "成品仓仓位信息");
+            });
+            canvas1.find("*[id=_132228864]").bind("click", function () {
+                ShowStorageInfo('#2', "成品仓仓位信息");
+            });
+            canvas1.find("*[id=_132208832]").bind("click", function () {
+                ShowStorageInfo('#3', "成品仓仓位信息");
+            });
+            canvas1.find("*[id=path1326]").bind("click", function () {
+                ShowStorageInfo('#1', "配煤仓仓位信息");
+            });
+            canvas1.find("*[id=path1342]").bind("click", function () {
+                ShowStorageInfo('#2', "配煤仓仓位信息");
+            });
+            canvas1.find("*[id=path1358]").bind("click", function () {
+                ShowStorageInfo('#3', "配煤仓仓位信息");
+            });
+            canvas1.find("*[id=path1374]").bind("click", function () {
+                ShowStorageInfo('#4', "配煤仓仓位信息");
+            });
+            
+            canvas1.find("*[id=N1],*[id=N2],*[id=N3],*[id=N4],*[id=N5],*[id=N6],*[id=N7],*[id=N8],*[id=N9],*[id=N10],*[id=N11],*[id=S1],*[id=S2],*[id=S3],*[id=S4],*[id=S5],*[id=S6],*[id=S7],*[id=S8],*[id=S9],*[id=S10],*[id=S11]").hover(function (e) {
+
+                ShowStorageArea(e, $(this).attr("id"));
+            }, function () {
+                $("#StorageDiv").hide();
+            });
+
+            canvas1.find("*[inkscape\\:label=#1-乙],*[inkscape\\:label=#2-乙],*[inkscape\\:label=#3-乙],*[inkscape\\:label=#6-乙],*[inkscape\\:label=#7-乙],*[inkscape\\:label=#1-甲],*[inkscape\\:label=#2-甲],*[inkscape\\:label=#3-甲],*[inkscape\\:label=#6-甲],*[inkscape\\:label=#7-甲],*[inkscape\\:label=#4],*[inkscape\\:label=#5],*[inkscape\\:label=#8],*[inkscape\\:label=#9],*[inkscape\\:label=#10],*[inkscape\\:label=#11]").hover(function (e) {
+                
+                ShowBelt(e, $(this).attr("inkscape:label"));
+            }, function () {
+                $("#beltDiv").hide();
+            });
+        }
+
+        function ShowBelt(e, id) {
+
+            var qcal = new Array(4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5300, 5400);
+            var qty = new Array(5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000);
+            var i = Math.random();
+            var j = Math.random();
+            var dk = 1.4;
+            if (id == "#5" || id == "#4") {
+                dk = 1.8;
+            }
+
+            var html = '';
+            html += "<table class=\"table\" border=\"1\">";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>皮带名称：" + id + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>带宽：" + dk + "（m）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>带速：" + i.toFixed(0) * 10 + "（m/s）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>皮带流向：正向</td></tr>";
+            html += "</table>";
+            $("#beltDiv").html(html);
+
+            $("#beltDiv").show();
+
+            var x = 0;
+            $("#beltDiv").css("left", e.originalEvent.x + 10);
+            if (id == "#1-乙" || id == "#1-甲") {                
+                $("#beltDiv").css("top", e.originalEvent.y - 100);
+            }
+            else {
+                $("#beltDiv").css("top", e.originalEvent.y + 10);
+            }
+
+
+        }
+
+        function ShowStorageArea(e, id) {
+
+            var qcal = new Array(4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5300, 5400);
+            var qty = new Array(5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000);
+            var i = Math.random();
+            var j = Math.random();
+            
+            var html = '';
+            html += "<table class=\"table\" border=\"1\">";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>区域名称：" + id + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>煤量：" + qty[j.toFixed(0)] + "（吨）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>热值：" + qcal[i.toFixed(0)] + "（qcal/kg）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>硫分：" + i.toFixed(1) + "（%）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>挥发分：" + (j.toFixed(1) * 10).toString() + "（%）</td></tr>";
+            html += "</table>";
+            $("#StorageDiv").html(html);
+
+            $("#StorageDiv").show();
+            $("#StorageDiv").css("left", e.originalEvent.x + 10);
+            $("#StorageDiv").css("top", e.originalEvent.y + 10);
+        }
+
+         
+
+        // 请求数据 - 后台调用
+        function requestData(datas) {
+            for (var i = 0; i < datas.length; i++) {
+                dataHandler(datas[i]);
+            }
+        }
+
+        // 处理数据
+        function dataHandler(data) {
+            // key_value
+            if (data.Type == 0)
+                $("#" + data.Key).html(data.Value);
+            // json_data
+            else if (data.Type == 1) {
+
+            }
+            // svg_text
+            else if (data.Type == 2) {
+                canvas1.find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+            }
+            // svg_color
+            else if (data.Type == 3) {
+                svgChangeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+            }
+        }
+
+        // 测试
+        function test1() {
+            
+        } 
+     
+    </script>
+    <style type="text/css">
+        html, body
+        {
+            
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+            background-color: rgb(43, 47, 51); 
+        }
+        .div-root
+        {
+            position: relative;
+            margin: 0px auto;
+            width: 100%;
+            overflow: hidden;
+        }
+       
+        .divMain
+        {
+            position: absolute;
+            top: 455px;
+            left: 950px;
+            width: 583px;
+            height: 241px;
+            overflow: hidden;
+            border: 1px solid #5C6065;
+        }
+        .button1
+        {
+            position: absolute;
+            width: 70px;
+            height: 23px;
+            font-family: 微软雅黑;
+            font-size: 14px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        
+        .button1:hover
+        {
+            background-color: #00CED1;
+            border-color: #00CED1;
+            color: White;
+        }
+        
+        /*异常table样式*/
+        .table
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        
+        .table td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 20px;
+            color: White;
+            height: 40px;
+        }
+        .trContent
+        {
+            text-align: center;
+            height: 30px;
+        }
+        
+        /*出样table样式*/
+        .SampleTable
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        .SampleTable td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trSampleTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 17px;
+            font-family: 微软雅黑;
+            color: White;
+            height: 36px;
+        }
+        .trSampleContent
+        {
+            text-align: center; 
+            height: 34px;
+            color: White;
+        }
+    </style>
+</head>
+<body onselectstart="return false;">
+    <div class="div-root">
+        <embed id="svgCanvas1" src="Resources/HomeYNWLY0606a.svg" type="image/svg+xml" />       
+    </div>
+
+      <div id="createtable" style="width: 400px; height:150px;  display:none; overflow: auto;">
+        <table class="table" border="1">
+         <tr class="trTitle"><td>仓位状态图</td><td>仓位信息</td></tr>
+         <tr class="trContent" ><td rowspan="3"><img src="../../../Resources/_132229104.png" /></td><td>仓位名称：#1</td></tr>
+         <tr class="trContent" ><td>料位：80%</td></tr>
+         <tr class="trContent" ><td>实时转速：100r/min</td></tr>
+         </table>
+      </div>
+
+      <div id="breakDiv" style="width: 800px; height:385px;  display:none; overflow: auto;">
+        
+      </div>
+
+       <div id="StorageDiv" style="width: 200px; height:160px; position:absolute;  
+            left:400px; top:220px; display:none; background-color:Gray; color:White; overflow : auto;">
+         <table class="table" border="1">
+         <tr class="trContent" style=" text-align:left" ><td>区域名称：N1</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>煤量：5000（吨）</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>热值：4500（qcal/kg）</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>硫分：0.5（%）</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>挥发分：20（%）</td></tr>
+         </table>  
+      </div>
+        
+        <div id="beltDiv" style="width: 200px; height:130px; position:absolute;  
+            left:200px; top:220px; display:none; background-color:Gray; color:White; overflow : auto;">
+         <table class="table" border="1">
+         <tr class="trContent" style=" text-align:left" ><td>皮带名称：#3-甲</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>带宽：1.4（m）</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>带速：3（m/s）</td></tr>
+         <tr class="trContent" style=" text-align:left" ><td>皮带流向：正向</td></tr>
+         </table>  
+      </div>
+</body>
+</html>

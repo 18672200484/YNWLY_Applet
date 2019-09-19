@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{498A0136-30F4-4075-AA38-A5DDFF6FF674}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMCS.MobilePad.Win</RootNamespace>
+    <AssemblyName>CMCS.MobilePad.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.0.0.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AU, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AU.dll</HintPath>
+    </Reference>
+    <Reference Include="BasisPlatform, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BasisPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=10.5.0.3, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetSpeech, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\DotNetSpeech.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\CMCS.Common\CMCS.Common\lib\Oracle.ManagedDataAccess\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DataItem.cs" />
+    <Compile Include="Core\ImperfectCar.cs" />
+    <Compile Include="Core\PassCarQueuer.cs" />
+    <Compile Include="Core\SelfVars.cs" />
+    <Compile Include="Enums\eFlowFlag.cs" />
+    <Compile Include="Enums\ePassWay.cs" />
+    <Compile Include="Enums\eFlowStatus.cs" />
+    <Compile Include="Frms\Camera\FrmCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Camera\FrmCamera.Designer.cs">
+      <DependentUpon>FrmCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarBreakRules\FrmCarBreakRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarBreakRules\FrmCarBreakRules.Designer.cs">
+      <DependentUpon>FrmCarBreakRules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarBreakRules\FrmCarBreakRules_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarBreakRules\FrmCarBreakRules_Confirm.Designer.cs">
+      <DependentUpon>FrmCarBreakRules_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarDeduction\FrmCarDeduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarDeduction\FrmCarDeduction.Designer.cs">
+      <DependentUpon>FrmCarDeduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarDeduction\FrmCarDeduction_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarDeduction\FrmCarDeduction_Confirm.Designer.cs">
+      <DependentUpon>FrmCarDeduction_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarManage\FrmCarManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarManage\FrmCarManage.Designer.cs">
+      <DependentUpon>FrmCarManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarManage\FrmCarManage_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarManage\FrmCarManage_Confirm.Designer.cs">
+      <DependentUpon>FrmCarManage_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarShippChange\FrmCarShippChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarShippChange\FrmCarShippChange.Designer.cs">
+      <DependentUpon>FrmCarShippChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\CarShippChange\FrmCarShippChange_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\CarShippChange\FrmCarShippChange_Confirm.Designer.cs">
+      <DependentUpon>FrmCarShippChange_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Common\FrmAutotruck_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Common\FrmAutotruck_Select.Designer.cs">
+      <DependentUpon>FrmAutotruck_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmUnFinishInFactory_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmUnFinishInFactory_Confirm.Designer.cs">
+      <DependentUpon>FrmUnFinishInFactory_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmUnFinishInFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmUnFinishInFactory.Designer.cs">
+      <DependentUpon>FrmUnFinishInFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmFinishInFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmFinishInFactory.Designer.cs">
+      <DependentUpon>FrmFinishInFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmFinishOutFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\DataTarget\FrmFinishOutFactory.Designer.cs">
+      <DependentUpon>FrmFinishOutFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmSetting.Designer.cs">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileGoodsType_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileGoodsType_Select.Designer.cs">
+      <DependentUpon>FrmMobileGoodsType_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileAutotruck_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileAutotruck_Select.Designer.cs">
+      <DependentUpon>FrmMobileAutotruck_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileBuyFuelForecast_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileBuyFuelForecast_Select.Designer.cs">
+      <DependentUpon>FrmMobileBuyFuelForecast_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileMine_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileMine_Select.Designer.cs">
+      <DependentUpon>FrmMobileMine_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileQueue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileQueue.Designer.cs">
+      <DependentUpon>FrmMobileQueue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileSupplier_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileSupplier_Select.Designer.cs">
+      <DependentUpon>FrmMobileSupplier_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileTransportCompany_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileTransportCompany_Select.Designer.cs">
+      <DependentUpon>FrmMobileTransportCompany_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileSaleFuelForecast_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileSaleFuelForecast_Select.Designer.cs">
+      <DependentUpon>FrmMobileSaleFuelForecast_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileSupplyReceive_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Queue\FrmMobileSupplyReceive_Select.Designer.cs">
+      <DependentUpon>FrmMobileSupplyReceive_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\StorageTemperature\FrmStorageTemperature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\StorageTemperature\FrmStorageTemperature.Designer.cs">
+      <DependentUpon>FrmStorageTemperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\StorageTemperature\FrmStorageTemperature_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\StorageTemperature\FrmStorageTemperature_Confirm.Designer.cs">
+      <DependentUpon>FrmStorageTemperature_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Sys\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Sys\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\Sys\FrmMainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\Sys\FrmMainFrame.Designer.cs">
+      <DependentUpon>FrmMainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\TransportPlan\FrmTransportPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\TransportPlan\FrmTransportPlan.Designer.cs">
+      <DependentUpon>FrmTransportPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\TransportPlan\FrmTransportPlan_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\TransportPlan\FrmTransportPlan_Confirm.Designer.cs">
+      <DependentUpon>FrmTransportPlan_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\UnLoadPlan\FrmUnLoadPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\UnLoadPlan\FrmUnLoadPlan.Designer.cs">
+      <DependentUpon>FrmUnLoadPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\UnLoadPlan\FrmUnLoadPlan_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\UnLoadPlan\FrmUnLoadPlan_Confirm.Designer.cs">
+      <DependentUpon>FrmUnLoadPlan_Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCtrlBuyFuelForecast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCtrlBuyFuelForecast.Designer.cs">
+      <DependentUpon>UCtrlBuyFuelForecast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Helper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\ImportExcel.cs" />
+    <Compile Include="Utilities\SuperTabControlManager.cs" />
+    <EmbeddedResource Include="Frms\Camera\FrmCamera.resx">
+      <DependentUpon>FrmCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarBreakRules\FrmCarBreakRules.resx">
+      <DependentUpon>FrmCarBreakRules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarBreakRules\FrmCarBreakRules_Confirm.resx">
+      <DependentUpon>FrmCarBreakRules_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarDeduction\FrmCarDeduction.resx">
+      <DependentUpon>FrmCarDeduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarDeduction\FrmCarDeduction_Confirm.resx">
+      <DependentUpon>FrmCarDeduction_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarManage\FrmCarManage.resx">
+      <DependentUpon>FrmCarManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarManage\FrmCarManage_Confirm.resx">
+      <DependentUpon>FrmCarManage_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarShippChange\FrmCarShippChange.resx">
+      <DependentUpon>FrmCarShippChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\CarShippChange\FrmCarShippChange_Confirm.resx">
+      <DependentUpon>FrmCarShippChange_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Common\FrmAutotruck_Select.resx">
+      <DependentUpon>FrmAutotruck_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\DataTarget\FrmUnFinishInFactory_Confirm.resx">
+      <DependentUpon>FrmUnFinishInFactory_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\DataTarget\FrmUnFinishInFactory.resx">
+      <DependentUpon>FrmUnFinishInFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\DataTarget\FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\DataTarget\FrmFinishInFactory.resx">
+      <DependentUpon>FrmFinishInFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\DataTarget\FrmFinishOutFactory.resx">
+      <DependentUpon>FrmFinishOutFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmSetting.resx">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileGoodsType_Select.resx">
+      <DependentUpon>FrmMobileGoodsType_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileAutotruck_Select.resx">
+      <DependentUpon>FrmMobileAutotruck_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileBuyFuelForecast_Select.resx">
+      <DependentUpon>FrmMobileBuyFuelForecast_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileMine_Select.resx">
+      <DependentUpon>FrmMobileMine_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileQueue.resx">
+      <DependentUpon>FrmMobileQueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileSupplier_Select.resx">
+      <DependentUpon>FrmMobileSupplier_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileTransportCompany_Select.resx">
+      <DependentUpon>FrmMobileTransportCompany_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileSaleFuelForecast_Select.resx">
+      <DependentUpon>FrmMobileSaleFuelForecast_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Queue\FrmMobileSupplyReceive_Select.resx">
+      <DependentUpon>FrmMobileSupplyReceive_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\StorageTemperature\FrmStorageTemperature.resx">
+      <DependentUpon>FrmStorageTemperature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\StorageTemperature\FrmStorageTemperature_Confirm.resx">
+      <DependentUpon>FrmStorageTemperature_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Sys\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\Sys\FrmMainFrame.resx">
+      <DependentUpon>FrmMainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\TransportPlan\FrmTransportPlan.resx">
+      <DependentUpon>FrmTransportPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\TransportPlan\FrmTransportPlan_Confirm.resx">
+      <DependentUpon>FrmTransportPlan_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\UnLoadPlan\FrmUnLoadPlan.resx">
+      <DependentUpon>FrmUnLoadPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\UnLoadPlan\FrmUnLoadPlan_Confirm.resx">
+      <DependentUpon>FrmUnLoadPlan_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCtrlBuyFuelForecast.resx">
+      <DependentUpon>UCtrlBuyFuelForecast.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="bin\log4net.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CMCS.CarTransport\CMCS.CarTransport\CMCS.CarTransport.csproj">
+      <Project>{5ED15A98-0895-48D3-851C-088A217D41E7}</Project>
+      <Name>CMCS.CarTransport %28CMCS.CarTransport\CMCS.CarTransport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
+      <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
+      <Name>CMCS.Common %28CMCS.Common\CMCS.Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.DapperDber\CMCS.DapperDber.csproj">
+      <Project>{6384F3D5-7CB5-4D1F-8A1F-3FA9B0A78F05}</Project>
+      <Name>CMCS.DapperDber</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.DotNetBar.Utilities\CMCS.DotNetBar.Utilities.csproj">
+      <Project>{AB80688E-8CFE-4E41-AF48-090EEE8553BA}</Project>
+      <Name>CMCS.DotNetBar.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.Forms.UserControls\CMCS.Forms.UserControls.csproj">
+      <Project>{543ED9EB-DADE-4694-BA6C-7ECEAA5D135C}</Project>
+      <Name>CMCS.Forms.UserControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Common.AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\update.xml" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\change.png" />
+    <None Include="Resources\camera1.png" />
+    <Content Include="Resources\ColorScheme.png" />
+    <Content Include="移动平板程序.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

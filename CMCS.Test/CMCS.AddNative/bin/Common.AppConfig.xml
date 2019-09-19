@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommonAppConfig>
+  <!--唯一标识-->
+  <AppIdentifier>#1量热仪</AppIdentifier>
+  <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_ynwly;Password=1234;</SelfConnStr>
+  <!--IP-->
+  <IP>10.90.20.10</IP>
+  <!--用户名-->
+  <User>administrator</User>
+  <!--密码-->
+  <Pass>Xhx123</Pass>
+  <!--进程名-->
+  <ProcessName>mstsc</ProcessName>
+  <!--上传XML路径-->
+  <XmlPath>D:\工作文档\豫能物流园\CMCS_APPLET\CMCS.Test\CMCS.AddNative\bin\ProcessRun.xml</XmlPath>
+  <!--上传XML标识-->
+  <XmlElement>LRY4</XmlElement>
+  <!--数据文件路径-->
+  <DataPath>D:\工作文档\豫能物流园\化验设备数据\定硫仪#1\KY8SA.mdb</DataPath>
+  <!--数据文件复制路径-->
+  <DataCopyPath>D:\工作文档\豫能物流园\化验设备数据\KY8SA.mdb</DataCopyPath>
+</CommonAppConfig>
+

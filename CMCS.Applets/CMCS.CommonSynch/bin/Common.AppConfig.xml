@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommonAppConfig>
+  <!--程序唯一标识-->
+  <AppIdentifier>入场煤就地端</AppIdentifier>
+  <!--服务器IP-->
+  <ServerIp>127.0.0.1</ServerIp>
+  <!--同步标识-->
+  <SyncIdentifier>1</SyncIdentifier>
+  <!--服务器端(下达)Oracle数据库连接字符串-->
+  <ServerConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_ynwly;Password=1234;</ServerConnStr>
+  <!--就地端(上传)Oracle数据库连接字符串-->
+  <ClientConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_ynwly50;Password=1234;</ClientConnStr>
+  <!--取数间隔 单位：秒-->
+  <SynchInterval>60</SynchInterval>
+  <!--开机启动-->
+  <Startup>False</Startup>
+  <!--需要自动同步的数据表-->
+  <Synchs>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="预报同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="fultblmyb" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="预报表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="下达" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="1" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="预报明细同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="fultblmybdetail" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="预报明细表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="下达" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="2" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="批次同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="fultbinfactorybatch" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="批次表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="3" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="采样同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbrcsampling" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="采样表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="4" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="制样同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbrcmake" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="制样表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="5" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="制样明细同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbrcmakedetail" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="制样明细表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="6" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="化验同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbrcassay" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="化验表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="7" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="化验煤质同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="fultbfuelquality" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="化验煤质表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="8" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="矿点同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="fultbmine" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="矿点表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="9" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="煤种同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="fultbfuelkind" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="煤种表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="10" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="车辆信息同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbautotruck" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="车辆信息表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="11" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="入场煤运输记录同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbbuyfueltransport" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="入场煤运输记录表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="12" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="出场煤运输记录同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbsalefueltransport" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="出场煤运输记录表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="双向" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="13" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+    <Table>
+      <!--标题-->
+      <Param Key="SynchTitle" Value="待上传事件同步" />
+      <!--表名-->
+      <Param Key="TableName" Value="cmcstbwaitforhandleevent" />
+      <!--表名(中文名)-->
+      <Param Key="TableZNName" Value="事件表" />
+      <!--主键-->
+      <Param Key="PrimaryKey" Value="Id" />
+      <!--同步标识字段（0未同步 1已同步）-->
+      <Param Key="SynchField" Value="IsSynch" />
+      <!--同步类型（上传 下达 双向）-->
+      <Param Key="SynchType" Value="上传" />
+      <!--同步顺序-->
+      <Param Key="Sequence" Value="14" />
+      <!--是否启用-->
+      <Param Key="Enabled" Value="True" />
+    </Table>
+  </Synchs>
+</CommonAppConfig>
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--本地版本号-->
+  <Version>1.0.1.0</Version>
+  <!--更新地址-->
+  <UpdateUrl>http://192.168.0.104/AU/AddNative/</UpdateUrl>
+  <!--备份路径,为空时不备份-->
+  <BackupPath>
+  </BackupPath>
+  <!--更新后执行文件路径,为空时不执行-->
+  <ExecuteFile>CMCS.AddNative.exe</ExecuteFile>
+  <!--更新日志-->
+  <UpdateLogs>
+  </UpdateLogs>
+</root>

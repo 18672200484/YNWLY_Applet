@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="../Resources/plugins/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
+    <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
+    <script type="text/javascript">
+
+        $(function ($) {
+
+        });
+
+        // 获取SVG jquery对象
+        function getSVGjQuery(id) {
+            return $(document.getElementById(id).getSVGDocument())
+        }
+
+        // 获取 svgCanvas1 SVG jquery对象
+        function getCanvas1() {
+            return getSVGjQuery("svgCanvas1");
+        }
+
+        function StartTwinkle() {
+            alert(example.getDateTime());
+        }
+
+        function StartTwinkle2() {
+            alert(example.showConform("确定要删除？"));
+        }
+
+        // 请求数据 - 后台调用
+        function requestData(datas) {
+            for (var i = 0; i < datas.length; i++) {
+                dataHandler(datas[i]);
+            }
+        }
+
+        // 请求异常数据，创建表格 - 后台调用
+        function requestHitchData(datas) {
+            LoadHitchs(datas);
+        }
+
+        var angle = 1;
+        // 处理数据
+        function dataHandler(data) {
+            try {
+                // key_value
+                if (data.Type == 0)
+                    $("#" + data.Key).html(data.Value);
+                // json_data
+                else if (data.Type == 1) {
+                    if (data.Key == "采样机1_集样罐" || data.Key == "采样机2_集样罐") loadBarrels(data);
+                }
+                // svg_text
+                else if (data.Type == 2) {
+                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+                }
+                // svg_color
+                else if (data.Type == 3) {
+                    changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                }
+                // svg_visible
+                else if (data.Type == 4) {
+                    if (data.Value.toLowerCase() == "true") {
+                        if (data.Key == "Car1")
+                            $("#" + data.Key).attr("src", "../../Autotruck_1.bmp");
+                        else
+                            $("#" + data.Key).attr("src", "../../Autotruck_2.bmp");
+                    }
+                    else {
+                        if (data.Key == "Car1")
+                            $("#" + data.Key).attr("src", "Resources/images/Autotruck.png");
+                        else
+                            $("#" + data.Key).attr("src", "Resources/images/Autotruck.png");
+                    }
+                }
+            } catch (e) {
+                //alert(e.Message);
+            }
+        }
+
+        // 测试 改变数据
+        function test1() {
+            dataHandler({ Key: "制样机1_制样方式", Type: "2", Value: "170111098" });
+        }
+
+        // 测试 改变颜色
+        function testColor() {
+
+            dataHandler({ Key: "采样机1_运行模式_远程", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机1_运行模式_就地", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机1_程序状态", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机1_设备状态", Type: "3", Value: "Red" });
+
+            dataHandler({ Key: "采样机1_接料斗", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机1_除铁给料皮带", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机1_锤式破碎机", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机1_缩分皮带", Type: "3", Value: "Red" });
+
+            dataHandler({ Key: "采样机2_接料斗", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机2_除铁给料皮带", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机2_锤式破碎机", Type: "3", Value: "Red" });
+            dataHandler({ Key: "采样机2_缩分皮带", Type: "3", Value: "Red" });
+
+
+            dataHandler({ Key: "采样机1_汽车", Type: "4", Value: "false" });
+        }
+
+
+        // 加载集样罐
+        function loadBarrels(data) {
+            var barrels = eval(data.Value),
+                $ulsvgbarrel = $(data.Key == "采样机1_集样罐" ? "#ulSampler1Barrel" : "#ulSampler2Barrel");
+
+            // 清空集样罐
+            $ulsvgbarrel.empty();
+
+            for (var i = 0; i < barrels.length; i++) {
+                var barrel = barrels[i],
+                $li = $("<li/>"),
+                imgSrc = "Resources/images/barrel-empty.png";
+
+                if (barrel.BarrelStatus == "已满")
+                    imgSrc = "Resources/images/barrel-full.png";
+                else if (barrel.BarrelStatus == "未满")
+                    imgSrc = "Resources/images/barrel-notfull.png";
+
+                $li.append($("<img/>").attr("src", imgSrc));
+                $li.append($("<label class=\"labelSampleCount\">&nbsp;&nbsp;" + barrel.SampleCount + "</label>"))
+                //                $li.append($("<font class='fontColor'>" + (i + 1) + "号罐</font>"))
+
+                // 当前进料罐
+                if (barrel.IsCurrent == 1)
+                    changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + (i + 1) + "]"), "Red");
+                else
+                    changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + (i + 1) + "]"), "#808080");
+                //                if (barrel.IsCurrent == 1) $li.append($("<div/>").addClass("div-inbarrel-arrow"));
+
+                $ulsvgbarrel.append($li);
+            }
+        }
+
+
+        //急停
+        function Stop(paramSampler) {
+
+            CarSamplerV8Cef.Stop(paramSampler);
+        }
+
+        //车辆信息
+        function CarInfo(paramSampler) {
+
+            CarSamplerV8Cef.CarInfo(paramSampler);
+        }
+
+        //故障复位
+        function ErrorReset(paramSampler) {
+
+            CarSamplerV8Cef.ErrorReset(paramSampler);
+        }
+
+        //采样历史记录
+        function SampleHistory(paramSampler) {
+            CarSamplerV8Cef.SampleHistory(paramSampler);
+        }
+
+        // 加载异常信息
+        function LoadHitchs(datas) {
+            $("#createtable").empty();
+            var table = $("<table class=\"table\" border=\"1\">");
+            table.appendTo($("#createtable"));
+            //创建表头
+            var trTitle = $("<tr class=\"trTitle\"></tr>");
+            trTitle.appendTo(table);
+            var tdTitle = $("<td style=\"width: 180px;\">设备名称</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 140px;\">异常时间</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td>异常内容</td>");
+            tdTitle.appendTo(trTitle);
+
+            for (var i = 0; i < datas.length; i++) {
+                //创建内容
+                tr = $("<tr class=\"trContent\"></tr>");
+                tr.appendTo(table);
+                var td = $("<td>" + datas[i].MachineCode + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].HitchTime + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].HitchDescribe + "</td>");
+                td.appendTo(tr);
+            }
+            $("#createtable").append("</table>");
+        }
+
+        function ShowHitchs(paramSampler) {
+            var res = CarSamplerV8Cef.GetHitchs(paramSampler);
+            LoadHitchs(eval(res));
+            ShowLayerFrom("异常信息", $("#createtable"));
+        }
+
+        function ShowLayerFrom(strtitle, domObj) {
+            $.layer({
+                type: 1,
+                title: strtitle,
+                btns: 0,
+                area: ['800px', '420px'],
+                border: [1, 0.3, '#000'],
+                page: {
+                    dom: domObj
+                }, close: function (index) {
+                    // 层右上角关闭按钮的点击事件触发回调函数
+                    //alert("close");
+                }, end: function () {
+                    // 层被彻底关闭后执行的回调函数
+                }
+            });
+        }
+
+
+        var i = 0;
+        function testColor() {
+
+            if (i % 2 == 0) {
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车1]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车2]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车3]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车4]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车5]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车6]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车7]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗1]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗2]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗3]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗4]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗5]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_给料皮带]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机1]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机2]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机3]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机4]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机5]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_缩分皮带]").css({ "fill": "Red" });
+
+
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车1]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车2]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车3]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车4]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车5]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车6]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车7]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗1]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗2]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗3]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗4]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗5]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_给料皮带]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机1]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机2]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机3]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机4]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机5]").css({ "fill": "Red" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_缩分皮带]").css({ "fill": "Red" });
+
+            }
+            else {
+
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车1]").css({ "fill": "url(#SVGID_16_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车2]").css({ "fill": "url(#SVGID_14_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车3]").css({ "fill": "url(#SVGID_15_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车4]").css({ "fill": "url(#SVGID_10_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车5]").css({ "fill": "url(#SVGID_11_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车6]").css({ "fill": "url(#SVGID_12_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_小车7]").css({ "fill": "url(#SVGID_13_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗1]").css({ "fill": "url(#_164344952_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗2]").css({ "fill": "url(#_130855712_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗3]").css({ "fill": "url(#_164355560_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗4]").css({ "fill": "url(#_164351936_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_接料斗5]").css({ "fill": "#A9A9A9" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_给料皮带]").css({ "fill": "#808080" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机1]").css({ "fill": "url(#_125277864-0_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机2]").css({ "fill": "url(#_164348960_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机3]").css({ "fill": "url(#_130859336_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机4]").css({ "fill": "url(#_130854176_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_锤式破碎机5]").css({ "fill": "url(#_130859336-4_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机1_缩分皮带]").css({ "fill": "#808080" });
+
+
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车1]").css({ "fill": "url(#SVGID_8_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车2]").css({ "fill": "url(#SVGID_6_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车3]").css({ "fill": "url(#SVGID_7_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车4]").css({ "fill": "url(#SVGID_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车5]").css({ "fill": "url(#SVGID_3_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车6]").css({ "fill": "url(#SVGID_4_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_小车7]").css({ "fill": "url(#SVGID_5_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗1]").css({ "fill": "url(#_164344952_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗2]").css({ "fill": "url(#_130855712_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗3]").css({ "fill": "url(#_164355560_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗4]").css({ "fill": "url(#_164351936_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_接料斗5]").css({ "fill": "#A9A9A9" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_给料皮带]").css({ "fill": "#808080" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机1]").css({ "fill": "url(#_125277864-0_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机2]").css({ "fill": "url(#_164348960_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机3]").css({ "fill": "url(#_130859336_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机4]").css({ "fill": "url(#_130854176_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_锤式破碎机5]").css({ "fill": "url(#_130859336-4_2_)" });
+                getCanvas1().find("*[inkscape\\:label=采样机2_缩分皮带]").css({ "fill": "#808080" });
+            }
+            i++;
+        }
+
+    </script>
+    <style type="text/css">
+        html, body
+        {
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+            background-color: rgb(43, 47, 51);
+        }
+        .div-inbarrel-arrow
+        {
+            position: absolute;
+            top: -8px;
+            left: 6px;
+            width: 0px;
+            height: 0px;
+            border-top: solid 10px red;
+            border-bottom: solid 10px transparent;
+            border-left: solid 10px transparent;
+            border-right: solid 10px transparent;
+        }
+        .div-root
+        {
+            position: relative;
+            margin: 0px auto;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .ul-svg-barrel
+        {
+            padding: 0px;
+            padding-top: 5px;
+            margin: 0px;
+            list-style: none;
+            position: absolute;
+            width: 420px;
+            height: 40px;
+            background-color: rgb(43, 47, 51);
+        }
+        
+        .ul-svg-barrel > li
+        {
+            position: relative;
+            float: left;
+            width: 30px;
+            height: 35px;
+            margin-left: 25px;
+        }
+        
+        .ul-svg-barrel > li:first-child
+        {
+            margin-left: 0px;
+        }
+        
+        .ul-svg-barrel > li > img
+        {
+            width: 30px;
+            height: 35px;
+            border: none;
+        }
+        
+        .labelSampleCount
+        {
+            color: White;
+            font-size: 13px;
+        }
+        
+        .fontColor
+        {
+            color: #EBEBF2;
+            font-size: 10px;
+        }
+        .button1
+        {
+            position: absolute;
+            width: 86px;
+            height: 23px;
+            font-family: 微软雅黑;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .button1:hover
+        {
+            background-color: #00CED1;
+            border-color: #00CED1;
+            color: White;
+        }
+        
+        .table
+        {
+            border-collapse: collapse;
+            border: 1px solid #5C6065;
+            width: 100%;
+        }
+        
+        .table td
+        {
+            border: 1px solid #5C6065;
+        }
+        
+        .trTitle
+        {
+            background-color: #2C3E48;
+            text-align: center;
+            font-size: 20px;
+            color: White;
+            height: 40px;
+        }
+        .trContent
+        {
+            text-align: center;
+            height: 30px;
+        }
+    </style>
+</head>
+<body onselectstart="return false;">
+    <div class="div-root">
+        <div class="div-root" id="divCanvas">
+            <!--#1采样机-->
+            <input type="button" id="btnStop" value="急 停" class="button1" style="top: 210px;
+                left: 500px;" onclick="Stop('#1')" />
+            <input type="button" id="btnCarInfo" value="查看故障信息" class="button1" style="top: 210px;
+                left: 625px;" onclick="ShowHitchs('#1')" />
+            <input type="button" id="btnErrorReset" value="故障复位" class="button1" style="top: 250px;
+                left: 500px;" onclick="ErrorReset('#1')" />
+            <input type="button" id="btnSampleHistory" value="采样历史记录" class="button1" style="top: 250px;
+                left: 625px;" onclick="SampleHistory('#1')" />
+            <!--#2采样机-->
+            <input type="button" id="btnStop2" value="急 停" class="button1" style="top: 210px;
+                left: 1300px;" onclick="Stop('#2')" />
+            <input type="button" id="btnCarInfo2" value="查看故障信息" class="button1" style="top: 210px;
+                left: 1425px;" onclick="ShowHitchs('#2')" />
+            <input type="button" id="btnErrorReset2" value="故障复位" class="button1" style="top: 250px;
+                left: 1300px;" onclick="ErrorReset('#2')" />
+            <input type="button" id="btnSampleHistory2" value="采样历史记录" class="button1" style="top: 250px;
+                left: 1425px;" onclick="SampleHistory('#2')" />
+            <img id="Car1" src="Resources/images/Autotruck.png" style="position: absolute; width: 249px;
+                height: 130px; top: 578px; left: 40px;" />
+            <img id="Car2" src="Resources/images/Autotruck.png" style="position: absolute; width: 249px;
+                height: 130px; top: 578px; left: 840px;" />
+            <embed id="svgCanvas1" src="Resources/CarSampler.svg" type="image/svg+xml" />
+        </div>
+        <!--采样机一 集样罐-->
+        <ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 632px; left: 333px;">
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+        </ul>
+        <!--采样机二 集样罐-->
+        <ul id="ulSampler2Barrel" class="ul-svg-barrel" style="top: 632px; left: 1132px;">
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+            <li>
+                <img src="Resources/images/barrel-empty.png" />
+            </li>
+        </ul>
+    </div>
+    <div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
+    </div>
+</body>
+</html>

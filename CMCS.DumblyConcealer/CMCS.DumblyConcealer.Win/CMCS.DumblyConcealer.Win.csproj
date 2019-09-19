@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF2B8E85-8B9E-48A9-BC5D-546A97AA6402}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMCS.DumblyConcealer.Win</RootNamespace>
+    <AssemblyName>CMCS.DumblyConcealer.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BasisPlatform">
+      <HintPath>bin\BasisPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="BasisPlatform.Forms">
+      <HintPath>bin\BasisPlatform.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\IAssayGraber.cs" />
+    <Compile Include="Core\RTxtOutputer.cs" />
+    <Compile Include="Core\TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\ITemperGraber.cs" />
+    <Compile Include="Core\IBeltWeightGraber.cs" />
+    <Compile Include="DumblyTasks\FrmAssayDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAssayDevice.Designer.cs">
+      <DependentUpon>FrmAssayDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAutoCupboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAutoCupboard.Designer.cs">
+      <DependentUpon>FrmAutoCupboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAutoMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmAutoMaker.Designer.cs">
+      <DependentUpon>FrmAutoMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmBeltSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmBeltSampler.Designer.cs">
+      <DependentUpon>FrmBeltSampler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmCarSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmCarSampler.Designer.cs">
+      <DependentUpon>FrmCarSampler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmDataHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmDataHandler.Designer.cs">
+      <DependentUpon>FrmDataHandler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPackingBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPackingBatch.Designer.cs">
+      <DependentUpon>FrmPackingBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPLC.Designer.cs">
+      <DependentUpon>FrmPLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPneumaticTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmPneumaticTransfer.Designer.cs">
+      <DependentUpon>FrmPneumaticTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmWeightBridger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmWeightBridger.Designer.cs">
+      <DependentUpon>FrmWeightBridger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmTemperator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmTemperator.Designer.cs">
+      <DependentUpon>FrmTemperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmTemperatureHumidity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmTemperatureHumidity.designer.cs">
+      <DependentUpon>FrmTemperatureHumidity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmBeltWeight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmBeltWeight.Designer.cs">
+      <DependentUpon>FrmBeltWeight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmSignalDataSync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DumblyTasks\FrmSignalDataSync.Designer.cs">
+      <DependentUpon>FrmSignalDataSync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Core\TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmAssayDevice.resx">
+      <DependentUpon>FrmAssayDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmAutoCupboard.resx">
+      <DependentUpon>FrmAutoCupboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmAutoMaker.resx">
+      <DependentUpon>FrmAutoMaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmBeltSampler.resx">
+      <DependentUpon>FrmBeltSampler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmCarSampler.resx">
+      <DependentUpon>FrmCarSampler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmDataHandler.resx">
+      <DependentUpon>FrmDataHandler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmPackingBatch.resx">
+      <DependentUpon>FrmPackingBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmPLC.resx">
+      <DependentUpon>FrmPLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmPneumaticTransfer.resx">
+      <DependentUpon>FrmPneumaticTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmWeightBridger.resx">
+      <DependentUpon>FrmWeightBridger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmTemperator.resx">
+      <DependentUpon>FrmTemperator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmTemperatureHumidity.resx">
+      <DependentUpon>FrmTemperatureHumidity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmBeltWeight.resx">
+      <DependentUpon>FrmBeltWeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DumblyTasks\FrmSignalDataSync.resx">
+      <DependentUpon>FrmSignalDataSync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
+      <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
+      <Name>CMCS.Common %28CMCS.Common\CMCS.Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.DapperDber\CMCS.DapperDber.csproj">
+      <Project>{6384F3D5-7CB5-4D1F-8A1F-3FA9B0A78F05}</Project>
+      <Name>CMCS.DapperDber</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Hardware\TM.Temperature\TM.Temperature.csproj">
+      <Project>{67C64F7E-37BB-4552-BB14-8E82D2B3671D}</Project>
+      <Name>TM.Temperature</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMCS.DumblyConcealer\CMCS.DumblyConcealer.csproj">
+      <Project>{71E5FAE9-7CB4-4FA6-8847-D076F1CBCC5A}</Project>
+      <Name>CMCS.DumblyConcealer %28CMCS.DumblyConcealer\CMCS.DumblyConcealer%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Common.AppConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C56E2092-4B56-4366-9F41-1F949A9F619B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMCS.ADGS</RootNamespace>
+    <AssemblyName>CMCS.ADGS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\..\CMCS.Common\CMCS.DapperDber\bin\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADGSAppConfig.cs" />
+    <Compile Include="AssayDevice\Entities\Ash\ASH_5EAF.cs" />
+    <Compile Include="AssayDevice\Entities\Ash\ASH_5EAF1.cs" />
+    <Compile Include="AssayDevice\Entities\Ash\ASH_5EAF2.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\HY_LAST_DATA.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_AAD.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_CVAD.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_FCA.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_Gyfx.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_Had.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_Mad.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_MT.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_QBAD.cs" />
+    <Compile Include="AssayDevice\Entities\CSKY_Clims\V_STAD.cs" />
+    <Compile Include="AssayDevice\Entities\Had\HAD_CH2200.cs" />
+    <Compile Include="AssayDevice\Entities\Had\HAD_CH22001.cs" />
+    <Compile Include="AssayDevice\Entities\Had\HAD_CH22002.cs" />
+    <Compile Include="AssayDevice\Entities\Heat\LRY_5EC5500.cs" />
+    <Compile Include="AssayDevice\Entities\Moisture\SFY_5EMW6510.cs" />
+    <Compile Include="AssayDevice\Entities\Moisture\SFY_5EMW65101.cs" />
+    <Compile Include="AssayDevice\Entities\Moisture\SFY_5EMW65102.cs" />
+    <Compile Include="AssayDevice\Entities\Moisture\SFY_5EMW65103.cs" />
+    <Compile Include="AssayDevice\Entities\Proximate\HYTBPAG_5EMAG6700.cs" />
+    <Compile Include="AssayDevice\Entities\Proximate\HYTBPAG_5EMAG67001.cs" />
+    <Compile Include="AssayDevice\Entities\Proximate\HYTBPAG_5EMAG67002.cs" />
+    <Compile Include="AssayDevice\Entities\Proximate\HYTBPAG_5EMAG67003.cs" />
+    <Compile Include="AssayDevice\Entities\Proximate\HYTBPAG_5EMAG67004.cs" />
+    <Compile Include="AssayDevice\Entities\Sulf\CLY_5E8SAII.cs" />
+    <Compile Include="AssayDevice\Entities\Sulf\CLY_5E8SAII1.cs" />
+    <Compile Include="AssayDevice\Entities\Sulf\CLY_5E8SAII2.cs" />
+    <Compile Include="AssayDevice\Entities\Sulf\CLY_5E8SAII3.cs" />
+    <Compile Include="AssayDevice\EquAssayDeviceDAO.cs" />
+    <Compile Include="Core\AssayGraber.cs" />
+    <Compile Include="Core\CustomGraber\KaiYuan\AF_5EAF.cs" />
+    <Compile Include="Core\CustomGraber\KaiYuan\HAD_CH2200.cs" />
+    <Compile Include="Core\CustomGraber\KaiYuan\HG_5EC5500A.cs" />
+    <Compile Include="Core\CustomGraber\KaiYuan\PAG_5EMAG6700.cs" />
+    <Compile Include="Core\GrabPerformer.cs" />
+    <Compile Include="Core\OracleSqlBuilder.cs" />
+    <Compile Include="Core\CustomGraber\KaiYuan\Sfy_5EMW6510_Graber.cs" />
+    <Compile Include="Core\ByoGraber.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
+      <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
+      <Name>CMCS.Common %28CMCS.Common\CMCS.Common%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\CMCS.Common\CMCS.DapperDber\CMCS.DapperDber.csproj">
+      <Project>{6384F3D5-7CB5-4D1F-8A1F-3FA9B0A78F05}</Project>
+      <Name>CMCS.DapperDber</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AssayDevice\Entities\FuelAssay\" />
+    <Folder Include="Core\CustomGraber\SanDe\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AssayDevice\化验数据同步接口.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

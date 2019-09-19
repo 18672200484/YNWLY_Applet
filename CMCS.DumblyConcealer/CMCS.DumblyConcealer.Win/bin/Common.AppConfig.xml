@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommonAppConfig>
+  <!--程序唯一标识-->
+  <AppIdentifier>后台业务处理程序</AppIdentifier>
+  <!--集中管控Oracle数据库连接字符串-->
+  <SelfConnStr>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=bieos_ynwly;Password=1234;</SelfConnStr>
+
+<Instrument>
+    <!--温湿度仪1-->
+    <Item FacilityNumber="量热仪" Enabled="true">
+      <!--参数1-ip地址-->
+      <Param>172.168.100.204</Param>
+      <!--参数2-端口号-->
+      <Param>201</Param>
+      <!--参数3-数据保留天数-->
+      <Param>30</Param>
+      <!--参数4-数据同步间隔 单位：秒-->
+      <Param>300</Param>
+      <!--参数5-本机端口-->
+      <Param>6001</Param>
+    </Item>
+    <!--温湿度仪2-->
+    <Item FacilityNumber="水分仪" Enabled="true">
+      <!--参数1-ip地址-->
+      <Param>172.168.100.204</Param>
+      <!--参数2-端口号-->
+      <Param>202</Param>
+      <!--参数3-数据保留天数-->
+      <Param>30</Param>
+      <!--参数4-数据同步间隔 单位：秒-->
+      <Param>300</Param>
+      <!--参数5-本机端口-->
+      <Param>6002</Param>
+    </Item>
+    <!--温湿度仪3-->
+    <Item FacilityNumber="工分仪" Enabled="true">
+      <!--参数1-ip地址-->
+      <Param>172.168.100.204</Param>
+      <!--参数2-端口号-->
+      <Param>203</Param>
+      <!--参数3-数据保留天数-->
+      <Param>30</Param>
+      <!--参数4-数据同步间隔 单位：秒-->
+      <Param>300</Param>
+      <!--参数5-本机端口-->
+      <Param>6003</Param>
+    </Item>
+    <!--温湿度仪4-->
+    <Item FacilityNumber="测硫仪" Enabled="true">
+      <!--参数1-ip地址-->
+      <Param>172.168.100.204</Param>
+      <!--参数2-端口号-->
+      <Param>204</Param>
+      <!--参数3-数据保留天数-->
+      <Param>30</Param>
+      <!--参数4-数据同步间隔 单位：秒-->
+      <Param>300</Param>
+      <!--参数5-本机端口-->
+      <Param>6004</Param>
+    </Item>
+	<!--温湿度仪5-->
+    <Item FacilityNumber="碳氢仪" Enabled="true">
+      <!--参数1-ip地址-->
+      <Param>172.168.100.204</Param>
+      <!--参数2-端口号-->
+      <Param>205</Param>
+      <!--参数3-数据保留天数-->
+      <Param>30</Param>
+      <!--参数4-数据同步间隔 单位：秒-->
+      <Param>300</Param>
+      <!--参数5-本机端口-->
+      <Param>6005</Param>
+    </Item>
+  </Instrument>
+</CommonAppConfig>
+

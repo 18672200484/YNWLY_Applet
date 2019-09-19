@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="../Resources/plugins/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+
+        var twinkleColor = "Green";
+        function twinkle() {
+            FillColor("pd_4a", twinkleColor);
+            if (twinkleColor == "Green")
+                twinkleColor = "Red";
+            else
+                twinkleColor = "Green";
+
+        }
+
+        function StartTwinkle() {
+            alert(example.getDateTime());
+            // window.setInterval("twinkle()",500);
+        }
+
+        // 请求数据 - 后台调用
+        function requestData(datas) {
+            for (var i = 0; i < datas.length; i++) {
+                dataHandler(datas[i]);
+            }
+        }
+
+
+        // 测试 改变数据
+        function test1() {
+            dataHandler({ Key: "翻车机1_待翻车数", Type: "0", Value: "25" });
+            dataHandler({ Key: "翻车机1_已翻车数", Type: "0", Value: "30" });
+
+            dataHandler({ Key: "翻车机1_正翻", Type: "1", Value: "0" });
+            dataHandler({ Key: "翻车机1_反翻", Type: "1", Value: "1" });
+            dataHandler({ Key: "翻车机1_正翻效果", Type: "1", Value: "0" });
+            dataHandler({ Key: "翻车机1_反翻效果", Type: "1", Value: "1" });
+        }
+
+
+
+        // 处理数据
+        function dataHandler(data) {
+            // key_value
+            if (data.Type == 0)
+                $("#" + data.Key).html(data.Value);
+            // json_data
+            else if (data.Type == 1) {
+                if (data.Key == "翻车机1_正翻" || data.Key == "翻车机1_反翻" || data.Key == "翻车机1_重调原位" || data.Key == "翻车机2_正翻" || data.Key == "翻车机2_反翻" || data.Key == "翻车机2_重调原位") setStatus(data);
+                if (data.Key == "翻车机1_正翻效果" || data.Key == "翻车机1_反翻效果" || data.Key == "翻车机2_正翻效果" || data.Key == "翻车机2_反翻效果") animateImg(data);
+            }
+            // svg_text
+            else if (data.Type == 2) {
+
+            }
+            // svg_color
+            else if (data.Type == 3) {
+
+            }
+        }
+        function setStatus(data) {
+            var key = eval(data.Key),
+                value = eval(data.Value);
+            if (value == "0") {
+                $("#" + data.Key).attr("src", "Resources/images/红灯.png");
+            }
+            else if (value == "1") {
+                $("#" + data.Key).attr("src", "Resources/images/绿灯.png");
+            }
+            else {
+                $("#" + data.Key).attr("src", "Resources/images/灰色灯.png");
+            }
+        }
+        //翻转箭头闪烁
+        function animateImg(data) {
+            setInterval(function () {
+                var imgvalue = eval(data.Value),
+             $img = $("#" + data.Key);
+                if (imgvalue == "1") {
+                    $img.animate({ opacity: 0.3 }, 1000);
+                    $img.animate({ opacity: 1 }, 1000);
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        html, body
+        {
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+        }
+        .div-main
+        {
+            width: 1600px;
+            height: 800px;
+            background: rgb(43, 47, 51);
+        }
+        .div-top
+        {
+            position: relative;
+            top: 0px;
+            left: 130px;
+            background: #231F20;
+        }
+        .div-buttom
+        {
+            position: relative;
+            top: 340px;
+            left: 130px;
+            background: #231F20;
+        }
+        .div-top > div, .div-buttom > div
+        {
+            position: absolute;
+            float: left;
+        }
+        .truntable
+        {
+        }
+        .truntable > img
+        {
+            float: left;
+        }
+        .tbl-header
+        {
+            border-collapse: collapse;
+            border: 2px solider #6D6E70;
+        }
+        .tbl-header tr
+        {
+            height: 40px;
+        }
+        .td-header-title
+        {
+            border-color: #6D6E70;
+            background-color: #233139;
+            color: White;
+            text-align: center;
+            width: 90px;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .td-header-value
+        {
+            color: White;
+            text-align: center;
+            width: 270px;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+        .ul-top
+        {
+            list-style: none;
+            position: absolute;
+            width: 420px;
+            height: 80px;
+        }
+        .ul-top > li
+        {
+            position: relative;
+            float: left;
+            width: 47px;
+            height: 77px;
+            margin-left: 25px;
+            color: White;
+            float: left;
+        }
+        .ul-top > li > span
+        {
+            float: left;
+        }
+        .status
+        {
+            float: left;
+            width: 80px;
+            display: block;
+            margin-left: 33px;
+            margin-top: -30px;
+        }
+    </style>
+</head>
+<body onload="" style="overflow: hidden;">
+    <form action="">
+    <div class="div-main">
+        <div class="div-top">
+            <!--标题-->
+            <div style="width: 550px; left: 270px; top: 20px;">
+                <label style="float: left; font-size: 26px; color: #2379D4;">
+                    #1翻车机</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label style="float: right; font-size: 24px; color: #2379D4;">
+                    待翻车数：<label id="翻车机1_待翻车数">0</label>
+                    已翻车数：<label id="翻车机1_已翻车数">0</label>
+                </label>
+            </div>
+            <!--转盘底座-->
+            <div style="left: 0px; top: 50px;">
+                <img alt="" src="Resources/images/转盘底座.png" />
+            </div>
+            <!--转盘-->
+            <div style="left: 4px; top: 52px;">
+                <img alt="" src="Resources/images/转盘.png" />
+            </div>
+            <!--牵引机-->
+            <div style="left: 200px; top: 57px;">
+                <label style="color: White; font-size: 13px;">
+                    #1牵引机</label><br />
+                <img alt="" src="Resources/images/牵引车.png" style="" />
+            </div>
+            <!--铁轨-->
+            <div style="left: 164px; top: 50px;">
+                <img alt="" src="Resources/images/火车轨道.png" style="margin-top: 60px;" />
+                <label style="color: White; left: 20px; top: -20px;">
+                    出厂铁轨</label>
+                <img alt="" src="Resources/images/火车轨道.png" style="margin-top: 60px;" />
+                <label style="color: White;">
+                    入厂铁轨</label>
+            </div>
+            <!--红箭头-->
+            <div style="left: 266px; top: 185px;">
+                <img alt="" id="翻车机1_反翻效果" src="Resources/images/红色箭头.png" />
+            </div>
+            <!--翻车机-->
+            <div style="left: 278px; top: 172px;">
+                <img alt="" src="Resources/images/翻车机.png" style="margin-top: 0;" />
+            </div>
+            <!--绿箭头-->
+            <div style="left: 496px; top: 185px;">
+                <img alt="" id="翻车机1_正翻效果" src="Resources/images/绿色箭头.png" />
+            </div>
+            <!--识别器-->
+            <div style="left: 530px; top: 223px;">
+                <img alt="" src="Resources/images/识别器.png" />
+            </div>
+            <!--火车平面-->
+            <div style="left: 600px; top: 208px;">
+                <img alt="" src="Resources/images/火车平面.png" />
+                <img alt="" src="Resources/images/火车平面.png" />
+            </div>
+            <!--信号点-->
+            <div style="left: 191px; top: 296px;">
+                <ul class="ul-top">
+                    <li>
+                        <img alt="" id="翻车机1_正翻" src="Resources/images/绿灯.png" /><span class="status">正翻</span></li>
+                    <li>
+                        <img alt="" id="翻车机1_反翻" src="Resources/images/红灯.png" /><span class="status">反翻</span></li>
+                    <li>
+                        <img alt="" id="翻车机1_重调原位" src="Resources/images/灰色灯.png" /><span class="status"
+                            style="margin-top: -28px;">重调原位</span></li>
+                </ul>
+            </div>
+            <!--表格-->
+            <div style="left: 1000px; top: 85px;">
+                <table class="tbl-header" border="2" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="td-header-title" style="font-size: 20px;">
+                            当前车号
+                        </td>
+                        <td class="td-header-value" style="font-size: 20px;">
+                            <label id="翻车机1_当前翻车车号">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            供应商
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机1_供应商">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            发站
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机1_发站">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            矿点
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机1_矿点">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            煤种
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机1_煤种">
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="div-buttom">
+            <!--标题-->
+            <div style="width: 550px; left: 270px; top: 20px;">
+                <label style="float: left; font-size: 28px; color: #2379D4;">
+                    #2翻车机</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label style="float: right; font-size: 24px; color: #2379D4;">
+                    待翻车数：<label id="Label1">0</label>
+                    已翻车数：<label id="Label2">0</label>
+                </label>
+            </div>
+            <!--转盘底座-->
+            <div style="left: 0px; top: 50px;">
+                <img alt="" src="Resources/images/转盘底座.png" />
+            </div>
+            <!--转盘-->
+            <div style="left: 4px; top: 52px;">
+                <img alt="" src="Resources/images/转盘.png" />
+            </div>
+            <!--牵引机-->
+            <div style="left: 200px; top: 57px;">
+                <label style="color: White; font-size: 13px;">
+                    #2牵引机</label><br />
+                <img alt="" src="Resources/images/牵引车.png" style="" />
+            </div>
+            <!--铁轨-->
+            <div style="left: 164px; top: 50px;">
+                <img alt="" src="Resources/images/火车轨道.png" style="margin-top: 60px;" />
+                <label style="color: White; left: 20px; top: -20px;">
+                    出厂铁轨</label>
+                <img alt="" src="Resources/images/火车轨道.png" style="margin-top: 60px;" />
+                <label style="color: White;">
+                    入厂铁轨</label>
+            </div>
+            <!--红箭头-->
+            <div style="left: 266px; top: 185px;">
+                <img alt="" id="翻车机2_反翻效果" src="Resources/images/红色箭头.png" />
+            </div>
+            <!--翻车机-->
+            <div style="left: 278px; top: 172px;">
+                <img alt="" src="Resources/images/翻车机.png" style="margin-top: 0;" />
+            </div>
+            <!--绿箭头-->
+            <div style="left: 496px; top: 185px;">
+                <img alt="" id="翻车机2_正翻效果" src="Resources/images/绿色箭头.png" />
+            </div>
+            <!--识别器-->
+            <div style="left: 530px; top: 223px;">
+                <img alt="" src="Resources/images/识别器.png" />
+            </div>
+            <!--火车平面-->
+            <div style="left: 600px; top: 208px;">
+                <img alt="" src="Resources/images/火车平面.png" />
+                <img alt="" src="Resources/images/火车平面.png" />
+            </div>
+            <!--信号点-->
+            <div style="left: 191px; top: 296px;">
+                <ul class="ul-top">
+                    <li>
+                        <img alt="" id="翻车机2_正翻" src="Resources/images/绿灯.png" /><span class="status">正翻</span></li>
+                    <li>
+                        <img alt="" id="翻车机2_反翻" src="Resources/images/红灯.png" /><span class="status">反翻</span></li>
+                    <li>
+                        <img alt="" id="翻车机2_重调原位" src="Resources/images/灰色灯.png" /><span class="status"
+                            style="margin-top: -28px;">重调原位</span></li>
+                </ul>
+            </div>
+            <!--表格-->
+            <div style="left: 1000px; top: 85px;">
+                <table class="tbl-header" border="2" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="td-header-title" style="font-size: 20px;">
+                            当前车号
+                        </td>
+                        <td class="td-header-value" style="font-size: 20px;">
+                            <label id="翻车机2_当前翻车车号">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            供应商
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机2_供应商">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            发站
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机2_发站">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            矿点
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机2_矿点">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-header-title">
+                            煤种
+                        </td>
+                        <td class="td-header-value">
+                            <label id="翻车机2_煤种">
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
