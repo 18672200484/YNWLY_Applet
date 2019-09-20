@@ -145,7 +145,20 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Sample
             btnWriteCode.Click += new EventHandler(btnDel_Click);
         }
 
-        private void FrmSampleWeigth_Load(object sender, EventArgs e)
+		/// <summary>
+		/// 对窗体及其所有子控件进行双重缓冲
+		/// </summary>
+		protected override CreateParams CreateParams
+		{
+			get
+			{
+				CreateParams cp = base.CreateParams;
+				cp.ExStyle |= 0x02000000;
+				return cp;
+			}
+		}
+
+		private void FrmSampleWeigth_Load(object sender, EventArgs e)
         {
             InitFrom();
             // 初始化设备

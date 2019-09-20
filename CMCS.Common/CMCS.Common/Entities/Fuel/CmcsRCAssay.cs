@@ -140,10 +140,15 @@ namespace CMCS.Common.Entities.Fuel
         /// </summary>
         public string AssayWay { get; set; }
 
-        /// <summary>
-        /// 制样
-        /// </summary>
-        [CMCS.DapperDber.Attrs.DapperIgnore]
+		/// <summary>
+		/// 父ID
+		/// </summary>
+		public string ParentId { get; set; }
+
+		/// <summary>
+		/// 制样
+		/// </summary>
+		[CMCS.DapperDber.Attrs.DapperIgnore]
         public CmcsRCMake TheRcMake
         {
             get { return Dbers.GetInstance().SelfDber.Get<CmcsRCMake>(this.MakeId); }

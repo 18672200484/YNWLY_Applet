@@ -89,7 +89,20 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Sample
             this._CodePrinter = new CodePrinterSample(printDocument1);
         }
 
-        private void FrmSampleCheck_Load(object sender, EventArgs e)
+		/// <summary>
+		/// 对窗体及其所有子控件进行双重缓冲
+		/// </summary>
+		protected override CreateParams CreateParams
+		{
+			get
+			{
+				CreateParams cp = base.CreateParams;
+				cp.ExStyle |= 0x02000000;
+				return cp;
+			}
+		}
+
+		private void FrmSampleCheck_Load(object sender, EventArgs e)
         {
             //初始化
             InitFrom();

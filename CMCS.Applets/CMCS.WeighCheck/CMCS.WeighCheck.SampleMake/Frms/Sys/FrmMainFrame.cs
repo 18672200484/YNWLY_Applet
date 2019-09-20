@@ -55,7 +55,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Sys
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+		private void Form1_Shown(object sender, EventArgs e)
         {
             if (SelfVars.LoginUser != null) lblLoginUserName.Text = SelfVars.LoginUser.UserName;
 

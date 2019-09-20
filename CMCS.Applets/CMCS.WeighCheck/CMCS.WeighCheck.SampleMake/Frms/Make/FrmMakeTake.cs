@@ -201,7 +201,20 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
             this.AutoMaker = this.commonDAO.GetCMEquipmentByMachineCode(this.commonDAO.GetCommonAppletConfigString(CommonAppConfig.GetInstance().AppIdentifier + "对应制样机"));
         }
 
-        private void FrmSampleCheck_Load(object sender, System.EventArgs e)
+		/// <summary>
+		/// 对窗体及其所有子控件进行双重缓冲
+		/// </summary>
+		protected override CreateParams CreateParams
+		{
+			get
+			{
+				CreateParams cp = base.CreateParams;
+				cp.ExStyle |= 0x02000000;
+				return cp;
+			}
+		}
+
+		private void FrmSampleCheck_Load(object sender, System.EventArgs e)
         {
             this.InitFrom();
             this.InitHardware();
