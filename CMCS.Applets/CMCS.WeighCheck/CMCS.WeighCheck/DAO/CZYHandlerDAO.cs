@@ -402,6 +402,7 @@ namespace CMCS.WeighCheck.DAO
 						MakeEndTime = DateTime.Now,
 						MakeCode = CommonDAO.GetInstance().CreateNewMakeCode(DateTime.Now),
 						MakePle = user,
+						ParentMakeId = make.Id
 					};
 
 					isSuccess = Dbers.GetInstance().SelfDber.Insert(rCMake) > 0;

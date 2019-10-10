@@ -190,7 +190,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 
         private void GetTotalCount(string sqlWhere, object param)
         {
-            TotalCount = Dbers.GetInstance().SelfDber.Count<CmcsBuyFuelTransport>(sqlWhere, param);
+            TotalCount = Dbers.GetInstance().SelfDber.Count<CmcsRCMake>(sqlWhere, param);
             if (TotalCount % PageSize != 0)
                 PageCount = TotalCount / PageSize + 1;
             else

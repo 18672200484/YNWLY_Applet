@@ -175,11 +175,21 @@ namespace CMCS.Common.Entities.Fuel
             get { return isSynch; }
             set { isSynch = value; }
         }
-    
-        /// <summary>
-        /// 合/留样 0 无 1 留样 2 合样
-        /// </summary>
-        public int StayStatus { get; set; }
+
+		private string parentMakeId;
+		/// <summary>
+		/// 父ID
+		/// </summary>
+		public string ParentMakeId
+		{
+			get { return parentMakeId; }
+			set { parentMakeId = value; }
+		}
+
+		/// <summary>
+		/// 合/留样 0 无 1 留样 2 合样
+		/// </summary>
+		public int StayStatus { get; set; }
 
         /// <summary>
         /// 采样记录
