@@ -52,10 +52,15 @@ namespace CMCS.Common.Entities.Balance
             set { _BalanceRecordId = value; }
         }
 
-        /// <summary>
-        /// 坩埚号
-        /// </summary>
-        public string GGCode { get; set; }
+		/// <summary>
+		/// 坩埚架号
+		/// </summary>
+		public string GGJCode { get; set; }
+
+		/// <summary>
+		/// 坩埚号
+		/// </summary>
+		public string GGCode { get; set; }
 
         private Int32 _SyncFlag;
         /// <summary>

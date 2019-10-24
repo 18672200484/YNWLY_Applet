@@ -14,14 +14,14 @@ namespace CMCS.WeighBalance.Utilities
     /// </summary>
     public class RTxtOutputer
     {
-        public RTxtOutputer(RichTextBoxEx rtxt)
+        public RTxtOutputer(RichTextBox rtxt)
         {
             this.rTxtOutputer = rtxt;
         }
 
         private object lockObject = new object();
 
-        RichTextBoxEx rTxtOutputer;
+        RichTextBox rTxtOutputer;
 
         /// <summary>
         /// 输出运行信息
