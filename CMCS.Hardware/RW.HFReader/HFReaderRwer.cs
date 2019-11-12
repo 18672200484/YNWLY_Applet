@@ -469,25 +469,26 @@ namespace RW.HFReader
                 return fCmdRet == 0;
             }
             return false;
-        }
-        #region  16进制字符串到数组之间的相互转换
-        private byte[] HexStringToByteArray(string s)
+		}
+
+		/// <summary>
+		/// 执行蜂鸣
+		/// </summary>
+		public void Rf_Beep()
+		{
+			StaticClassReaderB.SetBeep(ref readerAddr, 5, 0, 1, portFrmIndex);
+			System.Threading.Thread.Sleep(300);
+			StaticClassReaderB.SetLED(ref readerAddr, 5, 0, 1, portFrmIndex);
+		}
+
+		#region  16进制字符串到数组之间的相互转换
+		private byte[] HexStringToByteArray(string s)
         {
             s = s.Replace(" ", "");
             byte[] buffer = new byte[s.Length / 2];
             for (int i = 0; i < s.Length; i += 2)
                 buffer[i / 2] = (byte)Convert.ToByte(s.Substring(i, 2), 16);
             return buffer;
-        }
-
-        /// <summary>
-        /// 执行蜂鸣
-        /// </summary>
-        public void Rf_Beep()
-        {
-            StaticClassReaderB.SetBeep(ref readerAddr, 5, 0, 1, portFrmIndex);
-            System.Threading.Thread.Sleep(300);
-            StaticClassReaderB.SetLED(ref readerAddr, 5, 0, 1, portFrmIndex);
         }
 
         /// <summary>
