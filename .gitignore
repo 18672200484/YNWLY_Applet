@@ -247,3 +247,5 @@
 /CMCS.Test/CMCS.DataTester/bin/Logs
 /CMCS.Test/CMCS.DataTester/bin/192.168.1.99
 /CMCS.Test/CMCS.DataTester/obj/x86
+/CMCS.ADGS/CMCS.ADGS.Win/bin
+/CMCS.FingerIdentify/bin

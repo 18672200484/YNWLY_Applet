@@ -39,5 +39,4 @@ D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Applets\CMCS.WeighChec
 D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\bin\RW.HFReader.pdb
 D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\bin\WB.XiangPing.Balance.pdb
 D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\bin\CMCS.WeighCheck.pdb
-D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\bin\DevComponents.DotNetBar.SuperGrid.xml
 D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Applets\CMCS.WeighCheck\CMCS.WeighCheck.SampleMake\bin\DevComponents.Instrumentation.xml
