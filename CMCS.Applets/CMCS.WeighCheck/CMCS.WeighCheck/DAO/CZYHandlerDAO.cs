@@ -443,7 +443,6 @@ namespace CMCS.WeighCheck.DAO
 								FuelQualityId = fuelQuality.Id,
 								AssayDate = rCMake.CreateDate,
 								WfStatus = 0,
-
 								AssayPoint = assayTarget
 							};
 
@@ -613,12 +612,12 @@ namespace CMCS.WeighCheck.DAO
 				assay.GetPle = assayCheckUser;
 				assay.SendPle = makeCreateUser;
 				if (assay.AssayType == "三级编码化验" && makeDetail.SampleType.Contains("6mm"))
-					assay.SendDate = DateTime.Now;
+					assay.SendDate = GlobalVars.ServerNowDateTime;
 				else if ((assay.AssayType == "复查样化验" || assay.AssayType == "抽查样化验") && makeDetail.SampleType.Contains("0.2mm"))
 					assay.SendDate = DateTime.Now;
 				if (makeDetail.SampleType.Contains("0.2mm") && assay.GetDate.Year < 2000)
 				{
-					assay.GetDate = DateTime.Now;
+					assay.GetDate = GlobalVars.ServerNowDateTime;
 				}
 				if (makeDetail.PrintCount == 0)
 				{
@@ -769,7 +768,8 @@ namespace CMCS.WeighCheck.DAO
 				assay = new CmcsRCAssay();
 				assay.AssayPoint = assayPoint;
 				assay.AssayType = "三级编码化验";
-				assay.AssayDate = DateTime.Now;
+				assay.SendDate = GlobalVars.ServerNowDateTime;
+				assay.AssayDate = GlobalVars.ServerNowDateTime;
 				CmcsRCMake make = entity.TheRcMake;
 				if (make.TheRcSampling != null && make.TheRcSampling.TheInFactoryBatch != null)
 					assay.InFactoryBatchId = make.TheRcSampling.TheInFactoryBatch.Id;
@@ -780,6 +780,7 @@ namespace CMCS.WeighCheck.DAO
 				assay.AssayWay = PreFix;
 				assay.Remark = "由化验室接样程序手动生成";
 				assay.ParentId = entity.Id;
+				assay.BackBatchDate = entity.BackBatchDate;
 				CmcsFuelQuality quality_new = new CmcsFuelQuality();
 				CmcsRCAssay assay_new = CommonDAO.GetInstance().SelfDber.Entity<CmcsRCAssay>("where MakeId=:MakeId order by CreateDate desc", new { MakeId = make.Id });
 				if (assay_new != null)

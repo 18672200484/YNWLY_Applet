@@ -193,7 +193,7 @@ namespace CMCS.ADGS.Win
 				item.SampleWeight = entity.SYZL;
 				item.Stad = entity.KGJQL;
 				item.Std = entity.GJQL;
-				if (item.IsHandModify != "1") item.AssayUser = entity.HYY;
+				item.AssayUser = entity.HYY;
 				item.AssayTime = entity.CSRQ;
 				item.OrderNumber = 0;
 				item.IsEffective = 0;
@@ -204,13 +204,16 @@ namespace CMCS.ADGS.Win
 			else
 			{
 				if (item.IsEffective == 1) return res;
-				item.SampleNumber = entity.SYMC;
 				item.FacilityNumber = entity.MachineCode;
 				item.ContainerWeight = entity.GGZ;
 				item.SampleWeight = entity.SYZL;
 				item.Stad = entity.KGJQL;
 				item.Std = entity.GJQL;
-				if (item.IsHandModify != "1") item.AssayUser = entity.HYY;
+				if (item.IsHandModify != "1")
+				{
+					item.SampleNumber = entity.SYMC;
+					item.AssayUser = entity.HYY;
+				}
 				item.AssayTime = entity.CSRQ;
 				item.OrderNumber = 0;
 				item.DataType = "原始数据";
@@ -239,7 +242,7 @@ namespace CMCS.ADGS.Win
 				item.ContainerWeight = 0;
 				item.SampleWeight = Convert.ToDecimal(entity.Weight);
 				item.Qbad = Convert.ToDecimal(entity.Qb);
-				if (item.IsHandModify != "1") item.AssayUser = entity.Testman;
+				item.AssayUser = entity.Testman;
 				item.AssayTime = entity.TestTime;
 				item.IsEffective = 0;
 				item.PKID = entity.PKID;
@@ -249,12 +252,15 @@ namespace CMCS.ADGS.Win
 			else
 			{
 				if (item.IsEffective == 1) return res;
-				item.SampleNumber = entity.Mingchen;
 				item.FacilityNumber = entity.MachineCode;
 				item.ContainerWeight = 0;
 				item.SampleWeight = Convert.ToDecimal(entity.Weight);
 				item.Qbad = Convert.ToDecimal(entity.Qb);
-				if (item.IsHandModify != "1") item.AssayUser = entity.Testman;
+				if (item.IsHandModify != "1")
+				{
+					item.SampleNumber = entity.Mingchen;
+					item.AssayUser = entity.Testman;
+				}
 				item.AssayTime = entity.TestTime;
 				item.DataType = "原始数据";
 				res += selfDber.Update<CmcsHeatStdAssay>(item);
@@ -283,7 +289,7 @@ namespace CMCS.ADGS.Win
 				item.WaterType = entity.Content.Contains("全水") ? "全水分" : "分析水";
 				item.WaterPer = entity.Moisture;
 				if (item.WaterType == "全水分") item.WaterPer += Convert.ToDecimal(GetCommonAppletConfig("全水补正值"));
-				if (item.IsHandModify != "1") item.AssayUser = entity.Operator;
+				item.AssayUser = entity.Operator;
 				item.IsEffective = 0;
 				item.PKID = entity.PKID;
 				item.AssayTime = entity.BeginDate;
@@ -293,12 +299,16 @@ namespace CMCS.ADGS.Win
 			else
 			{
 				if (item.IsEffective == 1) return res;
-				item.SampleNumber = entity.SampleName;
+
 				item.FacilityNumber = entity.MachineCode;
 				item.ContainerWeight = 0;
 				item.SampleWeight = entity.Sample;
 				item.WaterPer = entity.Moisture;
-				if (item.IsHandModify != "1") item.AssayUser = entity.Operator;
+				if (item.IsHandModify != "1")
+				{
+					item.SampleNumber = entity.SampleName;
+					item.AssayUser = entity.Operator;
+				}
 				item.AssayTime = entity.BeginDate;
 				item.WaterType = entity.Content.Contains("全水") ? "全水分" : "分析水";
 				item.DataType = "原始数据";
@@ -329,7 +339,7 @@ namespace CMCS.ADGS.Win
 				present.Vad = entity.Vad;
 				present.Mad = entity.Mad;
 				present.Aad = entity.Aad;
-				if (present.IsHandModify != "1") present.AssayUser = entity.Operator;
+				present.AssayUser = entity.Operator;
 				present.AssayTime = entity.Date_Ex;
 				present.FacilityNumber = entity.MachineCode;
 				present.OrderNumber = entity.ObjCode;
@@ -337,14 +347,17 @@ namespace CMCS.ADGS.Win
 
 				return selfDber.Insert(present);
 			}
-			//if (present.IsEffective == 1) return res;
-			present.SampleNumber = entity.SampleName;
+			if (present.IsEffective == 1) return res;
 			present.ContainerWeight = entity.EmptyGGWeight;
 			present.SampleWeight = entity.ColeWeight;
 			present.Vad = entity.Vad;
 			present.Mad = entity.Mad;
 			present.Aad = entity.Aad;
-			if (present.IsHandModify != "1") present.AssayUser = entity.Operator;
+			if (present.IsHandModify != "1")
+			{
+				present.SampleNumber = entity.SampleName;
+				present.AssayUser = entity.Operator;
+			}
 			present.AssayTime = entity.Date_Ex;
 			present.FacilityNumber = entity.MachineCode;
 			present.OrderNumber = entity.ObjCode;
@@ -373,7 +386,7 @@ namespace CMCS.ADGS.Win
 				item.ST = entity.ST;
 				item.FT = entity.FT;
 				item.HT = entity.HT;
-				if (item.IsHandModify != "1") item.AssayUser = entity.Operator;
+				item.AssayUser = entity.Operator;
 				item.IsEffective = 0;
 				item.PKID = entity.PKID;
 				item.AssayTime = entity.TestDate;
@@ -383,7 +396,6 @@ namespace CMCS.ADGS.Win
 			else
 			{
 				if (item.IsEffective == 1) return res;
-				item.SampleNumber = entity.SampleName;
 				item.FacilityNumber = entity.MachineCode;
 				item.ContainerWeight = 0;
 				item.SampleWeight = 0;
@@ -391,7 +403,11 @@ namespace CMCS.ADGS.Win
 				item.ST = entity.ST;
 				item.FT = entity.FT;
 				item.HT = entity.HT;
-				if (item.IsHandModify != "1") item.AssayUser = entity.Operator;
+				if (item.IsHandModify != "1")
+				{
+					item.SampleNumber = entity.SampleName;
+					item.AssayUser = entity.Operator;
+				}
 				item.IsEffective = 0;
 				item.PKID = entity.PKID;
 				item.AssayTime = entity.TestDate;
@@ -422,7 +438,7 @@ namespace CMCS.ADGS.Win
 				item.Hd = entity.Hd;
 				item.Cad = entity.Cad;
 				item.Cd = entity.Cd;
-				if (item.IsHandModify != "1") item.AssayUser = entity.Operator;
+				item.AssayUser = entity.Operator;
 				item.IsEffective = 0;
 				item.PKID = entity.PKID;
 				item.AssayTime = entity.Date_Ex;
@@ -432,14 +448,17 @@ namespace CMCS.ADGS.Win
 			else
 			{
 				if (item.IsEffective == 1) return res;
-				item.SampleNumber = entity.Name;
 				item.FacilityNumber = entity.MachineCode;
 				item.SampleWeight = entity.Weight;
 				item.Had = entity.Had;
 				item.Hd = entity.Hd;
 				item.Cad = entity.Cad;
 				item.Cd = entity.Cd;
-				if (item.IsHandModify != "1") item.AssayUser = entity.Operator;
+				if (item.IsHandModify != "1")
+				{
+					item.SampleNumber = entity.Name;
+					item.AssayUser = entity.Operator;
+				}
 				item.IsEffective = 0;
 				item.AssayTime = entity.Date_Ex;
 				item.DataType = "原始数据";

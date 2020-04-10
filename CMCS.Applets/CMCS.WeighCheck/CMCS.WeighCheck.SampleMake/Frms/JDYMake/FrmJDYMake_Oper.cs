@@ -167,7 +167,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 
 			CmcsRCMakeDetail rCMakeDetail = btn.EditorCell.GridRow.DataItem as CmcsRCMakeDetail;
 			if (rCMakeDetail == null) return;
-			if (!string.IsNullOrEmpty(rCMakeDetail.BarrelCode) && WriteRf(rCMakeDetail.BarrelCode))
+			if (!string.IsNullOrEmpty(rCMakeDetail.BarrelCode) && !String.IsNullOrEmpty(WriteRf(rCMakeDetail.BarrelCode)))
 				MessageBoxEx.Show("写入成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			else
 				MessageBoxEx.Show("写入失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -177,16 +177,51 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 		/// 写卡
 		/// </summary>
 		/// <returns></returns>
-		private bool WriteRf(string rf)
+		private string WriteRf(string rf)
 		{
 			byte SecNumber = Convert.ToByte(commonDAO.GetAppletConfigInt32("读卡器扇区"));
 			byte BlockNumber = Convert.ToByte(commonDAO.GetAppletConfigInt32("读卡器块区"));
 
-			if (Hardwarer.ReadRwer.WriteData(rf, Convert.ToInt32(SecNumber), Convert.ToInt32(BlockNumber)))
+			if (!Hardwarer.ReadRwer.OpenRF())
 			{
-				return Hardwarer.ReadRwer.RWRead14443A(Convert.ToInt32(SecNumber), Convert.ToInt32(BlockNumber)) == rf;
+				MessageBoxEx.Show("射频打开失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return string.Empty;
 			}
-			return false;
+
+			if (!Hardwarer.ReadRwer.ChangeToISO14443A())
+			{
+				MessageBoxEx.Show("切换到1443模式失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return string.Empty;
+			}
+
+			if (!Hardwarer.ReadRwer.Request14443A())
+			{
+				MessageBoxEx.Show("获取卡类型失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return string.Empty;
+			}
+
+			if (!Hardwarer.ReadRwer.Anticoll14443A())
+			{
+				MessageBoxEx.Show("获取卡号失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return string.Empty;
+			}
+
+			if (!Hardwarer.ReadRwer.Select14443A())
+			{
+				MessageBoxEx.Show("获取卡容量失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return string.Empty;
+			}
+
+			if (!Hardwarer.ReadRwer.AuthKey14443A(SecNumber, BlockNumber))
+			{
+				MessageBoxEx.Show("标签密钥验证失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return string.Empty;
+			}
+			if (Hardwarer.ReadRwer.Write14443(rf, Convert.ToInt32(SecNumber), Convert.ToInt32(BlockNumber)))
+			{
+				return Hardwarer.ReadRwer.Byte16ToString(Hardwarer.ReadRwer.ReadData);
+			}
+			return string.Empty;
 		}
 
 		/// <summary>
