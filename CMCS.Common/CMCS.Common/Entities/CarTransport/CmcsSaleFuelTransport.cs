@@ -296,5 +296,17 @@ namespace CMCS.Common.Entities.CarTransport
         /// 来煤预报ID
         /// </summary>
         public string LMYBId { get; set; }
-    }
+
+		private int _PrintCount;
+		/// <summary>
+		/// 打印次数
+		/// </summary>
+		public int PrintCount { get { return _PrintCount; } set { _PrintCount = value; } }
+
+		private DateTime _PrintTime;
+		/// <summary>
+		/// 打印时间
+		/// </summary>
+		public DateTime PrintTime { get { return _PrintTime; } set { _PrintTime = value; } }
+	}
 }

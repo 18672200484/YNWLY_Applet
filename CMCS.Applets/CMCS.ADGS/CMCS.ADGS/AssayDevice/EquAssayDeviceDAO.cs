@@ -326,7 +326,7 @@ namespace CMCS.ADGS.Win
 		{
 			int res = 0;
 			if (entity == null) return res;
-
+			
 			CmcsProximateStdAssay present = selfDber.Entity<CmcsProximateStdAssay>("where PKID=:PKID", new { PKID = entity.PKID });
 			if (present == null)
 			{

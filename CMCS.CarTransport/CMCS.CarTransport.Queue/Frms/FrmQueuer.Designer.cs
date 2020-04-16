@@ -29,20 +29,6 @@ namespace CMCS.CarTransport.Queue.Frms
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -60,6 +46,20 @@ namespace CMCS.CarTransport.Queue.Frms
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
 			DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -150,6 +150,84 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.slightRwer2 = new CMCS.Forms.UserControls.UCtrlSignalLight();
 			this.labelX4 = new DevComponents.DotNetBar.LabelX();
 			this.superTabControl2 = new DevComponents.DotNetBar.SuperTabControl();
+			this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+			this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+			this.superGridControl2_BuyFuel = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.tsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
+			this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
+			this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+			this.superGridControl1_BuyFuel = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+			this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+			this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+			this.superTabControlWay_BuyFuel = new DevComponents.DotNetBar.SuperTabControl();
+			this.superTabControlPanel15 = new DevComponents.DotNetBar.SuperTabControlPanel();
+			this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+			this.labelX31 = new DevComponents.DotNetBar.LabelX();
+			this.txt_LMYB_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.btnSelectSupplier_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.txtTitle_BuyFuel = new DevComponents.DotNetBar.LabelX();
+			this.btnSelectAutotruck_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.labelX9 = new DevComponents.DotNetBar.LabelX();
+			this.btnReset_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.txtCarNumber_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.btnSelectTransportCompany_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.labelX11 = new DevComponents.DotNetBar.LabelX();
+			this.btnSelectMine_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.txtSupplierName_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.labelX10 = new DevComponents.DotNetBar.LabelX();
+			this.txtTicketWeight_BuyFuel = new DevComponents.Editors.DoubleInput();
+			this.txtTransportCompanyName_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.labelX13 = new DevComponents.DotNetBar.LabelX();
+			this.cmbFuelName_BuyFuel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.txtMineName_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.cmbBuyFuelType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.cmbSamplingType_BuyFuel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.labelX12 = new DevComponents.DotNetBar.LabelX();
+			this.btnNewAutotruck_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.labelX15 = new DevComponents.DotNetBar.LabelX();
+			this.labelX21 = new DevComponents.DotNetBar.LabelX();
+			this.btnSelectForecast_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.labelX14 = new DevComponents.DotNetBar.LabelX();
+			this.btnSaveTransport_BuyFuel = new DevComponents.DotNetBar.ButtonX();
+			this.labelX16 = new DevComponents.DotNetBar.LabelX();
+			this.txtRemark_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.superTabItem_BuyFuelWay1 = new DevComponents.DotNetBar.SuperTabItem();
+			this.superTabControlPanel16 = new DevComponents.DotNetBar.SuperTabControlPanel();
+			this.panelEx12 = new DevComponents.DotNetBar.PanelEx();
+			this.labelX32 = new DevComponents.DotNetBar.LabelX();
+			this.txt_LMYB_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.btnSelectSupplier_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.txtTitle_BuyFuel2 = new DevComponents.DotNetBar.LabelX();
+			this.btnSelectAutotruck_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.labelX39 = new DevComponents.DotNetBar.LabelX();
+			this.btnReset_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.txtCarNumber_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.btnSelectTransportCompany_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.labelX40 = new DevComponents.DotNetBar.LabelX();
+			this.btnSelectMine_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.txtSupplierName_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.labelX41 = new DevComponents.DotNetBar.LabelX();
+			this.txtTicketWeight_BuyFuel2 = new DevComponents.Editors.DoubleInput();
+			this.txtTransportCompanyName_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.labelX42 = new DevComponents.DotNetBar.LabelX();
+			this.cmbFuelName_BuyFuel2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.txtMineName_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.cmbBuyFuelType2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.cmbSamplingType_BuyFuel2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+			this.labelX43 = new DevComponents.DotNetBar.LabelX();
+			this.btnNewAutotruck_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.labelX44 = new DevComponents.DotNetBar.LabelX();
+			this.labelX45 = new DevComponents.DotNetBar.LabelX();
+			this.btnSelectForecast_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.labelX46 = new DevComponents.DotNetBar.LabelX();
+			this.btnSaveTransport_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
+			this.labelX47 = new DevComponents.DotNetBar.LabelX();
+			this.txtRemark_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+			this.superTabItem_BuyFuelWay2 = new DevComponents.DotNetBar.SuperTabItem();
+			this.superTabItem_BuyFuel = new DevComponents.DotNetBar.SuperTabItem();
 			this.superTabControlPanel4 = new DevComponents.DotNetBar.SuperTabControlPanel();
 			this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
 			this.superTabControl5 = new DevComponents.DotNetBar.SuperTabControl();
@@ -228,84 +306,6 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.labelX37 = new DevComponents.DotNetBar.LabelX();
 			this.superTabItem_SaleFuelWay2 = new DevComponents.DotNetBar.SuperTabItem();
 			this.superTabItem_SaleFuel = new DevComponents.DotNetBar.SuperTabItem();
-			this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-			this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
-			this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-			this.superGridControl1_BuyFuel = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-			this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
-			this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-			this.superGridControl2_BuyFuel = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.tsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
-			this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-			this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-			this.superTabControlWay_BuyFuel = new DevComponents.DotNetBar.SuperTabControl();
-			this.superTabControlPanel15 = new DevComponents.DotNetBar.SuperTabControlPanel();
-			this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-			this.labelX31 = new DevComponents.DotNetBar.LabelX();
-			this.txt_LMYB_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.btnSelectSupplier_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.txtTitle_BuyFuel = new DevComponents.DotNetBar.LabelX();
-			this.btnSelectAutotruck_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.labelX9 = new DevComponents.DotNetBar.LabelX();
-			this.btnReset_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.txtCarNumber_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.btnSelectTransportCompany_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.labelX11 = new DevComponents.DotNetBar.LabelX();
-			this.btnSelectMine_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.txtSupplierName_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.labelX10 = new DevComponents.DotNetBar.LabelX();
-			this.txtTicketWeight_BuyFuel = new DevComponents.Editors.DoubleInput();
-			this.txtTransportCompanyName_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.labelX13 = new DevComponents.DotNetBar.LabelX();
-			this.cmbFuelName_BuyFuel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-			this.txtMineName_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.cmbBuyFuelType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-			this.cmbSamplingType_BuyFuel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-			this.labelX12 = new DevComponents.DotNetBar.LabelX();
-			this.btnNewAutotruck_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.labelX15 = new DevComponents.DotNetBar.LabelX();
-			this.labelX21 = new DevComponents.DotNetBar.LabelX();
-			this.btnSelectForecast_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.labelX14 = new DevComponents.DotNetBar.LabelX();
-			this.btnSaveTransport_BuyFuel = new DevComponents.DotNetBar.ButtonX();
-			this.labelX16 = new DevComponents.DotNetBar.LabelX();
-			this.txtRemark_BuyFuel = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.superTabItem_BuyFuelWay1 = new DevComponents.DotNetBar.SuperTabItem();
-			this.superTabControlPanel16 = new DevComponents.DotNetBar.SuperTabControlPanel();
-			this.panelEx12 = new DevComponents.DotNetBar.PanelEx();
-			this.labelX32 = new DevComponents.DotNetBar.LabelX();
-			this.txt_LMYB_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.btnSelectSupplier_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.txtTitle_BuyFuel2 = new DevComponents.DotNetBar.LabelX();
-			this.btnSelectAutotruck_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.labelX39 = new DevComponents.DotNetBar.LabelX();
-			this.btnReset_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.txtCarNumber_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.btnSelectTransportCompany_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.labelX40 = new DevComponents.DotNetBar.LabelX();
-			this.btnSelectMine_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.txtSupplierName_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.labelX41 = new DevComponents.DotNetBar.LabelX();
-			this.txtTicketWeight_BuyFuel2 = new DevComponents.Editors.DoubleInput();
-			this.txtTransportCompanyName_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.labelX42 = new DevComponents.DotNetBar.LabelX();
-			this.cmbFuelName_BuyFuel2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-			this.txtMineName_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.cmbBuyFuelType2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-			this.cmbSamplingType_BuyFuel2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-			this.labelX43 = new DevComponents.DotNetBar.LabelX();
-			this.btnNewAutotruck_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.labelX44 = new DevComponents.DotNetBar.LabelX();
-			this.labelX45 = new DevComponents.DotNetBar.LabelX();
-			this.btnSelectForecast_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.labelX46 = new DevComponents.DotNetBar.LabelX();
-			this.btnSaveTransport_BuyFuel2 = new DevComponents.DotNetBar.ButtonX();
-			this.labelX47 = new DevComponents.DotNetBar.LabelX();
-			this.txtRemark_BuyFuel2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-			this.superTabItem_BuyFuelWay2 = new DevComponents.DotNetBar.SuperTabItem();
-			this.superTabItem_BuyFuel = new DevComponents.DotNetBar.SuperTabItem();
 			this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.superTabControl3 = new DevComponents.DotNetBar.SuperTabControl();
@@ -408,6 +408,22 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl2)).BeginInit();
 			this.superTabControl2.SuspendLayout();
+			this.superTabControlPanel3.SuspendLayout();
+			this.tableLayoutPanel3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
+			this.superTabControl1.SuspendLayout();
+			this.superTabControlPanel2.SuspendLayout();
+			this.contextMenuStrip1.SuspendLayout();
+			this.superTabControlPanel1.SuspendLayout();
+			this.panelEx1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.superTabControlWay_BuyFuel)).BeginInit();
+			this.superTabControlWay_BuyFuel.SuspendLayout();
+			this.superTabControlPanel15.SuspendLayout();
+			this.panelEx3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel)).BeginInit();
+			this.superTabControlPanel16.SuspendLayout();
+			this.panelEx12.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel2)).BeginInit();
 			this.superTabControlPanel4.SuspendLayout();
 			this.tableLayoutPanel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl5)).BeginInit();
@@ -422,22 +438,6 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.panelEx4.SuspendLayout();
 			this.superTabControlPanel14.SuspendLayout();
 			this.panelEx11.SuspendLayout();
-			this.superTabControlPanel3.SuspendLayout();
-			this.tableLayoutPanel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
-			this.superTabControl1.SuspendLayout();
-			this.superTabControlPanel1.SuspendLayout();
-			this.superTabControlPanel2.SuspendLayout();
-			this.contextMenuStrip1.SuspendLayout();
-			this.panelEx1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.superTabControlWay_BuyFuel)).BeginInit();
-			this.superTabControlWay_BuyFuel.SuspendLayout();
-			this.superTabControlPanel15.SuspendLayout();
-			this.panelEx3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel)).BeginInit();
-			this.superTabControlPanel16.SuspendLayout();
-			this.panelEx12.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel2)).BeginInit();
 			this.superTabControlPanel5.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl3)).BeginInit();
@@ -911,8 +911,8 @@ namespace CMCS.CarTransport.Queue.Frms
             this.superTabControl2.ControlBox.MenuBox,
             this.superTabControl2.ControlBox.CloseBox});
 			this.superTabControl2.ControlBox.Visible = false;
-			this.superTabControl2.Controls.Add(this.superTabControlPanel4);
 			this.superTabControl2.Controls.Add(this.superTabControlPanel3);
+			this.superTabControl2.Controls.Add(this.superTabControlPanel4);
 			this.superTabControl2.Controls.Add(this.superTabControlPanel5);
 			this.superTabControl2.Controls.Add(this.superTabControlPanel6);
 			this.superTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -933,6 +933,1444 @@ namespace CMCS.CarTransport.Queue.Frms
             this.superTabItem_Visit});
 			this.superTabControl2.Text = "superTabControl2";
 			this.superTabControl2.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
+			// 
+			// superTabControlPanel3
+			// 
+			this.superTabControlPanel3.Controls.Add(this.tableLayoutPanel3);
+			this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControlPanel3.Location = new System.Drawing.Point(0, 31);
+			this.superTabControlPanel3.Name = "superTabControlPanel3";
+			this.superTabControlPanel3.Size = new System.Drawing.Size(1099, 609);
+			this.superTabControlPanel3.TabIndex = 1;
+			this.superTabControlPanel3.TabItem = this.superTabItem_BuyFuel;
+			// 
+			// tableLayoutPanel3
+			// 
+			this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+			this.tableLayoutPanel3.ColumnCount = 1;
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel3.Controls.Add(this.superTabControl1, 0, 1);
+			this.tableLayoutPanel3.Controls.Add(this.panelEx1, 0, 0);
+			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel3.ForeColor = System.Drawing.Color.White;
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+			this.tableLayoutPanel3.RowCount = 2;
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(1099, 609);
+			this.tableLayoutPanel3.TabIndex = 0;
+			// 
+			// superTabControl1
+			// 
+			this.superTabControl1.AutoCloseTabs = false;
+			this.superTabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.superTabControl1.CloseButtonOnTabsAlwaysDisplayed = false;
+			// 
+			// 
+			// 
+			// 
+			// 
+			// 
+			this.superTabControl1.ControlBox.CloseBox.Name = "";
+			// 
+			// 
+			// 
+			this.superTabControl1.ControlBox.MenuBox.Name = "";
+			this.superTabControl1.ControlBox.Name = "";
+			this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabControl1.ControlBox.MenuBox,
+            this.superTabControl1.ControlBox.CloseBox});
+			this.superTabControl1.ControlBox.Visible = false;
+			this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+			this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+			this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControl1.ForeColor = System.Drawing.Color.White;
+			this.superTabControl1.Location = new System.Drawing.Point(3, 403);
+			this.superTabControl1.Name = "superTabControl1";
+			this.superTabControl1.ReorderTabsEnabled = true;
+			this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.superTabControl1.SelectedTabIndex = 0;
+			this.superTabControl1.Size = new System.Drawing.Size(1093, 203);
+			this.superTabControl1.TabFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.superTabControl1.TabIndex = 1;
+			this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem1,
+            this.superTabItem2});
+			this.superTabControl1.Text = "superTabControl1";
+			// 
+			// superTabControlPanel2
+			// 
+			this.superTabControlPanel2.Controls.Add(this.superGridControl2_BuyFuel);
+			this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
+			this.superTabControlPanel2.Name = "superTabControlPanel2";
+			this.superTabControlPanel2.Size = new System.Drawing.Size(1093, 203);
+			this.superTabControlPanel2.TabIndex = 0;
+			this.superTabControlPanel2.TabItem = this.superTabItem2;
+			// 
+			// superGridControl2_BuyFuel
+			// 
+			this.superGridControl2_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.superGridControl2_BuyFuel.ContextMenuStrip = this.contextMenuStrip1;
+			this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+			this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.superGridControl2_BuyFuel.DefaultVisualStyles.ColumnHeaderStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.superGridControl2_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superGridControl2_BuyFuel.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+			this.superGridControl2_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.superGridControl2_BuyFuel.Location = new System.Drawing.Point(0, 0);
+			this.superGridControl2_BuyFuel.Name = "superGridControl2_BuyFuel";
+			this.superGridControl2_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
+			gridColumn15.DataPropertyName = "SerialNumber";
+			gridColumn15.HeaderText = "流水号";
+			gridColumn15.Name = "";
+			gridColumn15.Width = 120;
+			gridColumn16.DataPropertyName = "Batch";
+			gridColumn16.HeaderText = "批次编号";
+			gridColumn16.Name = "";
+			gridColumn16.Width = 120;
+			gridColumn17.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn17.DataPropertyName = "YbNum";
+			gridColumn17.HeaderText = "预报编号";
+			gridColumn17.Name = "";
+			gridColumn18.DataPropertyName = "CarNumber";
+			gridColumn18.HeaderText = "车牌号";
+			gridColumn18.Name = "";
+			gridColumn19.DataPropertyName = "InFactoryTime";
+			gridColumn19.HeaderText = "入厂时间";
+			gridColumn19.Name = "";
+			gridColumn19.Width = 150;
+			gridColumn20.DataPropertyName = "SupplierName";
+			gridColumn20.HeaderText = "供煤单位";
+			gridColumn20.Name = "";
+			gridColumn20.Width = 150;
+			gridColumn21.DataPropertyName = "TransportCompanyName";
+			gridColumn21.HeaderText = "运输单位";
+			gridColumn21.Name = "";
+			gridColumn21.Width = 150;
+			gridColumn22.DataPropertyName = "MineName";
+			gridColumn22.HeaderText = "矿点";
+			gridColumn22.Name = "";
+			gridColumn23.DataPropertyName = "FuelKindName";
+			gridColumn23.HeaderText = "煤种";
+			gridColumn23.Name = "";
+			gridColumn24.DataPropertyName = "SamplingType";
+			gridColumn24.HeaderText = "采样方式";
+			gridColumn24.Name = "";
+			gridColumn24.Width = 80;
+			gridColumn25.DataPropertyName = "TicketWeight";
+			gridColumn25.HeaderText = "矿发量(吨)";
+			gridColumn25.Name = "";
+			gridColumn25.Width = 80;
+			gridColumn26.DataPropertyName = "GrossWeight";
+			gridColumn26.HeaderText = "毛重(吨)";
+			gridColumn26.Name = "";
+			gridColumn26.Width = 80;
+			gridColumn27.DataPropertyName = "TareWeight";
+			gridColumn27.HeaderText = "皮重(吨)";
+			gridColumn27.Name = "";
+			gridColumn27.Width = 80;
+			gridColumn28.DataPropertyName = "DeductWeight";
+			gridColumn28.HeaderText = "扣吨(吨)";
+			gridColumn28.Name = "";
+			gridColumn28.Width = 80;
+			gridColumn29.DataPropertyName = "SuttleWeight";
+			gridColumn29.HeaderText = "净重(吨)";
+			gridColumn29.Name = "";
+			gridColumn29.Width = 80;
+			gridColumn30.DataPropertyName = "ChangeIsUse";
+			gridColumn30.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+			gridColumn30.HeaderText = "有效";
+			gridColumn30.Name = "ChangeIsUse";
+			gridColumn30.Width = 60;
+			gridColumn31.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn31.DataPropertyName = "Remark";
+			gridColumn31.HeaderText = "备注";
+			gridColumn31.Name = "";
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn15);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn16);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn17);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn18);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn19);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn20);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn21);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn22);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn23);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn24);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn25);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn26);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn27);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn28);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn29);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn30);
+			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn31);
+			this.superGridControl2_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
+			this.superGridControl2_BuyFuel.PrimaryGrid.MultiSelect = false;
+			this.superGridControl2_BuyFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+			this.superGridControl2_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
+			this.superGridControl2_BuyFuel.Size = new System.Drawing.Size(1093, 203);
+			this.superGridControl2_BuyFuel.TabIndex = 1;
+			this.superGridControl2_BuyFuel.Text = "superGridControl2";
+			this.superGridControl2_BuyFuel.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.superGridControl2_BuyFuel_CellClick);
+			this.superGridControl2_BuyFuel.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl_BuyFuel_CellDoubleClick);
+			this.superGridControl2_BuyFuel.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl2_BuyFuel_DataBindingComplete);
+			this.superGridControl2_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
+			this.superGridControl2_BuyFuel.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl_GetRowHeaderText);
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPrint});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+			// 
+			// tsmiPrint
+			// 
+			this.tsmiPrint.Name = "tsmiPrint";
+			this.tsmiPrint.Size = new System.Drawing.Size(180, 22);
+			this.tsmiPrint.Text = "打印磅单";
+			this.tsmiPrint.Click += new System.EventHandler(this.tsmiPrint_Click);
+			// 
+			// superTabItem2
+			// 
+			this.superTabItem2.AttachedControl = this.superTabControlPanel2;
+			this.superTabItem2.GlobalItem = false;
+			this.superTabItem2.Name = "superTabItem2";
+			this.superTabItem2.Text = "今 日 已 完 成";
+			// 
+			// superTabControlPanel1
+			// 
+			this.superTabControlPanel1.Controls.Add(this.superGridControl1_BuyFuel);
+			this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControlPanel1.Location = new System.Drawing.Point(0, 34);
+			this.superTabControlPanel1.Name = "superTabControlPanel1";
+			this.superTabControlPanel1.Size = new System.Drawing.Size(1093, 169);
+			this.superTabControlPanel1.TabIndex = 1;
+			this.superTabControlPanel1.TabItem = this.superTabItem1;
+			// 
+			// superGridControl1_BuyFuel
+			// 
+			this.superGridControl1_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			this.superGridControl1_BuyFuel.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+			this.superGridControl1_BuyFuel.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.superGridControl1_BuyFuel.DefaultVisualStyles.ColumnHeaderStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.superGridControl1_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superGridControl1_BuyFuel.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+			this.superGridControl1_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.superGridControl1_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.superGridControl1_BuyFuel.Location = new System.Drawing.Point(0, 0);
+			this.superGridControl1_BuyFuel.Name = "superGridControl1_BuyFuel";
+			this.superGridControl1_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
+			gridColumn1.DataPropertyName = "SerialNumber";
+			gridColumn1.HeaderText = "流水号";
+			gridColumn1.Name = "";
+			gridColumn1.Width = 120;
+			gridColumn2.DataPropertyName = "Batch";
+			gridColumn2.HeaderText = "批次编号";
+			gridColumn2.Name = "";
+			gridColumn2.Width = 120;
+			gridColumn3.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn3.DataPropertyName = "YbNum";
+			gridColumn3.HeaderText = "预报编号";
+			gridColumn3.Name = "";
+			gridColumn4.DataPropertyName = "CarNumber";
+			gridColumn4.HeaderText = "车牌号";
+			gridColumn4.Name = "";
+			gridColumn5.DataPropertyName = "InFactoryTime";
+			gridColumn5.HeaderText = "入场时间";
+			gridColumn5.Name = "";
+			gridColumn5.Width = 150;
+			gridColumn6.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn6.DataPropertyName = "SupplierName";
+			gridColumn6.HeaderText = "供煤单位";
+			gridColumn6.Name = "";
+			gridColumn6.Width = 150;
+			gridColumn7.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn7.DataPropertyName = "TransportCompanyName";
+			gridColumn7.HeaderText = "运输单位";
+			gridColumn7.Name = "";
+			gridColumn7.Width = 150;
+			gridColumn8.DataPropertyName = "MineName";
+			gridColumn8.HeaderText = "矿点";
+			gridColumn8.Name = "";
+			gridColumn9.DataPropertyName = "FuelKindName";
+			gridColumn9.HeaderText = "煤种";
+			gridColumn9.Name = "";
+			gridColumn10.DataPropertyName = "DeductWeight";
+			gridColumn10.HeaderText = "毛重(吨)";
+			gridColumn10.Name = "";
+			gridColumn10.Width = 80;
+			gridColumn11.DataPropertyName = "TareWeight";
+			gridColumn11.HeaderText = "皮重(吨)";
+			gridColumn11.Name = "";
+			gridColumn11.Width = 80;
+			gridColumn12.DataPropertyName = "SuttleWeight";
+			gridColumn12.HeaderText = "净重(吨)";
+			gridColumn12.Name = "";
+			gridColumn12.Width = 80;
+			gridColumn13.DataPropertyName = "";
+			gridColumn13.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+			gridColumn13.HeaderText = "有效";
+			gridColumn13.Name = "ChangeIsUse";
+			gridColumn13.Width = 60;
+			gridColumn14.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn14.DataPropertyName = "Remark";
+			gridColumn14.HeaderText = "备注";
+			gridColumn14.Name = "";
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn1);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn2);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn3);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn4);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn5);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn6);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn7);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn8);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn9);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn10);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn11);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn12);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn13);
+			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn14);
+			this.superGridControl1_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
+			this.superGridControl1_BuyFuel.PrimaryGrid.MultiSelect = false;
+			this.superGridControl1_BuyFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+			this.superGridControl1_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
+			this.superGridControl1_BuyFuel.Size = new System.Drawing.Size(1093, 169);
+			this.superGridControl1_BuyFuel.TabIndex = 0;
+			this.superGridControl1_BuyFuel.Text = "superGridControl1";
+			this.superGridControl1_BuyFuel.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.superGridControl1_BuyFuel_CellClick);
+			this.superGridControl1_BuyFuel.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl_BuyFuel_CellDoubleClick);
+			this.superGridControl1_BuyFuel.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl1_BuyFuel_DataBindingComplete);
+			this.superGridControl1_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
+			this.superGridControl1_BuyFuel.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl_GetRowHeaderText);
+			// 
+			// superTabItem1
+			// 
+			this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+			this.superTabItem1.GlobalItem = false;
+			this.superTabItem1.Name = "superTabItem1";
+			this.superTabItem1.Text = "未 完 成";
+			// 
+			// panelEx1
+			// 
+			this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+			this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelEx1.Controls.Add(this.superTabControlWay_BuyFuel);
+			this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelEx1.Location = new System.Drawing.Point(3, 3);
+			this.panelEx1.Name = "panelEx1";
+			this.panelEx1.Size = new System.Drawing.Size(1093, 394);
+			this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+			this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+			this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+			this.panelEx1.Style.GradientAngle = 90;
+			this.panelEx1.TabIndex = 2;
+			// 
+			// superTabControlWay_BuyFuel
+			// 
+			this.superTabControlWay_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			// 
+			// 
+			// 
+			this.superTabControlWay_BuyFuel.ControlBox.CloseBox.Name = "";
+			// 
+			// 
+			// 
+			this.superTabControlWay_BuyFuel.ControlBox.MenuBox.AutoHide = true;
+			this.superTabControlWay_BuyFuel.ControlBox.MenuBox.Name = "";
+			this.superTabControlWay_BuyFuel.ControlBox.MenuBox.Visible = false;
+			this.superTabControlWay_BuyFuel.ControlBox.Name = "";
+			this.superTabControlWay_BuyFuel.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabControlWay_BuyFuel.ControlBox.MenuBox,
+            this.superTabControlWay_BuyFuel.ControlBox.CloseBox});
+			this.superTabControlWay_BuyFuel.Controls.Add(this.superTabControlPanel15);
+			this.superTabControlWay_BuyFuel.Controls.Add(this.superTabControlPanel16);
+			this.superTabControlWay_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControlWay_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+			this.superTabControlWay_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.superTabControlWay_BuyFuel.Location = new System.Drawing.Point(0, 0);
+			this.superTabControlWay_BuyFuel.Name = "superTabControlWay_BuyFuel";
+			this.superTabControlWay_BuyFuel.ReorderTabsEnabled = true;
+			this.superTabControlWay_BuyFuel.SelectedTabFont = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
+			this.superTabControlWay_BuyFuel.SelectedTabIndex = 0;
+			this.superTabControlWay_BuyFuel.Size = new System.Drawing.Size(1093, 394);
+			this.superTabControlWay_BuyFuel.TabFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.superTabControlWay_BuyFuel.TabIndex = 26;
+			this.superTabControlWay_BuyFuel.TabLayoutType = DevComponents.DotNetBar.eSuperTabLayoutType.SingleLineFit;
+			this.superTabControlWay_BuyFuel.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem_BuyFuelWay1,
+            this.superTabItem_BuyFuelWay2});
+			this.superTabControlWay_BuyFuel.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.superTabControl_SelectedTabChanged);
+			// 
+			// superTabControlPanel15
+			// 
+			this.superTabControlPanel15.Controls.Add(this.panelEx3);
+			this.superTabControlPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControlPanel15.Location = new System.Drawing.Point(0, 30);
+			this.superTabControlPanel15.Name = "superTabControlPanel15";
+			this.superTabControlPanel15.Size = new System.Drawing.Size(1093, 364);
+			this.superTabControlPanel15.TabIndex = 1;
+			this.superTabControlPanel15.TabItem = this.superTabItem_BuyFuelWay1;
+			// 
+			// panelEx3
+			// 
+			this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+			this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelEx3.Controls.Add(this.labelX31);
+			this.panelEx3.Controls.Add(this.txt_LMYB_BuyFuel);
+			this.panelEx3.Controls.Add(this.btnSelectSupplier_BuyFuel);
+			this.panelEx3.Controls.Add(this.txtTitle_BuyFuel);
+			this.panelEx3.Controls.Add(this.btnSelectAutotruck_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX9);
+			this.panelEx3.Controls.Add(this.btnReset_BuyFuel);
+			this.panelEx3.Controls.Add(this.txtCarNumber_BuyFuel);
+			this.panelEx3.Controls.Add(this.btnSelectTransportCompany_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX11);
+			this.panelEx3.Controls.Add(this.btnSelectMine_BuyFuel);
+			this.panelEx3.Controls.Add(this.txtSupplierName_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX10);
+			this.panelEx3.Controls.Add(this.txtTicketWeight_BuyFuel);
+			this.panelEx3.Controls.Add(this.txtTransportCompanyName_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX13);
+			this.panelEx3.Controls.Add(this.cmbFuelName_BuyFuel);
+			this.panelEx3.Controls.Add(this.txtMineName_BuyFuel);
+			this.panelEx3.Controls.Add(this.cmbBuyFuelType);
+			this.panelEx3.Controls.Add(this.cmbSamplingType_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX12);
+			this.panelEx3.Controls.Add(this.btnNewAutotruck_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX15);
+			this.panelEx3.Controls.Add(this.labelX21);
+			this.panelEx3.Controls.Add(this.btnSelectForecast_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX14);
+			this.panelEx3.Controls.Add(this.btnSaveTransport_BuyFuel);
+			this.panelEx3.Controls.Add(this.labelX16);
+			this.panelEx3.Controls.Add(this.txtRemark_BuyFuel);
+			this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelEx3.Location = new System.Drawing.Point(0, 0);
+			this.panelEx3.Name = "panelEx3";
+			this.panelEx3.Size = new System.Drawing.Size(1093, 364);
+			this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+			this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+			this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+			this.panelEx3.Style.GradientAngle = 90;
+			this.panelEx3.TabIndex = 25;
+			// 
+			// labelX31
+			// 
+			this.labelX31.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX31.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX31.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX31.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX31.ForeColor = System.Drawing.Color.White;
+			this.labelX31.Location = new System.Drawing.Point(202, 163);
+			this.labelX31.Name = "labelX31";
+			this.labelX31.Size = new System.Drawing.Size(77, 26);
+			this.labelX31.TabIndex = 66;
+			this.labelX31.Text = "预报编号";
+			// 
+			// txt_LMYB_BuyFuel
+			// 
+			this.txt_LMYB_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txt_LMYB_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txt_LMYB_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(52)))));
+			this.txt_LMYB_BuyFuel.Border.Class = "TextBoxBorder";
+			this.txt_LMYB_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txt_LMYB_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txt_LMYB_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txt_LMYB_BuyFuel.Location = new System.Drawing.Point(283, 161);
+			this.txt_LMYB_BuyFuel.Name = "txt_LMYB_BuyFuel";
+			this.txt_LMYB_BuyFuel.ReadOnly = true;
+			this.txt_LMYB_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.txt_LMYB_BuyFuel.TabIndex = 65;
+			this.txt_LMYB_BuyFuel.TabStop = false;
+			// 
+			// btnSelectSupplier_BuyFuel
+			// 
+			this.btnSelectSupplier_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectSupplier_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectSupplier_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectSupplier_BuyFuel.Location = new System.Drawing.Point(498, 44);
+			this.btnSelectSupplier_BuyFuel.Name = "btnSelectSupplier_BuyFuel";
+			this.btnSelectSupplier_BuyFuel.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectSupplier_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectSupplier_BuyFuel.TabIndex = 4;
+			this.btnSelectSupplier_BuyFuel.Text = "选";
+			this.btnSelectSupplier_BuyFuel.Click += new System.EventHandler(this.btnSelectSupplier_BuyFuel_Click);
+			// 
+			// txtTitle_BuyFuel
+			// 
+			this.txtTitle_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtTitle_BuyFuel.AutoSize = true;
+			// 
+			// 
+			// 
+			this.txtTitle_BuyFuel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtTitle_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtTitle_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtTitle_BuyFuel.Location = new System.Drawing.Point(273, 321);
+			this.txtTitle_BuyFuel.Name = "txtTitle_BuyFuel";
+			this.txtTitle_BuyFuel.Size = new System.Drawing.Size(583, 26);
+			this.txtTitle_BuyFuel.TabIndex = 4;
+			this.txtTitle_BuyFuel.Text = "已登记总量：{0}   已称重：{1}  未称重：{2}   已称重未回皮：{3}   已回皮：{4}";
+			// 
+			// btnSelectAutotruck_BuyFuel
+			// 
+			this.btnSelectAutotruck_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectAutotruck_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectAutotruck_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectAutotruck_BuyFuel.Location = new System.Drawing.Point(498, 6);
+			this.btnSelectAutotruck_BuyFuel.Name = "btnSelectAutotruck_BuyFuel";
+			this.btnSelectAutotruck_BuyFuel.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectAutotruck_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectAutotruck_BuyFuel.TabIndex = 2;
+			this.btnSelectAutotruck_BuyFuel.Text = "选";
+			this.btnSelectAutotruck_BuyFuel.Click += new System.EventHandler(this.btnSelectAutotruck_BuyFuel_Click);
+			// 
+			// labelX9
+			// 
+			this.labelX9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX9.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX9.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX9.ForeColor = System.Drawing.Color.White;
+			this.labelX9.Location = new System.Drawing.Point(220, 5);
+			this.labelX9.Name = "labelX9";
+			this.labelX9.Size = new System.Drawing.Size(60, 26);
+			this.labelX9.TabIndex = 4;
+			this.labelX9.Text = "车牌号";
+			// 
+			// btnReset_BuyFuel
+			// 
+			this.btnReset_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnReset_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnReset_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnReset_BuyFuel.Location = new System.Drawing.Point(789, 262);
+			this.btnReset_BuyFuel.Name = "btnReset_BuyFuel";
+			this.btnReset_BuyFuel.Size = new System.Drawing.Size(120, 37);
+			this.btnReset_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnReset_BuyFuel.TabIndex = 20;
+			this.btnReset_BuyFuel.Text = "重  置";
+			this.btnReset_BuyFuel.Click += new System.EventHandler(this.btnReset_BuyFuel_Click);
+			// 
+			// txtCarNumber_BuyFuel
+			// 
+			this.txtCarNumber_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtCarNumber_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtCarNumber_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtCarNumber_BuyFuel.Border.Class = "TextBoxBorder";
+			this.txtCarNumber_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtCarNumber_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtCarNumber_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtCarNumber_BuyFuel.Location = new System.Drawing.Point(285, 4);
+			this.txtCarNumber_BuyFuel.Name = "txtCarNumber_BuyFuel";
+			this.txtCarNumber_BuyFuel.ReadOnly = true;
+			this.txtCarNumber_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.txtCarNumber_BuyFuel.TabIndex = 0;
+			this.txtCarNumber_BuyFuel.TabStop = false;
+			// 
+			// btnSelectTransportCompany_BuyFuel
+			// 
+			this.btnSelectTransportCompany_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectTransportCompany_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectTransportCompany_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectTransportCompany_BuyFuel.Location = new System.Drawing.Point(882, 7);
+			this.btnSelectTransportCompany_BuyFuel.Name = "btnSelectTransportCompany_BuyFuel";
+			this.btnSelectTransportCompany_BuyFuel.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectTransportCompany_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectTransportCompany_BuyFuel.TabIndex = 6;
+			this.btnSelectTransportCompany_BuyFuel.Text = "选";
+			this.btnSelectTransportCompany_BuyFuel.Click += new System.EventHandler(this.btnSelectTransportCompany_BuyFuel_Click);
+			// 
+			// labelX11
+			// 
+			this.labelX11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX11.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX11.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX11.ForeColor = System.Drawing.Color.White;
+			this.labelX11.Location = new System.Drawing.Point(204, 45);
+			this.labelX11.Name = "labelX11";
+			this.labelX11.Size = new System.Drawing.Size(77, 26);
+			this.labelX11.TabIndex = 8;
+			this.labelX11.Text = "供煤单位";
+			// 
+			// btnSelectMine_BuyFuel
+			// 
+			this.btnSelectMine_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectMine_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectMine_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectMine_BuyFuel.Location = new System.Drawing.Point(498, 85);
+			this.btnSelectMine_BuyFuel.Name = "btnSelectMine_BuyFuel";
+			this.btnSelectMine_BuyFuel.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectMine_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectMine_BuyFuel.TabIndex = 8;
+			this.btnSelectMine_BuyFuel.Text = "选";
+			this.btnSelectMine_BuyFuel.Click += new System.EventHandler(this.btnSelectMine_BuyFuel_Click);
+			// 
+			// txtSupplierName_BuyFuel
+			// 
+			this.txtSupplierName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtSupplierName_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtSupplierName_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtSupplierName_BuyFuel.Border.Class = "TextBoxBorder";
+			this.txtSupplierName_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtSupplierName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtSupplierName_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtSupplierName_BuyFuel.Location = new System.Drawing.Point(285, 42);
+			this.txtSupplierName_BuyFuel.Name = "txtSupplierName_BuyFuel";
+			this.txtSupplierName_BuyFuel.ReadOnly = true;
+			this.txtSupplierName_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.txtSupplierName_BuyFuel.TabIndex = 2;
+			this.txtSupplierName_BuyFuel.TabStop = false;
+			// 
+			// labelX10
+			// 
+			this.labelX10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX10.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX10.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX10.ForeColor = System.Drawing.Color.White;
+			this.labelX10.Location = new System.Drawing.Point(588, 7);
+			this.labelX10.Name = "labelX10";
+			this.labelX10.Size = new System.Drawing.Size(77, 26);
+			this.labelX10.TabIndex = 10;
+			this.labelX10.Text = "运输单位";
+			// 
+			// txtTicketWeight_BuyFuel
+			// 
+			this.txtTicketWeight_BuyFuel.AllowEmptyState = false;
+			this.txtTicketWeight_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			// 
+			// 
+			// 
+			this.txtTicketWeight_BuyFuel.BackgroundStyle.Class = "DateTimeInputBackground";
+			this.txtTicketWeight_BuyFuel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtTicketWeight_BuyFuel.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+			this.txtTicketWeight_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtTicketWeight_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtTicketWeight_BuyFuel.Increment = 1D;
+			this.txtTicketWeight_BuyFuel.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+			this.txtTicketWeight_BuyFuel.Location = new System.Drawing.Point(285, 123);
+			this.txtTicketWeight_BuyFuel.MaxValue = 1000D;
+			this.txtTicketWeight_BuyFuel.MinValue = 0D;
+			this.txtTicketWeight_BuyFuel.Name = "txtTicketWeight_BuyFuel";
+			this.txtTicketWeight_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.txtTicketWeight_BuyFuel.TabIndex = 12;
+			// 
+			// txtTransportCompanyName_BuyFuel
+			// 
+			this.txtTransportCompanyName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtTransportCompanyName_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtTransportCompanyName_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtTransportCompanyName_BuyFuel.Border.Class = "TextBoxBorder";
+			this.txtTransportCompanyName_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtTransportCompanyName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtTransportCompanyName_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtTransportCompanyName_BuyFuel.Location = new System.Drawing.Point(669, 5);
+			this.txtTransportCompanyName_BuyFuel.Name = "txtTransportCompanyName_BuyFuel";
+			this.txtTransportCompanyName_BuyFuel.ReadOnly = true;
+			this.txtTransportCompanyName_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.txtTransportCompanyName_BuyFuel.TabIndex = 3;
+			this.txtTransportCompanyName_BuyFuel.TabStop = false;
+			// 
+			// labelX13
+			// 
+			this.labelX13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX13.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX13.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX13.ForeColor = System.Drawing.Color.White;
+			this.labelX13.Location = new System.Drawing.Point(237, 85);
+			this.labelX13.Name = "labelX13";
+			this.labelX13.Size = new System.Drawing.Size(42, 26);
+			this.labelX13.TabIndex = 12;
+			this.labelX13.Text = "矿点";
+			// 
+			// cmbFuelName_BuyFuel
+			// 
+			this.cmbFuelName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cmbFuelName_BuyFuel.DisplayMember = "Text";
+			this.cmbFuelName_BuyFuel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbFuelName_BuyFuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbFuelName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cmbFuelName_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.cmbFuelName_BuyFuel.FormattingEnabled = true;
+			this.cmbFuelName_BuyFuel.ItemHeight = 23;
+			this.cmbFuelName_BuyFuel.Location = new System.Drawing.Point(669, 45);
+			this.cmbFuelName_BuyFuel.Name = "cmbFuelName_BuyFuel";
+			this.cmbFuelName_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.cmbFuelName_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.cmbFuelName_BuyFuel.TabIndex = 10;
+			this.cmbFuelName_BuyFuel.SelectedIndexChanged += new System.EventHandler(this.cmbFuelName_BuyFuel_SelectedIndexChanged);
+			// 
+			// txtMineName_BuyFuel
+			// 
+			this.txtMineName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtMineName_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtMineName_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtMineName_BuyFuel.Border.Class = "TextBoxBorder";
+			this.txtMineName_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtMineName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtMineName_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtMineName_BuyFuel.Location = new System.Drawing.Point(285, 83);
+			this.txtMineName_BuyFuel.Name = "txtMineName_BuyFuel";
+			this.txtMineName_BuyFuel.ReadOnly = true;
+			this.txtMineName_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.txtMineName_BuyFuel.TabIndex = 4;
+			this.txtMineName_BuyFuel.TabStop = false;
+			// 
+			// cmbBuyFuelType
+			// 
+			this.cmbBuyFuelType.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cmbBuyFuelType.DisplayMember = "Text";
+			this.cmbBuyFuelType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbBuyFuelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbBuyFuelType.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cmbBuyFuelType.ForeColor = System.Drawing.Color.White;
+			this.cmbBuyFuelType.FormattingEnabled = true;
+			this.cmbBuyFuelType.ItemHeight = 23;
+			this.cmbBuyFuelType.Location = new System.Drawing.Point(669, 123);
+			this.cmbBuyFuelType.Name = "cmbBuyFuelType";
+			this.cmbBuyFuelType.Size = new System.Drawing.Size(240, 29);
+			this.cmbBuyFuelType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.cmbBuyFuelType.TabIndex = 14;
+			// 
+			// cmbSamplingType_BuyFuel
+			// 
+			this.cmbSamplingType_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cmbSamplingType_BuyFuel.DisplayMember = "Text";
+			this.cmbSamplingType_BuyFuel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbSamplingType_BuyFuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbSamplingType_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cmbSamplingType_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.cmbSamplingType_BuyFuel.FormattingEnabled = true;
+			this.cmbSamplingType_BuyFuel.ItemHeight = 23;
+			this.cmbSamplingType_BuyFuel.Location = new System.Drawing.Point(669, 85);
+			this.cmbSamplingType_BuyFuel.Name = "cmbSamplingType_BuyFuel";
+			this.cmbSamplingType_BuyFuel.Size = new System.Drawing.Size(240, 29);
+			this.cmbSamplingType_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.cmbSamplingType_BuyFuel.TabIndex = 14;
+			// 
+			// labelX12
+			// 
+			this.labelX12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX12.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX12.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX12.ForeColor = System.Drawing.Color.White;
+			this.labelX12.Location = new System.Drawing.Point(621, 47);
+			this.labelX12.Name = "labelX12";
+			this.labelX12.Size = new System.Drawing.Size(42, 26);
+			this.labelX12.TabIndex = 14;
+			this.labelX12.Text = "煤种";
+			// 
+			// btnNewAutotruck_BuyFuel
+			// 
+			this.btnNewAutotruck_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnNewAutotruck_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnNewAutotruck_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnNewAutotruck_BuyFuel.Location = new System.Drawing.Point(285, 262);
+			this.btnNewAutotruck_BuyFuel.Name = "btnNewAutotruck_BuyFuel";
+			this.btnNewAutotruck_BuyFuel.Size = new System.Drawing.Size(120, 37);
+			this.btnNewAutotruck_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnNewAutotruck_BuyFuel.TabIndex = 24;
+			this.btnNewAutotruck_BuyFuel.TabStop = false;
+			this.btnNewAutotruck_BuyFuel.Text = "新车登记";
+			this.btnNewAutotruck_BuyFuel.Click += new System.EventHandler(this.btnNewAutotruck_BuyFuel_Click);
+			// 
+			// labelX15
+			// 
+			this.labelX15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX15.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX15.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX15.ForeColor = System.Drawing.Color.White;
+			this.labelX15.Location = new System.Drawing.Point(220, 125);
+			this.labelX15.Name = "labelX15";
+			this.labelX15.Size = new System.Drawing.Size(60, 26);
+			this.labelX15.TabIndex = 16;
+			this.labelX15.Text = "矿发量";
+			// 
+			// labelX21
+			// 
+			this.labelX21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX21.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX21.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX21.ForeColor = System.Drawing.Color.White;
+			this.labelX21.Location = new System.Drawing.Point(571, 126);
+			this.labelX21.Name = "labelX21";
+			this.labelX21.Size = new System.Drawing.Size(94, 26);
+			this.labelX21.TabIndex = 18;
+			this.labelX21.Text = "入场煤类型";
+			// 
+			// btnSelectForecast_BuyFuel
+			// 
+			this.btnSelectForecast_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectForecast_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectForecast_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSelectForecast_BuyFuel.Location = new System.Drawing.Point(527, 262);
+			this.btnSelectForecast_BuyFuel.Name = "btnSelectForecast_BuyFuel";
+			this.btnSelectForecast_BuyFuel.Size = new System.Drawing.Size(120, 37);
+			this.btnSelectForecast_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectForecast_BuyFuel.TabIndex = 23;
+			this.btnSelectForecast_BuyFuel.TabStop = false;
+			this.btnSelectForecast_BuyFuel.Text = "选择预报";
+			this.btnSelectForecast_BuyFuel.Click += new System.EventHandler(this.btnSelectForecast_BuyFuel_Click);
+			// 
+			// labelX14
+			// 
+			this.labelX14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX14.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX14.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX14.ForeColor = System.Drawing.Color.White;
+			this.labelX14.Location = new System.Drawing.Point(588, 87);
+			this.labelX14.Name = "labelX14";
+			this.labelX14.Size = new System.Drawing.Size(77, 26);
+			this.labelX14.TabIndex = 18;
+			this.labelX14.Text = "采样方式";
+			// 
+			// btnSaveTransport_BuyFuel
+			// 
+			this.btnSaveTransport_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSaveTransport_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSaveTransport_BuyFuel.BackColor = System.Drawing.Color.Transparent;
+			this.btnSaveTransport_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnSaveTransport_BuyFuel.Location = new System.Drawing.Point(658, 262);
+			this.btnSaveTransport_BuyFuel.Name = "btnSaveTransport_BuyFuel";
+			this.btnSaveTransport_BuyFuel.Size = new System.Drawing.Size(120, 37);
+			this.btnSaveTransport_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSaveTransport_BuyFuel.TabIndex = 18;
+			this.btnSaveTransport_BuyFuel.Text = "排  队";
+			this.btnSaveTransport_BuyFuel.Click += new System.EventHandler(this.btnSaveTransport_BuyFuel_Click);
+			// 
+			// labelX16
+			// 
+			this.labelX16.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX16.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX16.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX16.ForeColor = System.Drawing.Color.White;
+			this.labelX16.Location = new System.Drawing.Point(237, 201);
+			this.labelX16.Name = "labelX16";
+			this.labelX16.Size = new System.Drawing.Size(42, 26);
+			this.labelX16.TabIndex = 20;
+			this.labelX16.Text = "备注";
+			// 
+			// txtRemark_BuyFuel
+			// 
+			this.txtRemark_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtRemark_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtRemark_BuyFuel.Border.Class = "TextBoxBorder";
+			this.txtRemark_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtRemark_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtRemark_BuyFuel.ForeColor = System.Drawing.Color.White;
+			this.txtRemark_BuyFuel.Location = new System.Drawing.Point(285, 199);
+			this.txtRemark_BuyFuel.Multiline = true;
+			this.txtRemark_BuyFuel.Name = "txtRemark_BuyFuel";
+			this.txtRemark_BuyFuel.Size = new System.Drawing.Size(624, 52);
+			this.txtRemark_BuyFuel.TabIndex = 16;
+			this.txtRemark_BuyFuel.TabStop = false;
+			// 
+			// superTabItem_BuyFuelWay1
+			// 
+			this.superTabItem_BuyFuelWay1.AttachedControl = this.superTabControlPanel15;
+			this.superTabItem_BuyFuelWay1.GlobalItem = false;
+			this.superTabItem_BuyFuelWay1.Name = "superTabItem_BuyFuelWay1";
+			this.superTabItem_BuyFuelWay1.Text = "道 路 一";
+			this.superTabItem_BuyFuelWay1.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
+			// 
+			// superTabControlPanel16
+			// 
+			this.superTabControlPanel16.Controls.Add(this.panelEx12);
+			this.superTabControlPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.superTabControlPanel16.Location = new System.Drawing.Point(0, 0);
+			this.superTabControlPanel16.Name = "superTabControlPanel16";
+			this.superTabControlPanel16.Size = new System.Drawing.Size(1093, 394);
+			this.superTabControlPanel16.TabIndex = 0;
+			this.superTabControlPanel16.TabItem = this.superTabItem_BuyFuelWay2;
+			// 
+			// panelEx12
+			// 
+			this.panelEx12.CanvasColor = System.Drawing.SystemColors.Control;
+			this.panelEx12.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelEx12.Controls.Add(this.labelX32);
+			this.panelEx12.Controls.Add(this.txt_LMYB_BuyFuel2);
+			this.panelEx12.Controls.Add(this.btnSelectSupplier_BuyFuel2);
+			this.panelEx12.Controls.Add(this.txtTitle_BuyFuel2);
+			this.panelEx12.Controls.Add(this.btnSelectAutotruck_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX39);
+			this.panelEx12.Controls.Add(this.btnReset_BuyFuel2);
+			this.panelEx12.Controls.Add(this.txtCarNumber_BuyFuel2);
+			this.panelEx12.Controls.Add(this.btnSelectTransportCompany_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX40);
+			this.panelEx12.Controls.Add(this.btnSelectMine_BuyFuel2);
+			this.panelEx12.Controls.Add(this.txtSupplierName_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX41);
+			this.panelEx12.Controls.Add(this.txtTicketWeight_BuyFuel2);
+			this.panelEx12.Controls.Add(this.txtTransportCompanyName_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX42);
+			this.panelEx12.Controls.Add(this.cmbFuelName_BuyFuel2);
+			this.panelEx12.Controls.Add(this.txtMineName_BuyFuel2);
+			this.panelEx12.Controls.Add(this.cmbBuyFuelType2);
+			this.panelEx12.Controls.Add(this.cmbSamplingType_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX43);
+			this.panelEx12.Controls.Add(this.btnNewAutotruck_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX44);
+			this.panelEx12.Controls.Add(this.labelX45);
+			this.panelEx12.Controls.Add(this.btnSelectForecast_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX46);
+			this.panelEx12.Controls.Add(this.btnSaveTransport_BuyFuel2);
+			this.panelEx12.Controls.Add(this.labelX47);
+			this.panelEx12.Controls.Add(this.txtRemark_BuyFuel2);
+			this.panelEx12.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelEx12.Location = new System.Drawing.Point(0, 0);
+			this.panelEx12.Name = "panelEx12";
+			this.panelEx12.Size = new System.Drawing.Size(1093, 394);
+			this.panelEx12.Style.Alignment = System.Drawing.StringAlignment.Center;
+			this.panelEx12.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+			this.panelEx12.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.panelEx12.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+			this.panelEx12.Style.GradientAngle = 90;
+			this.panelEx12.TabIndex = 26;
+			// 
+			// labelX32
+			// 
+			this.labelX32.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX32.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX32.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX32.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX32.ForeColor = System.Drawing.Color.White;
+			this.labelX32.Location = new System.Drawing.Point(204, 167);
+			this.labelX32.Name = "labelX32";
+			this.labelX32.Size = new System.Drawing.Size(77, 26);
+			this.labelX32.TabIndex = 68;
+			this.labelX32.Text = "预报编号";
+			// 
+			// txt_LMYB_BuyFuel2
+			// 
+			this.txt_LMYB_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txt_LMYB_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txt_LMYB_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(52)))));
+			this.txt_LMYB_BuyFuel2.Border.Class = "TextBoxBorder";
+			this.txt_LMYB_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txt_LMYB_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txt_LMYB_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txt_LMYB_BuyFuel2.Location = new System.Drawing.Point(285, 165);
+			this.txt_LMYB_BuyFuel2.Name = "txt_LMYB_BuyFuel2";
+			this.txt_LMYB_BuyFuel2.ReadOnly = true;
+			this.txt_LMYB_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.txt_LMYB_BuyFuel2.TabIndex = 67;
+			this.txt_LMYB_BuyFuel2.TabStop = false;
+			// 
+			// btnSelectSupplier_BuyFuel2
+			// 
+			this.btnSelectSupplier_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectSupplier_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectSupplier_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectSupplier_BuyFuel2.Location = new System.Drawing.Point(498, 44);
+			this.btnSelectSupplier_BuyFuel2.Name = "btnSelectSupplier_BuyFuel2";
+			this.btnSelectSupplier_BuyFuel2.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectSupplier_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectSupplier_BuyFuel2.TabIndex = 4;
+			this.btnSelectSupplier_BuyFuel2.Text = "选";
+			this.btnSelectSupplier_BuyFuel2.Click += new System.EventHandler(this.btnSelectSupplier_BuyFuel_Click);
+			// 
+			// txtTitle_BuyFuel2
+			// 
+			this.txtTitle_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtTitle_BuyFuel2.AutoSize = true;
+			// 
+			// 
+			// 
+			this.txtTitle_BuyFuel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtTitle_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtTitle_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtTitle_BuyFuel2.Location = new System.Drawing.Point(272, 310);
+			this.txtTitle_BuyFuel2.Name = "txtTitle_BuyFuel2";
+			this.txtTitle_BuyFuel2.Size = new System.Drawing.Size(583, 26);
+			this.txtTitle_BuyFuel2.TabIndex = 4;
+			this.txtTitle_BuyFuel2.Text = "已登记总量：{0}   已称重：{1}  未称重：{2}   已称重未回皮：{3}   已回皮：{4}";
+			// 
+			// btnSelectAutotruck_BuyFuel2
+			// 
+			this.btnSelectAutotruck_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectAutotruck_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectAutotruck_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectAutotruck_BuyFuel2.Location = new System.Drawing.Point(498, 6);
+			this.btnSelectAutotruck_BuyFuel2.Name = "btnSelectAutotruck_BuyFuel2";
+			this.btnSelectAutotruck_BuyFuel2.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectAutotruck_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectAutotruck_BuyFuel2.TabIndex = 2;
+			this.btnSelectAutotruck_BuyFuel2.Text = "选";
+			this.btnSelectAutotruck_BuyFuel2.Click += new System.EventHandler(this.btnSelectAutotruck_BuyFuel_Click);
+			// 
+			// labelX39
+			// 
+			this.labelX39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX39.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX39.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX39.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX39.ForeColor = System.Drawing.Color.White;
+			this.labelX39.Location = new System.Drawing.Point(220, 5);
+			this.labelX39.Name = "labelX39";
+			this.labelX39.Size = new System.Drawing.Size(60, 26);
+			this.labelX39.TabIndex = 4;
+			this.labelX39.Text = "车牌号";
+			// 
+			// btnReset_BuyFuel2
+			// 
+			this.btnReset_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnReset_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnReset_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnReset_BuyFuel2.Location = new System.Drawing.Point(788, 268);
+			this.btnReset_BuyFuel2.Name = "btnReset_BuyFuel2";
+			this.btnReset_BuyFuel2.Size = new System.Drawing.Size(120, 37);
+			this.btnReset_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnReset_BuyFuel2.TabIndex = 20;
+			this.btnReset_BuyFuel2.Text = "重  置";
+			this.btnReset_BuyFuel2.Click += new System.EventHandler(this.btnReset_BuyFuel_Click);
+			// 
+			// txtCarNumber_BuyFuel2
+			// 
+			this.txtCarNumber_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtCarNumber_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtCarNumber_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtCarNumber_BuyFuel2.Border.Class = "TextBoxBorder";
+			this.txtCarNumber_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtCarNumber_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtCarNumber_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtCarNumber_BuyFuel2.Location = new System.Drawing.Point(285, 4);
+			this.txtCarNumber_BuyFuel2.Name = "txtCarNumber_BuyFuel2";
+			this.txtCarNumber_BuyFuel2.ReadOnly = true;
+			this.txtCarNumber_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.txtCarNumber_BuyFuel2.TabIndex = 0;
+			this.txtCarNumber_BuyFuel2.TabStop = false;
+			// 
+			// btnSelectTransportCompany_BuyFuel2
+			// 
+			this.btnSelectTransportCompany_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectTransportCompany_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectTransportCompany_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectTransportCompany_BuyFuel2.Location = new System.Drawing.Point(882, 7);
+			this.btnSelectTransportCompany_BuyFuel2.Name = "btnSelectTransportCompany_BuyFuel2";
+			this.btnSelectTransportCompany_BuyFuel2.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectTransportCompany_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectTransportCompany_BuyFuel2.TabIndex = 6;
+			this.btnSelectTransportCompany_BuyFuel2.Text = "选";
+			this.btnSelectTransportCompany_BuyFuel2.Click += new System.EventHandler(this.btnSelectTransportCompany_BuyFuel_Click);
+			// 
+			// labelX40
+			// 
+			this.labelX40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX40.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX40.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX40.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX40.ForeColor = System.Drawing.Color.White;
+			this.labelX40.Location = new System.Drawing.Point(204, 45);
+			this.labelX40.Name = "labelX40";
+			this.labelX40.Size = new System.Drawing.Size(77, 26);
+			this.labelX40.TabIndex = 8;
+			this.labelX40.Text = "供煤单位";
+			// 
+			// btnSelectMine_BuyFuel2
+			// 
+			this.btnSelectMine_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectMine_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectMine_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+			this.btnSelectMine_BuyFuel2.Location = new System.Drawing.Point(498, 85);
+			this.btnSelectMine_BuyFuel2.Name = "btnSelectMine_BuyFuel2";
+			this.btnSelectMine_BuyFuel2.Size = new System.Drawing.Size(25, 25);
+			this.btnSelectMine_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectMine_BuyFuel2.TabIndex = 8;
+			this.btnSelectMine_BuyFuel2.Text = "选";
+			this.btnSelectMine_BuyFuel2.Click += new System.EventHandler(this.btnSelectMine_BuyFuel_Click);
+			// 
+			// txtSupplierName_BuyFuel2
+			// 
+			this.txtSupplierName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtSupplierName_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtSupplierName_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtSupplierName_BuyFuel2.Border.Class = "TextBoxBorder";
+			this.txtSupplierName_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtSupplierName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtSupplierName_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtSupplierName_BuyFuel2.Location = new System.Drawing.Point(285, 42);
+			this.txtSupplierName_BuyFuel2.Name = "txtSupplierName_BuyFuel2";
+			this.txtSupplierName_BuyFuel2.ReadOnly = true;
+			this.txtSupplierName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.txtSupplierName_BuyFuel2.TabIndex = 2;
+			this.txtSupplierName_BuyFuel2.TabStop = false;
+			// 
+			// labelX41
+			// 
+			this.labelX41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX41.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX41.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX41.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX41.ForeColor = System.Drawing.Color.White;
+			this.labelX41.Location = new System.Drawing.Point(588, 7);
+			this.labelX41.Name = "labelX41";
+			this.labelX41.Size = new System.Drawing.Size(77, 26);
+			this.labelX41.TabIndex = 10;
+			this.labelX41.Text = "运输单位";
+			// 
+			// txtTicketWeight_BuyFuel2
+			// 
+			this.txtTicketWeight_BuyFuel2.AllowEmptyState = false;
+			this.txtTicketWeight_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			// 
+			// 
+			// 
+			this.txtTicketWeight_BuyFuel2.BackgroundStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtTicketWeight_BuyFuel2.BackgroundStyle.Class = "DateTimeInputBackground";
+			this.txtTicketWeight_BuyFuel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtTicketWeight_BuyFuel2.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+			this.txtTicketWeight_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtTicketWeight_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtTicketWeight_BuyFuel2.Increment = 1D;
+			this.txtTicketWeight_BuyFuel2.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+			this.txtTicketWeight_BuyFuel2.Location = new System.Drawing.Point(285, 123);
+			this.txtTicketWeight_BuyFuel2.MaxValue = 1000D;
+			this.txtTicketWeight_BuyFuel2.MinValue = 0D;
+			this.txtTicketWeight_BuyFuel2.Name = "txtTicketWeight_BuyFuel2";
+			this.txtTicketWeight_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.txtTicketWeight_BuyFuel2.TabIndex = 12;
+			// 
+			// txtTransportCompanyName_BuyFuel2
+			// 
+			this.txtTransportCompanyName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtTransportCompanyName_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtTransportCompanyName_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtTransportCompanyName_BuyFuel2.Border.Class = "TextBoxBorder";
+			this.txtTransportCompanyName_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtTransportCompanyName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtTransportCompanyName_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtTransportCompanyName_BuyFuel2.Location = new System.Drawing.Point(669, 5);
+			this.txtTransportCompanyName_BuyFuel2.Name = "txtTransportCompanyName_BuyFuel2";
+			this.txtTransportCompanyName_BuyFuel2.ReadOnly = true;
+			this.txtTransportCompanyName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.txtTransportCompanyName_BuyFuel2.TabIndex = 3;
+			this.txtTransportCompanyName_BuyFuel2.TabStop = false;
+			// 
+			// labelX42
+			// 
+			this.labelX42.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX42.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX42.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX42.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX42.ForeColor = System.Drawing.Color.White;
+			this.labelX42.Location = new System.Drawing.Point(237, 85);
+			this.labelX42.Name = "labelX42";
+			this.labelX42.Size = new System.Drawing.Size(42, 26);
+			this.labelX42.TabIndex = 12;
+			this.labelX42.Text = "矿点";
+			// 
+			// cmbFuelName_BuyFuel2
+			// 
+			this.cmbFuelName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cmbFuelName_BuyFuel2.DisplayMember = "Text";
+			this.cmbFuelName_BuyFuel2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbFuelName_BuyFuel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbFuelName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cmbFuelName_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.cmbFuelName_BuyFuel2.FormattingEnabled = true;
+			this.cmbFuelName_BuyFuel2.ItemHeight = 23;
+			this.cmbFuelName_BuyFuel2.Location = new System.Drawing.Point(669, 45);
+			this.cmbFuelName_BuyFuel2.Name = "cmbFuelName_BuyFuel2";
+			this.cmbFuelName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.cmbFuelName_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.cmbFuelName_BuyFuel2.TabIndex = 10;
+			this.cmbFuelName_BuyFuel2.SelectedIndexChanged += new System.EventHandler(this.cmbFuelName_BuyFuel_SelectedIndexChanged);
+			// 
+			// txtMineName_BuyFuel2
+			// 
+			this.txtMineName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtMineName_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtMineName_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
+			this.txtMineName_BuyFuel2.Border.Class = "TextBoxBorder";
+			this.txtMineName_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtMineName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtMineName_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtMineName_BuyFuel2.Location = new System.Drawing.Point(285, 83);
+			this.txtMineName_BuyFuel2.Name = "txtMineName_BuyFuel2";
+			this.txtMineName_BuyFuel2.ReadOnly = true;
+			this.txtMineName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.txtMineName_BuyFuel2.TabIndex = 4;
+			this.txtMineName_BuyFuel2.TabStop = false;
+			// 
+			// cmbBuyFuelType2
+			// 
+			this.cmbBuyFuelType2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cmbBuyFuelType2.DisplayMember = "Text";
+			this.cmbBuyFuelType2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbBuyFuelType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbBuyFuelType2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cmbBuyFuelType2.ForeColor = System.Drawing.Color.White;
+			this.cmbBuyFuelType2.FormattingEnabled = true;
+			this.cmbBuyFuelType2.ItemHeight = 23;
+			this.cmbBuyFuelType2.Location = new System.Drawing.Point(669, 123);
+			this.cmbBuyFuelType2.Name = "cmbBuyFuelType2";
+			this.cmbBuyFuelType2.Size = new System.Drawing.Size(240, 29);
+			this.cmbBuyFuelType2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.cmbBuyFuelType2.TabIndex = 14;
+			// 
+			// cmbSamplingType_BuyFuel2
+			// 
+			this.cmbSamplingType_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.cmbSamplingType_BuyFuel2.DisplayMember = "Text";
+			this.cmbSamplingType_BuyFuel2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cmbSamplingType_BuyFuel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbSamplingType_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cmbSamplingType_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.cmbSamplingType_BuyFuel2.FormattingEnabled = true;
+			this.cmbSamplingType_BuyFuel2.ItemHeight = 23;
+			this.cmbSamplingType_BuyFuel2.Location = new System.Drawing.Point(669, 85);
+			this.cmbSamplingType_BuyFuel2.Name = "cmbSamplingType_BuyFuel2";
+			this.cmbSamplingType_BuyFuel2.Size = new System.Drawing.Size(240, 29);
+			this.cmbSamplingType_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.cmbSamplingType_BuyFuel2.TabIndex = 14;
+			// 
+			// labelX43
+			// 
+			this.labelX43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX43.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX43.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX43.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX43.ForeColor = System.Drawing.Color.White;
+			this.labelX43.Location = new System.Drawing.Point(621, 47);
+			this.labelX43.Name = "labelX43";
+			this.labelX43.Size = new System.Drawing.Size(42, 26);
+			this.labelX43.TabIndex = 14;
+			this.labelX43.Text = "煤种";
+			// 
+			// btnNewAutotruck_BuyFuel2
+			// 
+			this.btnNewAutotruck_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnNewAutotruck_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnNewAutotruck_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnNewAutotruck_BuyFuel2.Location = new System.Drawing.Point(284, 268);
+			this.btnNewAutotruck_BuyFuel2.Name = "btnNewAutotruck_BuyFuel2";
+			this.btnNewAutotruck_BuyFuel2.Size = new System.Drawing.Size(120, 37);
+			this.btnNewAutotruck_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnNewAutotruck_BuyFuel2.TabIndex = 24;
+			this.btnNewAutotruck_BuyFuel2.TabStop = false;
+			this.btnNewAutotruck_BuyFuel2.Text = "新车登记";
+			this.btnNewAutotruck_BuyFuel2.Click += new System.EventHandler(this.btnNewAutotruck_BuyFuel_Click);
+			// 
+			// labelX44
+			// 
+			this.labelX44.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX44.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX44.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX44.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX44.ForeColor = System.Drawing.Color.White;
+			this.labelX44.Location = new System.Drawing.Point(220, 125);
+			this.labelX44.Name = "labelX44";
+			this.labelX44.Size = new System.Drawing.Size(60, 26);
+			this.labelX44.TabIndex = 16;
+			this.labelX44.Text = "矿发量";
+			// 
+			// labelX45
+			// 
+			this.labelX45.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX45.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX45.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX45.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX45.ForeColor = System.Drawing.Color.White;
+			this.labelX45.Location = new System.Drawing.Point(574, 125);
+			this.labelX45.Name = "labelX45";
+			this.labelX45.Size = new System.Drawing.Size(94, 26);
+			this.labelX45.TabIndex = 18;
+			this.labelX45.Text = "入场煤类型";
+			// 
+			// btnSelectForecast_BuyFuel2
+			// 
+			this.btnSelectForecast_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSelectForecast_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSelectForecast_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSelectForecast_BuyFuel2.Location = new System.Drawing.Point(526, 268);
+			this.btnSelectForecast_BuyFuel2.Name = "btnSelectForecast_BuyFuel2";
+			this.btnSelectForecast_BuyFuel2.Size = new System.Drawing.Size(120, 37);
+			this.btnSelectForecast_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSelectForecast_BuyFuel2.TabIndex = 23;
+			this.btnSelectForecast_BuyFuel2.TabStop = false;
+			this.btnSelectForecast_BuyFuel2.Text = "选择预报";
+			this.btnSelectForecast_BuyFuel2.Click += new System.EventHandler(this.btnSelectForecast_BuyFuel_Click);
+			// 
+			// labelX46
+			// 
+			this.labelX46.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX46.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX46.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX46.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX46.ForeColor = System.Drawing.Color.White;
+			this.labelX46.Location = new System.Drawing.Point(588, 87);
+			this.labelX46.Name = "labelX46";
+			this.labelX46.Size = new System.Drawing.Size(77, 26);
+			this.labelX46.TabIndex = 18;
+			this.labelX46.Text = "采样方式";
+			// 
+			// btnSaveTransport_BuyFuel2
+			// 
+			this.btnSaveTransport_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnSaveTransport_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSaveTransport_BuyFuel2.BackColor = System.Drawing.Color.Transparent;
+			this.btnSaveTransport_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+			this.btnSaveTransport_BuyFuel2.Location = new System.Drawing.Point(657, 268);
+			this.btnSaveTransport_BuyFuel2.Name = "btnSaveTransport_BuyFuel2";
+			this.btnSaveTransport_BuyFuel2.Size = new System.Drawing.Size(120, 37);
+			this.btnSaveTransport_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnSaveTransport_BuyFuel2.TabIndex = 18;
+			this.btnSaveTransport_BuyFuel2.Text = "排  队";
+			this.btnSaveTransport_BuyFuel2.Click += new System.EventHandler(this.btnSaveTransport_BuyFuel_Click);
+			// 
+			// labelX47
+			// 
+			this.labelX47.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.labelX47.AutoSize = true;
+			// 
+			// 
+			// 
+			this.labelX47.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.labelX47.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.labelX47.ForeColor = System.Drawing.Color.White;
+			this.labelX47.Location = new System.Drawing.Point(237, 206);
+			this.labelX47.Name = "labelX47";
+			this.labelX47.Size = new System.Drawing.Size(42, 26);
+			this.labelX47.TabIndex = 20;
+			this.labelX47.Text = "备注";
+			// 
+			// txtRemark_BuyFuel2
+			// 
+			this.txtRemark_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtRemark_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+			// 
+			// 
+			// 
+			this.txtRemark_BuyFuel2.Border.Class = "TextBoxBorder";
+			this.txtRemark_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.txtRemark_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.txtRemark_BuyFuel2.ForeColor = System.Drawing.Color.White;
+			this.txtRemark_BuyFuel2.Location = new System.Drawing.Point(285, 204);
+			this.txtRemark_BuyFuel2.Multiline = true;
+			this.txtRemark_BuyFuel2.Name = "txtRemark_BuyFuel2";
+			this.txtRemark_BuyFuel2.Size = new System.Drawing.Size(624, 52);
+			this.txtRemark_BuyFuel2.TabIndex = 16;
+			this.txtRemark_BuyFuel2.TabStop = false;
+			// 
+			// superTabItem_BuyFuelWay2
+			// 
+			this.superTabItem_BuyFuelWay2.AttachedControl = this.superTabControlPanel16;
+			this.superTabItem_BuyFuelWay2.GlobalItem = false;
+			this.superTabItem_BuyFuelWay2.Name = "superTabItem_BuyFuelWay2";
+			this.superTabItem_BuyFuelWay2.Text = "道 路 二";
+			this.superTabItem_BuyFuelWay2.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
+			// 
+			// superTabItem_BuyFuel
+			// 
+			this.superTabItem_BuyFuel.AttachedControl = this.superTabControlPanel3;
+			this.superTabItem_BuyFuel.GlobalItem = false;
+			this.superTabItem_BuyFuel.Name = "superTabItem_BuyFuel";
+			this.superTabItem_BuyFuel.Text = "入 场 煤";
 			// 
 			// superTabControlPanel4
 			// 
@@ -1023,83 +2461,83 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.superGridControl1_SaleFuel.Location = new System.Drawing.Point(0, 0);
 			this.superGridControl1_SaleFuel.Name = "superGridControl1_SaleFuel";
 			this.superGridControl1_SaleFuel.PrimaryGrid.AutoGenerateColumns = false;
-			gridColumn1.DataPropertyName = "SerialNumber";
-			gridColumn1.HeaderText = "流水号";
-			gridColumn1.Name = "";
-			gridColumn1.Width = 120;
-			gridColumn2.DataPropertyName = "Batch";
-			gridColumn2.HeaderText = "批次编号";
-			gridColumn2.Name = "";
-			gridColumn2.Width = 150;
-			gridColumn3.DataPropertyName = "CarNumber";
-			gridColumn3.HeaderText = "车牌号";
-			gridColumn3.Name = "";
-			gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn4.DataPropertyName = "TransportSalesNum";
-			gridColumn4.HeaderText = "预报编号";
-			gridColumn4.Name = "";
-			gridColumn4.Width = 120;
-			gridColumn5.DataPropertyName = "TransportNo";
-			gridColumn5.HeaderText = "运输单号";
-			gridColumn5.Name = "";
-			gridColumn5.Width = 120;
-			gridColumn6.DataPropertyName = "InFactoryTime";
-			gridColumn6.HeaderText = "入场时间";
-			gridColumn6.Name = "";
-			gridColumn6.Width = 150;
-			gridColumn7.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn7.DataPropertyName = "SupplierName";
-			gridColumn7.HeaderText = "接收单位";
-			gridColumn7.Name = "SupplierName";
-			gridColumn7.Width = 150;
-			gridColumn8.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn8.DataPropertyName = "TransportCompanyName";
-			gridColumn8.HeaderText = "运输单位";
-			gridColumn8.Name = "";
-			gridColumn8.Width = 150;
-			gridColumn9.DataPropertyName = "DeductWeight";
-			gridColumn9.HeaderText = "毛重(吨)";
-			gridColumn9.Name = "";
-			gridColumn9.Width = 80;
-			gridColumn10.DataPropertyName = "FuelKindName";
-			gridColumn10.HeaderText = "煤种";
-			gridColumn10.Name = "";
-			gridColumn10.Width = 80;
-			gridColumn11.DataPropertyName = "TareWeight";
-			gridColumn11.HeaderText = "皮重(吨)";
-			gridColumn11.Name = "";
-			gridColumn11.Width = 80;
-			gridColumn12.DataPropertyName = "SuttleWeight";
-			gridColumn12.HeaderText = "净重(吨)";
-			gridColumn12.Name = "";
-			gridColumn12.Width = 80;
-			gridColumn13.DataPropertyName = "OutFactoryType";
-			gridColumn13.HeaderText = "出场类型";
-			gridColumn13.Name = "";
-			gridColumn14.DataPropertyName = "";
-			gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-			gridColumn14.HeaderText = "有效";
-			gridColumn14.Name = "ChangeIsUse";
-			gridColumn14.Width = 60;
-			gridColumn15.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn15.DataPropertyName = "Remark";
-			gridColumn15.HeaderText = "备注";
-			gridColumn15.Name = "";
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn1);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn2);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn3);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn4);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn5);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn6);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn7);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn8);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn9);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn10);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn11);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn12);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn13);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn14);
-			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn15);
+			gridColumn32.DataPropertyName = "SerialNumber";
+			gridColumn32.HeaderText = "流水号";
+			gridColumn32.Name = "";
+			gridColumn32.Width = 120;
+			gridColumn33.DataPropertyName = "Batch";
+			gridColumn33.HeaderText = "批次编号";
+			gridColumn33.Name = "";
+			gridColumn33.Width = 150;
+			gridColumn34.DataPropertyName = "CarNumber";
+			gridColumn34.HeaderText = "车牌号";
+			gridColumn34.Name = "";
+			gridColumn35.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn35.DataPropertyName = "TransportSalesNum";
+			gridColumn35.HeaderText = "预报编号";
+			gridColumn35.Name = "";
+			gridColumn35.Width = 120;
+			gridColumn36.DataPropertyName = "TransportNo";
+			gridColumn36.HeaderText = "运输单号";
+			gridColumn36.Name = "";
+			gridColumn36.Width = 120;
+			gridColumn37.DataPropertyName = "InFactoryTime";
+			gridColumn37.HeaderText = "入场时间";
+			gridColumn37.Name = "";
+			gridColumn37.Width = 150;
+			gridColumn38.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn38.DataPropertyName = "SupplierName";
+			gridColumn38.HeaderText = "接收单位";
+			gridColumn38.Name = "SupplierName";
+			gridColumn38.Width = 150;
+			gridColumn39.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn39.DataPropertyName = "TransportCompanyName";
+			gridColumn39.HeaderText = "运输单位";
+			gridColumn39.Name = "";
+			gridColumn39.Width = 150;
+			gridColumn40.DataPropertyName = "DeductWeight";
+			gridColumn40.HeaderText = "毛重(吨)";
+			gridColumn40.Name = "";
+			gridColumn40.Width = 80;
+			gridColumn41.DataPropertyName = "FuelKindName";
+			gridColumn41.HeaderText = "煤种";
+			gridColumn41.Name = "";
+			gridColumn41.Width = 80;
+			gridColumn42.DataPropertyName = "TareWeight";
+			gridColumn42.HeaderText = "皮重(吨)";
+			gridColumn42.Name = "";
+			gridColumn42.Width = 80;
+			gridColumn43.DataPropertyName = "SuttleWeight";
+			gridColumn43.HeaderText = "净重(吨)";
+			gridColumn43.Name = "";
+			gridColumn43.Width = 80;
+			gridColumn44.DataPropertyName = "OutFactoryType";
+			gridColumn44.HeaderText = "出场类型";
+			gridColumn44.Name = "";
+			gridColumn45.DataPropertyName = "";
+			gridColumn45.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+			gridColumn45.HeaderText = "有效";
+			gridColumn45.Name = "ChangeIsUse";
+			gridColumn45.Width = 60;
+			gridColumn46.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn46.DataPropertyName = "Remark";
+			gridColumn46.HeaderText = "备注";
+			gridColumn46.Name = "";
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn32);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn33);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn34);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn35);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn36);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn37);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn38);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn39);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn40);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn41);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn42);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn43);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn44);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn45);
+			this.superGridControl1_SaleFuel.PrimaryGrid.Columns.Add(gridColumn46);
 			this.superGridControl1_SaleFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
 			this.superGridControl1_SaleFuel.PrimaryGrid.MultiSelect = false;
 			this.superGridControl1_SaleFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
@@ -1142,73 +2580,73 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.superGridControl2_SaleFuel.Location = new System.Drawing.Point(0, 0);
 			this.superGridControl2_SaleFuel.Name = "superGridControl2_SaleFuel";
 			this.superGridControl2_SaleFuel.PrimaryGrid.AutoGenerateColumns = false;
-			gridColumn16.DataPropertyName = "SerialNumber";
-			gridColumn16.HeaderText = "流水号";
-			gridColumn16.Name = "";
-			gridColumn16.Width = 120;
-			gridColumn17.DataPropertyName = "Batch";
-			gridColumn17.HeaderText = "批次编号";
-			gridColumn17.Name = "";
-			gridColumn17.Width = 150;
-			gridColumn18.DataPropertyName = "CarNumber";
-			gridColumn18.HeaderText = "车牌号";
-			gridColumn18.Name = "";
-			gridColumn19.DataPropertyName = "TransportSalesNum";
-			gridColumn19.HeaderText = "预报编号";
-			gridColumn19.Name = "";
-			gridColumn19.Width = 120;
-			gridColumn20.DataPropertyName = "TransportNo";
-			gridColumn20.HeaderText = "运输单号";
-			gridColumn20.Name = "";
-			gridColumn21.DataPropertyName = "InFactoryTime";
-			gridColumn21.HeaderText = "入厂时间";
-			gridColumn21.Name = "";
-			gridColumn21.Width = 150;
-			gridColumn22.DataPropertyName = "SupplierName";
-			gridColumn22.HeaderText = "客户单位";
-			gridColumn22.Name = "SupplierName";
-			gridColumn22.Width = 150;
-			gridColumn23.DataPropertyName = "TransportCompanyName";
-			gridColumn23.HeaderText = "运输单位";
-			gridColumn23.Name = "";
-			gridColumn23.Width = 150;
-			gridColumn24.DataPropertyName = "GrossWeight";
-			gridColumn24.HeaderText = "毛重(吨)";
-			gridColumn24.Name = "";
-			gridColumn24.Width = 80;
-			gridColumn25.DataPropertyName = "TareWeight";
-			gridColumn25.HeaderText = "皮重(吨)";
-			gridColumn25.Name = "";
-			gridColumn25.Width = 80;
-			gridColumn26.DataPropertyName = "SuttleWeight";
-			gridColumn26.HeaderText = "净重(吨)";
-			gridColumn26.Name = "";
-			gridColumn26.Width = 80;
-			gridColumn27.DataPropertyName = "OutFactoryType";
-			gridColumn27.HeaderText = "出场类型";
-			gridColumn27.Name = "";
-			gridColumn28.DataPropertyName = "ChangeIsUse";
-			gridColumn28.HeaderText = "有效";
-			gridColumn28.Name = "ChangeIsUse";
-			gridColumn28.Width = 60;
-			gridColumn29.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn29.DataPropertyName = "Remark";
-			gridColumn29.HeaderText = "备注";
-			gridColumn29.Name = "";
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn16);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn17);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn18);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn19);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn20);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn21);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn22);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn23);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn24);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn25);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn26);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn27);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn28);
-			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn29);
+			gridColumn47.DataPropertyName = "SerialNumber";
+			gridColumn47.HeaderText = "流水号";
+			gridColumn47.Name = "";
+			gridColumn47.Width = 120;
+			gridColumn48.DataPropertyName = "Batch";
+			gridColumn48.HeaderText = "批次编号";
+			gridColumn48.Name = "";
+			gridColumn48.Width = 150;
+			gridColumn49.DataPropertyName = "CarNumber";
+			gridColumn49.HeaderText = "车牌号";
+			gridColumn49.Name = "";
+			gridColumn50.DataPropertyName = "TransportSalesNum";
+			gridColumn50.HeaderText = "预报编号";
+			gridColumn50.Name = "";
+			gridColumn50.Width = 120;
+			gridColumn51.DataPropertyName = "TransportNo";
+			gridColumn51.HeaderText = "运输单号";
+			gridColumn51.Name = "";
+			gridColumn52.DataPropertyName = "InFactoryTime";
+			gridColumn52.HeaderText = "入厂时间";
+			gridColumn52.Name = "";
+			gridColumn52.Width = 150;
+			gridColumn53.DataPropertyName = "SupplierName";
+			gridColumn53.HeaderText = "客户单位";
+			gridColumn53.Name = "SupplierName";
+			gridColumn53.Width = 150;
+			gridColumn54.DataPropertyName = "TransportCompanyName";
+			gridColumn54.HeaderText = "运输单位";
+			gridColumn54.Name = "";
+			gridColumn54.Width = 150;
+			gridColumn55.DataPropertyName = "GrossWeight";
+			gridColumn55.HeaderText = "毛重(吨)";
+			gridColumn55.Name = "";
+			gridColumn55.Width = 80;
+			gridColumn56.DataPropertyName = "TareWeight";
+			gridColumn56.HeaderText = "皮重(吨)";
+			gridColumn56.Name = "";
+			gridColumn56.Width = 80;
+			gridColumn57.DataPropertyName = "SuttleWeight";
+			gridColumn57.HeaderText = "净重(吨)";
+			gridColumn57.Name = "";
+			gridColumn57.Width = 80;
+			gridColumn58.DataPropertyName = "OutFactoryType";
+			gridColumn58.HeaderText = "出场类型";
+			gridColumn58.Name = "";
+			gridColumn59.DataPropertyName = "ChangeIsUse";
+			gridColumn59.HeaderText = "有效";
+			gridColumn59.Name = "ChangeIsUse";
+			gridColumn59.Width = 60;
+			gridColumn60.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
+			gridColumn60.DataPropertyName = "Remark";
+			gridColumn60.HeaderText = "备注";
+			gridColumn60.Name = "";
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn47);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn48);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn49);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn50);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn51);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn52);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn53);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn54);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn55);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn56);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn57);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn58);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn59);
+			this.superGridControl2_SaleFuel.PrimaryGrid.Columns.Add(gridColumn60);
 			this.superGridControl2_SaleFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
 			this.superGridControl2_SaleFuel.PrimaryGrid.MultiSelect = false;
 			this.superGridControl2_SaleFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
@@ -2360,1444 +3798,6 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.superTabItem_SaleFuel.GlobalItem = false;
 			this.superTabItem_SaleFuel.Name = "superTabItem_SaleFuel";
 			this.superTabItem_SaleFuel.Text = "出 场 煤";
-			// 
-			// superTabControlPanel3
-			// 
-			this.superTabControlPanel3.Controls.Add(this.tableLayoutPanel3);
-			this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControlPanel3.Location = new System.Drawing.Point(0, 31);
-			this.superTabControlPanel3.Name = "superTabControlPanel3";
-			this.superTabControlPanel3.Size = new System.Drawing.Size(1099, 609);
-			this.superTabControlPanel3.TabIndex = 1;
-			this.superTabControlPanel3.TabItem = this.superTabItem_BuyFuel;
-			// 
-			// tableLayoutPanel3
-			// 
-			this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-			this.tableLayoutPanel3.ColumnCount = 1;
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel3.Controls.Add(this.superTabControl1, 0, 1);
-			this.tableLayoutPanel3.Controls.Add(this.panelEx1, 0, 0);
-			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel3.ForeColor = System.Drawing.Color.White;
-			this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-			this.tableLayoutPanel3.RowCount = 2;
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(1099, 609);
-			this.tableLayoutPanel3.TabIndex = 0;
-			// 
-			// superTabControl1
-			// 
-			this.superTabControl1.AutoCloseTabs = false;
-			this.superTabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			this.superTabControl1.CloseButtonOnTabsAlwaysDisplayed = false;
-			// 
-			// 
-			// 
-			// 
-			// 
-			// 
-			this.superTabControl1.ControlBox.CloseBox.Name = "";
-			// 
-			// 
-			// 
-			this.superTabControl1.ControlBox.MenuBox.Name = "";
-			this.superTabControl1.ControlBox.Name = "";
-			this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabControl1.ControlBox.MenuBox,
-            this.superTabControl1.ControlBox.CloseBox});
-			this.superTabControl1.ControlBox.Visible = false;
-			this.superTabControl1.Controls.Add(this.superTabControlPanel1);
-			this.superTabControl1.Controls.Add(this.superTabControlPanel2);
-			this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControl1.ForeColor = System.Drawing.Color.White;
-			this.superTabControl1.Location = new System.Drawing.Point(3, 403);
-			this.superTabControl1.Name = "superTabControl1";
-			this.superTabControl1.ReorderTabsEnabled = true;
-			this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.superTabControl1.SelectedTabIndex = 0;
-			this.superTabControl1.Size = new System.Drawing.Size(1093, 203);
-			this.superTabControl1.TabFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.superTabControl1.TabIndex = 1;
-			this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem1,
-            this.superTabItem2});
-			this.superTabControl1.Text = "superTabControl1";
-			// 
-			// superTabControlPanel1
-			// 
-			this.superTabControlPanel1.Controls.Add(this.superGridControl1_BuyFuel);
-			this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControlPanel1.Location = new System.Drawing.Point(0, 34);
-			this.superTabControlPanel1.Name = "superTabControlPanel1";
-			this.superTabControlPanel1.Size = new System.Drawing.Size(1093, 169);
-			this.superTabControlPanel1.TabIndex = 1;
-			this.superTabControlPanel1.TabItem = this.superTabItem1;
-			// 
-			// superGridControl1_BuyFuel
-			// 
-			this.superGridControl1_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			this.superGridControl1_BuyFuel.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-			this.superGridControl1_BuyFuel.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.superGridControl1_BuyFuel.DefaultVisualStyles.ColumnHeaderStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.superGridControl1_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superGridControl1_BuyFuel.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-			this.superGridControl1_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.superGridControl1_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.superGridControl1_BuyFuel.Location = new System.Drawing.Point(0, 0);
-			this.superGridControl1_BuyFuel.Name = "superGridControl1_BuyFuel";
-			this.superGridControl1_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
-			gridColumn30.DataPropertyName = "SerialNumber";
-			gridColumn30.HeaderText = "流水号";
-			gridColumn30.Name = "";
-			gridColumn30.Width = 120;
-			gridColumn31.DataPropertyName = "Batch";
-			gridColumn31.HeaderText = "批次编号";
-			gridColumn31.Name = "";
-			gridColumn31.Width = 120;
-			gridColumn32.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn32.DataPropertyName = "YbNum";
-			gridColumn32.HeaderText = "预报编号";
-			gridColumn32.Name = "";
-			gridColumn33.DataPropertyName = "CarNumber";
-			gridColumn33.HeaderText = "车牌号";
-			gridColumn33.Name = "";
-			gridColumn34.DataPropertyName = "InFactoryTime";
-			gridColumn34.HeaderText = "入场时间";
-			gridColumn34.Name = "";
-			gridColumn34.Width = 150;
-			gridColumn35.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn35.DataPropertyName = "SupplierName";
-			gridColumn35.HeaderText = "供煤单位";
-			gridColumn35.Name = "";
-			gridColumn35.Width = 150;
-			gridColumn36.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn36.DataPropertyName = "TransportCompanyName";
-			gridColumn36.HeaderText = "运输单位";
-			gridColumn36.Name = "";
-			gridColumn36.Width = 150;
-			gridColumn37.DataPropertyName = "MineName";
-			gridColumn37.HeaderText = "矿点";
-			gridColumn37.Name = "";
-			gridColumn38.DataPropertyName = "FuelKindName";
-			gridColumn38.HeaderText = "煤种";
-			gridColumn38.Name = "";
-			gridColumn39.DataPropertyName = "DeductWeight";
-			gridColumn39.HeaderText = "毛重(吨)";
-			gridColumn39.Name = "";
-			gridColumn39.Width = 80;
-			gridColumn40.DataPropertyName = "TareWeight";
-			gridColumn40.HeaderText = "皮重(吨)";
-			gridColumn40.Name = "";
-			gridColumn40.Width = 80;
-			gridColumn41.DataPropertyName = "SuttleWeight";
-			gridColumn41.HeaderText = "净重(吨)";
-			gridColumn41.Name = "";
-			gridColumn41.Width = 80;
-			gridColumn42.DataPropertyName = "";
-			gridColumn42.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-			gridColumn42.HeaderText = "有效";
-			gridColumn42.Name = "ChangeIsUse";
-			gridColumn42.Width = 60;
-			gridColumn43.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn43.DataPropertyName = "Remark";
-			gridColumn43.HeaderText = "备注";
-			gridColumn43.Name = "";
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn30);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn31);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn32);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn33);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn34);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn35);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn36);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn37);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn38);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn39);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn40);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn41);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn42);
-			this.superGridControl1_BuyFuel.PrimaryGrid.Columns.Add(gridColumn43);
-			this.superGridControl1_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
-			this.superGridControl1_BuyFuel.PrimaryGrid.MultiSelect = false;
-			this.superGridControl1_BuyFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-			this.superGridControl1_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
-			this.superGridControl1_BuyFuel.Size = new System.Drawing.Size(1093, 169);
-			this.superGridControl1_BuyFuel.TabIndex = 0;
-			this.superGridControl1_BuyFuel.Text = "superGridControl1";
-			this.superGridControl1_BuyFuel.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.superGridControl1_BuyFuel_CellClick);
-			this.superGridControl1_BuyFuel.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl_BuyFuel_CellDoubleClick);
-			this.superGridControl1_BuyFuel.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl1_BuyFuel_DataBindingComplete);
-			this.superGridControl1_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
-			this.superGridControl1_BuyFuel.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl_GetRowHeaderText);
-			// 
-			// superTabItem1
-			// 
-			this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-			this.superTabItem1.GlobalItem = false;
-			this.superTabItem1.Name = "superTabItem1";
-			this.superTabItem1.Text = "未 完 成";
-			// 
-			// superTabControlPanel2
-			// 
-			this.superTabControlPanel2.Controls.Add(this.superGridControl2_BuyFuel);
-			this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
-			this.superTabControlPanel2.Name = "superTabControlPanel2";
-			this.superTabControlPanel2.Size = new System.Drawing.Size(1093, 203);
-			this.superTabControlPanel2.TabIndex = 0;
-			this.superTabControlPanel2.TabItem = this.superTabItem2;
-			// 
-			// superGridControl2_BuyFuel
-			// 
-			this.superGridControl2_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			this.superGridControl2_BuyFuel.ContextMenuStrip = this.contextMenuStrip1;
-			this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-			this.superGridControl2_BuyFuel.DefaultVisualStyles.CellStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.superGridControl2_BuyFuel.DefaultVisualStyles.ColumnHeaderStyles.Default.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.superGridControl2_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superGridControl2_BuyFuel.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-			this.superGridControl2_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.superGridControl2_BuyFuel.Location = new System.Drawing.Point(0, 0);
-			this.superGridControl2_BuyFuel.Name = "superGridControl2_BuyFuel";
-			this.superGridControl2_BuyFuel.PrimaryGrid.AutoGenerateColumns = false;
-			gridColumn44.DataPropertyName = "SerialNumber";
-			gridColumn44.HeaderText = "流水号";
-			gridColumn44.Name = "";
-			gridColumn44.Width = 120;
-			gridColumn45.DataPropertyName = "Batch";
-			gridColumn45.HeaderText = "批次编号";
-			gridColumn45.Name = "";
-			gridColumn45.Width = 120;
-			gridColumn46.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn46.DataPropertyName = "YbNum";
-			gridColumn46.HeaderText = "预报编号";
-			gridColumn46.Name = "";
-			gridColumn47.DataPropertyName = "CarNumber";
-			gridColumn47.HeaderText = "车牌号";
-			gridColumn47.Name = "";
-			gridColumn48.DataPropertyName = "InFactoryTime";
-			gridColumn48.HeaderText = "入厂时间";
-			gridColumn48.Name = "";
-			gridColumn48.Width = 150;
-			gridColumn49.DataPropertyName = "SupplierName";
-			gridColumn49.HeaderText = "供煤单位";
-			gridColumn49.Name = "";
-			gridColumn49.Width = 150;
-			gridColumn50.DataPropertyName = "TransportCompanyName";
-			gridColumn50.HeaderText = "运输单位";
-			gridColumn50.Name = "";
-			gridColumn50.Width = 150;
-			gridColumn51.DataPropertyName = "MineName";
-			gridColumn51.HeaderText = "矿点";
-			gridColumn51.Name = "";
-			gridColumn52.DataPropertyName = "FuelKindName";
-			gridColumn52.HeaderText = "煤种";
-			gridColumn52.Name = "";
-			gridColumn53.DataPropertyName = "SamplingType";
-			gridColumn53.HeaderText = "采样方式";
-			gridColumn53.Name = "";
-			gridColumn53.Width = 80;
-			gridColumn54.DataPropertyName = "TicketWeight";
-			gridColumn54.HeaderText = "矿发量(吨)";
-			gridColumn54.Name = "";
-			gridColumn54.Width = 80;
-			gridColumn55.DataPropertyName = "GrossWeight";
-			gridColumn55.HeaderText = "毛重(吨)";
-			gridColumn55.Name = "";
-			gridColumn55.Width = 80;
-			gridColumn56.DataPropertyName = "TareWeight";
-			gridColumn56.HeaderText = "皮重(吨)";
-			gridColumn56.Name = "";
-			gridColumn56.Width = 80;
-			gridColumn57.DataPropertyName = "DeductWeight";
-			gridColumn57.HeaderText = "扣吨(吨)";
-			gridColumn57.Name = "";
-			gridColumn57.Width = 80;
-			gridColumn58.DataPropertyName = "SuttleWeight";
-			gridColumn58.HeaderText = "净重(吨)";
-			gridColumn58.Name = "";
-			gridColumn58.Width = 80;
-			gridColumn59.DataPropertyName = "ChangeIsUse";
-			gridColumn59.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-			gridColumn59.HeaderText = "有效";
-			gridColumn59.Name = "ChangeIsUse";
-			gridColumn59.Width = 60;
-			gridColumn60.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
-			gridColumn60.DataPropertyName = "Remark";
-			gridColumn60.HeaderText = "备注";
-			gridColumn60.Name = "";
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn44);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn45);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn46);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn47);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn48);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn49);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn50);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn51);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn52);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn53);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn54);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn55);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn56);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn57);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn58);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn59);
-			this.superGridControl2_BuyFuel.PrimaryGrid.Columns.Add(gridColumn60);
-			this.superGridControl2_BuyFuel.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.Row;
-			this.superGridControl2_BuyFuel.PrimaryGrid.MultiSelect = false;
-			this.superGridControl2_BuyFuel.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-			this.superGridControl2_BuyFuel.PrimaryGrid.ShowRowGridIndex = true;
-			this.superGridControl2_BuyFuel.Size = new System.Drawing.Size(1093, 203);
-			this.superGridControl2_BuyFuel.TabIndex = 1;
-			this.superGridControl2_BuyFuel.Text = "superGridControl2";
-			this.superGridControl2_BuyFuel.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.superGridControl2_BuyFuel_CellClick);
-			this.superGridControl2_BuyFuel.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl_BuyFuel_CellDoubleClick);
-			this.superGridControl2_BuyFuel.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl2_BuyFuel_DataBindingComplete);
-			this.superGridControl2_BuyFuel.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl_BeginEdit);
-			this.superGridControl2_BuyFuel.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl_GetRowHeaderText);
-			// 
-			// contextMenuStrip1
-			// 
-			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiPrint});
-			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
-			// 
-			// tsmiPrint
-			// 
-			this.tsmiPrint.Name = "tsmiPrint";
-			this.tsmiPrint.Size = new System.Drawing.Size(124, 22);
-			this.tsmiPrint.Text = "打印磅单";
-			this.tsmiPrint.Click += new System.EventHandler(this.tsmiPrint_Click);
-			// 
-			// superTabItem2
-			// 
-			this.superTabItem2.AttachedControl = this.superTabControlPanel2;
-			this.superTabItem2.GlobalItem = false;
-			this.superTabItem2.Name = "superTabItem2";
-			this.superTabItem2.Text = "今 日 已 完 成";
-			// 
-			// panelEx1
-			// 
-			this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
-			this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panelEx1.Controls.Add(this.superTabControlWay_BuyFuel);
-			this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelEx1.Location = new System.Drawing.Point(3, 3);
-			this.panelEx1.Name = "panelEx1";
-			this.panelEx1.Size = new System.Drawing.Size(1093, 394);
-			this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
-			this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-			this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-			this.panelEx1.Style.GradientAngle = 90;
-			this.panelEx1.TabIndex = 2;
-			// 
-			// superTabControlWay_BuyFuel
-			// 
-			this.superTabControlWay_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			// 
-			// 
-			// 
-			this.superTabControlWay_BuyFuel.ControlBox.CloseBox.Name = "";
-			// 
-			// 
-			// 
-			this.superTabControlWay_BuyFuel.ControlBox.MenuBox.AutoHide = true;
-			this.superTabControlWay_BuyFuel.ControlBox.MenuBox.Name = "";
-			this.superTabControlWay_BuyFuel.ControlBox.MenuBox.Visible = false;
-			this.superTabControlWay_BuyFuel.ControlBox.Name = "";
-			this.superTabControlWay_BuyFuel.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabControlWay_BuyFuel.ControlBox.MenuBox,
-            this.superTabControlWay_BuyFuel.ControlBox.CloseBox});
-			this.superTabControlWay_BuyFuel.Controls.Add(this.superTabControlPanel15);
-			this.superTabControlWay_BuyFuel.Controls.Add(this.superTabControlPanel16);
-			this.superTabControlWay_BuyFuel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControlWay_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-			this.superTabControlWay_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.superTabControlWay_BuyFuel.Location = new System.Drawing.Point(0, 0);
-			this.superTabControlWay_BuyFuel.Name = "superTabControlWay_BuyFuel";
-			this.superTabControlWay_BuyFuel.ReorderTabsEnabled = true;
-			this.superTabControlWay_BuyFuel.SelectedTabFont = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Bold);
-			this.superTabControlWay_BuyFuel.SelectedTabIndex = 0;
-			this.superTabControlWay_BuyFuel.Size = new System.Drawing.Size(1093, 394);
-			this.superTabControlWay_BuyFuel.TabFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.superTabControlWay_BuyFuel.TabIndex = 26;
-			this.superTabControlWay_BuyFuel.TabLayoutType = DevComponents.DotNetBar.eSuperTabLayoutType.SingleLineFit;
-			this.superTabControlWay_BuyFuel.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem_BuyFuelWay1,
-            this.superTabItem_BuyFuelWay2});
-			this.superTabControlWay_BuyFuel.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.superTabControl_SelectedTabChanged);
-			// 
-			// superTabControlPanel15
-			// 
-			this.superTabControlPanel15.Controls.Add(this.panelEx3);
-			this.superTabControlPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControlPanel15.Location = new System.Drawing.Point(0, 30);
-			this.superTabControlPanel15.Name = "superTabControlPanel15";
-			this.superTabControlPanel15.Size = new System.Drawing.Size(1093, 364);
-			this.superTabControlPanel15.TabIndex = 1;
-			this.superTabControlPanel15.TabItem = this.superTabItem_BuyFuelWay1;
-			// 
-			// panelEx3
-			// 
-			this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-			this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panelEx3.Controls.Add(this.labelX31);
-			this.panelEx3.Controls.Add(this.txt_LMYB_BuyFuel);
-			this.panelEx3.Controls.Add(this.btnSelectSupplier_BuyFuel);
-			this.panelEx3.Controls.Add(this.txtTitle_BuyFuel);
-			this.panelEx3.Controls.Add(this.btnSelectAutotruck_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX9);
-			this.panelEx3.Controls.Add(this.btnReset_BuyFuel);
-			this.panelEx3.Controls.Add(this.txtCarNumber_BuyFuel);
-			this.panelEx3.Controls.Add(this.btnSelectTransportCompany_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX11);
-			this.panelEx3.Controls.Add(this.btnSelectMine_BuyFuel);
-			this.panelEx3.Controls.Add(this.txtSupplierName_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX10);
-			this.panelEx3.Controls.Add(this.txtTicketWeight_BuyFuel);
-			this.panelEx3.Controls.Add(this.txtTransportCompanyName_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX13);
-			this.panelEx3.Controls.Add(this.cmbFuelName_BuyFuel);
-			this.panelEx3.Controls.Add(this.txtMineName_BuyFuel);
-			this.panelEx3.Controls.Add(this.cmbBuyFuelType);
-			this.panelEx3.Controls.Add(this.cmbSamplingType_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX12);
-			this.panelEx3.Controls.Add(this.btnNewAutotruck_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX15);
-			this.panelEx3.Controls.Add(this.labelX21);
-			this.panelEx3.Controls.Add(this.btnSelectForecast_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX14);
-			this.panelEx3.Controls.Add(this.btnSaveTransport_BuyFuel);
-			this.panelEx3.Controls.Add(this.labelX16);
-			this.panelEx3.Controls.Add(this.txtRemark_BuyFuel);
-			this.panelEx3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelEx3.Location = new System.Drawing.Point(0, 0);
-			this.panelEx3.Name = "panelEx3";
-			this.panelEx3.Size = new System.Drawing.Size(1093, 364);
-			this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-			this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-			this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-			this.panelEx3.Style.GradientAngle = 90;
-			this.panelEx3.TabIndex = 25;
-			// 
-			// labelX31
-			// 
-			this.labelX31.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX31.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX31.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX31.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX31.ForeColor = System.Drawing.Color.White;
-			this.labelX31.Location = new System.Drawing.Point(202, 163);
-			this.labelX31.Name = "labelX31";
-			this.labelX31.Size = new System.Drawing.Size(77, 26);
-			this.labelX31.TabIndex = 66;
-			this.labelX31.Text = "预报编号";
-			// 
-			// txt_LMYB_BuyFuel
-			// 
-			this.txt_LMYB_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txt_LMYB_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txt_LMYB_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(52)))));
-			this.txt_LMYB_BuyFuel.Border.Class = "TextBoxBorder";
-			this.txt_LMYB_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txt_LMYB_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txt_LMYB_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txt_LMYB_BuyFuel.Location = new System.Drawing.Point(283, 161);
-			this.txt_LMYB_BuyFuel.Name = "txt_LMYB_BuyFuel";
-			this.txt_LMYB_BuyFuel.ReadOnly = true;
-			this.txt_LMYB_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.txt_LMYB_BuyFuel.TabIndex = 65;
-			this.txt_LMYB_BuyFuel.TabStop = false;
-			// 
-			// btnSelectSupplier_BuyFuel
-			// 
-			this.btnSelectSupplier_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectSupplier_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectSupplier_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectSupplier_BuyFuel.Location = new System.Drawing.Point(498, 44);
-			this.btnSelectSupplier_BuyFuel.Name = "btnSelectSupplier_BuyFuel";
-			this.btnSelectSupplier_BuyFuel.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectSupplier_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectSupplier_BuyFuel.TabIndex = 4;
-			this.btnSelectSupplier_BuyFuel.Text = "选";
-			this.btnSelectSupplier_BuyFuel.Click += new System.EventHandler(this.btnSelectSupplier_BuyFuel_Click);
-			// 
-			// txtTitle_BuyFuel
-			// 
-			this.txtTitle_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtTitle_BuyFuel.AutoSize = true;
-			// 
-			// 
-			// 
-			this.txtTitle_BuyFuel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtTitle_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtTitle_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtTitle_BuyFuel.Location = new System.Drawing.Point(273, 321);
-			this.txtTitle_BuyFuel.Name = "txtTitle_BuyFuel";
-			this.txtTitle_BuyFuel.Size = new System.Drawing.Size(583, 26);
-			this.txtTitle_BuyFuel.TabIndex = 4;
-			this.txtTitle_BuyFuel.Text = "已登记总量：{0}   已称重：{1}  未称重：{2}   已称重未回皮：{3}   已回皮：{4}";
-			// 
-			// btnSelectAutotruck_BuyFuel
-			// 
-			this.btnSelectAutotruck_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectAutotruck_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectAutotruck_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectAutotruck_BuyFuel.Location = new System.Drawing.Point(498, 6);
-			this.btnSelectAutotruck_BuyFuel.Name = "btnSelectAutotruck_BuyFuel";
-			this.btnSelectAutotruck_BuyFuel.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectAutotruck_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectAutotruck_BuyFuel.TabIndex = 2;
-			this.btnSelectAutotruck_BuyFuel.Text = "选";
-			this.btnSelectAutotruck_BuyFuel.Click += new System.EventHandler(this.btnSelectAutotruck_BuyFuel_Click);
-			// 
-			// labelX9
-			// 
-			this.labelX9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX9.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX9.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX9.ForeColor = System.Drawing.Color.White;
-			this.labelX9.Location = new System.Drawing.Point(220, 5);
-			this.labelX9.Name = "labelX9";
-			this.labelX9.Size = new System.Drawing.Size(60, 26);
-			this.labelX9.TabIndex = 4;
-			this.labelX9.Text = "车牌号";
-			// 
-			// btnReset_BuyFuel
-			// 
-			this.btnReset_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnReset_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnReset_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnReset_BuyFuel.Location = new System.Drawing.Point(789, 262);
-			this.btnReset_BuyFuel.Name = "btnReset_BuyFuel";
-			this.btnReset_BuyFuel.Size = new System.Drawing.Size(120, 37);
-			this.btnReset_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnReset_BuyFuel.TabIndex = 20;
-			this.btnReset_BuyFuel.Text = "重  置";
-			this.btnReset_BuyFuel.Click += new System.EventHandler(this.btnReset_BuyFuel_Click);
-			// 
-			// txtCarNumber_BuyFuel
-			// 
-			this.txtCarNumber_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtCarNumber_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtCarNumber_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtCarNumber_BuyFuel.Border.Class = "TextBoxBorder";
-			this.txtCarNumber_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtCarNumber_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtCarNumber_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtCarNumber_BuyFuel.Location = new System.Drawing.Point(285, 4);
-			this.txtCarNumber_BuyFuel.Name = "txtCarNumber_BuyFuel";
-			this.txtCarNumber_BuyFuel.ReadOnly = true;
-			this.txtCarNumber_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.txtCarNumber_BuyFuel.TabIndex = 0;
-			this.txtCarNumber_BuyFuel.TabStop = false;
-			// 
-			// btnSelectTransportCompany_BuyFuel
-			// 
-			this.btnSelectTransportCompany_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectTransportCompany_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectTransportCompany_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectTransportCompany_BuyFuel.Location = new System.Drawing.Point(882, 7);
-			this.btnSelectTransportCompany_BuyFuel.Name = "btnSelectTransportCompany_BuyFuel";
-			this.btnSelectTransportCompany_BuyFuel.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectTransportCompany_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectTransportCompany_BuyFuel.TabIndex = 6;
-			this.btnSelectTransportCompany_BuyFuel.Text = "选";
-			this.btnSelectTransportCompany_BuyFuel.Click += new System.EventHandler(this.btnSelectTransportCompany_BuyFuel_Click);
-			// 
-			// labelX11
-			// 
-			this.labelX11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX11.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX11.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX11.ForeColor = System.Drawing.Color.White;
-			this.labelX11.Location = new System.Drawing.Point(204, 45);
-			this.labelX11.Name = "labelX11";
-			this.labelX11.Size = new System.Drawing.Size(77, 26);
-			this.labelX11.TabIndex = 8;
-			this.labelX11.Text = "供煤单位";
-			// 
-			// btnSelectMine_BuyFuel
-			// 
-			this.btnSelectMine_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectMine_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectMine_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectMine_BuyFuel.Location = new System.Drawing.Point(498, 85);
-			this.btnSelectMine_BuyFuel.Name = "btnSelectMine_BuyFuel";
-			this.btnSelectMine_BuyFuel.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectMine_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectMine_BuyFuel.TabIndex = 8;
-			this.btnSelectMine_BuyFuel.Text = "选";
-			this.btnSelectMine_BuyFuel.Click += new System.EventHandler(this.btnSelectMine_BuyFuel_Click);
-			// 
-			// txtSupplierName_BuyFuel
-			// 
-			this.txtSupplierName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtSupplierName_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtSupplierName_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtSupplierName_BuyFuel.Border.Class = "TextBoxBorder";
-			this.txtSupplierName_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtSupplierName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtSupplierName_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtSupplierName_BuyFuel.Location = new System.Drawing.Point(285, 42);
-			this.txtSupplierName_BuyFuel.Name = "txtSupplierName_BuyFuel";
-			this.txtSupplierName_BuyFuel.ReadOnly = true;
-			this.txtSupplierName_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.txtSupplierName_BuyFuel.TabIndex = 2;
-			this.txtSupplierName_BuyFuel.TabStop = false;
-			// 
-			// labelX10
-			// 
-			this.labelX10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX10.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX10.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX10.ForeColor = System.Drawing.Color.White;
-			this.labelX10.Location = new System.Drawing.Point(588, 7);
-			this.labelX10.Name = "labelX10";
-			this.labelX10.Size = new System.Drawing.Size(77, 26);
-			this.labelX10.TabIndex = 10;
-			this.labelX10.Text = "运输单位";
-			// 
-			// txtTicketWeight_BuyFuel
-			// 
-			this.txtTicketWeight_BuyFuel.AllowEmptyState = false;
-			this.txtTicketWeight_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			// 
-			// 
-			// 
-			this.txtTicketWeight_BuyFuel.BackgroundStyle.Class = "DateTimeInputBackground";
-			this.txtTicketWeight_BuyFuel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtTicketWeight_BuyFuel.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-			this.txtTicketWeight_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtTicketWeight_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtTicketWeight_BuyFuel.Increment = 1D;
-			this.txtTicketWeight_BuyFuel.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-			this.txtTicketWeight_BuyFuel.Location = new System.Drawing.Point(285, 123);
-			this.txtTicketWeight_BuyFuel.MaxValue = 1000D;
-			this.txtTicketWeight_BuyFuel.MinValue = 0D;
-			this.txtTicketWeight_BuyFuel.Name = "txtTicketWeight_BuyFuel";
-			this.txtTicketWeight_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.txtTicketWeight_BuyFuel.TabIndex = 12;
-			// 
-			// txtTransportCompanyName_BuyFuel
-			// 
-			this.txtTransportCompanyName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtTransportCompanyName_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtTransportCompanyName_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtTransportCompanyName_BuyFuel.Border.Class = "TextBoxBorder";
-			this.txtTransportCompanyName_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtTransportCompanyName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtTransportCompanyName_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtTransportCompanyName_BuyFuel.Location = new System.Drawing.Point(669, 5);
-			this.txtTransportCompanyName_BuyFuel.Name = "txtTransportCompanyName_BuyFuel";
-			this.txtTransportCompanyName_BuyFuel.ReadOnly = true;
-			this.txtTransportCompanyName_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.txtTransportCompanyName_BuyFuel.TabIndex = 3;
-			this.txtTransportCompanyName_BuyFuel.TabStop = false;
-			// 
-			// labelX13
-			// 
-			this.labelX13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX13.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX13.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX13.ForeColor = System.Drawing.Color.White;
-			this.labelX13.Location = new System.Drawing.Point(237, 85);
-			this.labelX13.Name = "labelX13";
-			this.labelX13.Size = new System.Drawing.Size(42, 26);
-			this.labelX13.TabIndex = 12;
-			this.labelX13.Text = "矿点";
-			// 
-			// cmbFuelName_BuyFuel
-			// 
-			this.cmbFuelName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cmbFuelName_BuyFuel.DisplayMember = "Text";
-			this.cmbFuelName_BuyFuel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cmbFuelName_BuyFuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbFuelName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cmbFuelName_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.cmbFuelName_BuyFuel.FormattingEnabled = true;
-			this.cmbFuelName_BuyFuel.ItemHeight = 23;
-			this.cmbFuelName_BuyFuel.Location = new System.Drawing.Point(669, 45);
-			this.cmbFuelName_BuyFuel.Name = "cmbFuelName_BuyFuel";
-			this.cmbFuelName_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.cmbFuelName_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.cmbFuelName_BuyFuel.TabIndex = 10;
-			this.cmbFuelName_BuyFuel.SelectedIndexChanged += new System.EventHandler(this.cmbFuelName_BuyFuel_SelectedIndexChanged);
-			// 
-			// txtMineName_BuyFuel
-			// 
-			this.txtMineName_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtMineName_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtMineName_BuyFuel.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtMineName_BuyFuel.Border.Class = "TextBoxBorder";
-			this.txtMineName_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtMineName_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtMineName_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtMineName_BuyFuel.Location = new System.Drawing.Point(285, 83);
-			this.txtMineName_BuyFuel.Name = "txtMineName_BuyFuel";
-			this.txtMineName_BuyFuel.ReadOnly = true;
-			this.txtMineName_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.txtMineName_BuyFuel.TabIndex = 4;
-			this.txtMineName_BuyFuel.TabStop = false;
-			// 
-			// cmbBuyFuelType
-			// 
-			this.cmbBuyFuelType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cmbBuyFuelType.DisplayMember = "Text";
-			this.cmbBuyFuelType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cmbBuyFuelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbBuyFuelType.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cmbBuyFuelType.ForeColor = System.Drawing.Color.White;
-			this.cmbBuyFuelType.FormattingEnabled = true;
-			this.cmbBuyFuelType.ItemHeight = 23;
-			this.cmbBuyFuelType.Location = new System.Drawing.Point(669, 123);
-			this.cmbBuyFuelType.Name = "cmbBuyFuelType";
-			this.cmbBuyFuelType.Size = new System.Drawing.Size(240, 29);
-			this.cmbBuyFuelType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.cmbBuyFuelType.TabIndex = 14;
-			// 
-			// cmbSamplingType_BuyFuel
-			// 
-			this.cmbSamplingType_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cmbSamplingType_BuyFuel.DisplayMember = "Text";
-			this.cmbSamplingType_BuyFuel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cmbSamplingType_BuyFuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbSamplingType_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cmbSamplingType_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.cmbSamplingType_BuyFuel.FormattingEnabled = true;
-			this.cmbSamplingType_BuyFuel.ItemHeight = 23;
-			this.cmbSamplingType_BuyFuel.Location = new System.Drawing.Point(669, 85);
-			this.cmbSamplingType_BuyFuel.Name = "cmbSamplingType_BuyFuel";
-			this.cmbSamplingType_BuyFuel.Size = new System.Drawing.Size(240, 29);
-			this.cmbSamplingType_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.cmbSamplingType_BuyFuel.TabIndex = 14;
-			// 
-			// labelX12
-			// 
-			this.labelX12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX12.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX12.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX12.ForeColor = System.Drawing.Color.White;
-			this.labelX12.Location = new System.Drawing.Point(621, 47);
-			this.labelX12.Name = "labelX12";
-			this.labelX12.Size = new System.Drawing.Size(42, 26);
-			this.labelX12.TabIndex = 14;
-			this.labelX12.Text = "煤种";
-			// 
-			// btnNewAutotruck_BuyFuel
-			// 
-			this.btnNewAutotruck_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnNewAutotruck_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnNewAutotruck_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnNewAutotruck_BuyFuel.Location = new System.Drawing.Point(285, 262);
-			this.btnNewAutotruck_BuyFuel.Name = "btnNewAutotruck_BuyFuel";
-			this.btnNewAutotruck_BuyFuel.Size = new System.Drawing.Size(120, 37);
-			this.btnNewAutotruck_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnNewAutotruck_BuyFuel.TabIndex = 24;
-			this.btnNewAutotruck_BuyFuel.TabStop = false;
-			this.btnNewAutotruck_BuyFuel.Text = "新车登记";
-			this.btnNewAutotruck_BuyFuel.Click += new System.EventHandler(this.btnNewAutotruck_BuyFuel_Click);
-			// 
-			// labelX15
-			// 
-			this.labelX15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX15.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX15.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX15.ForeColor = System.Drawing.Color.White;
-			this.labelX15.Location = new System.Drawing.Point(220, 125);
-			this.labelX15.Name = "labelX15";
-			this.labelX15.Size = new System.Drawing.Size(60, 26);
-			this.labelX15.TabIndex = 16;
-			this.labelX15.Text = "矿发量";
-			// 
-			// labelX21
-			// 
-			this.labelX21.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX21.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX21.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX21.ForeColor = System.Drawing.Color.White;
-			this.labelX21.Location = new System.Drawing.Point(571, 126);
-			this.labelX21.Name = "labelX21";
-			this.labelX21.Size = new System.Drawing.Size(94, 26);
-			this.labelX21.TabIndex = 18;
-			this.labelX21.Text = "入场煤类型";
-			// 
-			// btnSelectForecast_BuyFuel
-			// 
-			this.btnSelectForecast_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectForecast_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectForecast_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSelectForecast_BuyFuel.Location = new System.Drawing.Point(527, 262);
-			this.btnSelectForecast_BuyFuel.Name = "btnSelectForecast_BuyFuel";
-			this.btnSelectForecast_BuyFuel.Size = new System.Drawing.Size(120, 37);
-			this.btnSelectForecast_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectForecast_BuyFuel.TabIndex = 23;
-			this.btnSelectForecast_BuyFuel.TabStop = false;
-			this.btnSelectForecast_BuyFuel.Text = "选择预报";
-			this.btnSelectForecast_BuyFuel.Click += new System.EventHandler(this.btnSelectForecast_BuyFuel_Click);
-			// 
-			// labelX14
-			// 
-			this.labelX14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX14.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX14.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX14.ForeColor = System.Drawing.Color.White;
-			this.labelX14.Location = new System.Drawing.Point(588, 87);
-			this.labelX14.Name = "labelX14";
-			this.labelX14.Size = new System.Drawing.Size(77, 26);
-			this.labelX14.TabIndex = 18;
-			this.labelX14.Text = "采样方式";
-			// 
-			// btnSaveTransport_BuyFuel
-			// 
-			this.btnSaveTransport_BuyFuel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSaveTransport_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSaveTransport_BuyFuel.BackColor = System.Drawing.Color.Transparent;
-			this.btnSaveTransport_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnSaveTransport_BuyFuel.Location = new System.Drawing.Point(658, 262);
-			this.btnSaveTransport_BuyFuel.Name = "btnSaveTransport_BuyFuel";
-			this.btnSaveTransport_BuyFuel.Size = new System.Drawing.Size(120, 37);
-			this.btnSaveTransport_BuyFuel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSaveTransport_BuyFuel.TabIndex = 18;
-			this.btnSaveTransport_BuyFuel.Text = "排  队";
-			this.btnSaveTransport_BuyFuel.Click += new System.EventHandler(this.btnSaveTransport_BuyFuel_Click);
-			// 
-			// labelX16
-			// 
-			this.labelX16.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX16.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX16.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX16.ForeColor = System.Drawing.Color.White;
-			this.labelX16.Location = new System.Drawing.Point(237, 201);
-			this.labelX16.Name = "labelX16";
-			this.labelX16.Size = new System.Drawing.Size(42, 26);
-			this.labelX16.TabIndex = 20;
-			this.labelX16.Text = "备注";
-			// 
-			// txtRemark_BuyFuel
-			// 
-			this.txtRemark_BuyFuel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtRemark_BuyFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtRemark_BuyFuel.Border.Class = "TextBoxBorder";
-			this.txtRemark_BuyFuel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtRemark_BuyFuel.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtRemark_BuyFuel.ForeColor = System.Drawing.Color.White;
-			this.txtRemark_BuyFuel.Location = new System.Drawing.Point(285, 199);
-			this.txtRemark_BuyFuel.Multiline = true;
-			this.txtRemark_BuyFuel.Name = "txtRemark_BuyFuel";
-			this.txtRemark_BuyFuel.Size = new System.Drawing.Size(624, 52);
-			this.txtRemark_BuyFuel.TabIndex = 16;
-			this.txtRemark_BuyFuel.TabStop = false;
-			// 
-			// superTabItem_BuyFuelWay1
-			// 
-			this.superTabItem_BuyFuelWay1.AttachedControl = this.superTabControlPanel15;
-			this.superTabItem_BuyFuelWay1.GlobalItem = false;
-			this.superTabItem_BuyFuelWay1.Name = "superTabItem_BuyFuelWay1";
-			this.superTabItem_BuyFuelWay1.Text = "道 路 一";
-			this.superTabItem_BuyFuelWay1.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
-			// 
-			// superTabControlPanel16
-			// 
-			this.superTabControlPanel16.Controls.Add(this.panelEx12);
-			this.superTabControlPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.superTabControlPanel16.Location = new System.Drawing.Point(0, 0);
-			this.superTabControlPanel16.Name = "superTabControlPanel16";
-			this.superTabControlPanel16.Size = new System.Drawing.Size(1093, 394);
-			this.superTabControlPanel16.TabIndex = 0;
-			this.superTabControlPanel16.TabItem = this.superTabItem_BuyFuelWay2;
-			// 
-			// panelEx12
-			// 
-			this.panelEx12.CanvasColor = System.Drawing.SystemColors.Control;
-			this.panelEx12.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panelEx12.Controls.Add(this.labelX32);
-			this.panelEx12.Controls.Add(this.txt_LMYB_BuyFuel2);
-			this.panelEx12.Controls.Add(this.btnSelectSupplier_BuyFuel2);
-			this.panelEx12.Controls.Add(this.txtTitle_BuyFuel2);
-			this.panelEx12.Controls.Add(this.btnSelectAutotruck_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX39);
-			this.panelEx12.Controls.Add(this.btnReset_BuyFuel2);
-			this.panelEx12.Controls.Add(this.txtCarNumber_BuyFuel2);
-			this.panelEx12.Controls.Add(this.btnSelectTransportCompany_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX40);
-			this.panelEx12.Controls.Add(this.btnSelectMine_BuyFuel2);
-			this.panelEx12.Controls.Add(this.txtSupplierName_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX41);
-			this.panelEx12.Controls.Add(this.txtTicketWeight_BuyFuel2);
-			this.panelEx12.Controls.Add(this.txtTransportCompanyName_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX42);
-			this.panelEx12.Controls.Add(this.cmbFuelName_BuyFuel2);
-			this.panelEx12.Controls.Add(this.txtMineName_BuyFuel2);
-			this.panelEx12.Controls.Add(this.cmbBuyFuelType2);
-			this.panelEx12.Controls.Add(this.cmbSamplingType_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX43);
-			this.panelEx12.Controls.Add(this.btnNewAutotruck_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX44);
-			this.panelEx12.Controls.Add(this.labelX45);
-			this.panelEx12.Controls.Add(this.btnSelectForecast_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX46);
-			this.panelEx12.Controls.Add(this.btnSaveTransport_BuyFuel2);
-			this.panelEx12.Controls.Add(this.labelX47);
-			this.panelEx12.Controls.Add(this.txtRemark_BuyFuel2);
-			this.panelEx12.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelEx12.Location = new System.Drawing.Point(0, 0);
-			this.panelEx12.Name = "panelEx12";
-			this.panelEx12.Size = new System.Drawing.Size(1093, 394);
-			this.panelEx12.Style.Alignment = System.Drawing.StringAlignment.Center;
-			this.panelEx12.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-			this.panelEx12.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.panelEx12.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-			this.panelEx12.Style.GradientAngle = 90;
-			this.panelEx12.TabIndex = 26;
-			// 
-			// labelX32
-			// 
-			this.labelX32.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX32.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX32.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX32.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX32.ForeColor = System.Drawing.Color.White;
-			this.labelX32.Location = new System.Drawing.Point(204, 167);
-			this.labelX32.Name = "labelX32";
-			this.labelX32.Size = new System.Drawing.Size(77, 26);
-			this.labelX32.TabIndex = 68;
-			this.labelX32.Text = "预报编号";
-			// 
-			// txt_LMYB_BuyFuel2
-			// 
-			this.txt_LMYB_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txt_LMYB_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txt_LMYB_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(52)))));
-			this.txt_LMYB_BuyFuel2.Border.Class = "TextBoxBorder";
-			this.txt_LMYB_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txt_LMYB_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txt_LMYB_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txt_LMYB_BuyFuel2.Location = new System.Drawing.Point(285, 165);
-			this.txt_LMYB_BuyFuel2.Name = "txt_LMYB_BuyFuel2";
-			this.txt_LMYB_BuyFuel2.ReadOnly = true;
-			this.txt_LMYB_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.txt_LMYB_BuyFuel2.TabIndex = 67;
-			this.txt_LMYB_BuyFuel2.TabStop = false;
-			// 
-			// btnSelectSupplier_BuyFuel2
-			// 
-			this.btnSelectSupplier_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectSupplier_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectSupplier_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectSupplier_BuyFuel2.Location = new System.Drawing.Point(498, 44);
-			this.btnSelectSupplier_BuyFuel2.Name = "btnSelectSupplier_BuyFuel2";
-			this.btnSelectSupplier_BuyFuel2.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectSupplier_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectSupplier_BuyFuel2.TabIndex = 4;
-			this.btnSelectSupplier_BuyFuel2.Text = "选";
-			this.btnSelectSupplier_BuyFuel2.Click += new System.EventHandler(this.btnSelectSupplier_BuyFuel_Click);
-			// 
-			// txtTitle_BuyFuel2
-			// 
-			this.txtTitle_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtTitle_BuyFuel2.AutoSize = true;
-			// 
-			// 
-			// 
-			this.txtTitle_BuyFuel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtTitle_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtTitle_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtTitle_BuyFuel2.Location = new System.Drawing.Point(272, 310);
-			this.txtTitle_BuyFuel2.Name = "txtTitle_BuyFuel2";
-			this.txtTitle_BuyFuel2.Size = new System.Drawing.Size(583, 26);
-			this.txtTitle_BuyFuel2.TabIndex = 4;
-			this.txtTitle_BuyFuel2.Text = "已登记总量：{0}   已称重：{1}  未称重：{2}   已称重未回皮：{3}   已回皮：{4}";
-			// 
-			// btnSelectAutotruck_BuyFuel2
-			// 
-			this.btnSelectAutotruck_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectAutotruck_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectAutotruck_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectAutotruck_BuyFuel2.Location = new System.Drawing.Point(498, 6);
-			this.btnSelectAutotruck_BuyFuel2.Name = "btnSelectAutotruck_BuyFuel2";
-			this.btnSelectAutotruck_BuyFuel2.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectAutotruck_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectAutotruck_BuyFuel2.TabIndex = 2;
-			this.btnSelectAutotruck_BuyFuel2.Text = "选";
-			this.btnSelectAutotruck_BuyFuel2.Click += new System.EventHandler(this.btnSelectAutotruck_BuyFuel_Click);
-			// 
-			// labelX39
-			// 
-			this.labelX39.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX39.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX39.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX39.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX39.ForeColor = System.Drawing.Color.White;
-			this.labelX39.Location = new System.Drawing.Point(220, 5);
-			this.labelX39.Name = "labelX39";
-			this.labelX39.Size = new System.Drawing.Size(60, 26);
-			this.labelX39.TabIndex = 4;
-			this.labelX39.Text = "车牌号";
-			// 
-			// btnReset_BuyFuel2
-			// 
-			this.btnReset_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnReset_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnReset_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnReset_BuyFuel2.Location = new System.Drawing.Point(788, 268);
-			this.btnReset_BuyFuel2.Name = "btnReset_BuyFuel2";
-			this.btnReset_BuyFuel2.Size = new System.Drawing.Size(120, 37);
-			this.btnReset_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnReset_BuyFuel2.TabIndex = 20;
-			this.btnReset_BuyFuel2.Text = "重  置";
-			this.btnReset_BuyFuel2.Click += new System.EventHandler(this.btnReset_BuyFuel_Click);
-			// 
-			// txtCarNumber_BuyFuel2
-			// 
-			this.txtCarNumber_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtCarNumber_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtCarNumber_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtCarNumber_BuyFuel2.Border.Class = "TextBoxBorder";
-			this.txtCarNumber_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtCarNumber_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtCarNumber_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtCarNumber_BuyFuel2.Location = new System.Drawing.Point(285, 4);
-			this.txtCarNumber_BuyFuel2.Name = "txtCarNumber_BuyFuel2";
-			this.txtCarNumber_BuyFuel2.ReadOnly = true;
-			this.txtCarNumber_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.txtCarNumber_BuyFuel2.TabIndex = 0;
-			this.txtCarNumber_BuyFuel2.TabStop = false;
-			// 
-			// btnSelectTransportCompany_BuyFuel2
-			// 
-			this.btnSelectTransportCompany_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectTransportCompany_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectTransportCompany_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectTransportCompany_BuyFuel2.Location = new System.Drawing.Point(882, 7);
-			this.btnSelectTransportCompany_BuyFuel2.Name = "btnSelectTransportCompany_BuyFuel2";
-			this.btnSelectTransportCompany_BuyFuel2.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectTransportCompany_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectTransportCompany_BuyFuel2.TabIndex = 6;
-			this.btnSelectTransportCompany_BuyFuel2.Text = "选";
-			this.btnSelectTransportCompany_BuyFuel2.Click += new System.EventHandler(this.btnSelectTransportCompany_BuyFuel_Click);
-			// 
-			// labelX40
-			// 
-			this.labelX40.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX40.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX40.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX40.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX40.ForeColor = System.Drawing.Color.White;
-			this.labelX40.Location = new System.Drawing.Point(204, 45);
-			this.labelX40.Name = "labelX40";
-			this.labelX40.Size = new System.Drawing.Size(77, 26);
-			this.labelX40.TabIndex = 8;
-			this.labelX40.Text = "供煤单位";
-			// 
-			// btnSelectMine_BuyFuel2
-			// 
-			this.btnSelectMine_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectMine_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectMine_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-			this.btnSelectMine_BuyFuel2.Location = new System.Drawing.Point(498, 85);
-			this.btnSelectMine_BuyFuel2.Name = "btnSelectMine_BuyFuel2";
-			this.btnSelectMine_BuyFuel2.Size = new System.Drawing.Size(25, 25);
-			this.btnSelectMine_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectMine_BuyFuel2.TabIndex = 8;
-			this.btnSelectMine_BuyFuel2.Text = "选";
-			this.btnSelectMine_BuyFuel2.Click += new System.EventHandler(this.btnSelectMine_BuyFuel_Click);
-			// 
-			// txtSupplierName_BuyFuel2
-			// 
-			this.txtSupplierName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtSupplierName_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtSupplierName_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtSupplierName_BuyFuel2.Border.Class = "TextBoxBorder";
-			this.txtSupplierName_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtSupplierName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtSupplierName_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtSupplierName_BuyFuel2.Location = new System.Drawing.Point(285, 42);
-			this.txtSupplierName_BuyFuel2.Name = "txtSupplierName_BuyFuel2";
-			this.txtSupplierName_BuyFuel2.ReadOnly = true;
-			this.txtSupplierName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.txtSupplierName_BuyFuel2.TabIndex = 2;
-			this.txtSupplierName_BuyFuel2.TabStop = false;
-			// 
-			// labelX41
-			// 
-			this.labelX41.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX41.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX41.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX41.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX41.ForeColor = System.Drawing.Color.White;
-			this.labelX41.Location = new System.Drawing.Point(588, 7);
-			this.labelX41.Name = "labelX41";
-			this.labelX41.Size = new System.Drawing.Size(77, 26);
-			this.labelX41.TabIndex = 10;
-			this.labelX41.Text = "运输单位";
-			// 
-			// txtTicketWeight_BuyFuel2
-			// 
-			this.txtTicketWeight_BuyFuel2.AllowEmptyState = false;
-			this.txtTicketWeight_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			// 
-			// 
-			// 
-			this.txtTicketWeight_BuyFuel2.BackgroundStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtTicketWeight_BuyFuel2.BackgroundStyle.Class = "DateTimeInputBackground";
-			this.txtTicketWeight_BuyFuel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtTicketWeight_BuyFuel2.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-			this.txtTicketWeight_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtTicketWeight_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtTicketWeight_BuyFuel2.Increment = 1D;
-			this.txtTicketWeight_BuyFuel2.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-			this.txtTicketWeight_BuyFuel2.Location = new System.Drawing.Point(285, 123);
-			this.txtTicketWeight_BuyFuel2.MaxValue = 1000D;
-			this.txtTicketWeight_BuyFuel2.MinValue = 0D;
-			this.txtTicketWeight_BuyFuel2.Name = "txtTicketWeight_BuyFuel2";
-			this.txtTicketWeight_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.txtTicketWeight_BuyFuel2.TabIndex = 12;
-			// 
-			// txtTransportCompanyName_BuyFuel2
-			// 
-			this.txtTransportCompanyName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtTransportCompanyName_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtTransportCompanyName_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtTransportCompanyName_BuyFuel2.Border.Class = "TextBoxBorder";
-			this.txtTransportCompanyName_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtTransportCompanyName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtTransportCompanyName_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtTransportCompanyName_BuyFuel2.Location = new System.Drawing.Point(669, 5);
-			this.txtTransportCompanyName_BuyFuel2.Name = "txtTransportCompanyName_BuyFuel2";
-			this.txtTransportCompanyName_BuyFuel2.ReadOnly = true;
-			this.txtTransportCompanyName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.txtTransportCompanyName_BuyFuel2.TabIndex = 3;
-			this.txtTransportCompanyName_BuyFuel2.TabStop = false;
-			// 
-			// labelX42
-			// 
-			this.labelX42.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX42.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX42.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX42.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX42.ForeColor = System.Drawing.Color.White;
-			this.labelX42.Location = new System.Drawing.Point(237, 85);
-			this.labelX42.Name = "labelX42";
-			this.labelX42.Size = new System.Drawing.Size(42, 26);
-			this.labelX42.TabIndex = 12;
-			this.labelX42.Text = "矿点";
-			// 
-			// cmbFuelName_BuyFuel2
-			// 
-			this.cmbFuelName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cmbFuelName_BuyFuel2.DisplayMember = "Text";
-			this.cmbFuelName_BuyFuel2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cmbFuelName_BuyFuel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbFuelName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cmbFuelName_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.cmbFuelName_BuyFuel2.FormattingEnabled = true;
-			this.cmbFuelName_BuyFuel2.ItemHeight = 23;
-			this.cmbFuelName_BuyFuel2.Location = new System.Drawing.Point(669, 45);
-			this.cmbFuelName_BuyFuel2.Name = "cmbFuelName_BuyFuel2";
-			this.cmbFuelName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.cmbFuelName_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.cmbFuelName_BuyFuel2.TabIndex = 10;
-			this.cmbFuelName_BuyFuel2.SelectedIndexChanged += new System.EventHandler(this.cmbFuelName_BuyFuel_SelectedIndexChanged);
-			// 
-			// txtMineName_BuyFuel2
-			// 
-			this.txtMineName_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtMineName_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtMineName_BuyFuel2.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(32)))), ((int)(((byte)(133)))));
-			this.txtMineName_BuyFuel2.Border.Class = "TextBoxBorder";
-			this.txtMineName_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtMineName_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtMineName_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtMineName_BuyFuel2.Location = new System.Drawing.Point(285, 83);
-			this.txtMineName_BuyFuel2.Name = "txtMineName_BuyFuel2";
-			this.txtMineName_BuyFuel2.ReadOnly = true;
-			this.txtMineName_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.txtMineName_BuyFuel2.TabIndex = 4;
-			this.txtMineName_BuyFuel2.TabStop = false;
-			// 
-			// cmbBuyFuelType2
-			// 
-			this.cmbBuyFuelType2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cmbBuyFuelType2.DisplayMember = "Text";
-			this.cmbBuyFuelType2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cmbBuyFuelType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbBuyFuelType2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cmbBuyFuelType2.ForeColor = System.Drawing.Color.White;
-			this.cmbBuyFuelType2.FormattingEnabled = true;
-			this.cmbBuyFuelType2.ItemHeight = 23;
-			this.cmbBuyFuelType2.Location = new System.Drawing.Point(669, 123);
-			this.cmbBuyFuelType2.Name = "cmbBuyFuelType2";
-			this.cmbBuyFuelType2.Size = new System.Drawing.Size(240, 29);
-			this.cmbBuyFuelType2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.cmbBuyFuelType2.TabIndex = 14;
-			// 
-			// cmbSamplingType_BuyFuel2
-			// 
-			this.cmbSamplingType_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.cmbSamplingType_BuyFuel2.DisplayMember = "Text";
-			this.cmbSamplingType_BuyFuel2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cmbSamplingType_BuyFuel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbSamplingType_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cmbSamplingType_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.cmbSamplingType_BuyFuel2.FormattingEnabled = true;
-			this.cmbSamplingType_BuyFuel2.ItemHeight = 23;
-			this.cmbSamplingType_BuyFuel2.Location = new System.Drawing.Point(669, 85);
-			this.cmbSamplingType_BuyFuel2.Name = "cmbSamplingType_BuyFuel2";
-			this.cmbSamplingType_BuyFuel2.Size = new System.Drawing.Size(240, 29);
-			this.cmbSamplingType_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.cmbSamplingType_BuyFuel2.TabIndex = 14;
-			// 
-			// labelX43
-			// 
-			this.labelX43.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX43.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX43.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX43.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX43.ForeColor = System.Drawing.Color.White;
-			this.labelX43.Location = new System.Drawing.Point(621, 47);
-			this.labelX43.Name = "labelX43";
-			this.labelX43.Size = new System.Drawing.Size(42, 26);
-			this.labelX43.TabIndex = 14;
-			this.labelX43.Text = "煤种";
-			// 
-			// btnNewAutotruck_BuyFuel2
-			// 
-			this.btnNewAutotruck_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnNewAutotruck_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnNewAutotruck_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnNewAutotruck_BuyFuel2.Location = new System.Drawing.Point(284, 268);
-			this.btnNewAutotruck_BuyFuel2.Name = "btnNewAutotruck_BuyFuel2";
-			this.btnNewAutotruck_BuyFuel2.Size = new System.Drawing.Size(120, 37);
-			this.btnNewAutotruck_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnNewAutotruck_BuyFuel2.TabIndex = 24;
-			this.btnNewAutotruck_BuyFuel2.TabStop = false;
-			this.btnNewAutotruck_BuyFuel2.Text = "新车登记";
-			this.btnNewAutotruck_BuyFuel2.Click += new System.EventHandler(this.btnNewAutotruck_BuyFuel_Click);
-			// 
-			// labelX44
-			// 
-			this.labelX44.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX44.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX44.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX44.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX44.ForeColor = System.Drawing.Color.White;
-			this.labelX44.Location = new System.Drawing.Point(220, 125);
-			this.labelX44.Name = "labelX44";
-			this.labelX44.Size = new System.Drawing.Size(60, 26);
-			this.labelX44.TabIndex = 16;
-			this.labelX44.Text = "矿发量";
-			// 
-			// labelX45
-			// 
-			this.labelX45.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX45.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX45.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX45.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX45.ForeColor = System.Drawing.Color.White;
-			this.labelX45.Location = new System.Drawing.Point(574, 125);
-			this.labelX45.Name = "labelX45";
-			this.labelX45.Size = new System.Drawing.Size(94, 26);
-			this.labelX45.TabIndex = 18;
-			this.labelX45.Text = "入场煤类型";
-			// 
-			// btnSelectForecast_BuyFuel2
-			// 
-			this.btnSelectForecast_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSelectForecast_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSelectForecast_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSelectForecast_BuyFuel2.Location = new System.Drawing.Point(526, 268);
-			this.btnSelectForecast_BuyFuel2.Name = "btnSelectForecast_BuyFuel2";
-			this.btnSelectForecast_BuyFuel2.Size = new System.Drawing.Size(120, 37);
-			this.btnSelectForecast_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSelectForecast_BuyFuel2.TabIndex = 23;
-			this.btnSelectForecast_BuyFuel2.TabStop = false;
-			this.btnSelectForecast_BuyFuel2.Text = "选择预报";
-			this.btnSelectForecast_BuyFuel2.Click += new System.EventHandler(this.btnSelectForecast_BuyFuel_Click);
-			// 
-			// labelX46
-			// 
-			this.labelX46.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX46.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX46.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX46.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX46.ForeColor = System.Drawing.Color.White;
-			this.labelX46.Location = new System.Drawing.Point(588, 87);
-			this.labelX46.Name = "labelX46";
-			this.labelX46.Size = new System.Drawing.Size(77, 26);
-			this.labelX46.TabIndex = 18;
-			this.labelX46.Text = "采样方式";
-			// 
-			// btnSaveTransport_BuyFuel2
-			// 
-			this.btnSaveTransport_BuyFuel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnSaveTransport_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnSaveTransport_BuyFuel2.BackColor = System.Drawing.Color.Transparent;
-			this.btnSaveTransport_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-			this.btnSaveTransport_BuyFuel2.Location = new System.Drawing.Point(657, 268);
-			this.btnSaveTransport_BuyFuel2.Name = "btnSaveTransport_BuyFuel2";
-			this.btnSaveTransport_BuyFuel2.Size = new System.Drawing.Size(120, 37);
-			this.btnSaveTransport_BuyFuel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.btnSaveTransport_BuyFuel2.TabIndex = 18;
-			this.btnSaveTransport_BuyFuel2.Text = "排  队";
-			this.btnSaveTransport_BuyFuel2.Click += new System.EventHandler(this.btnSaveTransport_BuyFuel_Click);
-			// 
-			// labelX47
-			// 
-			this.labelX47.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.labelX47.AutoSize = true;
-			// 
-			// 
-			// 
-			this.labelX47.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.labelX47.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.labelX47.ForeColor = System.Drawing.Color.White;
-			this.labelX47.Location = new System.Drawing.Point(237, 206);
-			this.labelX47.Name = "labelX47";
-			this.labelX47.Size = new System.Drawing.Size(42, 26);
-			this.labelX47.TabIndex = 20;
-			this.labelX47.Text = "备注";
-			// 
-			// txtRemark_BuyFuel2
-			// 
-			this.txtRemark_BuyFuel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtRemark_BuyFuel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-			// 
-			// 
-			// 
-			this.txtRemark_BuyFuel2.Border.Class = "TextBoxBorder";
-			this.txtRemark_BuyFuel2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.txtRemark_BuyFuel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.txtRemark_BuyFuel2.ForeColor = System.Drawing.Color.White;
-			this.txtRemark_BuyFuel2.Location = new System.Drawing.Point(285, 204);
-			this.txtRemark_BuyFuel2.Multiline = true;
-			this.txtRemark_BuyFuel2.Name = "txtRemark_BuyFuel2";
-			this.txtRemark_BuyFuel2.Size = new System.Drawing.Size(624, 52);
-			this.txtRemark_BuyFuel2.TabIndex = 16;
-			this.txtRemark_BuyFuel2.TabStop = false;
-			// 
-			// superTabItem_BuyFuelWay2
-			// 
-			this.superTabItem_BuyFuelWay2.AttachedControl = this.superTabControlPanel16;
-			this.superTabItem_BuyFuelWay2.GlobalItem = false;
-			this.superTabItem_BuyFuelWay2.Name = "superTabItem_BuyFuelWay2";
-			this.superTabItem_BuyFuelWay2.Text = "道 路 二";
-			this.superTabItem_BuyFuelWay2.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
-			// 
-			// superTabItem_BuyFuel
-			// 
-			this.superTabItem_BuyFuel.AttachedControl = this.superTabControlPanel3;
-			this.superTabItem_BuyFuel.GlobalItem = false;
-			this.superTabItem_BuyFuel.Name = "superTabItem_BuyFuel";
-			this.superTabItem_BuyFuel.Text = "入 场 煤";
 			// 
 			// superTabControlPanel5
 			// 
@@ -5233,6 +5233,24 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.flowLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl2)).EndInit();
 			this.superTabControl2.ResumeLayout(false);
+			this.superTabControlPanel3.ResumeLayout(false);
+			this.tableLayoutPanel3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
+			this.superTabControl1.ResumeLayout(false);
+			this.superTabControlPanel2.ResumeLayout(false);
+			this.contextMenuStrip1.ResumeLayout(false);
+			this.superTabControlPanel1.ResumeLayout(false);
+			this.panelEx1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.superTabControlWay_BuyFuel)).EndInit();
+			this.superTabControlWay_BuyFuel.ResumeLayout(false);
+			this.superTabControlPanel15.ResumeLayout(false);
+			this.panelEx3.ResumeLayout(false);
+			this.panelEx3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel)).EndInit();
+			this.superTabControlPanel16.ResumeLayout(false);
+			this.panelEx12.ResumeLayout(false);
+			this.panelEx12.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel2)).EndInit();
 			this.superTabControlPanel4.ResumeLayout(false);
 			this.tableLayoutPanel6.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl5)).EndInit();
@@ -5249,24 +5267,6 @@ namespace CMCS.CarTransport.Queue.Frms
 			this.superTabControlPanel14.ResumeLayout(false);
 			this.panelEx11.ResumeLayout(false);
 			this.panelEx11.PerformLayout();
-			this.superTabControlPanel3.ResumeLayout(false);
-			this.tableLayoutPanel3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
-			this.superTabControl1.ResumeLayout(false);
-			this.superTabControlPanel1.ResumeLayout(false);
-			this.superTabControlPanel2.ResumeLayout(false);
-			this.contextMenuStrip1.ResumeLayout(false);
-			this.panelEx1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.superTabControlWay_BuyFuel)).EndInit();
-			this.superTabControlWay_BuyFuel.ResumeLayout(false);
-			this.superTabControlPanel15.ResumeLayout(false);
-			this.panelEx3.ResumeLayout(false);
-			this.panelEx3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel)).EndInit();
-			this.superTabControlPanel16.ResumeLayout(false);
-			this.panelEx12.ResumeLayout(false);
-			this.panelEx12.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtTicketWeight_BuyFuel2)).EndInit();
 			this.superTabControlPanel5.ResumeLayout(false);
 			this.tableLayoutPanel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.superTabControl3)).EndInit();

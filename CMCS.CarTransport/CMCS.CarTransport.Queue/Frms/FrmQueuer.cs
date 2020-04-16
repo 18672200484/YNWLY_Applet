@@ -2681,6 +2681,7 @@ namespace CMCS.CarTransport.Queue.Frms
 			frm.ShowDialog();
 		}
 
+
 		#endregion
 
 		#region 出场煤业务
@@ -4443,7 +4444,5 @@ namespace CMCS.CarTransport.Queue.Frms
 		}
 
 		#endregion
-
-
 	}
 }
