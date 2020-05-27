@@ -126,7 +126,7 @@ namespace CMCS.ADGS.Win
 		{
 			int res = 0;
 			// .工分仪 型号：5E-MAG6700
-			foreach (HYTBPAG_5EMAG6700 entity in selfDber.Entities<HYTBPAG_5EMAG6700>("where Date_Ex >=:Date_Ex  and SampleName is not null", new { Date_Ex = DateTime.Now.AddDays(-Convert.ToInt32(GetAppletConfig("化验设备数据读取天数"))).Date }))
+			foreach (HYTBPAG_5EMAG6700 entity in selfDber.Entities<HYTBPAG_5EMAG6700>("where Date_Ex >=:Date_Ex  and SampleName is not null order by Date_Ex", new { Date_Ex = DateTime.Now.AddDays(-Convert.ToInt32(GetAppletConfig("化验设备数据读取天数"))).Date }))
 			{
 				res += SaveToProximateStdAssay(entity);
 			}
@@ -326,7 +326,12 @@ namespace CMCS.ADGS.Win
 		{
 			int res = 0;
 			if (entity == null) return res;
-			
+			CmcsRCAssay assay = selfDber.Entity<CmcsRCAssay>("where AssayCode=:AssayCode order by CreateDate", new { AssayCode = entity.SampleName });
+			if (assay != null && assay.AssayDate.Year < 2000)
+			{
+				assay.AssayDate = entity.Date_Ex;
+				selfDber.Update(assay);
+			}
 			CmcsProximateStdAssay present = selfDber.Entity<CmcsProximateStdAssay>("where PKID=:PKID", new { PKID = entity.PKID });
 			if (present == null)
 			{

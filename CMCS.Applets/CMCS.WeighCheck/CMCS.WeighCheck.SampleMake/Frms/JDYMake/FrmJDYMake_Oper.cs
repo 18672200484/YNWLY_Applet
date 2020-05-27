@@ -17,6 +17,8 @@ using CMCS.WeighCheck.SampleMake.Utilities;
 using DevComponents.Editors.DateTimeAdv;
 using CMCS.WeighCheck.DAO;
 using CMCS.WeighCheck.SampleMake.Core;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 {
@@ -85,46 +87,11 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 			}
 		}
 
-		#region 设备初始化与卸载
-		/// <summary>
-		/// 初始化外接设备
-		/// </summary>
-		private void InitHardware()
-		{
-			try
-			{
-				bool success = false;
-				if (!SelfVars.RfReadOpen)
-				{
-					// 初始化-读卡器
-					success = Hardwarer.ReadRwer.OpenNetPort(commonDAO.GetAppletConfigString("读卡器IP"), commonDAO.GetAppletConfigInt32("读卡器端口"));
-					SelfVars.RfReadOpen = success;
-				}
-			}
-			catch (Exception ex)
-			{
-				Log4Neter.Error("设备初始化", ex);
-			}
-		}
-
-		/// <summary>
-		/// 卸载设备
-		/// </summary>
-		private void UnloadHardware()
-		{
-			// 注意此段代码
-			Application.DoEvents();
-			//if (!SelfVars.RfReadOpen)
-			//    Hardwarer.ReadRwer.CloseNetPort();
-		}
-		#endregion
-
 		/// <summary>
 		/// 初始化
 		/// </summary>
 		public void InitFrom()
 		{
-			InitHardware();
 			this._CodePrinter = new CodePrinterMake(printDocument1);
 
 			// 打印编码按钮
@@ -167,10 +134,8 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 
 			CmcsRCMakeDetail rCMakeDetail = btn.EditorCell.GridRow.DataItem as CmcsRCMakeDetail;
 			if (rCMakeDetail == null) return;
-			if (!string.IsNullOrEmpty(rCMakeDetail.BarrelCode) && !String.IsNullOrEmpty(WriteRf(rCMakeDetail.BarrelCode)))
-				MessageBoxEx.Show("写入成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			else
-				MessageBoxEx.Show("写入失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			if (!string.IsNullOrEmpty(rCMakeDetail.BarrelCode))
+				WriteRf(rCMakeDetail.BarrelCode);
 		}
 
 		/// <summary>
@@ -184,43 +149,50 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 
 			if (!Hardwarer.ReadRwer.OpenRF())
 			{
-				MessageBoxEx.Show("射频打开失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				ShowMessage("射频打开失败！", eOutputType.Error);
 				return string.Empty;
 			}
 
 			if (!Hardwarer.ReadRwer.ChangeToISO14443A())
 			{
-				MessageBoxEx.Show("切换到1443模式失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				ShowMessage("切换到1443模式失败！", eOutputType.Error);
 				return string.Empty;
 			}
 
 			if (!Hardwarer.ReadRwer.Request14443A())
 			{
-				MessageBoxEx.Show("获取卡类型失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				ShowMessage("获取卡类型失败！", eOutputType.Error);
 				return string.Empty;
 			}
 
 			if (!Hardwarer.ReadRwer.Anticoll14443A())
 			{
-				MessageBoxEx.Show("获取卡号失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				ShowMessage("获取卡号失败！", eOutputType.Error);
 				return string.Empty;
 			}
 
 			if (!Hardwarer.ReadRwer.Select14443A())
 			{
-				MessageBoxEx.Show("获取卡容量失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				ShowMessage("获取卡容量失败！", eOutputType.Error);
 				return string.Empty;
 			}
 
 			if (!Hardwarer.ReadRwer.AuthKey14443A(SecNumber, BlockNumber))
 			{
-				MessageBoxEx.Show("标签密钥验证失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				ShowMessage("标签密钥验证失败！", eOutputType.Error);
 				return string.Empty;
 			}
 			if (Hardwarer.ReadRwer.Write14443(rf, Convert.ToInt32(SecNumber), Convert.ToInt32(BlockNumber)))
 			{
-				return Hardwarer.ReadRwer.Byte16ToString(Hardwarer.ReadRwer.ReadData);
+				ShowMessage("编码：" + rf + "写卡成功", eOutputType.Normal);
+				string rf_new = Hardwarer.ReadRwer.Byte16ToString(Hardwarer.ReadRwer.RWRead14443A(SecNumber, BlockNumber));
+				if (rf == rf_new)
+				{
+					ShowMessage("编码：" + rf + "读卡验证成功", eOutputType.Normal);
+					return rf_new;
+				}
 			}
+
 			return string.Empty;
 		}
 
@@ -458,6 +430,93 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 			if (input.Value.Hour == 0)
 				input.Value = Convert.ToDateTime(input.Value.ToString("yyyy-MM-dd") + DateTime.Now.ToString(" HH:mm:ss"));
 		}
+		#region 其他
 
+		private void ShowMessage(string info, eOutputType outputType)
+		{
+			OutputRunInfo(rtxtMessageInfo, info, outputType);
+		}
+
+		/// <summary>
+		/// 输出运行信息
+		/// </summary>
+		/// <param name="richTextBox"></param>
+		/// <param name="text"></param>
+		/// <param name="outputType"></param>
+		private void OutputRunInfo(RichTextBoxEx richTextBox, string text, eOutputType outputType = eOutputType.Normal)
+		{
+			this.Invoke((EventHandler)(delegate
+			{
+				if (richTextBox.TextLength > 100000) richTextBox.Clear();
+
+				text = string.Format("{0}  {1}", DateTime.Now.ToString("HH:mm:ss"), text);
+
+				richTextBox.SelectionStart = richTextBox.TextLength;
+
+				switch (outputType)
+				{
+					case eOutputType.Normal:
+						richTextBox.SelectionColor = ColorTranslator.FromHtml("#BD86FA");
+						break;
+					case eOutputType.Important:
+						richTextBox.SelectionColor = ColorTranslator.FromHtml("#A50081");
+						break;
+					case eOutputType.Warn:
+						richTextBox.SelectionColor = ColorTranslator.FromHtml("#F9C916");
+						break;
+					case eOutputType.Error:
+						richTextBox.SelectionColor = ColorTranslator.FromHtml("#DB2606");
+						break;
+					default:
+						richTextBox.SelectionColor = Color.White;
+						break;
+				}
+
+				richTextBox.AppendText(string.Format("{0}\r", text));
+
+				richTextBox.ScrollToCaret();
+
+			}));
+		}
+
+		/// <summary>
+		/// 输出信息类型
+		/// </summary>
+		public enum eOutputType
+		{
+			/// <summary>
+			/// 普通
+			/// </summary>
+			[Description("#BD86FA")]
+			Normal,
+			/// <summary>
+			/// 重要
+			/// </summary>
+			[Description("#A50081")]
+			Important,
+			/// <summary>
+			/// 警告
+			/// </summary>
+			[Description("#F9C916")]
+			Warn,
+			/// <summary>
+			/// 错误
+			/// </summary>
+			[Description("#DB2606")]
+			Error
+		}
+
+		/// <summary>
+		/// Invoke封装
+		/// </summary>
+		/// <param name="action"></param>
+		public void InvokeEx(Action action)
+		{
+			if (this.IsDisposed || !this.IsHandleCreated) return;
+
+			this.Invoke(action);
+		}
+
+		#endregion
 	}
 }

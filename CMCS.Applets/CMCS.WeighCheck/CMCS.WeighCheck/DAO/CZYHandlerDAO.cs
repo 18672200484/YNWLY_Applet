@@ -614,7 +614,7 @@ namespace CMCS.WeighCheck.DAO
 				if (assay.AssayType == "三级编码化验" && makeDetail.SampleType.Contains("6mm"))
 					assay.SendDate = GlobalVars.ServerNowDateTime;
 				else if ((assay.AssayType == "复查样化验" || assay.AssayType == "抽查样化验") && makeDetail.SampleType.Contains("0.2mm"))
-					assay.SendDate = DateTime.Now;
+					assay.SendDate = GlobalVars.ServerNowDateTime;
 				if (makeDetail.SampleType.Contains("0.2mm") && assay.GetDate.Year < 2000)
 				{
 					assay.GetDate = GlobalVars.ServerNowDateTime;
@@ -769,7 +769,8 @@ namespace CMCS.WeighCheck.DAO
 				assay.AssayPoint = assayPoint;
 				assay.AssayType = "三级编码化验";
 				assay.SendDate = GlobalVars.ServerNowDateTime;
-				assay.AssayDate = GlobalVars.ServerNowDateTime;
+
+				//assay.AssayDate = GlobalVars.ServerNowDateTime;
 				CmcsRCMake make = entity.TheRcMake;
 				if (make.TheRcSampling != null && make.TheRcSampling.TheInFactoryBatch != null)
 					assay.InFactoryBatchId = make.TheRcSampling.TheInFactoryBatch.Id;

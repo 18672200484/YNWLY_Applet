@@ -114,6 +114,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 
 		private void FrmMakeWeight_FormClosing(object sender, FormClosingEventArgs e)
 		{
+			Hardwarer.ReadRwer.OnStatusChange -= new HFReaderRwer.StatusChangeHandler(Rwer_OnStatusChange);
 			UnloadHardware();
 		}
 
@@ -392,8 +393,14 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			if (Hardwarer.ReadRwer.Write14443(rf, Convert.ToInt32(SecNumber), Convert.ToInt32(BlockNumber)))
 			{
 				ShowMessage("编码：" + rf + "写卡成功", eOutputType.Normal);
-				return Hardwarer.ReadRwer.Byte16ToString(Hardwarer.ReadRwer.ReadData);
+				string rf_new = Hardwarer.ReadRwer.Byte16ToString(Hardwarer.ReadRwer.RWRead14443A(SecNumber, BlockNumber));
+				if (rf == rf_new)
+				{
+					ShowMessage("编码：" + rf + "读卡验证成功", eOutputType.Normal);
+					return rf_new;
+				}
 			}
+
 			return string.Empty;
 		}
 
@@ -409,10 +416,11 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			try
 			{
 				bool success = false;
+				Hardwarer.ReadRwer.OnStatusChange += new HFReaderRwer.StatusChangeHandler(Rwer_OnStatusChange);
+				Rwer_OnStatusChange(Hardwarer.ReadRwer.Status);
 				if (!SelfVars.RfReadOpen)
 				{
 					// 初始化-读卡器
-					Hardwarer.ReadRwer.OnStatusChange += new HFReaderRwer.StatusChangeHandler(Rwer_OnStatusChange);
 					success = Hardwarer.ReadRwer.OpenNetPort(commonDAO.GetAppletConfigString("读卡器IP"), commonDAO.GetAppletConfigInt32("读卡器端口"));
 					SelfVars.RfReadOpen = success;
 				}
@@ -445,7 +453,6 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 		{
 			// 注意此段代码
 			Application.DoEvents();
-			Hardwarer.ReadRwer.CloseNetPort();
 			try
 			{
 				Hardwarer.Wber_min.CloseCom();
