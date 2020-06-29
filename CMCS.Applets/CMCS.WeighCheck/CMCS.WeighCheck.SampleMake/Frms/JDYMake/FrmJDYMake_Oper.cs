@@ -30,6 +30,12 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 		CodePrinterMake _CodePrinter = null;
 		private IList<CmcsRCMakeDetail> _cmcsMakeDetail = new List<CmcsRCMakeDetail>();
 		CommonDAO commonDAO = CommonDAO.GetInstance();
+
+		/// <summary>
+		/// 化验指标
+		/// </summary>
+		string assayTarget = string.Empty;
+
 		IList<CmcsRCMakeDetail> cmcsMakeDetail
 		{
 			get { return _cmcsMakeDetail; }
@@ -63,6 +69,30 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 				this.cmcsMake = Dbers.GetInstance().SelfDber.Get<CmcsRCMake>(this.id);
 				if (this.cmcsMake != null)
 				{
+					CmcsRCAssay assay = this.cmcsMake.TheRcAssay;
+					if (assay != null)
+					{
+						if (assay.AssayPoint == "全指标")
+						{
+							rbtnAll.Checked = true;
+						}
+						else if (assay.AssayPoint == "日常分析")
+							rbtnNormal.Checked = true;
+						else
+						{
+							rbtnHandChoose.Checked = true;
+							string[] assayPoint = assay.AssayPoint.Split(',');
+							System.Windows.Forms.Control.ControlCollection controls = panelAssayTarget.Controls;
+							foreach (Control item in controls)
+							{
+								CheckBoxX check = (CheckBoxX)item;
+								if (assayPoint.Contains(check.Text))
+									check.Checked = true;
+							}
+						}
+						if (assay.TheFuelQuality != null)
+							dbiMt.Value = Convert.ToDouble(assay.TheFuelQuality.Mt);
+					}
 					txt_GetPle.Text = cmcsMake.GetPle;
 					txt_MakeCode.Text = cmcsMake.MakeCode;
 					txt_MakePle.Text = cmcsMake.MakePle;
@@ -212,6 +242,11 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 				MessageBoxEx.Show("请选择实际采样时间！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return false;
 			}
+			if (string.IsNullOrEmpty(this.assayTarget))
+			{
+				MessageBoxEx.Show("请选择化验指标！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
 			if (string.IsNullOrEmpty(txt_GetPle.Text))
 				txt_GetPle.Text = SelfVars.LoginUser.UserName;
 
@@ -310,6 +345,65 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 			this.cmcsMakeDetail = details;
 		}
 
+
+		private void assayTarget_CheckedChanged(object sender, EventArgs e)
+		{
+			CheckBoxX check = (CheckBoxX)sender;
+			if (check.Checked && !this.assayTarget.Contains(check.Text))
+			{
+				this.assayTarget += check.Text + ",";
+			}
+			else
+			{
+				this.assayTarget = this.assayTarget.Replace(check.Text + ",", "");
+			}
+		}
+
+		/// <summary>
+		/// 选择化验指标
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void rbtnHandChoose_CheckedChanged(object sender, EventArgs e)
+		{
+			RadioButton rbtn = (RadioButton)sender;
+			if (rbtn.Tag.ToString() == "手选指标")
+			{
+				panelAssayTarget.Enabled = true;
+				foreach (Control item in this.panelAssayTarget.Controls)
+				{
+					CheckBoxX checkother = (CheckBoxX)item;
+					checkother.Checked = false;
+				}
+				this.assayTarget = string.Empty;
+			}
+			else if (rbtn.Tag.ToString() == "全指标")
+			{
+				panelAssayTarget.Enabled = false;
+				foreach (Control item in this.panelAssayTarget.Controls)
+				{
+					CheckBoxX checkother = (CheckBoxX)item;
+					checkother.Checked = true;
+				}
+				this.assayTarget = "全指标";
+			}
+			else if (rbtn.Tag.ToString() == "日常分析")
+			{
+				panelAssayTarget.Enabled = false;
+				foreach (Control item in this.panelAssayTarget.Controls)
+				{
+					CheckBoxX checkother = (CheckBoxX)item;
+					if (checkother.Text == "氢值" || checkother.Text == "灰熔融")
+					{
+						checkother.Checked = false;
+						continue;
+					}
+					checkother.Checked = true;
+				}
+				this.assayTarget = "日常分析";
+			}
+		}
+
 		/// <summary>
 		/// 获取明细信息
 		/// </summary>
@@ -381,7 +475,8 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 
 				CmcsFuelQuality fuelQuality = new CmcsFuelQuality()
 				{
-					Id = Guid.NewGuid().ToString()
+					Id = Guid.NewGuid().ToString(),
+					Mt = Convert.ToDecimal(dbiMt.Value)
 				};
 
 				if (CommonDAO.GetInstance().SelfDber.Insert(fuelQuality) > 0)
@@ -395,10 +490,23 @@ namespace CMCS.WeighCheck.SampleMake.Frms.JDYMake
 						FuelQualityId = fuelQuality.Id,
 						AssayPle = "",
 						WfStatus = 0,
-						BackBatchDate = rCMake.UseTime
+						BackBatchDate = rCMake.UseTime,
+						AssayPoint = this.assayTarget.TrimEnd(',')
 					};
 					return CommonDAO.GetInstance().SelfDber.Insert(rCAssay) > 0;
 				}
+			}
+			else
+			{
+				rCAssay.AssayPoint = this.assayTarget.TrimEnd(',');
+				CmcsFuelQuality fuelQuality = rCAssay.TheFuelQuality;
+				if (fuelQuality != null)
+				{
+					fuelQuality.Mt = Convert.ToDecimal(dbiMt.Value);
+					CommonDAO.GetInstance().SelfDber.Update(fuelQuality);
+				}
+
+				return CommonDAO.GetInstance().SelfDber.Update(rCAssay) > 0;
 			}
 			return false;
 		}

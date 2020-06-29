@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CMCS.DumblyConcealer.Win.DumblyTasks;
 using CMCS.DumblyConcealer.Win.Core;
 using BasisPlatform.Util;
+using System.Threading;
 
 namespace CMCS.DumblyConcealer.Win
 {
@@ -42,7 +43,7 @@ namespace CMCS.DumblyConcealer.Win
 		{
 
 #if DEBUG
-			timer1.Enabled = false;
+			timer1.Enabled = true;
 #else
 			this.IsSecretRunning = true;
 			this.VerifyBeforeClose = true;
@@ -181,13 +182,22 @@ namespace CMCS.DumblyConcealer.Win
 				case 14:
 					TileHorizontalToolStripMenuItem_Click(null, null);
 					break;
-				default:
-					timer1.Enabled = false;
-					break;
 			}
-
-
 			taskFormIndex++;
+			//if (taskFormIndex > 30 * 60)
+			//{
+			//	this.IsSecretRunning = false;
+			//	this.VerifyBeforeClose = false;
+			//	timer1.Enabled = false;
+			//	foreach (Form item in this.MdiChildren)
+			//	{
+			//		item.Close();
+			//		Thread.Sleep(200);
+			//	}
+			//	Thread.Sleep(2000);
+			//	Application.Restart();
+			//}
+			//Log4netUtil.Info(Thread.CurrentThread.ManagedThreadId);
 		}
 
 		/// <summary>

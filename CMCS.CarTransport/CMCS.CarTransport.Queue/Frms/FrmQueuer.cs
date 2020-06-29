@@ -574,9 +574,11 @@ namespace CMCS.CarTransport.Queue.Frms
 			// 重置程序远程控制命令
 			commonDAO.ResetAppRemoteControlCmd(CommonAppConfig.GetInstance().AppIdentifier);
 			//加载煤种
-			LoadFuelkind(new ComboBoxEx[] { cmbFuelName_BuyFuel, cmbFuelName_BuyFuel2, cmbFuelName_SaleFuel, cmbFuelName_SaleFuel2 });
+			LoadFuelkind(new ComboBoxEx[] { cmbFuelName_BuyFuel, cmbFuelName_BuyFuel2 });
+			LoadFuelkind(new ComboBoxEx[] { cmbFuelName_SaleFuel, cmbFuelName_SaleFuel2 });
 			//加载采样方式
-			LoadSampleType(new ComboBoxEx[] { cmbSamplingType_BuyFuel, cmbSamplingType_BuyFuel2, cmbSamplingType_SaleFuel, cmbSamplingType_SaleFuel2 });
+			LoadSampleType(new ComboBoxEx[] { cmbSamplingType_BuyFuel, cmbSamplingType_BuyFuel2 });
+			LoadSampleType(new ComboBoxEx[] { cmbSamplingType_SaleFuel, cmbSamplingType_SaleFuel2 });
 			//加载入厂煤类型
 			LoadBuyFuelType(new ComboBoxEx[] { cmbBuyFuelType, cmbBuyFuelType2 });
 			//加载出厂煤类型
@@ -1610,7 +1612,7 @@ namespace CMCS.CarTransport.Queue.Frms
 		}
 
 		/// <summary>
-		/// 加载煤种
+		/// 加载煤种 多个组件一起绑定会有问题
 		/// </summary>
 		void LoadFuelkind(ComboBoxEx[] comboBoxEx)
 		{
@@ -2189,11 +2191,11 @@ namespace CMCS.CarTransport.Queue.Frms
 		/// <returns></returns>
 		bool SaveBuyFuelTransport()
 		{
-			//if (IsUseYB && this.SelectedLMYB_BuyFuel == null)
-			//{
-			//    MessageBoxEx.Show("请选择预报信息", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			//    return false;
-			//}
+			if (IsUseYB && this.SelectedLMYB_BuyFuel == null)
+			{
+				MessageBoxEx.Show("请选择预报信息", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
 
 			if (this.CurrentAutotruck == null)
 			{
@@ -2252,7 +2254,7 @@ namespace CMCS.CarTransport.Queue.Frms
 					LoadTodayFinishBuyFuelTransport();
 
 					LetPass();
-					//ResetBuyFuel();
+					ResetBuyFuel();
 					return true;
 				}
 			}
@@ -2328,7 +2330,7 @@ namespace CMCS.CarTransport.Queue.Frms
 					LoadTodayFinishBuyFuelTransport();
 
 					LetPass();
-					//ResetBuyFuel();
+					ResetBuyFuel();
 					return true;
 				}
 			}
@@ -2366,7 +2368,9 @@ namespace CMCS.CarTransport.Queue.Frms
 				this.CurrentFlowFlag = eFlowFlag.等待车辆;
 
 				this.CurrentAutotruck = null;
-				this.SelectedLMYB_BuyFuel = null;
+
+				if (!this.IsUseYB)
+					this.SelectedLMYB_BuyFuel = null;
 				//this.SelectedMine_BuyFuel = null;
 				//this.SelectedSupplier_BuyFuel = null;
 				//this.SelectedTransportCompany_BuyFuel = null;
@@ -2385,7 +2389,8 @@ namespace CMCS.CarTransport.Queue.Frms
 				this.CurrentFlowFlag2 = eFlowFlag.等待车辆;
 
 				this.CurrentAutotruck2 = null;
-				this.SelectedLMYB_BuyFuel2 = null;
+				if (!this.IsUseYB)
+					this.SelectedLMYB_BuyFuel2 = null;
 				//this.SelectedMine_BuyFuel2 = null;
 				//this.SelectedSupplier_BuyFuel2 = null;
 				//this.SelectedTransportCompany_BuyFuel2 = null;
@@ -2595,21 +2600,29 @@ namespace CMCS.CarTransport.Queue.Frms
 			{
 				if (this.CurrentWay == ePassWay.Way1)
 				{
-					this.SelectedFuelKind_BuyFuel = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId);
-					this.SelectedMine_BuyFuel = commonDAO.SelfDber.Get<CmcsMine>(entity.MineId);
-					this.SelectedSupplier_BuyFuel = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
-					this.SelectedTransportCompany_BuyFuel = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
 					this.SelectedLMYB_BuyFuel = commonDAO.SelfDber.Entity<CmcsLMYB>("where YbNum=:YbNum order by Createdate desc", new { YbNum = entity.YbNum });
-					cmbSamplingType_BuyFuel.Text = entity.SamplingType;
+					if (this.SelectedLMYB_BuyFuel == null)
+					{
+						this.SelectedFuelKind_BuyFuel = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId);
+						this.SelectedMine_BuyFuel = commonDAO.SelfDber.Get<CmcsMine>(entity.MineId);
+						this.SelectedSupplier_BuyFuel = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
+						this.SelectedTransportCompany_BuyFuel = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
+
+						cmbSamplingType_BuyFuel.Text = entity.SamplingType;
+					}
 				}
 				else if (this.CurrentWay == ePassWay.Way2)
 				{
-					this.SelectedFuelKind_BuyFuel2 = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId);
-					this.SelectedMine_BuyFuel2 = commonDAO.SelfDber.Get<CmcsMine>(entity.MineId);
-					this.SelectedSupplier_BuyFuel2 = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
-					this.SelectedTransportCompany_BuyFuel2 = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
 					this.SelectedLMYB_BuyFuel2 = commonDAO.SelfDber.Entity<CmcsLMYB>("where YbNum=:YbNum order by Createdate desc", new { YbNum = entity.YbNum });
-					cmbSamplingType_BuyFuel2.Text = entity.SamplingType;
+					if (this.SelectedLMYB_BuyFuel2 == null)
+					{
+						this.SelectedFuelKind_BuyFuel2 = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId);
+						this.SelectedMine_BuyFuel2 = commonDAO.SelfDber.Get<CmcsMine>(entity.MineId);
+						this.SelectedSupplier_BuyFuel2 = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
+						this.SelectedTransportCompany_BuyFuel2 = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
+
+						cmbSamplingType_BuyFuel2.Text = entity.SamplingType;
+					}
 				}
 			}
 		}
@@ -2723,7 +2736,7 @@ namespace CMCS.CarTransport.Queue.Frms
 				{
 					this.txt_YBNumber1.ResetText();
 					this.txt_TransportNo1.ResetText();
-					this.txt_Consignee1.ResetText();
+					//this.txt_Consignee1.ResetText();
 				}
 			}
 		}
@@ -2829,7 +2842,7 @@ namespace CMCS.CarTransport.Queue.Frms
 				{
 					this.txt_YBNumber2.ResetText();
 					this.txt_TransportNo2.ResetText();
-					this.txt_Consignee2.ResetText();
+					//this.txt_Consignee2.ResetText();
 					//this.SelectedTransportCompany_SaleFuel2 = null;
 				}
 			}
@@ -3081,6 +3094,11 @@ namespace CMCS.CarTransport.Queue.Frms
 		/// <returns></returns>
 		bool SaveSaleFuelTransport()
 		{
+			if (this.IsUseYB && this.SelectedCmcsTransportSales == null)
+			{
+				MessageBoxEx.Show("请选择销售煤订单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
 			if (this.CurrentAutotruck == null)
 			{
 				MessageBoxEx.Show("请选择车辆", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -3106,11 +3124,7 @@ namespace CMCS.CarTransport.Queue.Frms
 				MessageBoxEx.Show("请选择煤种", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return false;
 			}
-			//if (this.SelectedCmcsTransportSales == null)
-			//{
-			//    MessageBoxEx.Show("请选择销售煤订单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			//    return false;
-			//}
+
 			//if (string.IsNullOrEmpty(cmbCPC.Text))
 			//{
 			//    MessageBoxEx.Show("请选择对应成品仓", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -3168,6 +3182,11 @@ namespace CMCS.CarTransport.Queue.Frms
 		/// <returns></returns>
 		bool SaveSaleFuelTransport2()
 		{
+			if (this.IsUseYB && this.SelectedCmcsTransportSales2 == null)
+			{
+				MessageBoxEx.Show("请选择销售煤订单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
 			if (this.CurrentAutotruck2 == null)
 			{
 				MessageBoxEx.Show("请选择车辆", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -3193,11 +3212,7 @@ namespace CMCS.CarTransport.Queue.Frms
 				MessageBoxEx.Show("请选择煤种", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return false;
 			}
-			//if (this.SelectedCmcsTransportSales2 == null)
-			//{
-			//    MessageBoxEx.Show("请选择销售煤订单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-			//    return false;
-			//}
+
 			//if (!cbCoalProduct4.Checked && !cbCoalProduct5.Checked && !cbCoalProduct6.Checked)
 			//{
 			//    MessageBoxEx.Show("请选择对应成品仓", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -3386,7 +3401,8 @@ namespace CMCS.CarTransport.Queue.Frms
 
 			this.CurrentAutotruck = null;
 
-			//this.SelectedCmcsTransportSales = null;
+			if (!this.IsUseYB)
+				this.SelectedCmcsTransportSales = null;
 
 			txtRemark_BuyFuel.ResetText();
 
@@ -3414,7 +3430,8 @@ namespace CMCS.CarTransport.Queue.Frms
 
 			this.CurrentAutotruck2 = null;
 
-			//this.SelectedCmcsTransportSales2 = null;
+			if (!this.IsUseYB)
+				this.SelectedCmcsTransportSales2 = null;
 
 			txt_ReMark2.ResetText();
 			btnSaveTransport_SaleFuel2.Enabled = true;
@@ -3447,21 +3464,27 @@ namespace CMCS.CarTransport.Queue.Frms
 			{
 				if (this.CurrentWay == ePassWay.Way1)
 				{
-					this.cmbFuelName_SaleFuel.Text = entity.FuelKindName;
-					this.SelectedReceive_SaleFuel = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
-					this.SelectedTransportCompany_SaleFuel = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
-					this.cmbSalesType.Text = entity.OutFactoryType;
-					this.cmbFuelName_SaleFuel.Text = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId).FuelName;
 					this.SelectedCmcsTransportSales = commonDAO.SelfDber.Entity<CmcsLMYB>("where YbNum=:YbNum order by CreateDate desc", new { YbNum = entity.TransportSalesNum });
+					if (this.SelectedCmcsTransportSales == null)
+					{
+						this.cmbFuelName_SaleFuel.Text = entity.FuelKindName;
+						this.SelectedReceive_SaleFuel = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
+						this.SelectedTransportCompany_SaleFuel = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
+						this.cmbSalesType.Text = entity.OutFactoryType;
+						this.cmbFuelName_SaleFuel.Text = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId).FuelName;
+					}
 				}
 				else if (this.CurrentWay == ePassWay.Way2)
 				{
-					this.cmbFuelName_SaleFuel2.SelectedItem = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId);
-					this.SelectedReceive_SaleFuel2 = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
-					this.SelectedTransportCompany_SaleFuel2 = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
-					this.cmbSalesType2.Text = entity.OutFactoryType;
-					this.cmbFuelName_SaleFuel2.Text = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId).FuelName;
 					this.SelectedCmcsTransportSales2 = commonDAO.SelfDber.Entity<CmcsLMYB>("where YbNum=:YbNum order by CreateDate desc", new { YbNum = entity.TransportSalesNum });
+					if (this.SelectedCmcsTransportSales2 == null)
+					{
+						this.cmbFuelName_SaleFuel2.SelectedItem = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId);
+						this.SelectedReceive_SaleFuel2 = commonDAO.SelfDber.Get<CmcsSupplier>(entity.SupplierId);
+						this.SelectedTransportCompany_SaleFuel2 = commonDAO.SelfDber.Get<CmcsTransportCompany>(entity.TransportCompanyId);
+						this.cmbSalesType2.Text = entity.OutFactoryType;
+						this.cmbFuelName_SaleFuel2.Text = commonDAO.SelfDber.Get<CmcsFuelKind>(entity.FuelKindId).FuelName;
+					}
 				}
 			}
 		}
