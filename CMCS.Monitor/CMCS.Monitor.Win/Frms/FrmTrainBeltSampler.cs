@@ -120,7 +120,7 @@ namespace CMCS.Monitor.Win.Frms
             #region 皮带采样机 #1
 
             datas.Clear();
-            machineCode = GlobalVars.MachineCode_PDCYJ_1;
+            machineCode = GlobalVars.MachineCode_InPDCYJ_1;
 
             datas.Add(new HtmlDataItem("皮带采样机1_采样编码", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("皮带采样机1_矿发量", commonDAO.GetSignalDataValue(machineCode, "矿发量"), eHtmlDataItemType.svg_text));
@@ -186,7 +186,7 @@ namespace CMCS.Monitor.Win.Frms
             #region 皮带采样机 #2
 
             datas.Clear();
-            machineCode = GlobalVars.MachineCode_PDCYJ_2;
+            machineCode = GlobalVars.MachineCode_InPDCYJ_2;
 
             datas.Add(new HtmlDataItem("皮带采样机2_采样编码", commonDAO.GetSignalDataValue(machineCode, "采样编码"), eHtmlDataItemType.svg_text));
             datas.Add(new HtmlDataItem("皮带采样机2_矿发量", commonDAO.GetSignalDataValue(machineCode, "矿发量"), eHtmlDataItemType.svg_text));

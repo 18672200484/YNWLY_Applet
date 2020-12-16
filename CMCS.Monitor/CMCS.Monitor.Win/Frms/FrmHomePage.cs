@@ -107,8 +107,8 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("#1翻车机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#2翻车机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_PDCYJ_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_PDCYJ_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_InPDCYJ_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_InPDCYJ_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
 
             datas.Add(new HtmlDataItem("#1重车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#2重车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));

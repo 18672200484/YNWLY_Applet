@@ -177,18 +177,6 @@
     <Compile Include="Frms\FrmIO12DI8.Designer.cs">
       <DependentUpon>FrmIO12DI8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frms\FrmPLCTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frms\FrmPLCTest.Designer.cs">
-      <DependentUpon>FrmPLCTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frms\FrmModBusTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frms\FrmModBusTest.Designer.cs">
-      <DependentUpon>FrmModBusTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frms\FrmSartoriusBalance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,12 +266,6 @@
     <EmbeddedResource Include="Frms\FrmIO12DI8.resx">
       <DependentUpon>FrmIO12DI8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frms\FrmPLCTest.resx">
-      <DependentUpon>FrmPLCTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frms\FrmModBusTest.resx">
-      <DependentUpon>FrmModBusTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmSartoriusBalance.resx">
       <DependentUpon>FrmSartoriusBalance.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,7 +314,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
       <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
-      <Name>CMCS.Common %28CMCS.Common\CMCS.Common%29</Name>
+      <Name>CMCS.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.DapperDber\CMCS.DapperDber.csproj">
       <Project>{6384F3D5-7CB5-4D1F-8A1F-3FA9B0A78F05}</Project>
@@ -344,7 +326,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\CMCS.DumblyConcealer\CMCS.DumblyConcealer\CMCS.DumblyConcealer.csproj">
       <Project>{71E5FAE9-7CB4-4FA6-8847-D076F1CBCC5A}</Project>
-      <Name>CMCS.DumblyConcealer %28CMCS.DumblyConcealer\CMCS.DumblyConcealer%29</Name>
+      <Name>CMCS.DumblyConcealer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Hardware\ModBus.Tcp\ModBus.Tcp.csproj">
       <Project>{6E26D9A6-9C30-4D86-AD6A-28508A3011D4}</Project>

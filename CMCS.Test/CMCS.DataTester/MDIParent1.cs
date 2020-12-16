@@ -244,18 +244,18 @@ namespace CMCS.DataTester
 
         private void pLC测试ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmPLCTest
-            {
-                MdiParent = this
-            }.Show();
+            //new FrmPLCTest
+            //{
+            //    MdiParent = this
+            //}.Show();
         }
 
         private void modBus测试ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FrmModBusTest
-            {
-                MdiParent = this
-            }.Show();
+            //new FrmModBusTest
+            //{
+            //    MdiParent = this
+            //}.Show();
         }
 
         private void 赛多利斯电子天平模拟工具ToolStripMenuItem_Click(object sender, EventArgs e)

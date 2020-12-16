@@ -44,9 +44,9 @@ namespace CMCS.Monitor.Win.CefGlue
                     //异常信息
                     string machineCode = string.Empty;
                     if (paramSampler1 == "#1")
-                        machineCode = GlobalVars.MachineCode_PDCYJ_1;
+                        machineCode = GlobalVars.MachineCode_InPDCYJ_1;
                     else if (paramSampler1 == "#2")
-                        machineCode = GlobalVars.MachineCode_PDCYJ_2;
+                        machineCode = GlobalVars.MachineCode_InPDCYJ_2;
                     equInfHitchs = CommonDAO.GetInstance().GetEquInfHitchsByTime(machineCode, DateTime.Now);
                     returnValue = CefV8Value.CreateString(Newtonsoft.Json.JsonConvert.SerializeObject(equInfHitchs.Select(a => new { MachineCode = a.MachineCode, HitchTime = a.HitchTime.ToString("yyyy-MM-dd HH:mm"), HitchDescribe = a.HitchDescribe })));
                     break;

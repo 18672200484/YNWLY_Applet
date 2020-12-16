@@ -26,7 +26,7 @@ namespace CMCS.Common.Enums
         #region 皮带秤
 
         速度,
-        累计量,
+        累计流量,
         瞬时流量,
 
         #endregion

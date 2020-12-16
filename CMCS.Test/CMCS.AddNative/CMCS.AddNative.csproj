@@ -111,7 +111,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.Common\CMCS.Common.csproj">
       <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
-      <Name>CMCS.Common %28CMCS.Common\CMCS.Common%29</Name>
+      <Name>CMCS.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

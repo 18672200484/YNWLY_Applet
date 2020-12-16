@@ -502,7 +502,9 @@
 			// 
 			// rTxTMessageInfo
 			// 
+			this.rTxTMessageInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
 			this.rTxTMessageInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.rTxTMessageInfo.ForeColor = System.Drawing.Color.White;
 			this.rTxTMessageInfo.Location = new System.Drawing.Point(3, 478);
 			this.rTxTMessageInfo.Name = "rTxTMessageInfo";
 			this.rTxTMessageInfo.Size = new System.Drawing.Size(1094, 94);
@@ -521,6 +523,7 @@
 			this.Controls.Add(this.pnlExMain);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
