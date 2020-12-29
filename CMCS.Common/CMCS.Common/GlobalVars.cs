@@ -89,7 +89,7 @@ namespace CMCS.Common
         /// </summary>
         public static string MachineCode_QZDZYJ_2 = "#2全自动制样机";
         /// <summary>
-        /// 设备编码 - 全自动制样机 #2
+        /// 设备编码 - 全自动制样机 #3
         /// </summary>
         public static string MachineCode_QZDZYJ_3 = "#3全自动制样机";
 

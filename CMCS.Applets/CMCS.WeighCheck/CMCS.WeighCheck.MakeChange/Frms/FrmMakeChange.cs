@@ -1149,7 +1149,17 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 					CmcsInFactoryBatch batch = commonDAO.SelfDber.Get<CmcsInFactoryBatch>(assay.InFactoryBatchId);
 					makeDetail.AssayId = assay.Id;
 					if (!string.IsNullOrEmpty(assay.AssayPoint)) makeDetail.AssayPoint = assay.AssayPoint;
-					makeDetail.BackBatchDate = batch != null ? batch.BACKBATCHDATE.ToString("yyyy-MM-dd") : rCMakeDetail.Where(a => a.MakeId == item.MakeId).FirstOrDefault().TheRCMake.UseTime.ToString("yyyy-MM-dd");
+					if (batch != null)
+						makeDetail.BackBatchDate = batch.BACKBATCHDATE.ToString("yyyy-MM-dd");
+					else
+					{
+						CmcsRCMakeDetail entity = rCMakeDetail.Where(a => a.MakeId == item.MakeId).FirstOrDefault();
+						if (entity != null && entity.TheRCMake.TheRcAssay.AssayType == "外样化验")
+							makeDetail.BackBatchDate = entity.TheRCMake.GetDate.ToString("yyyy-MM-dd");
+						else
+							makeDetail.BackBatchDate = entity.TheRCMake.UseTime.ToString("yyyy-MM-dd");
+					}
+
 					makeDetail.AssayCode = assay.AssayCode;
 					makeDetail.MakeCode_2mm = makeDetail_2mm != null ? makeDetail_2mm.BarrelCode : "";
 					makeDetail.CheckWeight_2mm = makeDetail_2mm != null ? makeDetail_2mm.CheckWeight.ToString() : "";
