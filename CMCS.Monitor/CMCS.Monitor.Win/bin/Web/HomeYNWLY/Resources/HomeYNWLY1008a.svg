@@ -30,15 +30,15 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1600"
-   inkscape:window-height="837"
+   inkscape:window-width="1920"
+   inkscape:window-height="1018"
    id="namedview2050"
    showgrid="false"
    inkscape:zoom="0.86888891"
    inkscape:cx="828.55835"
-   inkscape:cy="293.46037"
-   inkscape:window-x="-4"
-   inkscape:window-y="-4"
+   inkscape:cy="569.6752"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="svg2" />
  <defs
@@ -1100,8 +1100,6 @@
 
 
 
-
-
 <rect
    style="fill:#3f3f3f"
    id="rect10"
@@ -1109,8 +1107,7 @@
    width="1955.9744"
    y="11.565898"
    x="-65.998596"
-   class="fil0"
-   inkscape:label="翻车机待翻数" /><path
+   class="fil0" /><path
    style="fill:#191919;fill-rule:evenodd"
    inkscape:connector-curvature="0"
    id="path81-8"
@@ -1542,7 +1539,7 @@
    id="path109"
    d="m 507.3718,799.13176 49.66793,0 0,31.30278 -49.66793,0 0,-31.30278 z m 24.83403,4.52545 c 6.44724,0 11.67665,5.22945 11.67665,11.67799 0,0.23583 -0.009,0.47167 -0.0211,0.70516 l -3.31104,0 c 0.0187,-0.23349 0.0305,-0.46815 0.0305,-0.70516 0,-4.62519 -3.75103,-8.3751 -8.37499,-8.3751 -4.62513,0 -8.37498,3.74991 -8.37498,8.3751 0,2.90277 1.47835,5.4606 3.72286,6.96361 l 0,-11.37175 11.70241,0 0,11.64513 2.77132,0 0,3.68069 -20.60308,0 0,-3.68069 1.61798,0 c -1.5734,-1.98993 -2.51321,-4.50434 -2.51321,-7.23698 0,-6.44852 5.22822,-11.67798 11.67666,-11.67798 z m -22.66107,-2.35249 45.32201,0 0,26.95565 -45.32201,0 0,-26.95565 z"
    class="fil3"
-   inkscape:label="#2翻车机" /><path
+   inkscape:label="#1翻车机" /><path
    style="fill:#00c000;fill-opacity:1"
    inkscape:connector-curvature="0"
    id="path111"
@@ -1553,7 +1550,7 @@
    id="path113"
    d="m 507.3718,865.26229 49.6691,0 0,31.30161 -49.6691,0 0,-31.30161 z m 24.83519,4.52546 c 6.44725,0 11.67666,5.22945 11.67666,11.67682 0,0.237 -0.009,0.47283 -0.0222,0.70515 l -3.30988,0 c 0.0187,-0.23232 0.0294,-0.46697 0.0294,-0.70515 0,-4.62402 -3.74986,-8.37393 -8.37381,-8.37393 -4.62513,0 -8.37616,3.74991 -8.37616,8.37393 0,2.90394 1.47835,5.46176 3.72286,6.96361 l 0,-11.37059 11.70368,0 0,11.64514 2.77015,0 0,3.6795 -20.60307,0 0,-3.6795 1.61915,0 c -1.57456,-1.98994 -2.51438,-4.50435 -2.51438,-7.23816 0,-6.44735 5.22938,-11.67682 11.67782,-11.67682 z m -22.66223,-2.3525 45.32329,0 0,26.95565 -45.32329,0 0,-26.95565 z"
    class="fil3"
-   inkscape:label="#1翻车机" /><path
+   inkscape:label="#2翻车机" /><path
    style="fill:#00c000;fill-opacity:1"
    inkscape:connector-curvature="0"
    id="path115"
@@ -5355,8 +5352,6 @@
 
 
 
-
-
 <rect
    style="fill:#008080;fill-opacity:1;fill-rule:evenodd"
    y="-741.23315"
@@ -5377,8 +5372,6 @@
      x="57.576229"
      y="743.84839"
      style="font-size:12.9140749px;fill:#ffffff">皮带运行-反</tspan></text>
-
-
 
 
 
@@ -5451,8 +5444,6 @@
 
 
 
-
-
 <rect
    style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
    y="-774.28094"
@@ -5499,8 +5490,6 @@
 
 
 
-
-
 <rect
    style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd"
    y="-791.09265"
@@ -5521,8 +5510,6 @@
      x="57.576229"
      y="793.75195"
      style="font-size:12.9140749px;fill:#ffffff">气动传输管道</tspan></text>
-
-
 
 
 
@@ -5908,8 +5895,6 @@
 
 
 
-
-
 <rect
    style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd"
    y="-848.09296"
@@ -5930,8 +5915,6 @@
      x="57.475338"
      y="850.79016"
      style="font-size:12.9140749px;fill:#ffffff">设备运行状态</tspan></text>
-
-
 
 
 
@@ -5998,8 +5981,6 @@
 
 
 
-
-
 <text
    inkscape:label="#1磅_车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -6007,8 +5988,6 @@
    class="fil8 fnt10"
    y="764.10602"
    x="1402.6288">#1磅过磅车号：</text>
-
-
 
 
 
@@ -6062,8 +6041,6 @@
 
 
 
-
-
 <text
    x="1402.6288"
    y="622.86243"
@@ -6071,8 +6048,6 @@
    id="text7503-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
    inkscape:label="#2磅_车号">#2磅过磅车号：</text>
-
-
 
 
 
@@ -6126,8 +6101,6 @@
 
 
 
-
-
 <text
    x="1146.2021"
    y="617.61176"
@@ -6135,8 +6108,6 @@
    id="text7503-4-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="#2汽车机械采样机车号">采样车号：</text>
-
-
 
 
 
@@ -6188,8 +6159,6 @@
 
 
 
-
-
 <text
    x="1139.5697"
    y="774.33417"
@@ -6219,8 +6188,6 @@
 
 
 
-
-
 <text
    x="1139.4213"
    y="795.06055"
@@ -6228,8 +6195,6 @@
    id="text7521-8-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="#1汽车机械采样机已采车数">已采车数：</text>
-
-
 
 
 
@@ -6294,8 +6259,6 @@
 
 
 
-
-
 <text
    x="847.90045"
    y="703.5993"
@@ -6303,8 +6266,6 @@
    id="text7521-8-4-7"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
    inkscape:label="#1全自动制样机制样码">制样码：</text>
-
-
 
 
 
@@ -6356,8 +6317,6 @@
 
 
 
-
-
 <text
    x="849.17548"
    y="684.08521"
@@ -6365,8 +6324,6 @@
    id="text7503-4-4-1"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1">#1全自动制样机</text>
-
-
 
 
 
@@ -6416,8 +6373,6 @@
 
 
 
-
-
 <text
    x="1052.7362"
    y="782.07562"
@@ -6425,8 +6380,6 @@
    id="text7503-4-4-1-7-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1-7-4">#1采样机</text>
-
-
 
 
 
@@ -6476,8 +6429,6 @@
 
 
 
-
-
 <text
    x="1282.1014"
    y="692.30933"
@@ -6485,8 +6436,6 @@
    id="text7503-4-4-1-7-4-0-9"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1-7-4-0-9">#2磅</text>
-
-
 
 
 
@@ -6536,8 +6485,6 @@
 
 
 
-
-
 <text
    x="1346.8644"
    y="840.35236"
@@ -6545,8 +6492,6 @@
    id="text7521-8-8"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
    inkscape:label="text7521-8-8">出场节数：50</text>
-
-
 
 
 
@@ -6596,8 +6541,6 @@
 
 
 
-
-
 <text
    x="562.82483"
    y="684.5105"
@@ -6605,8 +6548,6 @@
    id="text7503-4-4-1-2-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1-2">#7磅</text>
-
-
 
 
 
@@ -6656,8 +6597,6 @@
 
 
 
-
-
 <text
    x="562.82483"
    y="613.57672"
@@ -6665,8 +6604,6 @@
    id="text7503-4-4-1-2-4-51"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1-2">#6磅</text>
-
-
 
 
 
@@ -6716,8 +6653,6 @@
 
 
 
-
-
 <text
    inkscape:label="#6磅_重量"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -6725,8 +6660,6 @@
    class="fil8 fnt10"
    y="581.42407"
    x="354.7424">过磅重量：</text>
-
-
 
 
 
@@ -6776,8 +6709,6 @@
 
 
 
-
-
 <text
    inkscape:label="#7磅_重量"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -6785,8 +6716,6 @@
    class="fil8 fnt10"
    y="643.4303"
    x="354.7424">过磅重量：</text>
-
-
 
 
 
@@ -6836,8 +6765,6 @@
 
 
 
-
-
 <text
    inkscape:label="#8磅_重量"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -6845,8 +6772,6 @@
    class="fil8 fnt10"
    y="783.19086"
    x="460.23083">过磅重量：</text>
-
-
 
 
 
@@ -6896,8 +6821,6 @@
 
 
 
-
-
 <text
    x="357.95258"
    y="726.37476"
@@ -6905,8 +6828,6 @@
    id="text7503-4-4-1-2-4-51-6-1"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1-2">#2-甲（1.4m）</text>
-
-
 
 
 
@@ -6956,8 +6877,6 @@
 
 
 
-
-
 <text
    inkscape:label="#2翻车机已翻数"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -6965,8 +6884,6 @@
    class="fil8 fnt10"
    y="811.77698"
    x="691.97266">已翻数：</text>
-
-
 
 
 
@@ -7016,8 +6933,6 @@
 
 
 
-
-
 <text
    inkscape:label="text7521-1-5-7-4-22"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -7025,8 +6940,6 @@
    class="fil8 fnt10"
    y="877.45032"
    x="616.37231">#1翻车机</text>
-
-
 
 
 
@@ -7076,8 +6989,6 @@
 
 
 
-
-
 <text
    inkscape:label="#1翻车机当前车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -7085,8 +6996,6 @@
    class="fil8 fnt10"
    y="877.41125"
    x="784.95502">翻车车号：</text>
-
-
 
 
 
@@ -7136,8 +7045,6 @@
 
 
 
-
-
 <text
    x="362.84247"
    y="876.43341"
@@ -7145,8 +7052,6 @@
    id="text7503-4-4-1-2-4-51-6-1-8-5"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="text7503-4-4-1-2">#1-甲（1.8m）</text>
-
-
 
 
 
@@ -7196,8 +7101,6 @@
 
 
 
-
-
 <text
    inkscape:label="#3磅_车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -7205,8 +7108,6 @@
    class="fil8 fnt10"
    y="204.12781"
    x="1689.005">#3过磅车号：</text>
-
-
 
 
 
@@ -7256,8 +7157,6 @@
 
 
 
-
-
 <text
    inkscape:label="#4磅_车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -7265,8 +7164,6 @@
    class="fil8 fnt10"
    y="251.38387"
    x="1689.005">#4过磅车号：</text>
-
-
 
 
 
@@ -7316,8 +7213,6 @@
 
 
 
-
-
 <text
    inkscape:label="#5磅_车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -7346,8 +7241,6 @@
 
 
 
-
-
 <text
    inkscape:label="#5磅_重量"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -7355,8 +7248,6 @@
    class="fil8 fnt10"
    y="318.34534"
    x="1689.005">#5过磅重量：</text>
-
-
 
 
 
@@ -7456,8 +7347,6 @@
 
 
 
-
-
 <text
    x="57.302956"
    y="356.80356"
@@ -7465,8 +7354,6 @@
    id="text7503-4-4-17"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="#1皮带采样机车号">#1采样车号：</text>
-
-
 
 
 
@@ -7510,8 +7397,6 @@
 
 
 
-
-
 <text
    x="56.842018"
    y="422.23447"
@@ -7537,8 +7422,6 @@
 
 
 
-
-
 <text
    x="56.607643"
    y="441.71719"
@@ -7546,8 +7429,6 @@
    id="text7521-8-4-1-9"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
    inkscape:label="#2全自动制样机已制样数">已制样数：</text>
-
-
 
 
 
@@ -7879,8 +7760,6 @@
 
 
 
-
-
 </g>
 <path
    style="opacity:0.02293576;fill:#ff0000;fill-opacity:1;stroke:none"
@@ -7952,8 +7831,6 @@
 
 
 
-
-
 <text
    x="1699.1842"
    y="36.326302"
@@ -7961,8 +7838,6 @@
    id="text7503-4-8-8"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;font-family:'微软雅黑'"
    inkscape:label="#销售煤入厂端_车号">入场车号：</text>
-
-
 
 
 
@@ -7994,8 +7869,6 @@
 
 
 
-
-
 <text
    x="1724.5138"
    y="783.56384"
@@ -8003,8 +7876,6 @@
    id="text7503-4-8-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;font-family:'微软雅黑'"
    inkscape:label="#入厂端_车号2">入场车号：</text>
-
-
 
 
 
@@ -8035,8 +7906,6 @@
 
 
 
-
-
 <text
    inkscape:label="#3成品仓料位"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8044,8 +7913,6 @@
    class="fil8 fnt10"
    y="469.85684"
    x="1690.5059">#3成品仓料位：</text>
-
-
 
 
 
@@ -8210,6 +8077,22 @@
    x="142.78583"
    class="fil7"
    inkscape:label="#化验室设备" /><rect
+   style="opacity:0.1;fill:#4d3f3f;fill-opacity:1;fill-rule:evenodd"
+   id="path131001-0-9-8"
+   height="30.965612"
+   width="49.455475"
+   y="799.34924"
+   x="507.36221"
+   class="fil7"
+   inkscape:label="#2翻车机" /><rect
+   style="opacity:0.1;fill:#4d3f3f;fill-opacity:1;fill-rule:evenodd"
+   id="path131001-0-9-8-2"
+   height="30.965612"
+   width="49.455475"
+   y="865.28412"
+   x="507.46146"
+   class="fil7"
+   inkscape:label="#1翻车机" /><rect
    style="fill:#4d3f3f;fill-opacity:0.00392157;fill-rule:evenodd"
    id="zhiyangji-1-4"
    height="30.903864"
@@ -8326,8 +8209,6 @@
 
 
 
-
-
 <text
    inkscape:label="#1B成品仓车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8335,8 +8216,6 @@
    class="fil8 fnt10"
    y="515.93512"
    x="1690.5059">#1B成品仓车号：</text>
-
-
 
 
 
@@ -8356,8 +8235,6 @@
 
 
 
-
-
 <text
    inkscape:label="#2B成品仓车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8365,8 +8242,6 @@
    class="fil8 fnt10"
    y="555.76501"
    x="1690.5059">#2B成品仓车号：</text>
-
-
 
 
 
@@ -8386,8 +8261,6 @@
 
 
 
-
-
 <text
    inkscape:label="#3B成品仓车号"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8395,8 +8268,6 @@
    class="fil8 fnt10"
    y="596.80121"
    x="1690.5059">#3B成品仓车号：</text>
-
-
 
 
 
@@ -8416,8 +8287,6 @@
 
 
 
-
-
 <text
    inkscape:label="#6a高精度皮带秤"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8431,8 +8300,6 @@
 
 
 
-
-
 <text
    inkscape:label="#6b高精度皮带秤"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8440,8 +8307,6 @@
    class="fil8 fnt10"
    y="186.4612"
    x="1086.4102">0t</text>
-
-
 
 
 
@@ -8505,8 +8370,6 @@
 
 
 
-
-
 <text
    inkscape:label="#2皮带秤值"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8514,8 +8377,6 @@
    class="fil8 fnt10"
    y="116.08588"
    x="795.56366">0t</text>
-
-
 
 
 
@@ -8535,8 +8396,6 @@
 
 
 
-
-
 <text
    inkscape:label="#4皮带秤值"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8550,8 +8409,6 @@
 
 
 
-
-
 <text
    inkscape:label="#5皮带秤值"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8559,8 +8416,6 @@
    class="fil8 fnt10"
    y="182.02193"
    x="709.44525">0t</text>
-
-
 
 
 
@@ -8586,8 +8441,6 @@
 
 
 
-
-
 <text
    inkscape:label="#8皮带秤值"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8595,8 +8448,6 @@
    class="fil8 fnt10"
    y="182.02193"
    x="965.57001">0t</text>
-
-
 
 
 
@@ -8616,8 +8467,6 @@
 
 
 
-
-
 <text
    inkscape:label="#7b高精度皮带秤"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8625,8 +8474,6 @@
    class="fil8 fnt10"
    y="380.50314"
    x="965.72388">0t</text>
-
-
 
 
 
@@ -8685,8 +8532,6 @@
 
 
 
-
-
 <rect
    style="fill:#7f7f7f;fill-opacity:1;fill-rule:evenodd"
    id="rect584-1"
@@ -8711,8 +8556,6 @@
 
 
 
-
-
 <text
    x="465.87598"
    y="355.4422"
@@ -8720,8 +8563,6 @@
    id="text7503-4-4-17-17-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">50</text>
-
-
 
 
 
@@ -8735,8 +8576,6 @@
 
 
 
-
-
 <text
    x="618.94299"
    y="355.4422"
@@ -8744,8 +8583,6 @@
    id="text7503-4-4-17-17-4-0-9"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">150</text>
-
-
 
 
 
@@ -8759,8 +8596,6 @@
 
 
 
-
-
 <text
    x="774.69635"
    y="355.4422"
@@ -8768,8 +8603,6 @@
    id="text7503-4-4-17-17-4-0-4-8"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">250</text>
-
-
 
 
 
@@ -8783,8 +8616,6 @@
 
 
 
-
-
 <text
    x="931.87933"
    y="355.43829"
@@ -8792,8 +8623,6 @@
    id="text7503-4-4-17-17-4-0-4-8-8-2"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">350</text>
-
-
 
 
 
@@ -8807,8 +8636,6 @@
 
 
 
-
-
 <text
    x="1088.3439"
    y="355.4422"
@@ -8816,8 +8643,6 @@
    id="text7503-4-4-17-17-4-0-4-8-8-4-5"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">450</text>
-
-
 
 
 
@@ -8831,8 +8656,6 @@
 
 
 
-
-
 <text
    x="1167.4849"
    y="355.4422"
@@ -8840,8 +8663,6 @@
    id="text7503-4-4-17-17-4-0-4-8-8-4-5-7"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">500</text>
-
-
 
 
 
@@ -8855,8 +8676,6 @@
 
 
 
-
-
 <text
    x="464.65738"
    y="543.13159"
@@ -8864,8 +8683,6 @@
    id="text7503-4-4-17-17-4-1"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">50</text>
-
-
 
 
 
@@ -8879,8 +8696,6 @@
 
 
 
-
-
 <text
    x="617.72437"
    y="543.13159"
@@ -8888,8 +8703,6 @@
    id="text7503-4-4-17-17-4-0-9-2"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">150</text>
-
-
 
 
 
@@ -8903,8 +8716,6 @@
 
 
 
-
-
 <text
    x="773.47772"
    y="543.13159"
@@ -8912,8 +8723,6 @@
    id="text7503-4-4-17-17-4-0-4-8-6"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">250</text>
-
-
 
 
 
@@ -8927,8 +8736,6 @@
 
 
 
-
-
 <text
    x="930.66071"
    y="543.12769"
@@ -8936,8 +8743,6 @@
    id="text7503-4-4-17-17-4-0-4-8-8-2-4"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">350</text>
-
-
 
 
 
@@ -8951,8 +8756,6 @@
 
 
 
-
-
 <text
    x="1087.1252"
    y="543.13159"
@@ -8960,8 +8763,6 @@
    id="text7503-4-4-17-17-4-0-4-8-8-4-5-3"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑';-inkscape-font-specification:Sans Bold"
    inkscape:label="">450</text>
-
-
 
 
 
@@ -8975,8 +8776,6 @@
 
 
 
-
-
 <text
    x="1166.2662"
    y="543.13159"
@@ -8987,8 +8786,6 @@
 
 
 
-
-
 <text
    inkscape:label="#8高精度皮带秤累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -8996,8 +8793,6 @@
    class="fil8 fnt10"
    y="235.45387"
    x="1351.328">0t</text>
-
-
 <text
    inkscape:label="#6b高精度皮带秤累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9005,8 +8800,6 @@
    class="fil8 fnt10"
    y="199.81839"
    x="1086.4102">0t</text>
-
-
 <text
    inkscape:label="#8皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9014,8 +8807,6 @@
    class="fil8 fnt10"
    y="199.10765"
    x="965.57001">0t</text>
-
-
 <text
    inkscape:label="#7皮带秤值"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9023,8 +8814,6 @@
    class="fil8 fnt10"
    y="182.02193"
    x="880.66705">0t</text>
-
-
 <text
    inkscape:label="#7皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9032,8 +8821,6 @@
    class="fil8 fnt10"
    y="199.10765"
    x="880.66705">0t</text>
-
-
 <text
    inkscape:label="#6皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9041,8 +8828,6 @@
    class="fil8 fnt10"
    y="199.10765"
    x="795.56366">0t</text>
-
-
 <text
    inkscape:label="#5皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9050,8 +8835,6 @@
    class="fil8 fnt10"
    y="199.10765"
    x="709.44525">0t</text>
-
-
 <g
    id="g4937"
    transform="translate(-1.4655738,12.240228)"
@@ -9171,8 +8954,6 @@
    class="fil8 fnt10"
    y="133.1716"
    x="709.44525">0t</text>
-
-
 <text
    inkscape:label="#2皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9180,8 +8961,6 @@
    class="fil8 fnt10"
    y="133.1716"
    x="795.56366">0t</text>
-
-
 <text
    inkscape:label="#3皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9189,8 +8968,6 @@
    class="fil8 fnt10"
    y="133.1716"
    x="880.66705">0t</text>
-
-
 <text
    inkscape:label="#4皮带秤值累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9198,8 +8975,6 @@
    class="fil8 fnt10"
    y="133.1716"
    x="965.57001">0t</text>
-
-
 <text
    inkscape:label="#5高精度皮带秤累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9207,8 +8982,6 @@
    class="fil8 fnt10"
    y="83.034203"
    x="460.68002">0t</text>
-
-
 <text
    inkscape:label="#6a高精度皮带秤累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9216,8 +8989,6 @@
    class="fil8 fnt10"
    y="133.1716"
    x="1086.4102">0t</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9225,8 +8996,6 @@
    class="fil8 fnt10"
    y="115.27728"
    x="631.05444">瞬时流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9234,8 +9003,6 @@
    class="fil8 fnt10"
    y="132.36301"
    x="631.05444">累计流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9243,8 +9010,6 @@
    class="fil8 fnt10"
    y="63.967426"
    x="383.46661">瞬时流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9252,8 +9017,6 @@
    class="fil8 fnt10"
    y="82.225609"
    x="383.46661">累计流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9261,8 +9024,6 @@
    class="fil8 fnt10"
    y="181.21333"
    x="631.05444">瞬时流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9270,8 +9031,6 @@
    class="fil8 fnt10"
    y="198.29906"
    x="631.05444">累计流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9279,8 +9038,6 @@
    class="fil8 fnt10"
    y="212.86972"
    x="1260.4661">瞬时流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9288,8 +9045,6 @@
    class="fil8 fnt10"
    y="234.64528"
    x="1260.4661">累计流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9297,8 +9052,6 @@
    class="fil8 fnt10"
    y="383.79816"
    x="478.12836">瞬时流量：</text>
-
-
 <text
    inkscape:label="#7a高精度皮带秤累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9306,8 +9059,6 @@
    class="fil8 fnt10"
    y="384.60675"
    x="733.5863">0t</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9315,8 +9066,6 @@
    class="fil8 fnt10"
    y="383.79816"
    x="654.89569">累计流量：</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9324,8 +9073,6 @@
    class="fil8 fnt10"
    y="379.69455"
    x="889.10388">瞬时流量：</text>
-
-
 <text
    inkscape:label="#7b高精度皮带秤累计"
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9333,8 +9080,6 @@
    class="fil8 fnt10"
    y="380.50314"
    x="1145.4556">0t</text>
-
-
 <text
    inkscape:label=""
    style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
@@ -9342,14 +9087,4 @@
    class="fil8 fnt10"
    y="379.69455"
    x="1068.8024">累计流量：</text>
-
-
-<text
-   inkscape:label="翻车机总待翻数"
-   style="font-size:16px;font-weight:normal;fill:#ffffff;fill-rule:evenodd;font-family:'微软雅黑'"
-   id="text7521-1-5-7-4-2-17"
-   class="fil8 fnt10"
-   y="858.68054"
-   x="509.35767">总待翻数：</text>
-
 </svg>

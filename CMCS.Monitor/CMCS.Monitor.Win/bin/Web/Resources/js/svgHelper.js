@@ -63,6 +63,26 @@ function changeColor1($elements, color) {
     });
 }
 
+// $elements:SVG.jQuery对象
+// color:颜色
+function svgChangeColor2($elements, color) {
+    if ($elements.children().length == 0) {
+        changeColor2($elements, color);
+    } else {
+        changeColor2($elements.find("*:not(g)"), color);
+    }
+}
+// 改变颜色
+// $element:SVG.jQuery对象
+// color:颜色
+function changeColor2($elements, color) {
+    $elements.each(function () {
+        var $this = $(this);
+        $this.css({ "stroke": color });
+    });
+}
+
+
 function changeScroll($elements, scroll) {
     $elements.each(function () {
         var $this = $(this);

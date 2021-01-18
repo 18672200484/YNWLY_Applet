@@ -41,6 +41,19 @@ namespace CMCS.Monitor.Win.CefGlue
                     equInfHitchs = CommonDAO.GetInstance().GetEquInfHitchsByTime(machineCode, DateTime.Now);
                     returnValue = CefV8Value.CreateString(Newtonsoft.Json.JsonConvert.SerializeObject(equInfHitchs.Select(a => new { MachineCode = a.MachineCode, HitchTime = a.HitchTime.ToString("yyyy-MM-dd HH:mm"), HitchDescribe = a.HitchDescribe })));
                     break;
+                case "OpenAutoMaker":
+                    CefProcessMessage OpenAutoMaker = CefProcessMessage.Create("OpenAutoMaker");
+                    int f = 0;
+                    foreach (CefV8Value item in arguments)
+                    {
+                        CefValue model = CefValue.Create();
+                        model.SetString(item.GetStringValue());
+                        OpenAutoMaker.Arguments.SetValue(f, model);
+                        f++;
+                    }
+
+                    CefV8Context.GetCurrentContext().GetBrowser().SendProcessMessage(CefProcessId.Browser, OpenAutoMaker);
+                    break;
                 default:
                     returnValue = null;
                     break;

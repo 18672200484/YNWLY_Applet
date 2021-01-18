@@ -30,7 +30,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
 {
     public partial class FrmMainFrame : MetroForm
     {
-        CommonDAO commonDAO = CommonDAO.GetInstance();
+         CommonDAO commonDAO = CommonDAO.GetInstance();
 
         public static SuperTabControlManager superTabControlManager;
 
@@ -74,21 +74,13 @@ namespace CMCS.Monitor.Win.Frms.Sys
             }
         }
 
-        /// <summary>
-        /// 退出系统
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //退出系统
         private void btnApplicationExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        /// <summary>
-        /// 显示当前时间
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //显示当前时间
         private void timer_CurrentTime_Tick(object sender, EventArgs e)
         {
             lblCurrentTime.Text = DateTime.Now.ToString("yyyy年MM月dd日 HH:mm:ss");
@@ -103,18 +95,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenHomePage1()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmHomePage.UniqueKey;
-
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmHomePage Frm = new FrmHomePage();
-                FrmMainFrame.superTabControlManager.CreateTab(Frm.Text, uniqueKey, Frm, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmHomePage.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmHomePage Frm = new FrmHomePage();
+                    FrmMainFrame.superTabControlManager.CreateTab(Frm.Text, uniqueKey, Frm, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
@@ -122,18 +114,22 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenHomePage2()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmHomeYNWLY.UniqueKey;
+            SetColoTable();
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
-            {
-                FrmHomeYNWLY Frm = new FrmHomeYNWLY();
-                FrmMainFrame.superTabControlManager.CreateTab(Frm.Text, uniqueKey, Frm, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+            this.btnOpenMainPage.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
+           {
+               string uniqueKey = FrmHomeYNWLY.UniqueKey;
+
+               if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+               {
+                   FrmHomeYNWLY Frm = new FrmHomeYNWLY();
+                   FrmMainFrame.superTabControlManager.CreateTab(Frm.Text, uniqueKey, Frm, true);
+               }
+               else
+                   FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+           }));
         }
 
         /// <summary>
@@ -141,18 +137,22 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenWeightBridgeLoadToday()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmWeightBridgeLoadToday.UniqueKey;
+            SetColoTable();
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.buttonX6.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
             {
-                FrmWeightBridgeLoadToday item = new FrmWeightBridgeLoadToday();
-                FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmWeightBridgeLoadToday.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmWeightBridgeLoadToday item = new FrmWeightBridgeLoadToday();
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
@@ -160,18 +160,22 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenBuyFuelLoadToday()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmBuyFuelLoadToday.UniqueKey;
+            SetColoTable();
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.buttonX6.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
             {
-                FrmBuyFuelLoadToday item = new FrmBuyFuelLoadToday();
-                FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmBuyFuelLoadToday.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmBuyFuelLoadToday item = new FrmBuyFuelLoadToday();
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
@@ -179,122 +183,145 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenTrainBeltSampler()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmTrainBeltSampler.UniqueKey;
+            SetColoTable();
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.btnCZGK.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
             {
-                FrmTrainBeltSampler frmTrainBeltSampler = new FrmTrainBeltSampler();
-                FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmTrainBeltSampler.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmTrainBeltSampler frmTrainBeltSampler = new FrmTrainBeltSampler();
+                    FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
-        /// <summary>
-        /// 打开全自动制样机监控
-        /// </summary>
-        public void OpenAutoMaker()
+        //打开全自动制样机监控
+        public void OpenAutoMaker(string par)
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmAutoMaker.UniqueKey;
+            SetColoTable();
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.btnOpenAutoMaker.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
             {
-                FrmAutoMaker frm = new FrmAutoMaker();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmAutoMaker.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmAutoMaker item = new FrmAutoMaker();
+                    FrmAutoMaker.Device = par;
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                {
+                    FrmAutoMaker.Device = par;
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+                }
+            }));
         }
 
         /// <summary>
         /// 打开智能存样柜与气动传输监控
         /// </summary>
-        public void OpenAutoCupboardPneumaticTransfer()
+        public void OpenAutoCupboardPneumaticTransfer(string par)
         {
-            //this.InvokeEx(() =>
-            //{
-            //    string uniqueKey = FrmAutoCupboardPneumaticTransfer.UniqueKey;
+            SetColoTable();
 
-            //    if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
-            //    {
-            //        FrmAutoCupboardPneumaticTransfer frm = new FrmAutoCupboardPneumaticTransfer();
-            //        FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
-            //    }
-            //    else
-            //        FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+            this.btnOpenAutoCupboard.ColorTable = eButtonColor.Blue;
 
-            string uniqueKey = FrmAutoCupboardPneumaticTransfer.UniqueKey;
-
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmAutoCupboardPneumaticTransfer frm = new FrmAutoCupboardPneumaticTransfer();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+                string uniqueKey = FrmAutoCupboardPneumaticTransfer.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmAutoCupboardPneumaticTransfer item = new FrmAutoCupboardPneumaticTransfer();
+                    FrmAutoCupboardPneumaticTransfer.Device = par;
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                {
+                    FrmAutoCupboardPneumaticTransfer.Device = par;
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+                }
+            }));
+
         }
 
         /// <summary>
         /// 打开火车入厂翻车机监控
         /// </summary>
-        public void OpenTrainTipper()
+        public void OpenTrainTipper(string par)
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmTrainTipper.UniqueKey;
+            SetColoTable();
+            this.btnOpenTrainTipper.ColorTable = eButtonColor.Blue;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmTrainTipper frm = new FrmTrainTipper();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmTrainTipper.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmTrainUpender item = new FrmTrainUpender();
+                    FrmTrainUpender.Device = par;
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                {
+                    FrmTrainUpender.Device = par;
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+                }
+            }));
+
         }
         /// <summary>
         /// 打开火车入厂翻车机监控
         /// </summary>
         public void OpenTrainUpender()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmTrainUpender.UniqueKey;
+            SetColoTable();
+            this.btnOpenTrainTipper.ColorTable = eButtonColor.Blue;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmTrainUpender frm = new FrmTrainUpender();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmTrainUpender.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmTrainUpender frm = new FrmTrainUpender();
+                    FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
         /// 打开汽车机械采样机监控
         /// </summary>
-        public void OpenTruckMachinerySampler()
+        public void OpenTruckMachinerySampler(string par)
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmCarSampler.UniqueKey;
+            SetColoTable();
+            this.btnCZGK.ColorTable = eButtonColor.Blue;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmCarSampler frm = new FrmCarSampler();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmCarSampler.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmCarSampler frm = new FrmCarSampler();
+                    FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
@@ -302,18 +329,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenTruckWeighter()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmTruckWeighter.UniqueKey;
-
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmTruckWeighter frm = new FrmTruckWeighter();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmTruckWeighter.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmTruckWeighter frm = new FrmTruckWeighter();
+                    FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
@@ -321,37 +348,40 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenTruckOrder()
         {
-            //this.InvokeEx(() =>
-            //{
+            this.Invoke((Action)(() =>
+            {
             string uniqueKey = FrmTruckOrder.UniqueKey;
 
             if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
             {
                 FrmTruckOrder frm = new FrmTruckOrder();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
+                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
             }
             else
                 FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+            }));
         }
 
         /// <summary>
         /// 打开汽车机械采样监控
         /// </summary>
-        public void OpenCarSampler()
+        public void OpenCarSampler(string par)
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmCarSampler.UniqueKey;
+            SetColoTable();
+            this.btnCZGK.ColorTable = eButtonColor.Blue;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
-            {
-                FrmCarSampler frm = new FrmCarSampler();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+            this.Invoke((Action)(() =>
+           {
+               string uniqueKey = FrmCarSampler.UniqueKey;
+
+               if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+               {
+                   FrmCarSampler frm = new FrmCarSampler();
+                   FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+               }
+               else
+                   FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+           }));
         }
 
         /// <summary>
@@ -359,18 +389,21 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenAssayManage()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmAssayManage.UniqueKey;
+            SetColoTable();
+            this.btnOpenAssayManage.ColorTable = eButtonColor.Blue;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
-            {
-                FrmAssayManage frm = new FrmAssayManage();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+            this.Invoke((Action)(() =>
+           {
+               string uniqueKey = FrmAssayManage.UniqueKey;
+
+               if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+               {
+                   FrmAssayManage frm = new FrmAssayManage();
+                   FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+               }
+               else
+                   FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+           }));
         }
 
         /// <summary>
@@ -378,18 +411,21 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenCarMonitor()
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmCarMonitor.UniqueKey;
+            SetColoTable();
+            this.btnCarMonitor.ColorTable = eButtonColor.Blue;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.Invoke((Action)(() =>
             {
-                FrmCarMonitor frm = new FrmCarMonitor();
-                FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmCarMonitor.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmCarMonitor frm = new FrmCarMonitor();
+                    FrmMainFrame.superTabControlManager.CreateTab(frm.Text, uniqueKey, frm, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
 
         /// <summary>
@@ -397,15 +433,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenEquInfHitch()
         {
-            string uniqueKey = FrmEquInfHitch.UniqueKey;
+          this.Invoke((Action)(() =>
+          {
+              string uniqueKey = FrmEquInfHitch.UniqueKey;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
-            {
-                FrmEquInfHitch item = new FrmEquInfHitch();
-                FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+              if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+              {
+                  FrmEquInfHitch item = new FrmEquInfHitch();
+                  FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+              }
+              else
+                  FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+          }));
         }
 
         /// <summary>
@@ -413,16 +452,145 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void OpenGuardInfo()
         {
-            string uniqueKey = FrmInfGuardInfo.UniqueKey;
+            this.Invoke((Action)(() =>
+          {
+              string uniqueKey = FrmInfGuardInfo.UniqueKey;
 
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
-            {
-                FrmInfGuardInfo item = new FrmInfGuardInfo();
-                FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+              if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+              {
+                  FrmInfGuardInfo item = new FrmInfGuardInfo();
+                  FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+              }
+              else
+                  FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+          }));
         }
+
+        /// <summary>
+        /// 点击地磅记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnOpenPoundInfo_Click(object sender, EventArgs e)
+        {
+            OpenPoundInfo("");
+        }
+
+        /// <summary>
+        /// 打开地磅记录
+        /// </summary>
+        public void OpenPoundInfo(string par)
+        {
+            SetColoTable();
+
+            this.buttonX6.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
+            {
+                string uniqueKey = FrmPoundInfo.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmPoundInfo item = new FrmPoundInfo();
+                    FrmPoundInfo.Device = par;
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                {
+                    FrmPoundInfo.Device = par;
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+                }
+            }));
+        }
+
+     
+
+        /// <summary>
+        /// 打开进出场记录
+        /// </summary>
+        public void OpenJoinBacthManag(string par)
+        {
+            SetColoTable();
+
+            this.btnJoinBacthManage.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
+            {
+                string uniqueKey = FrmJoinBacthManage.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmJoinBacthManage item = new FrmJoinBacthManage();
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
+
+
+        }
+
+        /// <summary>
+        /// 点击地磅记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnOpenInOutInfo_Click(object sender, EventArgs e)
+        {
+            OpenInOutInfo("");
+        }
+
+
+         /// <summary>
+        /// 打开进出场记录
+        /// </summary>
+        public void OpenInOutInfo(string par)
+        {
+            SetColoTable();
+
+            this.buttonX6.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
+            {
+                string uniqueKey = FrmInOutInfo.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmInOutInfo item = new FrmInOutInfo();
+                    FrmInOutInfo.Device = par;
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                {
+                    FrmInOutInfo.Device = par;
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+                }
+            }));
+
+           
+        }
+
+        /// <summary>
+        /// 全部置为BlueWithBackground
+        /// </summary>
+        private void SetColoTable()
+        {
+            this.btnOpenMainPage.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenAutoCupboard.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenAssayManage.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenAutoCupboard.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnCarMonitor.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenGuardInfo.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenEquInfHitch.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenAutoMaker.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnCZGK.ColorTable = eButtonColor.BlueWithBackground;
+            this.buttonX6.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnOpenTrainTipper.ColorTable = eButtonColor.BlueWithBackground;
+            //this.btnPoundInfo.ColorTable = eButtonColor.BlueWithBackground;
+            //this.btnInOutInfo.ColorTable = eButtonColor.BlueWithBackground;
+            this.btnJoinBacthManage.ColorTable = eButtonColor.BlueWithBackground;
+        }
+        
         #endregion
 
         /// <summary>
@@ -432,18 +600,18 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnCefTester_Click(object sender, EventArgs e)
         {
-            //this.InvokeEx(() =>
-            //{
-            string uniqueKey = FrmCefTester.UniqueKey;
-
-            if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+            this.InvokeEx(() =>
             {
-                FrmCefTester Frm = new FrmCefTester();
-                FrmMainFrame.superTabControlManager.CreateTab(Frm.Text, uniqueKey, Frm, false);
-            }
-            else
-                FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
-            //});
+                string uniqueKey = FrmCefTester.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmCefTester Frm = new FrmCefTester();
+                    FrmMainFrame.superTabControlManager.CreateTab(Frm.Text, uniqueKey, Frm, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            });
         }
 
         /// <summary>
@@ -477,7 +645,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
         }
 
         /// <summary>
-        /// 打开轨道衡计量查询
+        /// 打开火车入厂煤记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -487,13 +655,12 @@ namespace CMCS.Monitor.Win.Frms.Sys
         }
 
         /// <summary>
-        /// 打开入厂煤计量查询
+        /// 打开汽车入厂煤记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnOpenBuyFuelLoad_Click(object sender, EventArgs e)
         {
-
             OpenBuyFuelLoadToday();
         }
 
@@ -524,7 +691,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnOpenAutoMaker_Click(object sender, EventArgs e)
         {
-            OpenAutoMaker();
+            OpenAutoMaker("");
         }
 
         /// <summary>
@@ -534,7 +701,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnOpenAutoCupboard_Click(object sender, EventArgs e)
         {
-            OpenAutoCupboardPneumaticTransfer();
+            OpenAutoCupboardPneumaticTransfer("");
         }
 
         /// <summary>
@@ -544,8 +711,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnOpenTrainTipper_Click(object sender, EventArgs e)
         {
-            //OpenTrainTipper();
-            OpenTrainUpender();
+            OpenTrainTipper("");
         }
 
         /// <summary>
@@ -555,7 +721,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnOpenCarSampler_Click(object sender, EventArgs e)
         {
-            OpenCarSampler();
+            OpenCarSampler("");
         }
 
         /// <summary>
@@ -585,9 +751,12 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnOpenEquInfHitch_Click(object sender, EventArgs e)
         {
+            SetColoTable();
+            this.btnOpenEquInfHitch.ColorTable = eButtonColor.Blue;
+
             OpenEquInfHitch();
         }
-
+        
         /// <summary>
         /// 打开门禁记录
         /// </summary>
@@ -595,8 +764,43 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void btnOpenGuardInfo_Click(object sender, EventArgs e)
         {
+            SetColoTable();
+            this.btnOpenGuardInfo.ColorTable = eButtonColor.Blue;
+
             OpenGuardInfo();
         }
+
+        /// <summary>
+        /// 打开地磅记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPoundInfo_Click(object sender, EventArgs e)
+        {
+            OpenPoundInfo("");
+        }
+
+        /// <summary>
+        /// 打开进出场记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnInOutInfo_Click(object sender, EventArgs e)
+        {
+            OpenInOutInfo("");
+        }
+
+         /// <summary>
+        /// 打开合样归批机
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnJoinBacthManage_Click(object sender, EventArgs e)
+        {
+            OpenJoinBacthManag("");
+        }
+        
+
         #endregion
 
         #region 设备状态监控
@@ -609,7 +813,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
             timer_EquipmentStatus.Enabled = true;
 
             List<CmcsCMEquipment> list = commonDAO.GetChildrenMachinesByCode("皮带采样机");
-            list.AddRange(commonDAO.GetChildrenMachinesByCode("火车机械采样机"));
+            list.AddRange(commonDAO.GetChildrenMachinesByCode("汽车机械采样机"));
             list.AddRange(commonDAO.GetChildrenMachinesByCode("全自动制样机"));
             list.AddRange(commonDAO.GetChildrenMachinesByCode("智能存样柜"));
             list.AddRange(commonDAO.GetChildrenMachinesByCode("气动传输"));
@@ -668,7 +872,7 @@ namespace CMCS.Monitor.Win.Frms.Sys
                 string machineCode = uCtrlSignalLight.Tag.ToString();
                 if (string.IsNullOrEmpty(machineCode)) continue;
 
-                string systemStatus = CommonDAO.GetInstance().GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
+                string systemStatus = CommonDAO.GetInstance().GetSignalDataValue(machineCode, eSignalDataName.程序状态.ToString());
                 if ("|就绪待机|".Contains("|" + systemStatus + "|"))
                     uCtrlSignalLight.LightColor = EquipmentStatusColors.BeReady;
                 else if ("|正在运行|正在卸样|".Contains("|" + systemStatus + "|"))
@@ -705,15 +909,15 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// <param name="e"></param>
         private void timer_MsgTime_Tick(object sender, EventArgs e)
         {
-            timer_MsgTime.Stop();
+            //timer_MsgTime.Stop();
 
-            if (DateTime.Now.Second % 30 == 0)
-                //30秒获取一次异常信息表
-                ShowEquInfHitch();
-            if (DateTime.Now.Second % 5 == 0)
-                ShowSysMessage();
+            //if (DateTime.Now.Second % 30 == 0)
+            //    //30秒获取一次异常信息表
+            //    ShowEquInfHitch();
+            //if (DateTime.Now.Second % 5 == 0)
+            //    ShowSysMessage();           
 
-            timer_MsgTime.Start();
+            //timer_MsgTime.Start();
         }
 
         /// <summary>
@@ -721,21 +925,21 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void ShowEquInfHitch()
         {
-            List<InfEquInfHitch> listResult = CommonDAO.GetInstance().GetWarnEquInfHitch();
-            StringBuilder sbHitchDescribe = new StringBuilder();
-            if (listResult.Count > 0)
-            {
-                foreach (InfEquInfHitch item in listResult)
-                {
-                    sbHitchDescribe.Append("<font color='red' size='2'>");
-                    sbHitchDescribe.Append(item.HitchTime.ToString("HH:mm") + "   " + item.HitchDescribe + "<br>");
-                    sbHitchDescribe.Append("</font>");
-                    CommonDAO.GetInstance().UpdateReadEquInfHitch(item.Id);
-                }
-                //右下角显示
-                FrmSysMsg frm_sysMsg = new FrmSysMsg(sbHitchDescribe.ToString(), false);
-                frm_sysMsg.Show();
-            }
+            //List<InfEquInfHitch> listResult = CommonDAO.GetInstance().GetWarnEquInfHitch();
+            //StringBuilder sbHitchDescribe = new StringBuilder();
+            //if (listResult.Count > 0)
+            //{
+            //    foreach (InfEquInfHitch item in listResult)
+            //    {
+            //        sbHitchDescribe.Append("<font color='red' size='2'>");
+            //        sbHitchDescribe.Append(item.HitchTime.ToString("HH:mm") + "   " + item.HitchDescribe + "<br>");
+            //        sbHitchDescribe.Append("</font>");
+            //        CommonDAO.GetInstance().UpdateReadEquInfHitch(item.Id);
+            //    }
+            //    //右下角显示
+            //    FrmSysMsg frm_sysMsg = new FrmSysMsg(sbHitchDescribe.ToString(), false);
+            //    frm_sysMsg.Show();
+            //}
         }
 
         /// <summary>
@@ -743,15 +947,16 @@ namespace CMCS.Monitor.Win.Frms.Sys
         /// </summary>
         public void ShowSysMessage()
         {
-            CmcsSysMessage entity = CommonDAO.GetInstance().GetTodayTopSysMessage();
-            if (entity != null)
-            {
-                CommonDAO.GetInstance().ChangeSysMessageStatus(entity.Id, eSysMessageStatus.处理中);
-
-                FrmSysMsg frmSysMsg = new FrmSysMsg(entity);
-                frmSysMsg.OnMsgHandler += new FrmSysMsg.MsgHandler(frmSysMsg_OnMsgHandler);
-
-            }
+            //List<CmcsSysMessage> Messages = CommonDAO.GetInstance().GetTodayTopSysMessage();
+            //if (Messages != null)
+            //{
+            //    foreach (CmcsSysMessage item in Messages)
+            //    {
+            //        CommonDAO.GetInstance().ChangeSysMessageStatus(item.Id, eSysMessageStatus.处理中);                   
+            //    }
+            //    FrmSysMsg frmSysMsg = new FrmSysMsg(Messages);
+            //    frmSysMsg.OnMsgHandler += new FrmSysMsg.MsgHandler(frmSysMsg_OnMsgHandler);
+            //}
         }
 
         void frmSysMsg_OnMsgHandler(string msgId, string msgCode, string jsonStr, string buttonText, Form frmMsg)
@@ -811,18 +1016,60 @@ namespace CMCS.Monitor.Win.Frms.Sys
             this.Invoke(action);
         }
 
-        public void InvokeEx(Predicate<string> action)
+        private void btnOpenOutBeltSampler_Click(object sender, EventArgs e)
         {
-            if (this.IsDisposed || !this.IsHandleCreated) return;
-
-            this.Invoke(action);
+            OpenOutTrainBeltSampler();
         }
 
-        public void InvokeEx(Func<int, int, string> action)
+        //打开出场皮带采样机监控
+        public void OpenOutTrainBeltSampler()
         {
-            if (this.IsDisposed || !this.IsHandleCreated) return;
+            SetColoTable();
 
-            this.Invoke(action);
+            this.btnCZGK.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
+            {
+                string uniqueKey = FrmOutBeltSampler.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmOutBeltSampler frmTrainBeltSampler = new FrmOutBeltSampler();
+                    FrmMainFrame.superTabControlManager.CreateTab(frmTrainBeltSampler.Text, uniqueKey, frmTrainBeltSampler, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
+        }
+
+        private void btnOpenSaleFuelLoad_Click(object sender, EventArgs e)
+        {
+            OpenSaleFuelLoadToday();
+        }
+
+
+
+        /// <summary>
+        /// 打开汽车入厂记录查询
+        /// </summary>
+        public void OpenSaleFuelLoadToday()
+        {
+            SetColoTable();
+
+            this.buttonX6.ColorTable = eButtonColor.Blue;
+
+            this.Invoke((Action)(() =>
+            {
+                string uniqueKey = FrmSaleFuelLoadToday.UniqueKey;
+
+                if (FrmMainFrame.superTabControlManager.GetTab(uniqueKey) == null)
+                {
+                    FrmSaleFuelLoadToday item = new FrmSaleFuelLoadToday();
+                    FrmMainFrame.superTabControlManager.CreateTab(item.Text, uniqueKey, item, true);
+                }
+                else
+                    FrmMainFrame.superTabControlManager.ChangeToTab(uniqueKey);
+            }));
         }
     }
 }

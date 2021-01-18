@@ -35,6 +35,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cmbEquipment = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.全自动制样机 = new DevComponents.Editors.ComboItem();
+            this.汽车机械采样机 = new DevComponents.Editors.ComboItem();
+            this.智能存样柜 = new DevComponents.Editors.ComboItem();
+            this.气动传输 = new DevComponents.Editors.ComboItem();
+            this.矩阵合样归批机 = new DevComponents.Editors.ComboItem();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -119,7 +124,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.labelX3.ForeColor = System.Drawing.Color.White;
-            this.labelX3.Location = new System.Drawing.Point(773, 8);
+            this.labelX3.Location = new System.Drawing.Point(691, 8);
             this.labelX3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(70, 24);
@@ -134,12 +139,38 @@
             this.cmbEquipment.ForeColor = System.Drawing.Color.Black;
             this.cmbEquipment.FormattingEnabled = true;
             this.cmbEquipment.ItemHeight = 17;
-            this.cmbEquipment.Location = new System.Drawing.Point(851, 9);
+            this.cmbEquipment.Items.AddRange(new object[] {
+            this.全自动制样机,
+            this.汽车机械采样机,
+            this.智能存样柜,
+            this.气动传输,
+            this.矩阵合样归批机});
+            this.cmbEquipment.Location = new System.Drawing.Point(769, 9);
             this.cmbEquipment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEquipment.Name = "cmbEquipment";
             this.cmbEquipment.Size = new System.Drawing.Size(104, 23);
             this.cmbEquipment.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbEquipment.TabIndex = 15;
+            // 
+            // 全自动制样机
+            // 
+            this.全自动制样机.Text = "全自动制样机";
+            // 
+            // 汽车机械采样机
+            // 
+            this.汽车机械采样机.Text = "汽车机械采样机";
+            // 
+            // 智能存样柜
+            // 
+            this.智能存样柜.Text = "智能存样柜";
+            // 
+            // 气动传输
+            // 
+            this.气动传输.Text = "气动传输";
+            // 
+            // 矩阵合样归批机
+            // 
+            this.矩阵合样归批机.Text = "矩阵合样归批机";
             // 
             // btnSearch
             // 
@@ -163,7 +194,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.labelX2.ForeColor = System.Drawing.Color.White;
-            this.labelX2.Location = new System.Drawing.Point(1202, 11);
+            this.labelX2.Location = new System.Drawing.Point(1156, 11);
             this.labelX2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(16, 18);
@@ -179,10 +210,10 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.labelX1.ForeColor = System.Drawing.Color.White;
-            this.labelX1.Location = new System.Drawing.Point(961, 11);
+            this.labelX1.Location = new System.Drawing.Point(885, 11);
             this.labelX1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(86, 18);
+            this.labelX1.Size = new System.Drawing.Size(74, 18);
             this.labelX1.TabIndex = 11;
             this.labelX1.Text = "异常时间";
             // 
@@ -200,7 +231,7 @@
             this.dateTimeInput2.ForeColor = System.Drawing.Color.Black;
             this.dateTimeInput2.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dateTimeInput2.IsPopupCalendarOpen = false;
-            this.dateTimeInput2.Location = new System.Drawing.Point(1225, 10);
+            this.dateTimeInput2.Location = new System.Drawing.Point(1183, 10);
             this.dateTimeInput2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // 
@@ -235,7 +266,7 @@
             this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput2.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(139, 21);
+            this.dateTimeInput2.Size = new System.Drawing.Size(170, 21);
             this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput2.TabIndex = 10;
             // 
@@ -253,7 +284,7 @@
             this.dateTimeInput1.ForeColor = System.Drawing.Color.Black;
             this.dateTimeInput1.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(1058, 10);
+            this.dateTimeInput1.Location = new System.Drawing.Point(968, 10);
             this.dateTimeInput1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // 
@@ -288,7 +319,7 @@
             this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(139, 21);
+            this.dateTimeInput1.Size = new System.Drawing.Size(170, 21);
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput1.TabIndex = 9;
             this.dateTimeInput1.TimeSelectorTimeFormat = DevComponents.Editors.DateTimeAdv.eTimeSelectorFormat.Time24H;
@@ -345,7 +376,7 @@
             gridColumn2.HeaderText = "故障时间";
             gridColumn2.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn2.Name = "";
-            gridColumn2.Width = 140;
+            gridColumn2.Width = 260;
             gridColumn3.DataPropertyName = "HitchDescribe";
             gridColumn3.HeaderText = "故障描述";
             gridColumn3.Name = "";
@@ -472,7 +503,6 @@
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(1580, 730);
             this.MinimumSize = new System.Drawing.Size(1438, 730);
             this.Name = "FrmEquInfHitch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -516,6 +546,11 @@
         private DevComponents.DotNetBar.ButtonX btnNext;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbEquipment;
+        private DevComponents.Editors.ComboItem 全自动制样机;
+        private DevComponents.Editors.ComboItem 汽车机械采样机;
+        private DevComponents.Editors.ComboItem 智能存样柜;
+        private DevComponents.Editors.ComboItem 气动传输;
+        private DevComponents.Editors.ComboItem 矩阵合样归批机;
 
 
 

@@ -14,14 +14,10 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -51,13 +47,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AU.dll</HintPath>
     </Reference>
-    <Reference Include="BasisPlatform, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BasisPlatform, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\BasisPlatform.dll</HintPath>
     </Reference>
-    <Reference Include="CMCS.DapperDber, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BasisPlatform.Forms, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CMCS.Common\CMCS.DapperDber\bin\CMCS.DapperDber.dll</HintPath>
+      <HintPath>bin\BasisPlatform.Forms.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=10.5.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -121,6 +117,24 @@
     </Compile>
     <Compile Include="Frms\FrmHomePage.Designer.cs">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmInOutInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmInOutInfo.Designer.cs">
+      <DependentUpon>FrmInOutInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmJoinBacthManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmJoinBacthManage.Designer.cs">
+      <DependentUpon>FrmJoinBacthManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmPoundInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmPoundInfo.Designer.cs">
+      <DependentUpon>FrmPoundInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Frms\FrmTrainTipper.cs">
       <SubType>Form</SubType>
@@ -257,6 +271,24 @@
     <Compile Include="Frms\FrmInfGuardInfo.Designer.cs">
       <DependentUpon>FrmInfGuardInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\FrmOutBeltSampler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmOutBeltSampler.Designer.cs">
+      <DependentUpon>FrmOutBeltSampler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmSaleFuelLoadToday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmSaleFuelLoadToday.Designer.cs">
+      <DependentUpon>FrmSaleFuelLoadToday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\FrmSaleFuelLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\FrmSaleFuelLoad.Designer.cs">
+      <DependentUpon>FrmSaleFuelLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Html\eHtmlDataItemType.cs" />
     <Compile Include="Html\HtmlDataItem.cs" />
     <Compile Include="CefGlue\MonitorRenderProcessHandler.cs" />
@@ -279,6 +311,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmHomePage.resx">
       <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmInOutInfo.resx">
+      <DependentUpon>FrmInOutInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmJoinBacthManage.resx">
+      <DependentUpon>FrmJoinBacthManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmPoundInfo.resx">
+      <DependentUpon>FrmPoundInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\FrmTrainTipper.resx">
       <DependentUpon>FrmTrainTipper.cs</DependentUpon>
@@ -349,6 +390,15 @@
     <EmbeddedResource Include="Frms\FrmInfGuardInfo.resx">
       <DependentUpon>FrmInfGuardInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmOutBeltSampler.resx">
+      <DependentUpon>FrmOutBeltSampler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmSaleFuelLoadToday.resx">
+      <DependentUpon>FrmSaleFuelLoadToday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\FrmSaleFuelLoad.resx">
+      <DependentUpon>FrmSaleFuelLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -363,6 +413,7 @@
     <None Include="bin\log4net.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="bin\集控CS端0905.zip" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -378,6 +429,10 @@
       <Project>{7587893A-FEFB-4810-8509-E13A35BBAC35}</Project>
       <Name>CMCS.Common %28CMCS.Common\CMCS.Common%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Common\CMCS.DapperDber\CMCS.DapperDber.csproj">
+      <Project>{6384f3d5-7cb5-4d1f-8a1f-3fa9b0a78f05}</Project>
+      <Name>CMCS.DapperDber</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Common\CMCS.DotNetBar.Utilities\CMCS.DotNetBar.Utilities.csproj">
       <Project>{AB80688E-8CFE-4E41-AF48-090EEE8553BA}</Project>
       <Name>CMCS.DotNetBar.Utilities</Name>
@@ -392,21 +447,72 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Autotruck.bmp" />
+    <Content Include="bin\Autotruck_2.bmp" />
+    <Content Include="bin\BasisPlatform.dll" />
+    <Content Include="bin\BasisPlatform.Forms.dll" />
+    <Content Include="bin\BasisPlatform.XML" />
+    <Content Include="bin\CMCS.DapperDber.dll" />
     <Content Include="bin\Common.AppConfig.xml" />
+    <Content Include="bin\log4net.dll" />
     <Content Include="bin\update.xml" />
     <Content Include="bin\Web\AssayManage\Resources\AssayManage.svg" />
     <Content Include="bin\Web\AssayManage\index.htm" />
-    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer03.svg" />
+    <Content Include="bin\Web\AssayManage\Resources\AssayManage1.svg" />
+    <Content Include="bin\Web\AssayManage\Resources\AssayManage2.svg" />
     <Content Include="bin\Web\AutoCupboardPneumaticTransfer\index.htm" />
-    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer01.svg" />
     <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer01.svg" />
     <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer02.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer03.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer04.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\AutoCupboardPneumaticTransfer05.svg" />
+    <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\g3516.png" />
     <Content Include="bin\Web\AutoCupboardPneumaticTransfer\Resources\js\register.js" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0604c.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0604d.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0604f.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0605a.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0606a.svg" />
+    <Content Include="bin\Web\AutoMaker\Resources\AutoMaker2.svg" />
+    <Content Include="bin\Web\AutoMaker\Resources\AutoMaker3.svg" />
+    <Content Include="bin\Web\AutoMaker\Resources\AutoMaker4.svg" />
+    <Content Include="bin\Web\AutoMaker\Resources\AutoMaker5.svg" />
+    <Content Include="bin\Web\AutoMaker\Resources\AutoMaker6.svg" />
+    <Content Include="bin\Web\AutoMaker\Resources\images\g3886.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\东升杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\东降杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\北升杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\北降杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\南升杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\南降杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\西升杆.png" />
+    <Content Include="bin\Web\CarMonitor\Resources\images\西降杆.png" />
+    <Content Include="bin\Web\CarSampler\Resources\CarSampler1.svg" />
+    <Content Include="bin\Web\CarSampler\Resources\CarSampler2.svg" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\freightspace.png" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY1008a.svg">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\Web\HomeYNWLY\Resources\images\cewen-100.png" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\images\cewen-24.png" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\images\doulunji_wait.png" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\images\doulunji_stop.png" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\images\doulunji_run.png" />
+    <Content Include="bin\Web\HomeYNWLY\Resources\path1861png.png" />
+    <Content Include="bin\Web\Resources\js\HomeYNWLY.js" />
+    <Content Include="bin\Web\JoinBacthManage\index.htm" />
+    <Content Include="bin\Web\JoinBacthManage\Resources\JoinBacth.svg" />
+    <Content Include="bin\Web\JoinBacthManage\Resources\js\register.js" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\TrainBeltSampler1.svg" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\TrainBeltSampler2.svg" />
+    <Content Include="bin\Web\TrainBeltSampler\Resources\TrainBeltSampler3.svg">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\Web\TrainUpender\Resources\TrainUpender1.svg" />
+    <Content Include="bin\Web\OutBeltSampler\index.htm" />
+    <Content Include="bin\Web\OutBeltSampler\Resources\images\barrel-empty.png" />
+    <Content Include="bin\Web\OutBeltSampler\Resources\images\barrel-full.png" />
+    <Content Include="bin\Web\OutBeltSampler\Resources\images\barrel-notfull.png" />
+    <Content Include="bin\Web\OutBeltSampler\Resources\js\register.js" />
+    <Content Include="bin\Web\OutBeltSampler\Resources\OutBeltSampler.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Resources\freightspace1.png" />
     <Content Include="Resources\use.png" />
     <Content Include="Resources\_132229104.png" />
@@ -434,19 +540,7 @@
     <Content Include="bin\Web\HomePage\index.htm" />
     <Content Include="bin\Web\HomePage\Resources\HomePage.svg" />
     <Content Include="bin\Web\HomePage\Resources\js\register.js" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0524.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0522.svg" />
     <Content Include="bin\Web\HomeYNWLY\index.htm" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY.svg">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0523.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0524a.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0524b.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0524c.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0524d.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0531a.svg" />
-    <Content Include="bin\Web\HomeYNWLY\Resources\HomeYNWLY0604b.svg" />
     <Content Include="bin\Web\HomeYNWLY\Resources\js\register.js" />
     <Content Include="bin\Web\Resources\plugins\jquery\jquery-1.8.2.min.js" />
     <Content Include="bin\Web\Resources\plugins\layer\extend\layer.ext.js" />
@@ -505,9 +599,8 @@
   <ItemGroup>
     <Folder Include="bin\Web\AssayManage\Resources\images\" />
     <Folder Include="bin\Web\AssayManage\Resources\js\" />
-    <Folder Include="bin\Web\AutoMaker\Resources\images\" />
     <Folder Include="bin\Web\HomePage\Resources\images\" />
-    <Folder Include="bin\Web\HomeYNWLY\Resources\images\" />
+    <Folder Include="bin\Web\JoinBacthManage\Resources\images\" />
     <Folder Include="bin\Web\Resources\images\" />
     <Folder Include="bin\Web\TruckOrder\Resources\images\" />
     <Folder Include="bin\Web\TruckWeighter\Resources\images\" />

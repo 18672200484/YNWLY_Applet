@@ -30,15 +30,15 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1600"
-   inkscape:window-height="837"
+   inkscape:window-width="1680"
+   inkscape:window-height="988"
    id="namedview2050"
    showgrid="false"
-   inkscape:zoom="1.2287945"
-   inkscape:cx="208.93049"
-   inkscape:cy="235.01716"
-   inkscape:window-x="-4"
-   inkscape:window-y="-4"
+   inkscape:zoom="0.61439723"
+   inkscape:cx="1159.5967"
+   inkscape:cy="481.26283"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="svg2" />
  <defs
@@ -1137,7 +1137,6 @@
 
 
 
-
 <text
    y="77.173401"
    x="1278.8541"
@@ -1145,7 +1144,6 @@
    font-size="14.2861"
    id="text247"
    transform="scale(1.0522166,0.95037467)">未审核样品</text>
-
 
 
 
@@ -1210,7 +1208,6 @@
    inkscape:label="已审核样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
 
-
 <text
    font-size="14.2861"
    id="text297"
@@ -1220,7 +1217,6 @@
    inkscape:label="未审核样品个数"
    transform="scale(1.0522166,0.95037467)">2个</text>
 
-
 <text
    font-size="14.6848"
    id="text305"
@@ -1229,7 +1225,6 @@
    style="font-size:19.87704849px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
    transform="scale(1.0522166,0.95037467)">正在运行</text>
 
-
 <text
    font-size="14.6848"
    id="text307"
@@ -1237,7 +1232,6 @@
    y="120.40509"
    style="font-size:19.87704849px;fill:#ffffff;font-family:MicrosoftYaHei-Bold"
    transform="scale(1.0522166,0.95037467)">待机</text>
-
 
 
 <line
@@ -1296,8 +1290,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text439"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1307,7 +1300,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    inkscape:label="测硫仪1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <circle
    d="m 807.72899,643.914 c 0,4.66957 -3.78544,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66956,0 8.455,3.78543 8.455,8.455 z"
@@ -1342,7 +1334,6 @@
    transform="scale(1.0522166,0.95037467)">#1测硫仪</text>
 
 
-
 <rect
    style="fill:#808184"
    x="1732.8507"
@@ -1370,8 +1361,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text425"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1381,7 +1371,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    inkscape:label="测硫仪2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <circle
    d="m 941.12999,643.914 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
@@ -1402,7 +1391,6 @@
    font-size="12"
    id="text501"
    transform="scale(1.0522166,0.95037467)">#2测硫仪</text>
-
 
 
 <image
@@ -1426,8 +1414,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text121"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1437,7 +1424,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    inkscape:label="测硫仪3_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <circle
    d="m 1073.1759,643.91199 c 0,4.66956 -3.7854,8.455 -8.455,8.455 -4.6695,0 -8.455,-3.78544 -8.455,-8.455 0,-4.66957 3.7855,-8.455 8.455,-8.455 4.6696,0 8.455,3.78543 8.455,8.455 z"
@@ -1484,7 +1470,6 @@
 
 
 
-
 <rect
    style="fill:none;stroke:#26a9e0;stroke-width:5.53683615"
    x="818.61902"
@@ -1501,7 +1486,6 @@
    x="857.65027"
    y="573.71033">化验室</text>
 
-
 <text
    transform="scale(1.0522166,0.95037467)"
    id="text223"
@@ -1509,7 +1493,6 @@
    style="font-size:19.33737564px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    x="916.72736"
    y="573.80475">网络管理</text>
-
 
 </g><line
    style="fill:none;stroke:#d0d2d3;stroke-width:3.3248682"
@@ -1566,8 +1549,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-7"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1577,7 +1559,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="量热仪4_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1599,7 +1580,6 @@
    id="text461-3"
    transform="scale(1.0522166,0.95037467)">#1量热仪</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,847.49575,385.86701)"
@@ -1618,8 +1598,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1629,7 +1608,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;font-family:MicrosoftYaHei-Bold"
    inkscape:label="量热仪1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1651,7 +1629,6 @@
    id="text461"
    transform="scale(1.0522166,0.95037467)">#1量热仪</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,1041.8429,386.34326)"
@@ -1670,8 +1647,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-4"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1681,7 +1657,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="量热仪2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1703,7 +1678,6 @@
    id="text461-8"
    transform="scale(1.0522166,0.95037467)">#1量热仪</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,847.49575,518.99186)"
@@ -1722,8 +1696,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-5"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1733,7 +1706,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="量热仪3_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1754,7 +1726,6 @@
    font-size="12"
    id="text461-1"
    transform="scale(1.0522166,0.95037467)">#1量热仪</text>
-
 
 <g
    id="g3661"
@@ -1789,7 +1760,6 @@
    font-size="14.2861"
    id="text221-9"
    transform="scale(1.0522166,0.95037466)">量热室</text>
-
 
 <g
    style="fill-rule:evenodd"
@@ -1826,7 +1796,6 @@
    id="text221-9-1"
    transform="scale(1.0522166,0.95037466)">测硫室</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,-5.13248,518.99186)"
@@ -1845,8 +1814,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-77"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1856,7 +1824,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="水分仪1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1878,7 +1845,6 @@
    id="text461-9"
    transform="scale(1.0522166,0.95037467)">#1水分仪</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,186.96911,518.99186)"
@@ -1897,8 +1863,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-4-2"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1908,7 +1873,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="水分仪2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1930,7 +1894,6 @@
    id="text461-8-2"
    transform="scale(1.0522166,0.95037467)">#2水分仪</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,379.71507,518.99186)"
@@ -1949,8 +1912,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-5-5"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -1960,7 +1922,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="水分仪3_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -1981,7 +1942,6 @@
    font-size="12"
    id="text461-1-0"
    transform="scale(1.0522166,0.95037467)">#3水分仪</text>
-
 
 <g
    style="fill-rule:evenodd"
@@ -2018,7 +1978,6 @@
    id="text221-9-4"
    transform="scale(1.0522166,0.95037466)">水分室</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,-677.54598,518.99186)"
@@ -2037,8 +1996,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-77-6"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2048,7 +2006,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="灰熔仪1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2069,7 +2026,6 @@
    font-size="12"
    id="text461-9-4"
    transform="scale(1.0522166,0.95037467)">#1灰熔仪</text>
-
 
 <image
    y="789.93109"
@@ -2097,8 +2053,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-4-2-7"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2108,7 +2063,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="灰熔仪2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2129,7 +2083,6 @@
    font-size="12"
    id="text461-8-2-9"
    transform="scale(1.0522166,0.95037467)">#2灰熔仪</text>
-
 
 <image
    y="789.93109"
@@ -2174,7 +2127,6 @@
    id="text221-9-4-6"
    transform="scale(1.0522166,0.95037466)">灰熔融</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,-677.54598,326.09803)"
@@ -2193,8 +2145,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-77-6-5"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2204,7 +2155,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="碳氢仪1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2225,7 +2175,6 @@
    font-size="12"
    id="text461-9-4-9"
    transform="scale(1.0522166,0.95037467)">#1碳氢仪</text>
-
 
 <image
    y="597.03729"
@@ -2253,8 +2202,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-4-2-7-2"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2264,7 +2212,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="碳氢仪2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2285,7 +2232,6 @@
    font-size="12"
    id="text461-8-2-9-6"
    transform="scale(1.0522166,0.95037467)">#2碳氢仪</text>
-
 
 <image
    y="597.03729"
@@ -2330,7 +2276,6 @@
    id="text221-9-4-6-0"
    transform="scale(1.0522166,0.95037466)">碳氢室</text>
 
-
 <line
    style="fill:none;stroke:#bbbdbf;stroke-width:2.08337903"
    x1="400.13583"
@@ -2355,8 +2300,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-7-6"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2366,7 +2310,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="工分仪4_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2387,7 +2330,6 @@
    font-size="12"
    id="text461-3-7"
    transform="scale(1.0522166,0.95037467)">#4工分仪</text>
-
 
 <image
    y="401.05008"
@@ -2415,8 +2357,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-59"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2426,7 +2367,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="工分仪1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2447,7 +2387,6 @@
    font-size="12"
    id="text461-6"
    transform="scale(1.0522166,0.95037467)">#1工分仪</text>
-
 
 <image
    y="276.03677"
@@ -2475,8 +2414,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-4-0"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2486,7 +2424,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="工分仪2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2507,7 +2444,6 @@
    font-size="12"
    id="text461-8-0"
    transform="scale(1.0522166,0.95037467)">#2工分仪</text>
-
 
 <image
    y="276.03677"
@@ -2535,8 +2471,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-5-8"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2546,7 +2481,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="工分仪3_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2567,7 +2501,6 @@
    font-size="12"
    id="text461-1-2"
    transform="scale(1.0522166,0.95037467)">#3工分仪</text>
-
 
 <image
    y="401.87915"
@@ -2619,8 +2552,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-7-4"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2630,7 +2562,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="天平5_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2652,7 +2583,6 @@
    id="text461-3-8"
    transform="scale(1.0522166,0.95037467)">#5天平</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,-199.4798,4.1118289)"
@@ -2671,8 +2601,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-8"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2682,7 +2611,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="天平1_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2704,7 +2632,6 @@
    id="text461-7"
    transform="scale(1.0522166,0.95037467)">#1天平</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,-5.13248,4.1118289)"
@@ -2723,8 +2650,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-4-4"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2734,7 +2660,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="天平2_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2756,7 +2681,6 @@
    id="text461-8-09"
    transform="scale(1.0522166,0.95037467)">#2天平</text>
 
-
 <circle
    d="m 581.82701,225.92 c 0,4.66957 -3.78543,8.455 -8.455,8.455 -4.66957,0 -8.455,-3.78543 -8.455,-8.455 0,-4.66957 3.78543,-8.455 8.455,-8.455 4.66957,0 8.455,3.78543 8.455,8.455 z"
    transform="matrix(1.4242591,0,0,1.2864079,379.71507,4.1118289)"
@@ -2775,8 +2699,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-5-84"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2786,7 +2709,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="天平4_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2807,7 +2729,6 @@
    font-size="12"
    id="text461-1-5"
    transform="scale(1.0522166,0.95037467)">#4天平</text>
-
 
 <g
    style="fill-rule:evenodd"
@@ -2854,8 +2775,7 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    font-size="10"
    id="text193-7-4-8"
-   transform="scale(1.0522166,0.95037467)">今日化验</text>
-
+   transform="scale(1.0522166,0.95037467)">今日样品</text>
 
 <text
    font-size="10"
@@ -2865,7 +2785,6 @@
    style="font-size:13.53579712px;fill:#f1f1f2;fill-rule:evenodd;font-family:MicrosoftYaHei-Bold"
    inkscape:label="天平3_样品个数"
    transform="scale(1.0522166,0.95037467)">10个</text>
-
 
 <rect
    style="fill:none;stroke:#a6a8ab;stroke-width:1.35357976"
@@ -2887,7 +2806,6 @@
    id="text461-3-8-1"
    transform="scale(1.0522166,0.95037467)">#3天平</text>
 
-
 <text
    y="241.41948"
    x="164.28224"
@@ -2896,7 +2814,6 @@
    id="text221-9-4-6-0-8"
    transform="scale(1.0522166,0.95037466)">工分仪</text>
 
-
 <text
    y="241.41948"
    x="889.07642"
@@ -2904,7 +2821,6 @@
    font-size="14.2861"
    id="text221-9-4-6-0-8-9"
    transform="scale(1.0522166,0.95037466)">天平室</text>
-
 
 <rect
    style="fill:#bbbdbf"
@@ -2932,7 +2848,6 @@
    id="text287"
    transform="scale(1.0522166,0.95037467)">待化验数</text>
 
-
 <rect
    style="fill:#1b75bb"
    x="10.746854"
@@ -2953,7 +2868,6 @@
    id="text283"
    transform="scale(1.0522166,0.95037467)">化验完成</text>
 
-
 <text
    y="150.97467"
    x="42.957706"
@@ -2961,7 +2875,6 @@
    font-size="14.2861"
    id="text285"
    transform="scale(1.0522166,0.95037467)">化验中</text>
-
 
 <g
    id="g5633"
@@ -2984,7 +2897,6 @@
    font-size="14.2861"
    id="text245"
    transform="scale(1.0522166,0.95037467)">每日化验工作</text>
-
 
 <rect
    style="fill:#bbbdbf"
@@ -3015,7 +2927,6 @@
    inkscape:label="化验完成_Count"
    transform="scale(1.0522166,0.95037467)">10</text>
 
-
 <text
    y="150.96155"
    x="705.82251"
@@ -3025,7 +2936,6 @@
    inkscape:label="化验中_Count"
    transform="scale(1.0522166,0.95037467)">2</text>
 
-
 <text
    y="181.61269"
    x="705.82318"
@@ -3034,7 +2944,6 @@
    id="text303"
    inkscape:label="待化验数_Count"
    transform="scale(1.0522166,0.95037467)">8</text>
-
 
 <rect
    style="fill:#00a551"
@@ -3338,7 +3247,6 @@
    id="text239-2"
    transform="scale(1.0522166,0.95037466)">已审核样品</text>
 
-
 <text
    y="75.204727"
    x="1281.2258"
@@ -3346,7 +3254,6 @@
    font-size="14.2861"
    id="text247-8"
    transform="scale(1.0522166,0.95037466)">未审核样品</text>
-
 
 <g
    style="fill-rule:evenodd"

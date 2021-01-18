@@ -39,9 +39,10 @@
                 else
                     $("#" + data.Key).html(data.Value);
             // json_data
-            else if (data.Type == 1) {
-                if (data.Key == "采样机1_底卸集样罐" || data.Key == "采样机1_密码集样罐" || data.Key == "采样机2_底卸集样罐" || data.Key == "采样机2_密码集样罐")
-                    loadBarrels(data);
+                else if (data.Type == 1) {
+                    if (data.Key == "皮带采样机1_底卸集样罐" || data.Key == "皮带采样机1_密码集样罐" || data.Key == "皮带采样机2_底卸集样罐" || data.Key == "皮带采样机2_密码集样罐") {
+                loadBarrels(data);
+            }
             }
             // svg_text
             else if (data.Type == 2) {
@@ -57,22 +58,23 @@
         function loadBarrels(data) {
             var barrels = eval(data.Value);
             $ulsvgbarrel = null;
-            if (data.Key == "采样机1_底卸集样罐")
+            if (data.Key == "皮带采样机1_底卸集样罐")
                 $ulsvgbarrel = $("#ulSampler1Barrel_DX");
-            else if (data.Key == "采样机1_密码集样罐")
+            else if (data.Key == "皮带采样机1_密码集样罐")
                 $ulsvgbarrel = $("#ulSampler1Barrel_MM");
-            else if (data.Key == "采样机2_底卸集样罐")
+            else if (data.Key == "皮带采样机2_底卸集样罐")
                 $ulsvgbarrel = $("#ulSampler2Barrel_DX");
-            else if (data.Key == "采样机2_密码集样罐")
+            else if (data.Key == "皮带采样机2_密码集样罐")
                 $ulsvgbarrel = $("#ulSampler2Barrel_MM");
 
             // 清空集样罐
             $ulsvgbarrel.empty();
-
+           
             for (var i = 0; i < barrels.length; i++) {
                 var barrel = barrels[i],
                 $li = $("<li/>"),
                 imgSrc = "Resources/images/barrel-empty.png";
+               
                 if (barrel.BarrelStatus == "已满")
                     imgSrc = "Resources/images/barrel-full.png";
                 else if (barrel.BarrelStatus == "未满")
@@ -83,7 +85,8 @@
 
                 // 当前进料罐
                 if (barrel.IsCurrent == 1)
-                    changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + (i + 1) + "]"), "Red");
+                   changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + (i + 1) + "]"), "Red");
+                   //getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").css({ "fill": "Red" });
                 else
                     changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + (i + 1) + "]"), "#808080");
                 // $li.append($("<div/>").addClass("div-inbarrel-arrow"));
@@ -98,7 +101,7 @@
 
         // 测试
         function test1() {
-            dataHandler({ Key: "采样机1_缩分器皮带", Type: 3, Value: "Red", Tag: "皮带" });
+            dataHandler({ Key: "皮带采样机1_缩分器皮带", Type: 3, Value: "Red", Tag: "皮带" });
         }
 
         function SubmitSet(param1, param2) {
@@ -300,7 +303,7 @@
             margin: 0px;
             padding: 0px;
             font-family: 微软雅黑;
-            background-color: rgb(43, 47, 51);
+            background-color: rgb(63, 63, 63);
         }
         .div-inbarrel-arrow
         {
@@ -329,16 +332,16 @@
             margin: 0px;
             list-style: none;
             position: absolute;
-            width: 310px;
-            height: 40px;
-            background-color: rgb(43, 47, 51);
+            width: 360px;
+            height: 42px;
+            background-color: rgb(63, 63, 63);
         }
         .ul-svg-barrel > li
         {
             position: relative;
             float: left;
-            width: 30px;
-            height: 35px;
+            width: 36px;
+            height: 42px;
             margin-left: 8.5px;
         }
         .ul-svg-barrel > li:first-child
@@ -347,8 +350,8 @@
         }
         .ul-svg-barrel > li > img
         {
-            width: 30px;
-            height: 35px;
+            width: 36px;
+            height: 42px;
             border: none;
         }
         .fontColor
@@ -427,40 +430,41 @@
 <body onselectstart="return false;">
     <div class="div-root">
         <div class="table-b" id="divCanvas">
-            <div style="position: absolute; top: 669px; left: 140px; width: 300px; height: 100px;">
+            <div style="position: absolute; top: 840px; left: 215px; width: 300px; height: 100px;">
                 <label class="label">
                     <input name="ckbjy1" type="radio" value="底卸式" onclick="SubmitSet('集样1','底卸式')" />底卸式</label>&nbsp;&nbsp;&nbsp;&nbsp;
                 <label class="label">
                     <input name="ckbjy1" type="radio" value="密码罐" onclick="SubmitSet('集样1','密码罐')" />密码罐</label>
             </div>
-            <div style="position: absolute; top: 669px; left: 475px; width: 300px; height: 100px;">
+            <div style="position: absolute; top: 840px; left: 600px; width: 300px; height: 100px;">
                 <label class="label">
                     <input name="ckbfc1" type="radio" value="#1皮带采样机" onclick="SubmitSet('翻车1','#1皮带采样机')" />#1皮带采样机</label>&nbsp;&nbsp;&nbsp;&nbsp;
                 <label class="label">
                     <input name="ckbfc1" type="radio" value="#2皮带采样机" onclick="SubmitSet('翻车1','#2皮带采样机')" />#2皮带采样机</label>
             </div>
-            <div style="position: absolute; top: 669px; left: 925px; width: 300px; height: 100px;">
+            <div style="position: absolute; top: 840px; left: 1098px; width: 300px; height: 100px;">
                 <label class="label">
                     <input name="ckbfc2" type="radio" value="#1皮带采样机" onclick="SubmitSet('翻车2','#1皮带采样机')" />#1皮带采样机</label>&nbsp;&nbsp;&nbsp;&nbsp;
                 <label class="label">
                     <input name="ckbfc2" type="radio" value="#2皮带采样机" onclick="SubmitSet('翻车2','#2皮带采样机')" />#2皮带采样机</label>
             </div>
-            <div style="position: absolute; top: 669px; left: 1375px; width: 300px; height: 100px;">
+            <div style="position: absolute; top: 840px; left: 1600px; width: 300px; height: 100px;">
                 <label class="label">
                     <input name="ckbjy2" type="radio" value="底卸式" onclick="SubmitSet('集样2','底卸式')" />底卸式</label>&nbsp;&nbsp;&nbsp;&nbsp;
                 <label class="label">
                     <input name="ckbjy2" type="radio" value="密码罐" onclick="SubmitSet('集样2','密码罐')" />密码罐</label>
             </div>
-            <div style="position: absolute; top: 300px; left: 475px;">
+            <div style="position: absolute; top: 330px; left:605px;">
                 <input type="button" value="查看异常信息" class="button1" onclick="ShowHitchs('#1')" />
             </div>
-            <div style="position: absolute; top: 300px; left: 1255px;">
+
+            <div style="position: absolute; top: 330px; left: 1500px;">
                 <input type="button" value="查看异常信息" class="button1" onclick="ShowHitchs('#2')" />
             </div>
-            <embed id="svgCanvas1" src="Resources/TrainBeltSampler.svg" type="image/svg+xml" />
+            <embed id="svgCanvas1" src="Resources/TrainBeltSampler3.svg" type="image/svg+xml" />
         </div>
         <!--采样机一 底卸式集样罐-->
-        <ul id="ulSampler1Barrel_DX" class="ul-svg-barrel" style="top: 575px; left: 101px;">
+        <ul id="ulSampler1Barrel_DX" class="ul-svg-barrel" style="top: 730px; left: 145px;">
             <li>
                 <!--<div class="div-inbarrel-arrow">
                 </div>-->
@@ -489,7 +493,7 @@
             </li>
         </ul>
         <!--采样机一 密码集样罐-->
-        <ul id="ulSampler1Barrel_MM" class="ul-svg-barrel" style="top: 575px; left: 469px;">
+        <ul id="ulSampler1Barrel_MM" class="ul-svg-barrel" style="top: 730px; left: 570px;">
             <li>
                 <!--<div class="div-inbarrel-arrow">
                 </div>-->
@@ -518,7 +522,7 @@
             </li>
         </ul>
         <!--采样机二 底卸式集样罐-->
-        <ul id="ulSampler2Barrel_DX" class="ul-svg-barrel" style="top: 575px; left: 874px;">
+        <ul id="ulSampler2Barrel_DX" class="ul-svg-barrel" style="top: 730px; left: 1037px;">
             <li>
                 <!--<div class="div-inbarrel-arrow">
                 </div>-->
@@ -547,7 +551,7 @@
             </li>
         </ul>
         <!--采样机二 密码集样罐-->
-        <ul id="ulSampler2Barrel_MM" class="ul-svg-barrel" style="top: 575px; left: 1242px;">
+        <ul id="ulSampler2Barrel_MM" class="ul-svg-barrel" style="top: 730px; left: 1460px;">
             <li>
                 <!--<div class="div-inbarrel-arrow">
                 </div>-->

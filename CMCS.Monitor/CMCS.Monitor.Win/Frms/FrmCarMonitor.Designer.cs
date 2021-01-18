@@ -104,7 +104,6 @@
             this.ClientSize = new System.Drawing.Size(1452, 725);
             this.Controls.Add(this.panWebBrower);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1600, 800);
             this.Name = "FrmCarMonitor";
             this.Text = "设备监控";
             this.Load += new System.EventHandler(this.FrmCarMonitor_Load);

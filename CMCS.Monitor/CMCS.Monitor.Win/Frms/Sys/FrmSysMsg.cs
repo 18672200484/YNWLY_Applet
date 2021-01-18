@@ -215,37 +215,44 @@ namespace CMCS.Monitor.Win.Frm.Sys
         /// <summary>
         /// 显示消息提示框
         /// </summary> 
-        public FrmSysMsg(CmcsSysMessage sysMessage)
+        public FrmSysMsg(List<CmcsSysMessage> sysMessages)
         {
             InitializeComponent();
-
-            this.MsgId = sysMessage.Id;
-            this.MsgCode = sysMessage.MsgCode;
-            this.JsonStr = sysMessage.MsgParam;
-            this.HtmlContent = sysMessage.MsgContent;
-            this.IsAutoClose = Convert.ToBoolean(sysMessage.IsAutoClose);
-
-            string[] buttons = sysMessage.MsgButton.Split(new char[] { '|' });
-            for (int i = 0; i < buttons.Length; i++)
+            string str = "";
+            if (sysMessages.Count > 0)
             {
-                if (i == 0) btn1 = InitButtonX(buttons[i]);
-                if (i == 1) btn1 = InitButtonX(buttons[i]);
-                if (i == 2) btn1 = InitButtonX(buttons[i]);
-                if (i == 3) btn1 = InitButtonX(buttons[i]);
-            }
+                this.IsAutoClose = Convert.ToBoolean(sysMessages[0].IsAutoClose);
 
-            this.StopTime = 10 * 1000;
-            this.WindowTitle = string.IsNullOrEmpty(sysMessage.WindowsTitle) ? "提示" : sysMessage.WindowsTitle;
-            if (sysMessage.MsgWarnType == (int)eMsgWarnType.右下角)
-            {
-                this.ShowMode = eMsgWarnType.右下角;
-                this.Show();
+                foreach (CmcsSysMessage item in sysMessages)
+                {
+                    str += "<span style='color:White'>" + item.MsgCode + "：" + item.MsgContent + "</span></br>";
+                }
+                 
+                this.HtmlContent = str;        
+
+                string[] buttons = sysMessages[0].MsgButton.Split(new char[] { '|' });
+                for (int i = 0; i < buttons.Length; i++)
+                {
+                    if (i == 0) btn1 = InitButtonX(buttons[i]);
+                    if (i == 1) btn1 = InitButtonX(buttons[i]);
+                    if (i == 2) btn1 = InitButtonX(buttons[i]);
+                    if (i == 3) btn1 = InitButtonX(buttons[i]);
+                }
+
+                this.StopTime = 10 * 1000;
+                this.WindowTitle = "异常信息";
+                if (sysMessages[0].MsgWarnType == (int)eMsgWarnType.右下角)
+                {
+                    this.ShowMode = eMsgWarnType.右下角;
+                    this.Show();
+                }
+                else
+                {
+                    this.ShowMode = eMsgWarnType.对话框;
+                    this.ShowDialog();
+                }
             }
-            else
-            {
-                this.ShowMode = eMsgWarnType.对话框;
-                this.ShowDialog();
-            }
+        
         }
 
         #endregion

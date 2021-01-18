@@ -51,6 +51,7 @@
                     $("#" + data.Key).html(data.Value);
                 // json_data
                 else if (data.Type == 1) {
+                
                     if (data.Key == "采样机1_集样罐" || data.Key == "采样机2_集样罐") loadBarrels(data);
                 }
                 // svg_text
@@ -111,8 +112,9 @@
 
         // 加载集样罐
         function loadBarrels(data) {
-            var barrels = eval(data.Value),
-                $ulsvgbarrel = $(data.Key == "采样机1_集样罐" ? "#ulSampler1Barrel" : "#ulSampler2Barrel");
+            var barrels = eval(data.Value);
+         
+            var $ulsvgbarrel = $(data.Key == "采样机1_集样罐" ? "#ulSampler1Barrel" : "#ulSampler2Barrel");
 
             // 清空集样罐
             $ulsvgbarrel.empty();
@@ -348,17 +350,17 @@
             margin: 0px;
             list-style: none;
             position: absolute;
-            width: 420px;
+            width: 480px;  
             height: 40px;
-            background-color: rgb(43, 47, 51);
+            background-color: rgb(63, 63, 63);
         }
         
         .ul-svg-barrel > li
         {
             position: relative;
             float: left;
-            width: 30px;
-            height: 35px;
+            width: 38px;
+            height: 40px;
             margin-left: 25px;
         }
         
@@ -432,31 +434,31 @@
     <div class="div-root">
         <div class="div-root" id="divCanvas">
             <!--#1采样机-->
-            <input type="button" id="btnStop" value="急 停" class="button1" style="top: 210px;
-                left: 500px;" onclick="Stop('#1')" />
-            <input type="button" id="btnCarInfo" value="查看故障信息" class="button1" style="top: 210px;
-                left: 625px;" onclick="ShowHitchs('#1')" />
-            <input type="button" id="btnErrorReset" value="故障复位" class="button1" style="top: 250px;
-                left: 500px;" onclick="ErrorReset('#1')" />
-            <input type="button" id="btnSampleHistory" value="采样历史记录" class="button1" style="top: 250px;
-                left: 625px;" onclick="SampleHistory('#1')" />
+          <!--  <input type="button" id="btnStop" value="急 停" class="button1" style="top: 210px;
+                left: 420px;" onclick="Stop('#1')" />-->
+            <input type="button" id="btnCarInfo" value="查看异常信息" class="button1" style="top: 210px;
+                left: 545px;" onclick="ShowHitchs('#1')" />
+          <!--  <input type="button" id="btnErrorReset" value="故障复位" class="button1" style="top: 250px;
+                left: 420px;" onclick="ErrorReset('#1')" />-->
+         <!--   <input type="button" id="btnSampleHistory" value="采样历史记录" class="button1" style="top: 250px;
+                left: 545px;" onclick="SampleHistory('#1')" />-->
             <!--#2采样机-->
-            <input type="button" id="btnStop2" value="急 停" class="button1" style="top: 210px;
-                left: 1300px;" onclick="Stop('#2')" />
-            <input type="button" id="btnCarInfo2" value="查看故障信息" class="button1" style="top: 210px;
-                left: 1425px;" onclick="ShowHitchs('#2')" />
-            <input type="button" id="btnErrorReset2" value="故障复位" class="button1" style="top: 250px;
-                left: 1300px;" onclick="ErrorReset('#2')" />
+          <!--  <input type="button" id="btnStop2" value="急 停" class="button1" style="top: 210px;
+                left: 1350px;" onclick="Stop('#2')" />-->
+            <input type="button" id="btnCarInfo2" value="查看异常信息" class="button1" style="top: 210px;
+                left: 1475px;" onclick="ShowHitchs('#2')" />
+        <!--    <input type="button" id="btnErrorReset2" value="故障复位" class="button1" style="top: 250px;
+                left: 1350px;" onclick="ErrorReset('#2')" />
             <input type="button" id="btnSampleHistory2" value="采样历史记录" class="button1" style="top: 250px;
-                left: 1425px;" onclick="SampleHistory('#2')" />
+                left: 1475px;" onclick="SampleHistory('#2')" />-->
             <img id="Car1" src="Resources/images/Autotruck.png" style="position: absolute; width: 249px;
-                height: 130px; top: 578px; left: 40px;" />
+                height: 130px; top: 745px; left: 120px;" />
             <img id="Car2" src="Resources/images/Autotruck.png" style="position: absolute; width: 249px;
-                height: 130px; top: 578px; left: 840px;" />
-            <embed id="svgCanvas1" src="Resources/CarSampler.svg" type="image/svg+xml" />
+                height: 130px; top: 745px; left: 1030px;" />
+            <embed id="svgCanvas1" src="Resources/CarSampler2.svg" type="image/svg+xml" />
         </div>
         <!--采样机一 集样罐-->
-        <ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 632px; left: 333px;">
+        <ul id="ulSampler1Barrel" class="ul-svg-barrel" style="top: 820px; left: 450px;">
             <li>
                 <img src="Resources/images/barrel-empty.png" />
             </li>
@@ -482,8 +484,18 @@
                 <img src="Resources/images/barrel-empty.png" />
             </li>
         </ul>
+        <ul id="ul1" class="ul-svg-barrel" style="top: 790px; left: 450px; color:White; height:15px">
+            <li>#1</li>
+            <li>#2</li>
+            <li>#3</li>
+            <li>#4</li>
+            <li>#5</li>
+            <li>#6</li>
+            <li>#7</li>
+            <li>#8</li>
+        </ul>
         <!--采样机二 集样罐-->
-        <ul id="ulSampler2Barrel" class="ul-svg-barrel" style="top: 632px; left: 1132px;">
+        <ul id="ulSampler2Barrel" class="ul-svg-barrel" style="top: 820px; left: 1360px;">
             <li>
                 <img src="Resources/images/barrel-empty.png" />
             </li>
@@ -508,6 +520,16 @@
             <li>
                 <img src="Resources/images/barrel-empty.png" />
             </li>
+        </ul>
+        <ul id="ul2" class="ul-svg-barrel" style="top: 790px; left: 1360px;color:White; height:15px">
+            <li>#1</li>
+            <li>#2</li>
+            <li>#3</li>
+            <li>#4</li>
+            <li>#5</li>
+            <li>#6</li>
+            <li>#7</li>
+            <li>#8</li>
         </ul>
     </div>
     <div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">

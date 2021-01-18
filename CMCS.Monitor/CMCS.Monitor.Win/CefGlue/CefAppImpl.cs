@@ -113,25 +113,9 @@ namespace CMCS.Monitor.Win.CefGlue
         {
             if (!MultiThreadedMessageLoop) Application.Idle += (s, e) => CefRuntime.DoMessageLoopWork();
 
-            bool notRunning;
-            using (Mutex mutex = new Mutex(true, Application.ProductName, out notRunning))
-            {
-                if (notRunning)
-                {
-                    //Application.Run(new CMCS.Monitor.Win.Frms.Sys.FrmMainFrame());
-                    Program.frmLogin = new FrmLogin();
+            Program.frmLogin = new FrmLogin();
 
-                    Application.Run(Program.frmLogin);
-                }
-                else
-                {
-                    PlatformMessageBox("已有相同程序正在运行中！");
-                }
-
-            }
-            //Program.frmLogin = new FrmLogin();
-
-            //Application.Run(Program.frmLogin);
+            Application.Run(Program.frmLogin);
         }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace CMCS.Monitor.Win.Frms
         /// 窗体唯一标识符
         /// </summary>
         public static string UniqueKey = "FrmTruckWeighter";
+        public string Device = string.Empty;
 
         CommonDAO commonDAO = CommonDAO.GetInstance();
 
@@ -58,7 +59,7 @@ namespace CMCS.Monitor.Win.Frms
         {
             timer1.Enabled = true;
 
-            RequestData();
+            //RequestData();
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace CMCS.Monitor.Win.Frms
 
             datas.Clear();
 
-            datas.Add(new HtmlDataItem("过衡程序_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("过衡程序_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("IO控制器_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.IO控制器_连接状态.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("地磅仪表_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.地磅仪表_连接状态.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("LED屏_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.LED屏1_连接状态.ToString())), eHtmlDataItemType.svg_color));

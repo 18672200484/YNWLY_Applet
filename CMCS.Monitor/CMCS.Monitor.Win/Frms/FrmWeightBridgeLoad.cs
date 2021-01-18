@@ -29,7 +29,7 @@ namespace CMCS.Monitor.Win.Frms
         /// <summary>
         /// 每页显示行数
         /// </summary>
-        int PageSize = 28;
+        int PageSize = 60;
 
         /// <summary>
         /// 总页数
@@ -64,11 +64,6 @@ namespace CMCS.Monitor.Win.Frms
             dateTimeInput1.Value = DateTime.Now.Date;
             dateTimeInput2.Value = DateTime.Now.Date.AddDays(1).AddMilliseconds(-1);
 
-            // 加载识别设备
-            cmbEquipment.DisplayMember = "EquipmentName";
-            cmbEquipment.ValueMember = "EquipmentCode";
-            cmbEquipment.DataSource = Dbers.GetInstance().SelfDber.Entities<CmcsCMEquipment>("WHERE PARENTID IN (SELECT ID FROM CMCSTBCMEQUIPMENT A WHERE A.EQUIPMENTCODE in ('火车入厂动态衡','火车入厂静态衡')) ORDER BY SEQUENCE");
-            cmbEquipment.SelectedIndex = 0;
         }
 
         public class CmcsTrainWeightRecordTemp : CmcsTrainWeightRecord
@@ -82,6 +77,15 @@ namespace CMCS.Monitor.Win.Frms
             List<CmcsTrainWeightRecord> list = Dbers.GetInstance().SelfDber.ExecutePager<CmcsTrainWeightRecord>(PageSize, CurrentIndex, tempSqlWhere + " order by OrderNumber desc");
 
             GetTotalCount(tempSqlWhere);
+
+            CmcsTrainWeightRecord model = new CmcsTrainWeightRecord();
+            model.TicketWeight = list.Sum(t => t.TicketWeight);
+            model.StandardWeight = list.Sum(t => t.StandardWeight);
+            model.SkinWeight = list.Sum(t => t.SkinWeight);
+            model.GrossWeight = list.Sum(t => t.GrossWeight);
+            model.TrainNumber = "总计";
+            list.Add(model);
+
             superGridControl1.PrimaryGrid.DataSource = list;
             PagerControlStatue();
 
@@ -91,9 +95,6 @@ namespace CMCS.Monitor.Win.Frms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.SqlWhere = string.Empty;
-
-            CmcsCMEquipment cMEquipment = cmbEquipment.SelectedItem as CmcsCMEquipment;
-            if (cMEquipment != null) SqlWhere += " and MachineCode='" + cMEquipment.EquipmentCode + "' ";
 
             if (!String.IsNullOrEmpty((String)dateTimeInput1.Text))
             {
@@ -275,6 +276,31 @@ namespace CMCS.Monitor.Win.Frms
                     break;
             }
 
+        }
+
+        private void superGridControl1_DataBindingComplete(object sender, GridDataBindingCompleteEventArgs e)
+        {
+            foreach (GridRow item in e.GridPanel.Rows)
+            {
+                try
+                {
+                    CmcsTrainWeightRecord TrainWeight = item.DataItem as CmcsTrainWeightRecord;
+
+                    item.Cells["cellTicketWeight"].Value = TrainWeight.TicketWeight.ToString("f2");
+                    item.Cells["cellGrossWeight"].Value = TrainWeight.GrossWeight.ToString("f2");
+                    item.Cells["cellSkinWeight"].Value = TrainWeight.SkinWeight.ToString("f2");
+                    item.Cells["cellStandardWeight"].Value = TrainWeight.StandardWeight.ToString("f2");
+
+                    if (TrainWeight.TrainNumber != "总计")
+                    {
+                        item.Cells["cellSpeed"].Value = TrainWeight.Speed.ToString("f2");
+                        item.Cells["cellGrossTime"].Value = TrainWeight.GrossTime.Year > 2010 ? TrainWeight.GrossTime.ToShortDateString() : "";
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }

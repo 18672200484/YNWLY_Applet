@@ -64,12 +64,30 @@ namespace CMCS.Monitor.Win.Frms
             dateTimeInput1.Value = DateTime.Now.Date;
             dateTimeInput2.Value = DateTime.Now.Date.AddDays(1).AddMilliseconds(-1);
 
+            List<CmcsCMEquipment> list = new List<CmcsCMEquipment>();
+
+            getCmcsCMEquipment(list, "皮带采样机");
+            getCmcsCMEquipment(list, "机械采样机");
+            getCmcsCMEquipment(list, "全自动制样机");
+            getCmcsCMEquipment(list, "气动传输");
+            getCmcsCMEquipment(list, "智能存样柜");
+            getCmcsCMEquipment(list, "矩阵合样归批机");
+            getCmcsCMEquipment(list, "化验设备");
+
             // 加载识别设备
             cmbEquipment.DisplayMember = "EquipmentName";
             cmbEquipment.ValueMember = "EquipmentCode";
-            cmbEquipment.DataSource = Dbers.GetInstance().SelfDber.Entities<CmcsCMEquipment>("where parentid in (select a.id from cmcstbcmequipment a where a.equipmentname in ('皮带采样机','全自动制样机','智能存样柜','气动传输')) order by nodecode");
+            cmbEquipment.DataSource = list;
+                //Dbers.GetInstance().SelfDber.Entities<CmcsCMEquipment>("where parentid ='-1' order by nodecode");
             cmbEquipment.SelectedIndex = 0;
 
+        }
+
+        private void getCmcsCMEquipment(List<CmcsCMEquipment> list, string str)
+        {
+            CmcsCMEquipment d1 = new CmcsCMEquipment();
+            d1.EquipmentCode = d1.EquipmentName = str;
+            list.Add(d1);
         }
 
         public void BindData()
@@ -89,7 +107,7 @@ namespace CMCS.Monitor.Win.Frms
             this.SqlWhere = string.Empty;
 
             CmcsCMEquipment cMEquipment = cmbEquipment.SelectedItem as CmcsCMEquipment;
-            if (cMEquipment != null) SqlWhere += " and MachineCode='" + cMEquipment.EquipmentCode + "' ";
+            if (cMEquipment != null) SqlWhere += " and MachineCode like '%" + cMEquipment.EquipmentCode + "%' ";
 
             if (!String.IsNullOrEmpty((String)dateTimeInput1.Text))
             {

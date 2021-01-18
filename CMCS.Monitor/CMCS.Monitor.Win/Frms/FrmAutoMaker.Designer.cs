@@ -51,7 +51,7 @@
             this.panWebBrower.Location = new System.Drawing.Point(0, 0);
             this.panWebBrower.Margin = new System.Windows.Forms.Padding(0);
             this.panWebBrower.Name = "panWebBrower";
-            this.panWebBrower.Size = new System.Drawing.Size(1452, 725);
+            this.panWebBrower.Size = new System.Drawing.Size(1036, 725);
             this.panWebBrower.TabIndex = 2;
             // 
             // gboxTest
@@ -62,7 +62,7 @@
             this.gboxTest.Controls.Add(this.btnRefresh);
             this.gboxTest.Controls.Add(this.btnRequestData);
             this.gboxTest.ForeColor = System.Drawing.Color.White;
-            this.gboxTest.Location = new System.Drawing.Point(1337, 4);
+            this.gboxTest.Location = new System.Drawing.Point(921, 4);
             this.gboxTest.Name = "gboxTest";
             this.gboxTest.Size = new System.Drawing.Size(111, 114);
             this.gboxTest.TabIndex = 8;
@@ -109,11 +109,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 725);
+            this.ClientSize = new System.Drawing.Size(1036, 725);
             this.Controls.Add(this.panWebBrower);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1438, 725);
+            this.MinimumSize = new System.Drawing.Size(1022, 725);
             this.Name = "FrmAutoMaker";
             this.Text = "全自动制样机";
             this.Load += new System.EventHandler(this.FrmAutoMakerCSKY_Load);

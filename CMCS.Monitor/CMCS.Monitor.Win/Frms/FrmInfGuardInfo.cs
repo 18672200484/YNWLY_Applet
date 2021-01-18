@@ -81,15 +81,16 @@ namespace CMCS.Monitor.Win.Frms
         {
             this.SqlWhere = string.Empty;
 
-            if (!String.IsNullOrEmpty((String)txtUserName.Text)) SqlWhere += " and UserName like %'" + txtUserName.Text + "'% ";
+            //if (!String.IsNullOrEmpty((String)txtUserName.Text)) SqlWhere += " and UserName like %'" + txtUserName.Text + "'% ";
 
             if (!String.IsNullOrEmpty((String)dateTimeInput1.Text))
             {
-                SqlWhere += " and ReadCardTime>= to_date('" + dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','yyyy-mm-dd hh24:mi:ss') ";
+                SqlWhere += " and ReadCardTime >= to_date('" + dateTimeInput1.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','yyyy-mm-dd hh24:mi:ss') ";
             }
+
             if (!String.IsNullOrEmpty((String)dateTimeInput2.Text))
             {
-                SqlWhere += " and ReadCardTime< to_date('" + dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','yyyy-mm-dd hh24:mi:ss') ";
+                SqlWhere += " and ReadCardTime < to_date('" + dateTimeInput2.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','yyyy-mm-dd hh24:mi:ss') ";
             }
 
             if (!String.IsNullOrEmpty(this.SqlWhere))

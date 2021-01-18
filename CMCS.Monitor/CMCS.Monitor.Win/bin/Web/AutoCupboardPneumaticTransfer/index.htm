@@ -7,15 +7,11 @@
     <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
     <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
     <script type="text/javascript">
-
+        var canvas1;
         $(function ($) {
-
+            canvas1 = getCanvas1();
+           
         });
-
-        function initpage() {
-            dataHandler({ Key: "四项转换器", Type: "9999", Value: 3 });
-            dataHandler({ Key: "二项转换器", Type: "9998", Value: 2 });
-        }
 
         // 获取SVG jquery对象
         function getSVGjQuery(id) {
@@ -59,80 +55,102 @@
                 }
                 // svg_text
                 else if (data.Type == 2) {
-                    getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+                    if (data.Key == "传输记录") {
+                        //Createtable(data.Value);
+                    }
+                    else {
+                        getCanvas1().find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+                    }
                 }
                 // svg_color
                 else if (data.Type == 3) {
-                    changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+               
+                    //svgChangeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
+                     changeColor1(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
                 }
                 // svg_scroll
                 else if (data.Type == 9999) {
-                    if (data.Value == 1) {
-                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-25,159,110.4");
-                    } if (data.Value == 2) {
-                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,159,110.4");
-                    } if (data.Value == 3) {
-                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "0,159,110.4");
-                    } if (data.Value == 4) {
-                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "12,159,110.4");
-                    }
-                }
-                // svg_scroll
-                else if (data.Type == 9998) {
-                    if (data.Value == 1) {
-                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "-12,477.5,219");
-                    } if (data.Value == 2) {
-                        changeScroll(getCanvas1().find("*[inkscape\\:label=" + data.Key + "]"), "0,477.5,219");
-                    }
-                }
-                else if (data.Type = 9997) {
                     keys = data.Value;
                 }
+
+
             } catch (e) {
                 //alert(e.Message);
             }
         }
 
-        var i = 0;
-        // 测试 
-        function test() {
-            //            if (i == 0) {
-            //                i++;
-            //                changeScroll(getCanvas1().find("*[inkscape\\:label=二项转换器_旋转]"), "-12,477.5,219");
-            //            }
-            //            else if (i == 1) {
-            //                changeScroll(getCanvas1().find("*[inkscape\\:label=二项转换器_旋转]"), "0,477.5,219");
-            //                i = 0;
-            //            }
+        function Createtable(value) {
+            $("#sampletable").empty();
+            var table = $("<table class=\"SampleTable\" border=\"1\">");
+            table.appendTo($("#sampletable"));
+            var trTitle = $("<tr class=\"trSampleTitle\"></tr>");
+            trTitle.appendTo(table);
+            var tdTitle = $("<td style=\"width: 170px;\">传输时间</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 130px;\">样品编码</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 149px;\">样品类型</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 139px;\">传输状态</td>");
+            tdTitle.appendTo(trTitle);
 
-            //            CaclDiv($("#div1-1"), 12, 123);
+            var rows = value.split('|');
+//            if (rows.length > 6)
+//                $("#sampletableTitle").css("width", "566px");
+//            else
+//                $("#sampletableTitle").css("width", "100%");
 
-            dataHandler({ Key: "气动传输_风机", Type: "9997", Value: "气动传输_风机" });
+            for (var i = 0; i < rows.length -1; i++) {
+                var datas = rows[i].split(',');
+                //创建内容
+                var tr = $("<tr class=\"trSampleContent\"></tr>");
+                tr.appendTo(table);
+                var t0 = datas[0] == undefined ? "" : datas[0];
+                var t1 = datas[1] == undefined ? "" : datas[1];
+                var t2 = datas[2] == undefined ? "" : datas[2];
+                var t3= datas[3] == undefined ? "" : datas[3];
+
+                var td = $("<td>" + t0 + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" +  t1 + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" +  t2 + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" +  t3 + "</td>");
+                td.appendTo(tr);
+            }
+            $("#sampletable").append("</table>");
         }
+
+        var i = 0;
+        var j = 0;
+
+        window.setInterval(function () {
+            if (keys.indexOf("风机正转") >= 0)
+                $("#气动鼓风机").css("transform", "rotate(" + j + "deg)");
+            if (keys.indexOf("风机反转") >= 0)
+                $("#气动鼓风机").css("transform", "rotate(" + i + "deg)");
+
+            i += 120;
+            if (i >= 360)
+                i = 0;
+
+            j -= 120;
+            if (j <= 0)
+                j = 360;
+
+        }, 100);
+
 
         //显示div存样信息
         function CaclDiv(divObj, exist, pass) {
+
             divObj.children().eq(0).css("height", (224 - pass - exist) * divObj.height() / 224);
             divObj.children().eq(1).css("height", pass * divObj.height() / 224);
             divObj.children().eq(2).css("height", exist * divObj.height() / 224);
         }
 
-        // 测试 改变颜色
-        function testColor() {
-
-        }
-
-        // 旋转
-        var i = 1;
         var keys = "";
-//        window.setInterval(function () {
-//            if (keys.indexOf("气动传输_风机") >= 0)
-//            alert(getCanvas1().find("*[inkscape\\:label=气动传输_风机]").attr("transform"));
-//                changeScroll(getCanvas1().find("*[inkscape\\:label=气动传输_风机]"), i + ",146,437");
-//            i += 60;
-//            if (i >= 360)
-//                i = 0;
-//        }, 3000);
 
         //加载样品传输信息
         function LoadSampleInfo(datas) {
@@ -140,17 +158,17 @@
             var table = $("<table class=\"SampleTable\" border=\"1\">");
             table.appendTo($("#sampletable"));
 
-            if (datas.length > 6)
-                $("#sampletableTitle").css("width", "566px");
-            else
-                $("#sampletableTitle").css("width", "100%");
+//            if (datas.length > 6)
+//                $("#sampletableTitle").css("width", "566px");
+//            else
+//                $("#sampletableTitle").css("width", "100%");
 
             //创建表头
             var trTitle = $("<tr class=\"trSampleTitle\"></tr>");
             trTitle.appendTo(table);
             var tdTitle = $("<td style=\"width: 170px;\">传输时间</td>");
             tdTitle.appendTo(trTitle);
-            tdTitle = $("<td style=\"width: 130px;\">样品编码</td>");
+            tdTitle = $("<td style=\"width: 140px;\">样品编码</td>");
             tdTitle.appendTo(trTitle);
             tdTitle = $("<td style=\"width: 149px;\">样品类型</td>");
             tdTitle.appendTo(trTitle);
@@ -234,6 +252,31 @@
             padding: 0px;
             font-family: 微软雅黑;
         }
+        .rotateImg60
+        {
+            transform:rotate(60deg);
+            -ms-transform:rotate(60deg);
+            -moz-transform:rotate(60deg);
+            -webkit-transform:rotate(60deg);
+            -o-transform:rotate(60deg);
+        }
+         .rotateImg120
+        {
+            transform:rotate(120deg);
+            -ms-transform:rotate(120deg);
+            -moz-transform:rotate(120deg);
+            -webkit-transform:rotate(120deg);
+            -o-transform:rotate(120deg);
+        }
+         .rotateImg180
+        {
+            transform:rotate(180deg);
+            -ms-transform:rotate(180deg);
+            -moz-transform:rotate(180deg);
+            -webkit-transform:rotate(180deg);
+            -o-transform:rotate(180deg);
+        }
+        
         .div-root
         {
             position: relative;
@@ -328,55 +371,17 @@
 </head>
 <body onload="initpage()" style="background-color: #231F20;" onselectstart="return false;">
     <div class="div-root" id="divCanvas">
-        <div class="divMain" id="divMain">
-            <div id="sampletableTitle" style="position: absolute; width: 100%; height: 37px;
-                z-index: 999; top: 0px; left: 0px;">
-                <table class="SampleTable" border="1">
-                    <tr class="trSampleTitle">
-                        <td style="width: 170px;">
-                            传输时间
-                        </td>
-                        <td style="width: 130px;">
-                            样品编码
-                        </td>
-                        <td style="width: 149px;">
-                            样品类型
-                        </td>
-                        <td style="width: 139px;">
-                            传输状态
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="sampletable" style="width: 100%; height: 100%; overflow: auto;">
-                <table class="SampleTable" border="1">
-                    <tr class="trSampleTitle">
-                        <td style="width: 170px;">
-                            传输时间
-                        </td>
-                        <td style="width: 130px;">
-                            样品编码
-                        </td>
-                        <td style="width: 149px;">
-                            样品类型
-                        </td>
-                        <td style="width: 139px;">
-                            传输状态
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div style="position: absolute; top: 503px; left: 350px;">
+      
+        <div style="position: absolute; top: 550px; left: 461px;">
             <input type="button" value="异常信息" class="button1" onclick="ShowHitchs('#1CYG')" />
         </div>
-        <div style="position: absolute; top: 503px; left: 850px;">
+        <div style="position: absolute; top: 550px; left: 980px;">
             <input type="button" value="异常信息" class="button1" onclick="ShowHitchs('#2CYG')" />
         </div>
-        <div style="position: absolute; top: 503px; left: 1500px;">
+        <div style="position: absolute; top:153px; left: 1300px;">
             <input type="button" value="异常信息" class="button1" onclick="ShowHitchs('#1QD')" />
         </div>
-        <div id="div1-1" style="position: absolute; top: 614px; left: 78px; width: 96px;height: 250px;">
+        <div id="div1-1" style="position: absolute; top: 614px; left: 78px; width: 250px;height: 213px;">
             <div style="background-color: #A6A8AB; height: 100%;">
             </div>
             <div style="background-color: #EC1C24; height: 0px;">
@@ -384,7 +389,7 @@
             <div style="background-color: #00A551; height: 0px">
             </div>
         </div>
-        <div id="div1-2" style="position: absolute; top: 614px; left: 179px; width: 96px;height: 250px;">
+        <div id="div1-2" style="position: absolute; top: 614px; left: 332px; width: 250px;height: 213px;">
             <div style="background-color: #A6A8AB; height: 100%;">
             </div>
             <div style="background-color: #EC1C24; height: 0px;">
@@ -392,7 +397,7 @@
             <div style="background-color: #00A551; height: 0px">
             </div>
         </div>
-        <div id="div1-3" style="position: absolute; top: 614px; left: 280px; width: 96px;height: 250px;">
+       <div id="div1-3" style="position: absolute; top: 614px; left: 625px; width: 250px;height: 213px;">
             <div style="background-color: #A6A8AB; height: 100%;">
             </div>
             <div style="background-color: #EC1C24; height: 0px;">
@@ -400,7 +405,7 @@
             <div style="background-color: #00A551; height: 0px">
             </div>
         </div>
-        <div id="div1-4" style="position: absolute; top: 614px; left: 382px; width: 96px;height: 250px;">
+        <div id="div1-4" style="position: absolute; top: 614px; left: 879px; width: 250px;height: 213px;">
             <div style="background-color: #A6A8AB; height: 100%;">
             </div>
             <div style="background-color: #EC1C24; height: 0px;">
@@ -408,55 +413,10 @@
             <div style="background-color: #00A551; height: 0px">
             </div>
         </div>
-        <div id="div1-5" style="position: absolute; top: 614px; left: 484px; width: 96px;height: 250px;">
-            <div style="background-color: #A6A8AB; height: 100%;">
-            </div>
-            <div style="background-color: #EC1C24; height: 0px;">
-            </div>
-            <div style="background-color: #00A551; height: 0px">
-            </div>
-        </div>
-        <div id="div2-1" style="position: absolute; top: 614px; left: 624px; width: 96px;height: 250px;">
-            <div style="background-color: #A6A8AB; height: 100%;">
-            </div>
-            <div style="background-color: #EC1C24; height: 0px;">
-            </div>
-            <div style="background-color: #00A551; height: 0px">
-            </div>
-        </div>
-        <div id="div2-2" style="position: absolute; top: 614px; left: 725px; width: 96px;height: 250px;">
-            <div style="background-color: #A6A8AB; height: 100%;">
-            </div>
-            <div style="background-color: #EC1C24; height: 0px;">
-            </div>
-            <div style="background-color: #00A551; height: 0px">
-            </div>
-        </div>
-        <div id="div2-3" style="position: absolute; top: 614px; left: 827px; width: 96px;height: 250px;">
-            <div style="background-color: #A6A8AB; height: 100%;">
-            </div>
-            <div style="background-color: #EC1C24; height: 0px;">
-            </div>
-            <div style="background-color: #00A551; height: 0px">
-            </div>
-        </div>
-        <div id="div2-4" style="position: absolute; top: 614px; left: 929px; width: 96px;height: 250px;">
-            <div style="background-color: #A6A8AB; height: 100%;">
-            </div>
-            <div style="background-color: #EC1C24; height: 0px;">
-            </div>
-            <div style="background-color: #00A551; height: 0px">
-            </div>
-        </div>
-        <div id="div2-5" style="position: absolute; top: 614px; left: 1031px; width: 96px;height: 250px;">
-            <div style="background-color: #A6A8AB; height: 100%;">
-            </div>
-            <div style="background-color: #EC1C24; height: 0px;">
-            </div>
-            <div style="background-color: #00A551; height: 0px">
-            </div>
-        </div>
-        <embed id="svgCanvas1" src="Resources/AutoCupboardPneumaticTransfer03.svg" type="image/svg+xml" />
+
+        <img id="气动鼓风机" src="Resources/g3516.png" style="position: absolute; top: 380px; left: 125px; width: 44px;height: 44px;"/>
+        
+        <embed id="svgCanvas1" src="Resources/AutoCupboardPneumaticTransfer05.svg" type="image/svg+xml" />
     </div>
     <div id="createtable" style="width: 800px; height: 385px; display: none; overflow: auto;">
     </div>

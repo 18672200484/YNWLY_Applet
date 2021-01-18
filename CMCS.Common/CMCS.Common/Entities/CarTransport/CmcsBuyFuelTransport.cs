@@ -324,6 +324,16 @@ namespace CMCS.Common.Entities.CarTransport
 		/// </summary>
 		public DateTime PrintTime { get { return _PrintTime; } set { _PrintTime = value; } }
 
+		/// <summary>
+		/// 过衡时间（临时）
+		/// </summary>
+		[CMCS.DapperDber.Attrs.DapperIgnore]
+		public virtual DateTime PASSTIME { get; set; }
 
+		/// <summary>
+		/// 过衡重量（临时）
+		/// </summary>
+		[CMCS.DapperDber.Attrs.DapperIgnore]
+		public virtual Decimal PASSWEIGHT { get; set; }
 	}
 }

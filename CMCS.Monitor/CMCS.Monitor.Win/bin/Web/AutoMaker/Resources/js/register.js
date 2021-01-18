@@ -12,4 +12,10 @@
       return GetHitchs(paramSampler);
       };
 
+      // 打开全自动制样机监控界面
+      AutoMakerV8Cef.OpenAutoMaker = function(paramSampler) {
+        native function OpenAutoMaker(paramSampler);
+        OpenAutoMaker(paramSampler);
+      };  
+
     })(); 

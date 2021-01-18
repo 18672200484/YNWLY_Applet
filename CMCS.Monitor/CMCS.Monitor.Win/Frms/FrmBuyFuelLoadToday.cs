@@ -74,7 +74,16 @@ namespace CMCS.Monitor.Win.Frms
         public void BindData()
         {
             string tempSqlWhere = this.SqlWhere;
-            List<CmcsBuyFuelTransport> list = Dbers.GetInstance().SelfDber.Entities<CmcsBuyFuelTransport>(" where InFactoryTime>=to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + "','yyyy-mm-dd') order by OrderNumber desc");
+            List<CmcsBuyFuelTransport> list = Dbers.GetInstance().SelfDber.Entities<CmcsBuyFuelTransport>(" where InFactoryTime>=to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + "','yyyy-mm-dd') order by SerialNumber desc");
+
+            CmcsBuyFuelTransport model = new CmcsBuyFuelTransport();
+            model.TicketWeight = list.Sum(t => t.TicketWeight);
+            model.CheckWeight = list.Sum(t => t.CheckWeight);
+            model.TareWeight = list.Sum(t => t.TareWeight);
+            model.SuttleWeight = list.Sum(t => t.SuttleWeight);
+            model.GrossWeight = list.Sum(t => t.GrossWeight);
+            model.CarNumber = "总计";
+            list.Add(model);
 
             superGridControl1.PrimaryGrid.DataSource = list;
             if (list.Count > 0)
@@ -186,6 +195,30 @@ namespace CMCS.Monitor.Win.Frms
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             BindData();
+        }
+
+        private void superGridControl1_DataBindingComplete(object sender, GridDataBindingCompleteEventArgs e)
+        {
+            foreach (GridRow item in e.GridPanel.Rows)
+            {
+                try
+                {
+                    CmcsBuyFuelTransport cmcsBuyFuelTransport = item.DataItem as CmcsBuyFuelTransport;
+
+                    item.Cells["cellTicketWeight"].Value = cmcsBuyFuelTransport.TicketWeight.ToString("f2");
+                    item.Cells["cellGrossWeight"].Value = cmcsBuyFuelTransport.GrossWeight.ToString("f2");
+                    item.Cells["cellTareWeight"].Value = cmcsBuyFuelTransport.TareWeight.ToString("f2");
+                    item.Cells["cellSuttleWeight"].Value = cmcsBuyFuelTransport.SuttleWeight.ToString("f2");
+
+                    if (cmcsBuyFuelTransport.CarNumber != "总计")
+                    {
+                        item.Cells["cellInFactoryTime"].Value = cmcsBuyFuelTransport.InFactoryTime.ToShortDateString();
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }

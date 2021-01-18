@@ -75,6 +75,14 @@ namespace CMCS.Monitor.Win.Frms
             string tempSqlWhere = this.SqlWhere;
             List<CmcsTrainWeightRecord> list = Dbers.GetInstance().SelfDber.Entities<CmcsTrainWeightRecord>(" where GrossTime>=to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + "','yyyy-mm-dd') order by OrderNumber desc");
 
+            CmcsTrainWeightRecord model = new CmcsTrainWeightRecord();
+            model.TicketWeight = list.Sum(t => t.TicketWeight);
+            model.StandardWeight = list.Sum(t => t.StandardWeight);
+            model.SkinWeight = list.Sum(t => t.SkinWeight);
+            model.GrossWeight = list.Sum(t => t.GrossWeight);
+            model.TrainNumber = "总计";
+            list.Add(model);
+
             superGridControl1.PrimaryGrid.DataSource = list;
             if (list.Count > 0)
             {
@@ -388,6 +396,32 @@ namespace CMCS.Monitor.Win.Frms
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             BindData();
+        }
+
+        private void superGridControl1_DataBindingComplete_1(object sender, GridDataBindingCompleteEventArgs e)
+        {
+            foreach (GridRow item in e.GridPanel.Rows)
+            {
+                try
+                {
+                    CmcsTrainWeightRecord TrainWeight = item.DataItem as CmcsTrainWeightRecord;
+
+                    item.Cells["cellTicketWeight"].Value = TrainWeight.TicketWeight.ToString("f2");
+                    item.Cells["cellGrossWeight"].Value = TrainWeight.GrossWeight.ToString("f2");
+                    item.Cells["cellSkinWeight"].Value = TrainWeight.SkinWeight.ToString("f2");
+                    item.Cells["cellStandardWeight"].Value = TrainWeight.StandardWeight.ToString("f2");
+
+                    if(TrainWeight.TrainNumber != "总计")
+                    {
+                        item.Cells["cellSpeed"].Value = TrainWeight.Speed.ToString("f2");
+                        item.Cells["cellGrossTime"].Value = TrainWeight.GrossTime.Year > 2010 ? TrainWeight.GrossTime.ToShortDateString() : "";
+                    }
+                    
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }

@@ -390,13 +390,35 @@ namespace CMCS.Common.DAO
             return string.Empty;
         }
 
-        /// <summary>
-        /// 获取实时信号
-        /// </summary> 
-        /// <param name="signalPrefix">信号前缀</param>
-        /// <param name="signalName">信号名</param>
-        /// <returns></returns>
-        public double GetSignalDataValueDouble(string signalPrefix, string signalName)
+		/// <summary>
+		/// 获取实时信号
+		/// </summary> 
+		/// <param name="signalPrefix">信号前缀</param>
+		/// <param name="signalName">信号名</param>
+		/// <returns></returns>
+		public List<CmcsSignalData> GetInfTbqcjxcyPackingBatchCoord()
+		{
+			DataTable dt = SelfDber.ExecuteDataTable("select * from InfTbqcjxcyPackingBatchCoord d where d.MACHINECODE = '矩阵合样归批机'");
+			List<CmcsSignalData> list = new List<CmcsSignalData>();
+			foreach (DataRow dr in dt.Rows)
+			{
+				CmcsSignalData model = new CmcsSignalData();
+				model.SignalName = dr["COORD"].ToString();
+				model.SignalValue = dr["SAMPLECODE"].ToString();
+				model.Remark = dr["STATE"].ToString() == "1" ? "已使用" : "未使用";
+				model.UpdateTime = Convert.ToDateTime(dr["UPDATETIME"].ToString());
+				list.Add(model);
+			}
+			return list;
+		}
+
+		/// <summary>
+		/// 获取实时信号
+		/// </summary> 
+		/// <param name="signalPrefix">信号前缀</param>
+		/// <param name="signalName">信号名</param>
+		/// <returns></returns>
+		public double GetSignalDataValueDouble(string signalPrefix, string signalName)
         {
             double res = 0;
             Double.TryParse(GetSignalDataValue(signalPrefix, signalName), out res);
@@ -470,16 +492,37 @@ namespace CMCS.Common.DAO
             return SelfDber.Execute("update " + EntityReflectionUtil.GetTableName<CmcsSignalData>() + " set SignalValue=:SignalValue,UpdateTime=sysdate where SignalPrefix=:SignalPrefix and  SignalName=:SignalName", new { SignalPrefix = signalPrefix, SignalName = signalName, SignalValue = signalValue }) > 0;
         }
 
-        #endregion
+		/// <summary>
+		/// 获取实时信号
+		/// </summary> 
+		/// <param name="signalPrefix">信号前缀</param>
+		/// <param name="signalName">信号名</param>
+		/// <returns></returns>
+		public List<CmcsSignalData> GetSignalDataValueByLike(string signalPrefix)
+		{
+			return SelfDber.Entities<CmcsSignalData>("where SignalPrefix like '%' || :SignalPrefix || '%' order by UpdateTime desc", new { SignalPrefix = signalPrefix });
+		}
 
-        #region 设备管理
+		/// <summary>
+		/// 获取实时信号
+		/// </summary> 
+		/// <param name="signalPrefix">信号前缀</param>
+		/// <param name="signalName">信号名</param>
+		/// <returns></returns>
+		public DataTable GetSqlDatas(string sql)
+		{
+			return SelfDber.ExecuteDataTable(sql); ;
+		}
+		#endregion
 
-        /// <summary>
-        /// 根据设备编码获取设备
-        /// </summary>
-        /// <param name="machineCode">设备编码</param>
-        /// <returns></returns>
-        public CmcsCMEquipment GetCMEquipmentByMachineCode(string machineCode)
+		#region 设备管理
+
+		/// <summary>
+		/// 根据设备编码获取设备
+		/// </summary>
+		/// <param name="machineCode">设备编码</param>
+		/// <returns></returns>
+		public CmcsCMEquipment GetCMEquipmentByMachineCode(string machineCode)
         {
             return SelfDber.Entity<CmcsCMEquipment>("where EquipmentCode=:EquipmentCode", new { EquipmentCode = machineCode });
         }

@@ -36,8 +36,8 @@ namespace CMCS.Monitor.Win
 
             // BasisPlatform:应用程序初始化
             Basiser basiser = Basiser.GetInstance();
-            basiser.EnabledEbiaSupport = true;
-            basiser.InitBasisPlatform(CommonAppConfig.GetInstance().AppIdentifier, PlatformType.Winform);
+            //basiser.EnabledEbiaSupport = true;
+            //basiser.Init(CommonAppConfig.GetInstance().AppIdentifier, PlatformType.Winform);
 
             DotNetBarUtil.InitLocalization();
 

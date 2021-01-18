@@ -54,6 +54,14 @@ namespace CMCS.Monitor.Win.Html
         /// SVGTemp
         /// </summary>
         svg_Temp = 5050,
+        /// <summary>
+        /// SVGPlace
+        /// </summary>
+        svg_Place = 5040,
+        /// <summary>
+        /// SVGPlace
+        /// </summary>
+        svg_State = 5041,
     }
 
 }

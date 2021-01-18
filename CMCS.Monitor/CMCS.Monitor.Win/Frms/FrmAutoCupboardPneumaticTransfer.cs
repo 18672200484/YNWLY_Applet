@@ -28,6 +28,8 @@ namespace CMCS.Monitor.Win.Frms
         public static string UniqueKey = "FrmAutoCupboardPneumaticTransfer";
 
         CefWebBrowser cefWebBrowser = new CefWebBrowser();
+        public static string Device = string.Empty;
+
 
         public FrmAutoCupboardPneumaticTransfer()
         {
@@ -43,7 +45,7 @@ namespace CMCS.Monitor.Win.Frms
 #if DEBUG
             gboxTest.Visible = true;
 #else
-            gboxTest.Visible = false;
+            gboxTest.Visible = false; 
 #endif
             cefWebBrowser.StartUrl = SelfVars.Url_AutoCupboardPneumaticTransfer;
             cefWebBrowser.Dock = DockStyle.Fill;
@@ -76,74 +78,17 @@ namespace CMCS.Monitor.Win.Frms
             #region 智能存样柜 #
 
             datas.Clear();
-            machineCode = GlobalVars.MachineCode_CYG1;
-            datas.Add(new HtmlDataItem("#1智能存样柜_共有仓位", commonDAO.GetSignalDataValue(machineCode, "共有仓位"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1智能存样柜_已存仓位", commonDAO.GetSignalDataValue(machineCode, "已存仓位"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1智能存样柜_未存仓位", commonDAO.GetSignalDataValue(machineCode, "未存仓位"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#1智能存样柜_存样率", commonDAO.GetSignalDataValue(machineCode, "存样率"), eHtmlDataItemType.svg_text));
 
-            value = commonDAO.GetSignalDataValue(machineCode, "1号柜已存");
-            datas.Add(new HtmlDataItem("#1智能存样柜_1号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div1-1", value, commonDAO.GetSignalDataValue(machineCode, "1号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "2号柜已存");
-            datas.Add(new HtmlDataItem("#1智能存样柜_2号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div1-2", value, commonDAO.GetSignalDataValue(machineCode, "2号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "3号柜已存");
-            datas.Add(new HtmlDataItem("#1智能存样柜_3号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div1-3", value, commonDAO.GetSignalDataValue(machineCode, "3号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "4号柜已存");
-            datas.Add(new HtmlDataItem("#1智能存样柜_4号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div1-4", value, commonDAO.GetSignalDataValue(machineCode, "4号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "5号柜已存");
-            datas.Add(new HtmlDataItem("#1智能存样柜_5号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div1-5", value, commonDAO.GetSignalDataValue(machineCode, "5号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
+            GetBoxDatas(commonDAO, GlobalVars.MachineCode_CYG1, datas);
 
-            value = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
-            if ("|就绪待机|".Contains("|" + value + "|"))
-                datas.Add(new HtmlDataItem("#1智能存样柜_系统", "#00c000", eHtmlDataItemType.svg_color));
-            else if ("|正在运行|正在卸样|".Contains("|" + value + "|"))
-                datas.Add(new HtmlDataItem("#1智能存样柜_系统", "#ff0000", eHtmlDataItemType.svg_color));
-            else if ("|发生故障|".Contains("|" + value + "|"))
-                datas.Add(new HtmlDataItem("#1智能存样柜_系统", "#ffff00", eHtmlDataItemType.svg_color));
-            else
-                datas.Add(new HtmlDataItem("#1智能存样柜_系统", "#c0c0c0", eHtmlDataItemType.svg_color));
+            GetBoxDatas(commonDAO, GlobalVars.MachineCode_CYG2, datas);
 
-            machineCode = GlobalVars.MachineCode_CYG2;
-            datas.Add(new HtmlDataItem("#2智能存样柜_共有仓位", commonDAO.GetSignalDataValue(machineCode, "共有仓位"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2智能存样柜_已存仓位", commonDAO.GetSignalDataValue(machineCode, "已存仓位"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2智能存样柜_未存仓位", commonDAO.GetSignalDataValue(machineCode, "未存仓位"), eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("#2智能存样柜_存样率", commonDAO.GetSignalDataValue(machineCode, "存样率"), eHtmlDataItemType.svg_text));
-
-            value = commonDAO.GetSignalDataValue(machineCode, "1号柜已存");
-            datas.Add(new HtmlDataItem("#2智能存样柜_1号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div2-1", value, commonDAO.GetSignalDataValue(machineCode, "1号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "2号柜已存");
-            datas.Add(new HtmlDataItem("#2智能存样柜_2号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div2-2", value, commonDAO.GetSignalDataValue(machineCode, "2号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "3号柜已存");
-            datas.Add(new HtmlDataItem("#2智能存样柜_3号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div2-3", value, commonDAO.GetSignalDataValue(machineCode, "3号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "4号柜已存");
-            datas.Add(new HtmlDataItem("#2智能存样柜_4号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div2-4", value, commonDAO.GetSignalDataValue(machineCode, "4号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-            value = commonDAO.GetSignalDataValue(machineCode, "5号柜已存");
-            datas.Add(new HtmlDataItem("#2智能存样柜_5号柜已存", value, eHtmlDataItemType.svg_text));
-            datas.Add(new HtmlDataItem("div2-5", value, commonDAO.GetSignalDataValue(machineCode, "5号柜超期"), "ShowDiv", eHtmlDataItemType.key_value));
-
-            value = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
-            if ("|就绪待机|".Contains("|" + value + "|"))
-                datas.Add(new HtmlDataItem("#2智能存样柜_系统", "#00c000", eHtmlDataItemType.svg_color));
-            else if ("|正在运行|正在卸样|".Contains("|" + value + "|"))
-                datas.Add(new HtmlDataItem("#2智能存样柜_系统", "#ff0000", eHtmlDataItemType.svg_color));
-            else if ("|发生故障|".Contains("|" + value + "|"))
-                datas.Add(new HtmlDataItem("#2智能存样柜_系统", "#ffff00", eHtmlDataItemType.svg_color));
-            else
-                datas.Add(new HtmlDataItem("#2智能存样柜_系统", "#c0c0c0", eHtmlDataItemType.svg_color));
+         
 
             machineCode = GlobalVars.MachineCode_QD;
-            datas.Add(new HtmlDataItem("Keys", commonDAO.GetSignalDataValue(machineCode, "风机") == "1" ? "气动传输_风机" : "", eHtmlDataItemType.svg_scroll3));
+            //datas.Add(new HtmlDataItem("Keys", commonDAO.GetSignalDataValue(machineCode, "风机") == "1" ? "气动传输_风机" : "", eHtmlDataItemType.svg_scroll3));
 
-            value = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.系统.ToString());
+            value = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.程序状态.ToString());
             if ("|就绪待机|".Contains("|" + value + "|"))
                 datas.Add(new HtmlDataItem("气动传输_系统", "#00c000", eHtmlDataItemType.svg_color));
             else if ("|正在运行|正在卸样|".Contains("|" + value + "|"))
@@ -153,28 +98,166 @@ namespace CMCS.Monitor.Win.Frms
             else
                 datas.Add(new HtmlDataItem("气动传输_系统", "#c0c0c0", eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("四项转换器_旋转", nullif(commonDAO.GetSignalDataValue(machineCode, "四项转换器方向")) ?? "2", eHtmlDataItemType.svg_scroll));
-            datas.Add(new HtmlDataItem("四项转换器1", ((nullif(commonDAO.GetSignalDataValue(machineCode, "四项转换器方向")) ?? "2") == "1") ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("四项转换器2", ((nullif(commonDAO.GetSignalDataValue(machineCode, "四项转换器方向")) ?? "2") == "2") ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("四项转换器3", ((nullif(commonDAO.GetSignalDataValue(machineCode, "四项转换器方向")) ?? "2") == "3") ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("四项转换器4", ((nullif(commonDAO.GetSignalDataValue(machineCode, "四项转换器方向")) ?? "2") == "4") ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("二项转换器_旋转", nullif(commonDAO.GetSignalDataValue(machineCode, "二项转换器方向")) ?? "2", eHtmlDataItemType.svg_scroll2));
-            datas.Add(new HtmlDataItem("二项转换器1", ((nullif(commonDAO.GetSignalDataValue(machineCode, "二项转换器方向")) ?? "2") == "1") ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("二项转换器2", ((nullif(commonDAO.GetSignalDataValue(machineCode, "二项转换器方向")) ?? "2") == "2") ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            //信号状态
+            string keys = "";
 
-            //datas.Add(new HtmlDataItem("取样工作站", commonDAO.GetSignalDataValue(machineCode, "取样工作站") == "1" ? "#ff0000" : "#00c000", eHtmlDataItemType.svg_color));
-            //datas.Add(new HtmlDataItem("存样工作站", commonDAO.GetSignalDataValue(machineCode, "存样工作站") == "1" ? "#ff0000" : "#00c000", eHtmlDataItemType.svg_color));
-            //datas.Add(new HtmlDataItem("路径探测器1", commonDAO.GetSignalDataValue(machineCode, "路径探测器1") == "1" ? "#ff0000" : "#00c000", eHtmlDataItemType.svg_color));
-            //datas.Add(new HtmlDataItem("路径探测器2", commonDAO.GetSignalDataValue(machineCode, "路径探测器2") == "1" ? "#ff0000" : "#00c000", eHtmlDataItemType.svg_color));
-            //datas.Add(new HtmlDataItem("路径探测器3", commonDAO.GetSignalDataValue(machineCode, "路径探测器3") == "1" ? "#ff0000" : "#00c000", eHtmlDataItemType.svg_color));
+            if (commonDAO.GetSignalDataValue(machineCode, "风机运转") == "1")
+            {
+                keys += "风机正转";
+            }
 
+            datas.Add(new HtmlDataItem(machineCode + "Keys", keys, eHtmlDataItemType.svg_scroll));
+
+            datas.Add(new HtmlDataItem("1#换向器_位置1", commonDAO.GetSignalDataValue(machineCode, "1#换向器_位置1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1#换向器_位置2", commonDAO.GetSignalDataValue(machineCode, "1#换向器_位置2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1#换向器_位置3", commonDAO.GetSignalDataValue(machineCode, "1#换向器_位置3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1#换向器_位置4", commonDAO.GetSignalDataValue(machineCode, "1#换向器_位置4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("3#换向器_位置1", commonDAO.GetSignalDataValue(machineCode, "3#换向器_位置1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3#换向器_位置2", commonDAO.GetSignalDataValue(machineCode, "3#换向器_位置2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3#换向器_位置3", commonDAO.GetSignalDataValue(machineCode, "3#换向器_位置3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3#换向器_位置4", commonDAO.GetSignalDataValue(machineCode, "3#换向器_位置4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("6#换向器_位置1", commonDAO.GetSignalDataValue(machineCode, "6#换向器_位置1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("6#换向器_位置2", commonDAO.GetSignalDataValue(machineCode, "6#换向器_位置2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("存样柜1换向器_位置1", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_位置1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1换向器_位置2", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_位置2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1换向器_位置3", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_位置3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1换向器_位置4", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_位置4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("存样柜2换向器_位置1", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_位置1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2换向器_位置2", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_位置2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2换向器_位置3", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_位置3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2换向器_位置4", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_位置4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("1换向器_样瓶检测1", commonDAO.GetSignalDataValue(machineCode, "1#换向器_样瓶检测1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1换向器_样瓶检测2", commonDAO.GetSignalDataValue(machineCode, "1#换向器_样瓶检测2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1换向器_样瓶检测3", commonDAO.GetSignalDataValue(machineCode, "1#换向器_样瓶检测3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1换向器_样瓶检测4", commonDAO.GetSignalDataValue(machineCode, "1#换向器_样瓶检测4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("3换向器_样瓶检测1", commonDAO.GetSignalDataValue(machineCode, "3#换向器_样瓶检测1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3换向器_样瓶检测2", commonDAO.GetSignalDataValue(machineCode, "3#换向器_样瓶检测2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3换向器_样瓶检测3", commonDAO.GetSignalDataValue(machineCode, "3#换向器_样瓶检测3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3换向器_样瓶检测4", commonDAO.GetSignalDataValue(machineCode, "3#换向器_样瓶检测4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("6换向器_样瓶检测1", commonDAO.GetSignalDataValue(machineCode, "6#换向器_样瓶检测1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("6换向器_样瓶检测2", commonDAO.GetSignalDataValue(machineCode, "6#换向器_样瓶检测2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("存样柜1换向器_样瓶检测1", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_样瓶检测1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1换向器_样瓶检测2", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_样瓶检测2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1换向器_样瓶检测3", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_样瓶检测3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1换向器_样瓶检测4", commonDAO.GetSignalDataValue(machineCode, "存样柜1换向器_样瓶检测4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("存样柜2换向器_样瓶检测1", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_样瓶检测1") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2换向器_样瓶检测2", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_样瓶检测2") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2换向器_样瓶检测3", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_样瓶检测3") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2换向器_样瓶检测4", commonDAO.GetSignalDataValue(machineCode, "存样柜2换向器_样瓶检测4") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("1发送站1_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "1#发送站1_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1发送站1_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "1#发送站1_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1发送站2_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "1#发送站2_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("1发送站2_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "1#发送站2_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("3发送站1_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "3#发送站1_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3发送站1_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "3#发送站1_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3发送站2_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "3#发送站2_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("3发送站2_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "3#发送站2_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+
+            datas.Add(new HtmlDataItem("6发送站1_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "6#发送站1_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("6发送站1_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "6#发送站1_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("6发送站2_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "6#发送站2_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("6发送站2_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "6#发送站2_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            
+            datas.Add(new HtmlDataItem("化验室接收站_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "化验室接收站_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("人工收发站_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "制样人工收发站_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("人工收发站_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "制样人工收发站_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1收发站_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "存样柜1收发站_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜1收发站_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "存样柜1收发站_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2收发站_管道物料检测", commonDAO.GetSignalDataValue(machineCode, "存样柜2收发站_管道物料检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("存样柜2收发站_样瓶检测", commonDAO.GetSignalDataValue(machineCode, "存样柜2收发站_样瓶检测") == "1" ? "#ee4036" : "#ffffff", eHtmlDataItemType.svg_color));
+           
             // 发送到页面
             cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("requestData(" + Newtonsoft.Json.JsonConvert.SerializeObject(datas) + ");", "", 0);
 
             //出样信息
-            List<InfCYGControlCMDDetail> listMakerRecord = automakerDAO.GetCYGControlCMDDetailByTime(DateTime.Now);
-            cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadSampleInfo(" + Newtonsoft.Json.JsonConvert.SerializeObject(listMakerRecord.Select(a => new { UpdateTime = a.UpdateTime.Year < 2000 ? "" : a.UpdateTime.ToString("yyyy-MM-dd HH:mm"), Code = a.MakeCode, Status = a.Status == null ? "" : a.Status })) + ");", "", 0);
+            //List<InfCYGControlCMDDetail> listMakerRecord = automakerDAO.GetCYGControlCMDDetailByTime(DateTime.Now);
+            //cefWebBrowser.Browser.GetMainFrame().ExecuteJavaScript("LoadSampleInfo(" + Newtonsoft.Json.JsonConvert.SerializeObject(listMakerRecord.Select(a => new { UpdateTime = a.UpdateTime.Year < 2000 ? "" : a.UpdateTime.ToString("yyyy-MM-dd HH:mm"), Code = a.MakeCode, SamType = a. == null ? "" : a.SamType, Status = a.Status == null ? "" : a.Status })) + ");", "", 0);
             #endregion
+        }
+
+        private static void GetBoxDatas(CommonDAO commonDAO,string machineCode, List<HtmlDataItem> datas)
+        {
+            string value = "";
+            datas.Add(new HtmlDataItem(machineCode + "_共有仓位", commonDAO.GetSignalDataValue(machineCode, "共有仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem(machineCode + "_已存仓位", commonDAO.GetSignalDataValue(machineCode, "已存仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem(machineCode + "_未存仓位", commonDAO.GetSignalDataValue(machineCode, "未存仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem(machineCode + "_存样率", commonDAO.GetSignalDataValue(machineCode, "存样率"), eHtmlDataItemType.svg_text));
+
+            datas.Add(new HtmlDataItem(machineCode + "_大瓶已存仓位", commonDAO.GetSignalDataValue(machineCode, "大瓶已存仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem(machineCode + "_小瓶已存仓位", commonDAO.GetSignalDataValue(machineCode, "小瓶已存仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem(machineCode + "_大瓶仓位", commonDAO.GetSignalDataValue(machineCode, "大瓶仓位"), eHtmlDataItemType.svg_text));
+            datas.Add(new HtmlDataItem(machineCode + "_小瓶仓位", commonDAO.GetSignalDataValue(machineCode, "小瓶仓位"), eHtmlDataItemType.svg_text));
+
+            string sql2 = @"select (b.configvalue) from cmcstbappletconfig b where b.configname = '存样柜超期天数'";
+            DataTable dt1 = commonDAO.SelfDber.ExecuteDataTable(sql2);
+            int configvalue = 90;
+            if (dt1 != null && dt1.Rows.Count > 0)
+            {
+                configvalue = Convert.ToInt32(dt1.Rows[0][0].ToString());
+            }
+
+
+            string sql = string.Format(@"select
+                        (select count(0) from inftbcygsam d where d.machinecode = '#1智能存样柜' and d.areanumber = 1 and d.isnew = 1) a1,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#1智能存样柜' and d.areanumber = 2 and d.isnew = 1) a2,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#1智能存样柜' and d.areanumber = 1 and d.isnew = 1 and d.updatetime + {0} < sysdate) a3,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#1智能存样柜' and d.areanumber = 2 and d.isnew = 1 and d.updatetime + {0} < sysdate) a4,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#2智能存样柜' and d.areanumber = 1 and d.isnew = 1) b1,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#2智能存样柜' and d.areanumber = 2 and d.isnew = 1) b2 ,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#2智能存样柜' and d.areanumber = 1 and d.isnew = 1 and d.updatetime + {0} < sysdate) b3,
+                        (select count(0) from inftbcygsam d where d.machinecode = '#2智能存样柜' and d.areanumber = 2 and d.isnew = 1 and d.updatetime + {0} < sysdate) b4
+                        from dual ", configvalue);
+
+            DataTable dt = commonDAO.GetSqlDatas(sql);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                datas.Add(new HtmlDataItem(machineCode + "_a1", "已存：" + dt.Rows[0]["a1"].ToString() + "  超期：" + dt.Rows[0]["a3"].ToString() + "  仓位：520", eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem(machineCode + "_a2", "已存：" + dt.Rows[0]["a2"].ToString() + "  超期：" + dt.Rows[0]["a4"].ToString() + "  仓位：520", eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem(machineCode + "_b1", "已存：" + dt.Rows[0]["b1"].ToString() + "  超期：" + dt.Rows[0]["b3"].ToString() + "  仓位：520", eHtmlDataItemType.svg_text));
+                datas.Add(new HtmlDataItem(machineCode + "_b2", "已存：" + dt.Rows[0]["b2"].ToString() + "  超期：" + dt.Rows[0]["b4"].ToString() + "  仓位：520", eHtmlDataItemType.svg_text));
+
+                datas.Add(new HtmlDataItem("div1-1", value, dt.Rows[0]["a1"].ToString(), "ShowDiv", eHtmlDataItemType.key_value));
+                datas.Add(new HtmlDataItem("div1-2", value, dt.Rows[0]["a2"].ToString(), "ShowDiv", eHtmlDataItemType.key_value));
+                datas.Add(new HtmlDataItem("div1-3", value, dt.Rows[0]["b1"].ToString(), "ShowDiv", eHtmlDataItemType.key_value));
+                datas.Add(new HtmlDataItem("div1-4", value, dt.Rows[0]["b2"].ToString(), "ShowDiv", eHtmlDataItemType.key_value));
+            }
+
+//            sql = string.Format(@"select t.endtime,t.makecode,t.sampletype,t.result  from inftbqdcsrecord t 
+//                    where to_char(t.endtime,'yyyy-mm-dd' ) = to_char(sysdate,'yyyy-mm-dd')   
+//                    order by endtime desc   ");
+
+//            dt = commonDAO.GetSqlDatas(sql);
+            //string str = "";
+            //if (dt != null && dt.Rows.Count > 0)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        str += dr["endtime"].ToString() + "," + dr["makecode"].ToString() + "," + dr["sampletype"].ToString() + "," + dr["result"].ToString() + "|";
+            //    }
+            //}
+
+            //datas.Add(new HtmlDataItem("传输记录", str, eHtmlDataItemType.svg_text));
+
+            value = commonDAO.GetSignalDataValue(machineCode, eSignalDataName.程序状态.ToString());
+            if ("|就绪待机|自动|".Contains("|" + value + "|"))
+                datas.Add(new HtmlDataItem(machineCode + "_系统", "#00c000", eHtmlDataItemType.svg_color));
+            else if ("|正在运行|正在卸样|手动|".Contains("|" + value + "|"))
+                datas.Add(new HtmlDataItem(machineCode + "_系统", "#ff0000", eHtmlDataItemType.svg_color));
+            else if ("|发生故障|".Contains("|" + value + "|"))
+                datas.Add(new HtmlDataItem(machineCode + "_系统", "#ffff00", eHtmlDataItemType.svg_color));
+            else
+                datas.Add(new HtmlDataItem(machineCode + "_系统", "#c0c0c0", eHtmlDataItemType.svg_color));
         }
 
         String nullif(String st)

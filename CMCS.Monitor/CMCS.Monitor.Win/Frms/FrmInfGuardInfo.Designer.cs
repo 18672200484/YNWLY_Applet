@@ -33,8 +33,6 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -94,8 +92,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtUserName);
-            this.panel1.Controls.Add(this.labelX3);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.labelX2);
             this.panel1.Controls.Add(this.labelX1);
@@ -108,39 +104,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1452, 40);
             this.panel1.TabIndex = 12;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
-            // 
-            // 
-            // 
-            this.txtUserName.Border.Class = "TextBoxBorder";
-            this.txtUserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txtUserName.ForeColor = System.Drawing.Color.White;
-            this.txtUserName.Location = new System.Drawing.Point(959, 7);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(128, 27);
-            this.txtUserName.TabIndex = 17;
-            // 
-            // labelX3
-            // 
-            this.labelX3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelX3.AutoSize = true;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.labelX3.ForeColor = System.Drawing.Color.White;
-            this.labelX3.Location = new System.Drawing.Point(771, 8);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(54, 24);
-            this.labelX3.TabIndex = 16;
-            this.labelX3.Text = "用户名";
             // 
             // btnSearch
             // 
@@ -164,7 +127,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.labelX2.ForeColor = System.Drawing.Color.White;
-            this.labelX2.Location = new System.Drawing.Point(1202, 11);
+            this.labelX2.Location = new System.Drawing.Point(1157, 11);
             this.labelX2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(16, 18);
@@ -180,7 +143,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.labelX1.ForeColor = System.Drawing.Color.White;
-            this.labelX1.Location = new System.Drawing.Point(965, 11);
+            this.labelX1.Location = new System.Drawing.Point(880, 11);
             this.labelX1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(82, 18);
@@ -201,7 +164,7 @@
             this.dateTimeInput2.ForeColor = System.Drawing.Color.Black;
             this.dateTimeInput2.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dateTimeInput2.IsPopupCalendarOpen = false;
-            this.dateTimeInput2.Location = new System.Drawing.Point(1225, 10);
+            this.dateTimeInput2.Location = new System.Drawing.Point(1182, 10);
             this.dateTimeInput2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // 
@@ -236,7 +199,7 @@
             this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput2.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput2.Name = "dateTimeInput2";
-            this.dateTimeInput2.Size = new System.Drawing.Size(139, 21);
+            this.dateTimeInput2.Size = new System.Drawing.Size(180, 21);
             this.dateTimeInput2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput2.TabIndex = 10;
             // 
@@ -254,7 +217,7 @@
             this.dateTimeInput1.ForeColor = System.Drawing.Color.Black;
             this.dateTimeInput1.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(1058, 10);
+            this.dateTimeInput1.Location = new System.Drawing.Point(966, 10);
             this.dateTimeInput1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // 
@@ -289,7 +252,7 @@
             this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(139, 21);
+            this.dateTimeInput1.Size = new System.Drawing.Size(180, 21);
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput1.TabIndex = 9;
             this.dateTimeInput1.TimeSelectorTimeFormat = DevComponents.Editors.DateTimeAdv.eTimeSelectorFormat.Time24H;
@@ -345,13 +308,13 @@
             gridColumn2.HeaderText = "门名称";
             gridColumn2.Name = "";
             gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn2.Width = 150;
+            gridColumn2.Width = 250;
             gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn3.DataPropertyName = "ReadCardTime";
             gridColumn3.HeaderText = "刷卡时间";
             gridColumn3.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn3.Name = "";
-            gridColumn3.Width = 150;
+            gridColumn3.Width = 250;
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
@@ -473,7 +436,6 @@
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(1580, 730);
             this.MinimumSize = new System.Drawing.Size(1438, 730);
             this.Name = "FrmInfGuardInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -484,7 +446,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -515,8 +476,6 @@
         private DevComponents.DotNetBar.ButtonX btnFirst;
         private DevComponents.DotNetBar.ButtonX btnLast;
         private DevComponents.DotNetBar.ButtonX btnNext;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtUserName;
 
 
 

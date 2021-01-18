@@ -45,9 +45,14 @@ namespace CMCS.Monitor.Win.Core
         #region 皮带采样机
 
         /// <summary>
-        /// 网页地址 - 皮带采样机
+        /// 网页地址 - 火车皮带采样机
         /// </summary>
         public static string Url_BeltSampler = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/TrainBeltSampler/index.htm");
+
+        /// <summary>
+        /// 网页地址 - 出场皮带采样机
+        /// </summary>
+        public static string Url_OutBeltSampler = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/OutBeltSampler/index.htm");
 
         #endregion
 
@@ -122,6 +127,17 @@ namespace CMCS.Monitor.Win.Core
         /// 网页地址 - 设备监控
         /// </summary>
         public static string Url_CarMonitor = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/CarMonitor/index.htm");
+
+        #endregion
+
+
+
+        #region 矩阵合样归批机
+
+        /// <summary>
+        /// 网页地址 - 矩阵合样归批机
+        /// </summary>
+        public static string Url_JoinBacthManage = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web/JoinBacthManage/index.htm");
 
         #endregion
     }

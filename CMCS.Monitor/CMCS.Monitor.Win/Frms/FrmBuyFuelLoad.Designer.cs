@@ -179,7 +179,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(70, 24);
             this.labelX1.TabIndex = 11;
-            this.labelX1.Text = "入厂时间";
+            this.labelX1.Text = "入场时间";
             // 
             // dateTimeInput2
             // 
@@ -357,17 +357,17 @@
             gridColumn3.Visible = false;
             gridColumn3.Width = 45;
             gridColumn4.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn4.DataPropertyName = "InFactoryTime";
-            gridColumn4.HeaderText = "入厂时间";
+            gridColumn4.DataPropertyName = "";
+            gridColumn4.HeaderText = "入场时间";
             gridColumn4.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn4.Name = "";
-            gridColumn4.Width = 130;
+            gridColumn4.Name = "cellInFactoryTime";
+            gridColumn4.Width = 200;
             gridColumn5.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn5.DataPropertyName = "SupplierName";
             gridColumn5.HeaderText = "供煤单位";
             gridColumn5.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn5.Name = "";
-            gridColumn5.Width = 140;
+            gridColumn5.Width = 200;
             gridColumn6.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn6.DataPropertyName = "FuelKindName";
             gridColumn6.HeaderText = "煤种";
@@ -387,28 +387,28 @@
             gridColumn8.Name = "";
             gridColumn8.Width = 140;
             gridColumn9.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn9.DataPropertyName = "TicketWeight";
+            gridColumn9.DataPropertyName = "";
             gridColumn9.HeaderText = "矿发量(吨)";
             gridColumn9.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn9.Name = "";
+            gridColumn9.Name = "cellTicketWeight";
             gridColumn9.Width = 80;
             gridColumn10.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn10.DataPropertyName = "GrossWeight";
+            gridColumn10.DataPropertyName = "";
             gridColumn10.HeaderText = "毛重(吨)";
             gridColumn10.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn10.Name = "";
+            gridColumn10.Name = "cellGrossWeight";
             gridColumn10.Width = 80;
             gridColumn11.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn11.DataPropertyName = "TareWeight";
+            gridColumn11.DataPropertyName = "";
             gridColumn11.HeaderText = "皮重(吨)";
             gridColumn11.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn11.Name = "";
+            gridColumn11.Name = "cellTareWeight";
             gridColumn11.Width = 80;
             gridColumn12.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn12.DataPropertyName = "StandardWeight";
+            gridColumn12.DataPropertyName = "";
             gridColumn12.HeaderText = "净重(吨)";
             gridColumn12.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn12.Name = "";
+            gridColumn12.Name = "cellSuttleWeight";
             gridColumn12.Width = 80;
             gridColumn13.DataPropertyName = "Id";
             gridColumn13.Name = "clmId";
@@ -433,6 +433,7 @@
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.CellMouseDown += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellMouseEventArgs>(this.superGridControl1_CellMouseDown);
             this.superGridControl1.CellValidated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValidatedEventArgs>(this.superGridControl1_CellValidated);
+            this.superGridControl1.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl1_DataBindingComplete);
             this.superGridControl1.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl1_BeginEdit);
             this.superGridControl1.GetCellFormattedValue += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetCellFormattedValueEventArgs>(this.superGridControl1_GetCellFormattedValue);
             this.superGridControl1.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl1_GetRowHeaderText);

@@ -78,7 +78,7 @@
             this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.ForeColor = System.Drawing.Color.Black;
+            this.splitContainer1.ForeColor = System.Drawing.Color.White;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
@@ -88,14 +88,14 @@
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Panel1.Controls.Add(this.panel1);
-            this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.Black;
+            this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.White;
             this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Panel2.ForeColor = System.Drawing.Color.Black;
+            this.splitContainer1.Panel2.ForeColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(1452, 725);
             this.splitContainer1.SplitterDistance = 40;
@@ -108,7 +108,7 @@
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.ForeColor = System.Drawing.Color.Black;
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -144,27 +144,33 @@
             // 
             // splitContainer2
             // 
+            this.splitContainer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.ForeColor = System.Drawing.Color.White;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.splitContainer2.Panel1.Controls.Add(this.superGridControl1);
+            this.splitContainer2.Panel1.ForeColor = System.Drawing.Color.White;
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer2.Panel2.ForeColor = System.Drawing.Color.White;
             this.splitContainer2.Size = new System.Drawing.Size(1452, 684);
             this.splitContainer2.SplitterDistance = 979;
             this.splitContainer2.TabIndex = 1;
             // 
             // superGridControl1
             // 
-            this.superGridControl1.BackColor = System.Drawing.Color.White;
+            this.superGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl1.ForeColor = System.Drawing.Color.White;
             this.superGridControl1.Location = new System.Drawing.Point(0, 0);
             this.superGridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.superGridControl1.Name = "superGridControl1";
@@ -174,61 +180,61 @@
             gridColumn1.DataPropertyName = "TrainNumber";
             gridColumn1.HeaderText = "车号";
             gridColumn1.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn1.Name = "";
+            gridColumn1.Name = "cellTrainNumber";
             gridColumn1.Width = 80;
             gridColumn2.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn2.DataPropertyName = "TrainType";
             gridColumn2.HeaderText = "车型";
             gridColumn2.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn2.Name = "";
+            gridColumn2.Name = "TrainType";
             gridColumn2.Width = 80;
             gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn3.DataPropertyName = "GrossTime";
-            gridColumn3.HeaderText = "入厂时间";
+            gridColumn3.DataPropertyName = "";
+            gridColumn3.HeaderText = "入场时间";
             gridColumn3.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn3.Name = "";
-            gridColumn3.Width = 130;
-            gridColumn4.DataPropertyName = "SupplierName";
-            gridColumn4.HeaderText = "供煤单位";
+            gridColumn3.Name = "cellGrossTime";
+            gridColumn3.Width = 200;
+            gridColumn4.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn4.DataPropertyName = "";
+            gridColumn4.HeaderText = "矿发量(吨)";
             gridColumn4.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn4.Name = "";
-            gridColumn4.Width = 140;
-            gridColumn5.DataPropertyName = "StationName";
-            gridColumn5.HeaderText = "发站";
+            gridColumn4.Name = "cellTicketWeight";
+            gridColumn4.Width = 80;
+            gridColumn5.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn5.DataPropertyName = "";
+            gridColumn5.HeaderText = "毛重(吨)";
             gridColumn5.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn5.Name = "";
-            gridColumn6.DataPropertyName = "FuelKind";
-            gridColumn6.HeaderText = "煤种";
+            gridColumn5.Name = "cellGrossWeight";
+            gridColumn5.Width = 80;
+            gridColumn6.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn6.DataPropertyName = "";
+            gridColumn6.HeaderText = "皮重(吨)";
             gridColumn6.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn6.Name = "";
+            gridColumn6.Name = "cellSkinWeight";
             gridColumn6.Width = 80;
             gridColumn7.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn7.DataPropertyName = "TicketWeight";
-            gridColumn7.HeaderText = "矿发量(吨)";
+            gridColumn7.DataPropertyName = "";
+            gridColumn7.HeaderText = "净重(吨)";
             gridColumn7.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn7.Name = "";
+            gridColumn7.Name = "cellStandardWeight";
             gridColumn7.Width = 80;
             gridColumn8.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn8.DataPropertyName = "TicketWeight";
-            gridColumn8.HeaderText = "毛重(吨)";
+            gridColumn8.DataPropertyName = "";
+            gridColumn8.HeaderText = "车速(米/秒)";
             gridColumn8.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn8.Name = "";
+            gridColumn8.Name = "cellSpeed";
             gridColumn8.Width = 80;
-            gridColumn9.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn9.DataPropertyName = "GrossWeight";
-            gridColumn9.HeaderText = "毛重(吨)";
+            gridColumn9.DataPropertyName = "SupplierName";
+            gridColumn9.HeaderText = "供煤单位";
             gridColumn9.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn9.Name = "";
-            gridColumn9.Width = 80;
-            gridColumn10.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn10.DataPropertyName = "StandardWeight";
-            gridColumn10.HeaderText = "净重(吨)";
+            gridColumn9.Width = 200;
+            gridColumn10.DataPropertyName = "StationName";
+            gridColumn10.HeaderText = "发站";
             gridColumn10.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn10.Name = "";
-            gridColumn10.Width = 80;
-            gridColumn11.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn11.DataPropertyName = "Speed";
-            gridColumn11.HeaderText = "车速(米/秒)";
+            gridColumn11.DataPropertyName = "FuelKind";
+            gridColumn11.HeaderText = "煤种";
             gridColumn11.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn11.Name = "";
             gridColumn11.Width = 80;
@@ -253,11 +259,14 @@
             this.superGridControl1.TabIndex = 6;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.CellMouseDown += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellMouseEventArgs>(this.superGridControl1_CellMouseDown);
+            this.superGridControl1.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl1_DataBindingComplete_1);
             this.superGridControl1.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl1_BeginEdit);
+            this.superGridControl1.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl1_GetRowHeaderText);
             this.superGridControl1.RowHeaderClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowHeaderClickEventArgs>(this.superGridControl1_RowHeaderClick);
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
@@ -265,6 +274,7 @@
             this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -281,6 +291,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.ForeColor = System.Drawing.Color.White;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(463, 24);
@@ -304,6 +315,7 @@
             this.panel4.Controls.Add(this.buttonX2);
             this.panel4.Controls.Add(this.buttonX1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.ForeColor = System.Drawing.Color.White;
             this.panel4.Location = new System.Drawing.Point(3, 345);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(463, 24);
@@ -338,6 +350,7 @@
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -355,8 +368,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.ForeColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(3, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(463, 306);
@@ -368,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1452, 725);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

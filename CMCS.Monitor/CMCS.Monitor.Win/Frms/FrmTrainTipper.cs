@@ -28,6 +28,7 @@ namespace CMCS.Monitor.Win.Frms
         public static string UniqueKey = "FrmTrainTipper";
 
         CefWebBrowser cefWebBrowser = new CefWebBrowser();
+        public string Device = string.Empty;
 
         public FrmTrainTipper()
         {
@@ -55,7 +56,7 @@ namespace CMCS.Monitor.Win.Frms
         {
             timer1.Enabled = true;
 
-            RequestData();
+            //RequestData();
         }
 
         private void FrmTrainTipper_Load(object sender, EventArgs e)

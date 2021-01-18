@@ -55,7 +55,7 @@ namespace CMCS.Monitor.Win.Frms
         {
             timer1.Enabled = true;
 
-            RequestData();
+            //RequestData();
         }
 
         private void FrmCarMonitor_Load(object sender, EventArgs e)
@@ -83,8 +83,8 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("Infactory_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Infactory_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Infactory_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Infactory_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Infactory_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Infactory_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Infactory_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
             #endregion
 
             #region 采样
@@ -93,16 +93,16 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("Sample1_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Sample1_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Sample1_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Sample1_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Sample1_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Sample1_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Sample1_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_JxSampler_2;
             datas.Add(new HtmlDataItem("Sample2_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Sample2_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Sample2_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Sample2_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Sample2_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Sample2_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Sample2_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Sample2_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
             #endregion
 
             #region 汽车衡
@@ -111,72 +111,72 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("Weighter1_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter1_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter1_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter1_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter1_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter1_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter1_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_2;
             datas.Add(new HtmlDataItem("Weighter2_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter2_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter2_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter2_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter2_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter2_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter2_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter2_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_3;
             datas.Add(new HtmlDataItem("Weighter3_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter3_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter3_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter3_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter3_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter3_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter3_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter3_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_4;
             datas.Add(new HtmlDataItem("Weighter4_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter4_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter4_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter4_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter4_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter4_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter4_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter4_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_5;
             datas.Add(new HtmlDataItem("Weighter5_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter5_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter5_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter5_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter5_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter5_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter5_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter5_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_6;
             datas.Add(new HtmlDataItem("Weighter6_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter6_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter6_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter6_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter6_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter6_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter6_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter6_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_7;
             datas.Add(new HtmlDataItem("Weighter7_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter7_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter7_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter7_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter7_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter7_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter7_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter7_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_8;
             datas.Add(new HtmlDataItem("Weighter8_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter8_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter8_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter8_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter8_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter8_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter8_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter8_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
 
             machineCode = GlobalVars.MachineCode_QC_Weighter_9;
             datas.Add(new HtmlDataItem("Weighter9_State1", commonDAO.GetSignalDataValue(machineCode, "系统"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter9_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter9_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Weighter9_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter9_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Weighter9_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter9_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Weighter9_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
             #endregion
 
             #region 出厂
@@ -185,8 +185,8 @@ namespace CMCS.Monitor.Win.Frms
             datas.Add(new HtmlDataItem("Outfactory_State2", commonDAO.GetSignalDataValue(machineCode, "IO控制器_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Outfactory_State3", commonDAO.GetSignalDataValue(machineCode, "LED屏1_连接状态"), eHtmlDataItemType.json_data));
             datas.Add(new HtmlDataItem("Outfactory_State4", commonDAO.GetSignalDataValue(machineCode, "LED屏2_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Outfactory_State5", commonDAO.GetSignalDataValue(machineCode, "读卡器1_连接状态"), eHtmlDataItemType.json_data));
-            datas.Add(new HtmlDataItem("Outfactory_State6", commonDAO.GetSignalDataValue(machineCode, "读卡器2_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Outfactory_State5", commonDAO.GetSignalDataValue(machineCode, "车号识别1_连接状态"), eHtmlDataItemType.json_data));
+            datas.Add(new HtmlDataItem("Outfactory_State6", commonDAO.GetSignalDataValue(machineCode, "车号识别2_连接状态"), eHtmlDataItemType.json_data));
             #endregion
 
             // 发送到页面

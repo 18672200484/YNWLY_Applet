@@ -78,7 +78,18 @@ namespace CMCS.Monitor.Win.Frms
             string tempSqlWhere = this.SqlWhere;
             List<CmcsBuyFuelTransport> list = Dbers.GetInstance().SelfDber.ExecutePager<CmcsBuyFuelTransport>(PageSize, CurrentIndex, tempSqlWhere + " order by InFactoryTime desc");
 
+
             GetTotalCount(tempSqlWhere);
+
+            CmcsBuyFuelTransport model = new CmcsBuyFuelTransport();
+            model.TicketWeight = list.Sum(t => t.TicketWeight);
+            model.CheckWeight = list.Sum(t => t.CheckWeight);
+            model.TareWeight = list.Sum(t => t.TareWeight);
+            model.SuttleWeight = list.Sum(t => t.SuttleWeight);
+            model.GrossWeight = list.Sum(t => t.GrossWeight);
+            model.CarNumber = "总计";
+            list.Add(model);
+
             superGridControl1.PrimaryGrid.DataSource = list;
             PagerControlStatue();
 
@@ -201,10 +212,13 @@ namespace CMCS.Monitor.Win.Frms
                 return;
 
             SuperGridControl sgc = (SuperGridControl)sender;
-            CmcsBuyFuelTransport entity = Dbers.GetInstance().SelfDber.Get<CmcsBuyFuelTransport>(sgc.PrimaryGrid.GetCell(e.GridCell.GridRow.Index, 13).Value.ToString());
+            var Cell = sgc.PrimaryGrid.GetCell(e.GridCell.GridRow.Index, 12);
+            string id = Cell != null ? Cell.Value.ToString() : "";
+
+            CmcsBuyFuelTransport entity = Dbers.GetInstance().SelfDber.Get<CmcsBuyFuelTransport>(id);
             if (entity == null)
                 return;
-            String newid = sgc.PrimaryGrid.GetCell(e.GridCell.GridRow.Index, 13).Value.ToString();
+            String newid = id.ToString();
             switch (sgc.PrimaryGrid.GetCell(e.GridCell.GridRow.Index, e.GridCell.ColumnIndex).NullString)
             {
                 case "抓拍":
@@ -244,6 +258,30 @@ namespace CMCS.Monitor.Win.Frms
                     break;
             }
 
+        }
+
+        private void superGridControl1_DataBindingComplete(object sender, GridDataBindingCompleteEventArgs e)
+        {
+            foreach (GridRow item in e.GridPanel.Rows)
+            {
+                try
+                {
+                    CmcsBuyFuelTransport cmcsBuyFuelTransport = item.DataItem as CmcsBuyFuelTransport;
+
+                    item.Cells["cellTicketWeight"].Value = cmcsBuyFuelTransport.TicketWeight.ToString("f2");
+                    item.Cells["cellGrossWeight"].Value = cmcsBuyFuelTransport.GrossWeight.ToString("f2");
+                    item.Cells["cellTareWeight"].Value = cmcsBuyFuelTransport.TareWeight.ToString("f2");
+                    item.Cells["cellSuttleWeight"].Value = cmcsBuyFuelTransport.SuttleWeight.ToString("f2");
+
+                    if (cmcsBuyFuelTransport.CarNumber != "总计")
+                    {
+                        item.Cells["cellInFactoryTime"].Value = cmcsBuyFuelTransport.InFactoryTime.ToShortDateString();
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }

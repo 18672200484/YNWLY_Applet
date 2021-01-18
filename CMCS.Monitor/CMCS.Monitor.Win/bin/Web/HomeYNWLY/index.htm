@@ -6,6 +6,8 @@
     <script type="text/javascript" src="../Resources/plugins/layer/layer.min.js"></script>
     <script type="text/javascript" src="../Resources/plugins/svg/svg.js"></script>
     <script type="text/javascript" src="../Resources/js/svgHelper.js"></script>
+    <script type="text/javascript" src="../Resources/js/HomeYNWLY.js"></script>
+    
     <script type="text/javascript">
 
         var canvas1;
@@ -14,33 +16,436 @@
             canvas1 = getCanvas1();
 
             // 注册SVG元素脚本事件
-            initSvgElementEvent();
-            getMutualDataFast();
+           initSvgElementEvent1();
 
-            window.setInterval(getMutualDataFast, 3 * 1000);
+           initSvgElementEvent2();
         };
         // 获取 svgCanvas1 SVG jquery对象
         function getCanvas1() {
             return getSVGjQuery("svgCanvas1");
         }
 
-        function getMutualDataFast() {
-            SetDeviceBreak("path1486", "#1磅");
-            SetDeviceBreak("path1486box", "#1磅");
-            SetDeviceBreak("path1310", "#2采样机");
-            SetDeviceBreak("path1310box", "#2采样机");
-            SetDeviceBreak("rect1583", "#3乙皮带");
+        // 请求数据 - 后台调用
+        function requestData(datas) {
+            $("input[id^='cwg']").hide();
+            $("input[id^='stgDiv']").hide();
+            $("#dlj1").show();
+            $("#dlj2").show();
+            
+            for (var i = 0; i < datas.length; i++) {
+                dataHandler(datas[i]);
+            }
         }
 
-        function SetDeviceBreak(id,name) {
-            svgChangeColor(canvas1.find("*[id=" + id + "]"), "#ffff00");
+        // 处理数据
+        function dataHandler(data) {
+            if (data.Type == 0)
+                $("#" + data.Key).html(data.Value);
+            else if (data.Type == 1) {
+            }
+            else if (data.Type == 2) {
+                canvas1.find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
+            }
+            else if (data.Type == 3) {
+                svgChangeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
 
-            canvas1.find("*[id=" + id + "]").animate({ opacity: 0.2 }, 1000);
-            canvas1.find("*[id=" + id + "]").animate({ opacity: 1 }, 2000);
+                canvas1.find("*[inkscape\\:label=" + data.Key + "]").attr("color", data.Value);
+            }
+            else if (data.Type == 4) {
+                if (data.Value.toLowerCase() == "true")
+                    canvas1.find("*[inkscape\\:label=" + data.Key + "]").show();
+                else
+                    canvas1.find("*[inkscape\\:label=" + data.Key + "]").hide();
+            }
+            else if (data.Type == 5040) {
+                var left = (parseFloat(data.Value) * 1.54) + 390;
+                $("#" + data.Key).css("left", left + "px");
+            }
+            else if (data.Type == 5041) {
+                if (data.Value == "#C0C0C0") {
+                    $("#" + data.Key).attr("src", "Resources/images/doulunji_stop.png");
+                }
+                else if (data.Value == "#FF0000") {
+                    $("#" + data.Key).attr("src", "Resources/images/doulunji_run.png");
+                }
+                else if (data.Value == "#00C000") {
+                    $("#" + data.Key).attr("src", "Resources/images/doulunji_wait.png");
+                }
+            }
+            else if (data.Type == 5050) {
+
+                if (data.Key.indexOf("煤场温度测试仪_") != -1) {
+                    SetStorageTemp(data);
+                }
+                else if (data.Key.indexOf("煤场煤堆_") != -1) {
+                    SetStorageQty(data);
+                }
+            }
+        }
+
+
+        function SetStorageQty(data) {
+            var stgdatas = data.Value.split("|");
+            var cwy = data.Key.replace("煤场煤堆_", "");
+           
+            if (stgdatas.length == 6) {
+                var left = 0;
+                var top = 0;
+                var qtyHave = 0;
+                var startPoint = 0;
+                var endPoint = 0;
+                var txtWidth = 0;
+                var sid = stgdatas[5];
+
+                startPoint = parseInt(stgdatas[0]);
+                endPoint = parseInt(stgdatas[1]);
+                qtyHave = parseInt(stgdatas[4]);
+            
+                var width = endPoint - startPoint;
+                if (width <= 40) {
+                    width = width * 1.02;
+                }
+                else if (width > 40 && width <= 50) {
+                    width = width * 1.05;
+                }
+                else if (width > 50 && width <= 100) {
+                    width = width * 1.35;
+                }
+                else {
+                    width = width * 1.5;
+                }
+
+                if (stgdatas[3].toString() == "1") {
+                    left = 408 + startPoint * 1.55;
+                    top = 320;
+                }
+                else if (stgdatas[3].toString() == "2") {
+                    left = 408 + startPoint * 1.55;
+                    top = 504;
+                }
+
+                var stgDiv = $("#stgDiv" + cwy);
+                var stgText = $("#stgtext" + cwy);
+                stgDiv.show();
+                stgText.show();
+                if (qtyHave <= 10000) {
+                    stgText.css("left", left + 10 + "px").css("top", (top - 35) + "px").css("width", width + "px").text(stgdatas[2])
+                        .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+
+                    stgDiv.css("left", left + "px").css("top", top + 5 + "px").css("width", width + "px").css("border-width", "0px 9px 10px")
+                          .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+                }
+                else if (qtyHave > 10000 && qtyHave <= 20000) {
+                    stgText.css("left", left + 10 + "px").css("top", (top - 35) + "px").css("width", width + "px").text(stgdatas[2])
+                        .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+
+                    stgDiv.css("left", left + "px").css("top", top + "px").css("width", width + "px").css("border-width", "0px 9px 15px")
+                     .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+                }
+                else if (qtyHave > 20000 && qtyHave <= 30000) {
+                    stgText.css("left", left + 10 + "px").css("top", (top - 35) + "px").css("width", width + "px").text(stgdatas[2])
+                        .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+
+                    stgDiv.css("left", left + "px").css("top", (top - 5) + "px").css("width", width + "px").css("border-width", "0px 9px 20px")
+                     .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+                }
+                else if (qtyHave > 30000) {
+                    stgText.css("left", left + 10 + "px").css("top", (top - 35) + "px").css("width", width + "px").text(stgdatas[2])
+                        .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+
+                    stgDiv.css("left", left + 10 + "px").css("top", top - 10 + "px").css("width", width - 20 + "px").css("border-width", "0px 9px 25px")
+                     .attr("sid", sid).attr("startPoint", startPoint).attr("endPoint", endPoint).attr("name", stgdatas[2]);
+                }
+            }
+        }
+        function SetStorageTemp() {
+            var stgdatas = data.Value.split("|");
+            var cwy = data.Key.replace("煤场温度测试仪_", "");
+
+            if (stgdatas.length == 5) {
+                var left = 0;
+                var top = 0;
+                var x = 0;
+                var y = 0
+                x = parseInt(stgdatas[2]) * 1.2;
+                y = parseInt(stgdatas[3]) * 1.7;
+
+                if (stgdatas[4].toString().indexOf("N") != -1) {
+                    var i = parseInt(stgdatas[4].toString().replace("N", ""));
+                    left = 406 + (77 * (i - 1)) + x;
+                    top = 222 + y;
+                }
+                else if (stgdatas[4].toString().indexOf("S") != -1) {
+                    var j = parseInt(stgdatas[4].toString().replace("S", ""));
+                    left = 406 + (77 * (j - 1)) + x;
+                    top = 410 + y;
+                }
+                var cwgt = $("#cwgtext" + cwy);
+                var cwgi = $("#cwgimg" + cwy);
+                cwgt.show();
+                cwgi.show();
+                cwgt.css("left", left + "px").css("top", top + "px").text(stgdatas[1] + "℃");
+                cwgi.css("left", left + "px").css("top", (top + 18) + "px");
+            }
+        }
+
+
+
+        // 注册SVG元素脚本事件
+        function initSvgElementEvent2() {
+            
+
+            canvas1.find("*[inkscape\\:label=#1磅]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#1磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#1过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#1过衡端');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#2磅]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#2磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#2过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#2过衡端');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#3磅]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#3磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#3过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#3过衡端');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#4磅]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#4磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#4磅');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#4过衡端');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#5磅]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#5磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#5过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#5过衡端');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#6磅]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#6磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#6过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#6过衡端');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#7磅]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=汽车智能化-#7过衡端]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#7过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#7过衡端');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#8磅]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#8磅]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#8过衡端');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenPoundInfo('汽车智能化-#8过衡端');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#2汽车机械采样机]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=汽车智能化-#2机械采样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#2机械采样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenTruckMachinerySampler('汽车智能化-#2机械采样机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#1汽车机械采样机]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=汽车智能化-#1机械采样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('汽车智能化-#1机械采样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenTruckMachinerySampler('汽车智能化-#1机械采样机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#1全自动制样机]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#1全自动制样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#1全自动制样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenAutoMaker('#1全自动制样机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#2全自动制样机]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#2全自动制样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#2全自动制样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenAutoMaker('#2全自动制样机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#3全自动制样机]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#3全自动制样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#3全自动制样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenAutoMaker('#3全自动制样机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#化验室设备]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#化验室设备]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#化验室设备');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenLaboratory('#化验室设备');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#1翻车机]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#1翻车机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#1翻车机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenTrainTipper('#1翻车机');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#2翻车机]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#2翻车机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#2翻车机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenTrainTipper('#2翻车机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#1入场皮带采样机]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#1入场皮带采样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#1入场皮带采样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenTrainBeltSampler('#1入场皮带采样机');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#2入场皮带采样机]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#2入场皮带采样机]").attr("color");
+
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#2入场皮带采样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenTrainBeltSampler('#2入场皮带采样机');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#3出场皮带采样机]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#3出场皮带采样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#3出场皮带采样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenOutTrainBeltSampler('#3场皮带采样机');
+                }
+            });
+            canvas1.find("*[inkscape\\:label=#4出场皮带采样机]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find("*[inkscape\\:label=#4出场皮带采样机]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#4出场皮带采样机');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenOutTrainBeltSampler('#4出场皮带采样机');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#轨道衡]").unbind("click").bind("click", function () {
+                var color = canvas1.find("*[inkscape\\:label=#轨道衡]").attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo('#轨道衡');
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenWeightBridgeLoadToday('#轨道衡');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#销售煤入厂端_道闸1],*[inkscape\\:label=#销售煤入厂端_道闸2],*[inkscape\\:label=#2磅_道闸2],*[inkscape\\:label=#1磅_道闸2],*[inkscape\\:label=#1磅_道闸1],*[inkscape\\:label=#2磅_道闸1],*[inkscape\\:label=#2汽车机械采样机_道闸2],*[inkscape\\:label=#1汽车机械采样机_道闸2],*[inkscape\\:label=#2汽车机械采样机_道闸1],*[inkscape\\:label=#1汽车机械采样机_道闸1],*[inkscape\\:label=#6磅_道闸2],*[inkscape\\:label=#7磅_道闸2],*[inkscape\\:label=#8磅_道闸2],*[inkscape\\:label=#6磅_道闸1],*[inkscape\\:label=#7磅_道闸1],*[inkscape\\:label=#8磅_道闸1],*[inkscape\\:label=#出厂端_道闸1],*[inkscape\\:label=#出厂端_道闸2],*[inkscape\\:label=#3磅_道闸1],*[inkscape\\:label=#4磅_道闸1],*[inkscape\\:label=#5磅_道闸1],*[inkscape\\:label=#3磅_道闸2],*[inkscape\\:label=#4磅_道闸2],*[inkscape\\:label=#5磅_道闸2]").unbind("click").bind("click", function () {
+
+                var color = canvas1.find(this).attr("color");
+                if (color == "#FFFF00") {
+                    ShowBreakInfo(canvas1.find(this).attr("inkscape:label"));
+                }
+                else {
+                    HomeYNWLYV8Cef.OpenCarMonitor('#道闸');
+                }
+            });
+
+            canvas1.find("*[inkscape\\:label=#气动传输]").unbind("click").bind("click", function () {
+                HomeYNWLYV8Cef.OpenAutoCupboard('气动传输');
+            });
+
+            canvas1.find("*[id=rect1531-1]").unbind("click").bind("click", function () {
+                HomeYNWLYV8Cef.OpenInOutInfo('重车入场');
+            });
+
+            canvas1.find("*[id=rect1531-1]").unbind("click").bind("click", function () {
+                HomeYNWLYV8Cef.OpenInOutInfo('重车入场');
+            });
+            canvas1.find("*[id=g4909]").unbind("click").bind("click", function () {
+                HomeYNWLYV8Cef.OpenInOutInfo('轻车入场');
+            });
+            canvas1.find("*[id=g5154]").unbind("click").bind("click", function () {
+                HomeYNWLYV8Cef.OpenInOutInfo('汽车出口');
+            });
+
+            canvas1.find("*[id=rect1531-1]").unbind("click").bind("click", function () {
+                HomeYNWLYV8Cef.OpenInOutInfo('重车入场');
+            });
+        }
+
+        function SetDeviceBreak(label) {
+            canvas1.find("*[inkscape\\:label=" + label + "]").animate({ opacity: 0.05 }, 1000);
+            canvas1.find("*[inkscape\\:label=" + label + "]").animate({ opacity: 1 }, 3000);
 
             //异常信息
-            canvas1.find("*[id=" + id + "]").unbind("click").bind("click", function () {
-                ShowBreakInfo(name);
+            canvas1.find("*[inkscape\\:label=" + label + "]").unbind("click").bind("click", function () {
+                ShowBreakInfo(label);
             });
         }
         function ShowBreakInfo(param, type) {
@@ -65,6 +470,7 @@
             tdTitle.appendTo(trTitle);
 
             for (var i = 0; i < datas.length; i++) {
+
                 //创建内容
                 tr = $("<tr class=\"trContent\"></tr>");
                 tr.appendTo(table);
@@ -78,15 +484,73 @@
             $("#breakDiv").append("</table>");
         }
 
-         
 
-        function ShowStorageInfo(param,type) {
+        function ShowStorageInfo(param, type) {
             var res = HomeYNWLYV8Cef.getStorageInfo(param);
             BindStorageInfo(eval(res));
             ShowLayerFrom(type, $("#createtable"), '400px', '200px');
         }
 
-        function ShowLayerFrom(strtitle, domObj,width,height) {
+        function ShowStorageArea(e, id) {
+            var res = HomeYNWLYV8Cef.getStorageAreaInfo(id);
+            BindStorageAreaInfo(eval(res), id, e);
+        }
+
+        function ShowStorageStack(e, sid, start, end,name) {
+            var res = HomeYNWLYV8Cef.getStorageStackInfo(sid, start, end);
+            getStorageStackInfo(eval(res), e,name);
+        }
+
+        function getStorageStackInfo(datas, e ,name) {
+            var html = '';
+            html += "<table class=\"table\" border=\"1\">";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>煤堆名称：" + name + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>区间：" + datas[0].StartPoint.toFixed(0) + "-" + datas[0].EndPoint.toFixed(0) + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>煤量：" + datas[0].Value.toFixed(2) + "（吨）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>热值：" + datas[0].Qcal.toFixed(0) + "（qcal/kg）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>硫分：" + datas[0].Stad.toFixed(2) + "（%）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>挥发分：" + datas[0].Vdaf.toFixed(2) + "（%）</td></tr>";
+         
+            html += "</table>";
+            $("#StorageDiv").html(html);
+
+            $("#StorageDiv").show();
+            $("#StorageDiv").css("left", e.originalEvent.x + 10);
+            $("#StorageDiv").css("top", e.originalEvent.y + 10);
+            $("#StorageDiv").css("height", 32 * 6 + "px");
+        }
+
+        function BindStorageAreaInfo(datas, id, e) {
+            var html = '';
+            html += "<table class=\"table\" border=\"1\">";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>区域名称：" + id + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>区间：" + datas[0].StartPoint.toFixed(0) + "-" + datas[0].EndPoint.toFixed(0) + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>煤量：" + datas[0].Value.toFixed(2) + "（吨）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>热值：" + datas[0].Qcal.toFixed(0) + "（qcal/kg）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>硫分：" + datas[0].Stad.toFixed(2) + "（%）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>挥发分：" + datas[0].Vdaf.toFixed(2) + "（%）</td></tr>";
+            var k = 6;
+            if (datas[0].TEMPERATURE != null) {
+             
+                var temp = datas[0].TEMPERATURE.split("|");
+                for (var i = 0; i < temp.length; i++) {
+                    var datas = temp[i].split(",");
+                    if (datas.length == 2) {
+                        html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>测温杆编号" + datas[0] + "：" + datas[1] + "（℃）</td></tr>";
+                    }
+                    k++;
+                }
+            }
+
+            html += "</table>";
+            $("#StorageDiv").html(html);
+            $("#StorageDiv").show();
+            $("#StorageDiv").css("left", e.originalEvent.x + 10);
+            $("#StorageDiv").css("top", e.originalEvent.y + 10);
+            $("#StorageDiv").css("height", (32*k) + "px");
+        }
+
+        function ShowLayerFrom(strtitle, domObj, width, height) {
             $.layer({
                 type: 1,
                 title: strtitle,
@@ -108,11 +572,11 @@
             var html = '';
             html += "<table class=\"table\" border=\"1\">";
             html += "<tr class=\"trTitle\"><td>仓位状态图</td><td>仓位信息</td></tr>";
-            
-            var per =  parseInt((parseFloat(datas[0].per) / 10)) * 10;
+
+            var per = parseInt((parseFloat(datas[0].per) / 10)) * 10;
             html += "<tr class=\"trContent\" >";
             html += "<td rowspan=\"3\">";
-            html += "<div style=\"margin-left:50px;width:60px;height:79px;background-image:url(../../../Resources/freightspaceMax.png);background-position:" + per + "% 0%;\"></div>";
+            html += "<div style=\"margin-left:50px;width:60px;height:79px;background-image:url(Resources/freightspace.png);background-position:" + per + "% 0%;\"></div>";
             html += "</td>";
             html += "<td>仓位名称：" + datas[0].name + "</td></tr>";
             html += "<tr class=\"trContent\" ><td>料位：" + datas[0].per + "%</td></tr>";
@@ -120,10 +584,88 @@
             html += "</table>";
             $("#createtable").html(html);
         }
+        function ShowBelt(e, id) {
+            var qcal = new Array(4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5300, 5400);
+            var qty = new Array(5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000);
+            var i = Math.random();
+            var j = Math.random();
+            var dk = 1.4;
+            if (id == "#1" || id == "#3" || id == "#4" || id == "#5" || id == "#7" || id == "#11") {
+                dk = 1.8;
+            }
+
+            var html = '';
+            html += "<table class=\"table\" border=\"1\">";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>皮带名称：" + id + "</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>带宽：" + dk + "（m）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>带速：" + i.toFixed(0) * 10 + "（m/s）</td></tr>";
+            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>皮带流向：正向</td></tr>";
+            html += "</table>";
+            $("#beltDiv").html(html);
+            $("#beltDiv").show();
+
+            var x = 0;
+            $("#beltDiv").css("left", e.originalEvent.x + 10);
+            if (id == "#1-乙" || id == "#1-甲") {
+                $("#beltDiv").css("top", e.originalEvent.y - 100);
+            }
+            else {
+                $("#beltDiv").css("top", e.originalEvent.y + 10);
+            }
+        }
+
+
+
+        function ShowStorageBox(param) {
+            var res = HomeYNWLYV8Cef.GetStorageBox(param);
+            LoadStorageBox(eval(res));
+            ShowLayerFrom("存样柜信息", $("#breakDiv"), '800px', '200px');
+        }
+
+        // 加载异常信息
+        function LoadStorageBox(datas) {
+            $("#breakDiv").empty();
+            var table = $("<table class=\"table\" border=\"1\">");
+            table.appendTo($("#breakDiv"));
+            //创建表头
+            var trTitle = $("<tr class=\"trTitle\"></tr>");
+            trTitle.appendTo(table);
+            var tdTitle = $("<td style=\"width: 180px;\">序号</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 160px;\">存样柜</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 160px;\">已存样数</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 160px;\">可存样数</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 160px;\">使用占比</td>");
+            tdTitle.appendTo(trTitle);
+            tdTitle = $("<td style=\"width: 160px;\">超期样数</td>");
+            tdTitle.appendTo(trTitle);
+
+            for (var i = 0; i < datas.length; i++) {
+                //创建内容
+                tr = $("<tr class=\"trContent\"></tr>");
+                tr.appendTo(table);
+                var td = $("<td>" + datas[i].XH + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].Name + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].UseNumber + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].NoUseNumber + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].UsePer + "</td>");
+                td.appendTo(tr);
+                td = $("<td>" + datas[i].LimitNumber + "</td>");
+                td.appendTo(tr);
+            }
+            $("#breakDiv").append("</table>");
+        }
 
         // 注册SVG元素脚本事件
-        function initSvgElementEvent() {
-            //inkscape: label = "皮带采样机#2"
+        function initSvgElementEvent1() {
+
             canvas1.find("*[id=_132229104]").bind("click", function () {
                 ShowStorageInfo('#1', "成品仓仓位信息");
             });
@@ -145,111 +687,35 @@
             canvas1.find("*[id=path1374]").bind("click", function () {
                 ShowStorageInfo('#4', "配煤仓仓位信息");
             });
-            
-            canvas1.find("*[id=N1],*[id=N2],*[id=N3],*[id=N4],*[id=N5],*[id=N6],*[id=N7],*[id=N8],*[id=N9],*[id=N10],*[id=N11],*[id=S1],*[id=S2],*[id=S3],*[id=S4],*[id=S5],*[id=S6],*[id=S7],*[id=S8],*[id=S9],*[id=S10],*[id=S11]").hover(function (e) {
 
+            canvas1.find("*[id=path66]").bind("click", function () {
+                ShowStorageBox("存样柜");
+            });
+
+            canvas1.find("*[id=N1],*[id=N2],*[id=N3],*[id=N4],*[id=N5],*[id=N6],*[id=N7],*[id=N8],*[id=N9],*[id=N10],*[id=N11],*[id=S1],*[id=S2],*[id=S3],*[id=S4],*[id=S5],*[id=S6],*[id=S7],*[id=S8],*[id=S9],*[id=S10],*[id=S11]").hover(function (e) {
                 ShowStorageArea(e, $(this).attr("id"));
-            }, function () {
+            },
+            function () {
+                $("#StorageDiv").hide();
+            });
+
+            $(".stgDiv,.stgtext").hover(function (e) {
+                ShowStorageStack(e, $(this).attr("sid"), $(this).attr("startPoint"), $(this).attr("endPoint"),$(this).attr("name"));
+            },
+            function () {
                 $("#StorageDiv").hide();
             });
 
             canvas1.find("*[inkscape\\:label=#1-乙],*[inkscape\\:label=#2-乙],*[inkscape\\:label=#3-乙],*[inkscape\\:label=#6-乙],*[inkscape\\:label=#7-乙],*[inkscape\\:label=#1-甲],*[inkscape\\:label=#2-甲],*[inkscape\\:label=#3-甲],*[inkscape\\:label=#6-甲],*[inkscape\\:label=#7-甲],*[inkscape\\:label=#4],*[inkscape\\:label=#5],*[inkscape\\:label=#8],*[inkscape\\:label=#9],*[inkscape\\:label=#10],*[inkscape\\:label=#11]").hover(function (e) {
-                
+
                 ShowBelt(e, $(this).attr("inkscape:label"));
             }, function () {
                 $("#beltDiv").hide();
             });
         }
 
-        function ShowBelt(e, id) {
 
-            var qcal = new Array(4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5300, 5400);
-            var qty = new Array(5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000);
-            var i = Math.random();
-            var j = Math.random();
-            var dk = 1.4;
-            if (id == "#5" || id == "#4") {
-                dk = 1.8;
-            }
-
-            var html = '';
-            html += "<table class=\"table\" border=\"1\">";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>皮带名称：" + id + "</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>带宽：" + dk + "（m）</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>带速：" + i.toFixed(0) * 10 + "（m/s）</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>皮带流向：正向</td></tr>";
-            html += "</table>";
-            $("#beltDiv").html(html);
-
-            $("#beltDiv").show();
-
-            var x = 0;
-            $("#beltDiv").css("left", e.originalEvent.x + 10);
-            if (id == "#1-乙" || id == "#1-甲") {                
-                $("#beltDiv").css("top", e.originalEvent.y - 100);
-            }
-            else {
-                $("#beltDiv").css("top", e.originalEvent.y + 10);
-            }
-
-
-        }
-
-        function ShowStorageArea(e, id) {
-
-            var qcal = new Array(4500, 4600, 4700, 4800, 4900, 5000, 5100, 5200, 5300, 5400);
-            var qty = new Array(5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000);
-            var i = Math.random();
-            var j = Math.random();
-            
-            var html = '';
-            html += "<table class=\"table\" border=\"1\">";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>区域名称：" + id + "</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>煤量：" + qty[j.toFixed(0)] + "（吨）</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>热值：" + qcal[i.toFixed(0)] + "（qcal/kg）</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>硫分：" + i.toFixed(1) + "（%）</td></tr>";
-            html += "<tr class=\"trContent\" style=\" text-align:left\" ><td>挥发分：" + (j.toFixed(1) * 10).toString() + "（%）</td></tr>";
-            html += "</table>";
-            $("#StorageDiv").html(html);
-
-            $("#StorageDiv").show();
-            $("#StorageDiv").css("left", e.originalEvent.x + 10);
-            $("#StorageDiv").css("top", e.originalEvent.y + 10);
-        }
-
-         
-
-        // 请求数据 - 后台调用
-        function requestData(datas) {
-            for (var i = 0; i < datas.length; i++) {
-                dataHandler(datas[i]);
-            }
-        }
-
-        // 处理数据
-        function dataHandler(data) {
-            // key_value
-            if (data.Type == 0)
-                $("#" + data.Key).html(data.Value);
-            // json_data
-            else if (data.Type == 1) {
-
-            }
-            // svg_text
-            else if (data.Type == 2) {
-                canvas1.find("*[inkscape\\:label=" + data.Key + "]").html(data.Value);
-            }
-            // svg_color
-            else if (data.Type == 3) {
-                svgChangeColor1(canvas1.find("*[inkscape\\:label=" + data.Key + "]"), data.Value);
-            }
-        }
-
-        // 测试
-        function test1() {
-            
-        } 
-     
+       
     </script>
     <style type="text/css">
         html, body
@@ -258,7 +724,7 @@
             margin: 0px;
             padding: 0px;
             font-family: 微软雅黑;
-            background-color: rgb(43, 47, 51); 
+            background-color: #3f3f3f;
         }
         .div-root
         {
@@ -350,11 +816,35 @@
             height: 34px;
             color: White;
         }
+        .stgDiv
+        {
+           height:0px;
+            width:512px;
+          
+            border-style:solid;
+            position:absolute;
+            top:84.733036400px;
+            left:0px;
+            cursor:pointer; 
+            border-color:transparent transparent Red transparent 
+        }
+         .stgtext
+        {
+           height:20px;
+            width:512px;
+            position:absolute;
+            top:84.733036400px;
+            left:0px;
+            font-size:12px;
+            text-align:center;
+            color:White;
+             cursor:pointer; 
+        }
     </style>
 </head>
 <body onselectstart="return false;">
     <div class="div-root">
-        <embed id="svgCanvas1" src="Resources/HomeYNWLY0606a.svg" type="image/svg+xml" />       
+        <embed id="svgCanvas1" src="Resources/HomeYNWLY1008a.svg" type="image/svg+xml" />       
     </div>
 
       <div id="createtable" style="width: 400px; height:150px;  display:none; overflow: auto;">
@@ -370,7 +860,7 @@
         
       </div>
 
-       <div id="StorageDiv" style="width: 200px; height:160px; position:absolute;  
+       <div id="StorageDiv" style="width: 200px; height:380px; position:absolute;   z-index:999;
             left:400px; top:220px; display:none; background-color:Gray; color:White; overflow : auto;">
          <table class="table" border="1">
          <tr class="trContent" style=" text-align:left" ><td>区域名称：N1</td></tr>
@@ -390,5 +880,132 @@
          <tr class="trContent" style=" text-align:left" ><td>皮带流向：正向</td></tr>
          </table>  
       </div>
+
+      <div id="cwgtext1" style="position:absolute; display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg1" style="position:absolute; display:none;left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext2" style="position:absolute; display:none;left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg2" style="position:absolute; display:none;left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext3" style="position:absolute; display:none;left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg3" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext4" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg4" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext5" style="position:absolute; display:none;left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg5" style="position:absolute; display:none;left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext6" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg6" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext7" style="position:absolute; display:none;left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg7" style="position:absolute; display:none;left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext8" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg8" style="position:absolute; display:none;left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext9" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg9" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext10" style="position:absolute; display:none;left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg10" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext11" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg11" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext12" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg12" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+      
+      <div id="cwgtext13" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg13" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext14" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg14" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext15" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg15" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext16" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg16" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext17" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg17" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext18" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg18" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext19" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg19" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext20" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg20" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext21" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg21" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+      <div id="cwgtext22" style="position:absolute;display:none; left:406px; top:224px; color:Red;"  >40℃</div>
+      <div id="cwgimg22" style="position:absolute;display:none; left:406px; top:248px;"  ><img src="Resources/images/cewen-100.png" style=" width:18px; height:18px;" /> </div>
+
+        <div id="stgtext1" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext2" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext3" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext4" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext5" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext6" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext7" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext8" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext9" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext10" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext11" class='stgtext' style="display:none;" > </div>
+
+        <div id="stgtext12" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext13" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext14" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext15" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext16" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext17" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext18" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext19" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext20" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext21" class='stgtext' style="display:none;" > </div>
+        <div id="stgtext22" class='stgtext' style="display:none;" > </div>
+
+       <div id="stgDiv1" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv2" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv3" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv4" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv5" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv6" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv7" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv8" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv9" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv10" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv11" class="stgDiv" style="display:none;" > </div>
+
+       <div id="stgDiv12" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv13" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv14" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv15" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv16" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv17" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv18" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv19" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv20" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv21" class="stgDiv" style="display:none;" > </div>
+       <div id="stgDiv22" class="stgDiv" style="display:none;" > </div>
+
+  <div id="dlj1" style="position:absolute; display:none; left:662px; top:307px;"  >
+  <img id="dljimg1" src="Resources/images/doulunji_stop.png" style=" width:50px; height:50px;" />
+     <br />
+  <span style=" color:White;">#1斗轮机</span>
+   </div>
+
+  <div id="dlj2" style="position:absolute; display:none; left:896px; top:330px;"  > 
+  <img  id="dljimg2" src="Resources/images/doulunji_stop.png" style=" width:50px; height:50px;" /> 
+  <br />
+  <span style=" color:White;">#2斗轮机</span>
+  </div>
+
 </body>
 </html>

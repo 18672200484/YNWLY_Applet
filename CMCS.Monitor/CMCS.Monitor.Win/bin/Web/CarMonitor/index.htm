@@ -73,8 +73,8 @@
         
         .divMain
         {
-            width: 1600px;
-            height: 730px;
+            width: 1920px;
+            height: 906px;
             overflow: auto;
         }
         
@@ -82,9 +82,9 @@
         {
             position: relative;
             text-align: center;
-            width: 1508px;
+            width: 90%;
             height: 94px;
-            margin: 45px auto;
+            margin: 0px auto;
         }
         
         .table
@@ -129,42 +129,111 @@
 <body onload="" style="overflow: hidden;">
     <form action="">
     <div class="divMain">
-        <!--入厂排队-->
+    
+         <!--重车入厂排队-->
         <div id="id1" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/OutInfactory_ico.png" /><br />
                         <label class="labelHead">
-                            入厂排队</label>
+                            重车入厂</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img id="Img1" alt="" src="Resources/images/Light_green.png" />
+                    </td>
+                    <td>
+                        <img id="Img2" alt="" src="Resources/images/Light_green.png" />
+                    </td>
+                    <td>
+                        <img id="Img3" alt="" src="Resources/images/Light_green.png" />
+                    </td>
+                    <td>
+                        <img id="Img4" alt="" src="Resources/images/Light_green.png" />
+                    </td>
+                    <td>
+                        <img id="Img5" alt="" src="Resources/images/Light_green.png" />
+                    </td>
+                    <td>
+                        <img id="Img6" alt="" src="Resources/images/Light_green.png" />
+                    </td>
+                    <td>
+                        <!--<input class="imgBtn" type="button" style="width: 85px; height: 28px; margin:0px;   background-image:url(Resources/images/Up_btn.png)" />-->
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Up1')" src="Resources/images/北升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Down1')" src="Resources/images/北降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Up2')" src="Resources/images/南升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Down2')" src="Resources/images/南降杆.png" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--轻车入厂排队-->
+        <div id="Div9" class="divContent">
+            <table class="table">
+                <tr class="trTitle">
+                    <td rowspan="2" style="width: 200px;">
+                        <img alt="" src="Resources/images/OutInfactory_ico.png" /><br />
+                        <label class="labelHead">
+                            轻车入厂</label>
+                    </td>
+                    <td style="width: 200px; height: 50%">
+                        <label class="labelContent">
+                            程序状态</label>
+                    </td>
+                    <td style="width: 200px;">
+                        <label class="labelContent">
+                            IO控制器</label>
+                    </td>
+                    <td style="width: 200px;">
+                        <label class="labelContent">
+                            LED1屏</label>
+                    </td>
+                    <td style="width: 200px;">
+                        <label class="labelContent">
+                            LED2屏</label>
+                    </td>
+                    <td style="width: 200px;">
+                        <label class="labelContent">
+                            车号识别1</label>
+                    </td>
+                    <td style="width: 200px;">
+                        <label class="labelContent">
+                            车号识别2</label>
+                    </td>
+                    <td style="width: 520px;">
+                        <label class="labelContent">
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -188,50 +257,51 @@
                     </td>
                     <td>
                         <!--<input class="imgBtn" type="button" style="width: 85px; height: 28px; margin:0px;   background-image:url(Resources/images/Up_btn.png)" />-->
-                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Infactory_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
         </div>
+
         <!--#1汽车采样机-->
         <div id="id2" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Sampler_ico.png" /><br />
                         <label class="labelHead">
                             #1汽车采样机</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -254,10 +324,10 @@
                         <img id="Sample1_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample1_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -266,38 +336,38 @@
         <div id="id3" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Sampler_ico.png" /><br />
                         <label class="labelHead">
                             #2汽车采样机</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -320,10 +390,10 @@
                         <img id="Sample2_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Sample2_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -332,38 +402,38 @@
         <div id="Div1" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
                         <label class="labelHead">
                             #1汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -386,10 +456,10 @@
                         <img id="Weighter1_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Down2')" src="Resources/images/Down_btn.png" />
+                       <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter1_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -398,38 +468,38 @@
         <div id="Div2" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
                         <label class="labelHead">
                             #2汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED2屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent" style="color:#2c3e48">
+                           LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器2</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent" style="color:#2c3e48">
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -443,19 +513,19 @@
                         <img id="Weighter2_State3" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter2_State4" alt="" src="Resources/images/Light_green.png" />
+                    <!--  <img id="Weighter2_State4" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
                         <img id="Weighter2_State5" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter2_State6" alt="" src="Resources/images/Light_green.png" />
+                     <!--   <img id="Weighter2_State6" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter2_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -464,38 +534,38 @@
         <div id="Div3" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
                         <label class="labelHead">
                             #3汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -518,10 +588,10 @@
                         <img id="Weighter3_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Up1')" src="Resources/images/北升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Up1')" src="Resources/images/北降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Up2')" src="Resources/images/南升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter3_Down2')" src="Resources/images/南降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -530,38 +600,38 @@
         <div id="Div4" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
                         <label class="labelHead">
                             #4汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
+                    <td style="width: 200px;">
+                        <label class="labelContent" style="color:#2c3e48">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器2</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent"  style="color:#2c3e48">
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -575,19 +645,19 @@
                         <img id="Weighter4_State3" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter4_State4" alt="" src="Resources/images/Light_green.png" />
+                        <!--<img id="Weighter4_State4" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
                         <img id="Weighter4_State5" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter4_State6" alt="" src="Resources/images/Light_green.png" />
+                        <!--<img id="Weighter4_State6" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Up1')" src="Resources/images/北升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Down1')" src="Resources/images/北降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Up2')" src="Resources/images/南升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter4_Down2')" src="Resources/images/南降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -596,38 +666,38 @@
         <div id="Div5" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
                         <label class="labelHead">
                             #5汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -650,10 +720,10 @@
                         <img id="Weighter5_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Up1')" src="Resources/images/北升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Down1')" src="Resources/images/北降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Up2')" src="Resources/images/南升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter5_Down2')" src="Resources/images/南降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -662,38 +732,30 @@
         <div id="Div6" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
-                        <label class="labelHead">
-                            #6汽车衡</label>
+                        <label class="labelHead">#6汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
-                        <label class="labelContent">
-                            程序状态</label>
+                    <td style="width: 200px; height: 50%">
+                        <label class="labelContent">程序状态</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            IO控制器</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED1屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED2屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent"  style="color:#2c3e48">LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器1</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器2</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent" style="color:#2c3e48">车号识别2</label>
                     </td>
                     <td style="width: 520px;">
-                        <label class="labelContent">
-                            升降杆</label>
+                        <label class="labelContent">道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -707,19 +769,19 @@
                         <img id="Weighter6_State3" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter6_State4" alt="" src="Resources/images/Light_green.png" />
+                     <!--   <img id="Weighter6_State4" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
                         <img id="Weighter6_State5" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter6_State6" alt="" src="Resources/images/Light_green.png" />
+                        <!--<img id="Weighter6_State6" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
-                    <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Down2')" src="Resources/images/Down_btn.png" />
+                    <td> 
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter6_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -728,38 +790,30 @@
         <div id="Div7" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
-                        <label class="labelHead">
-                            #7汽车衡</label>
+                        <label class="labelHead">#7汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
-                        <label class="labelContent">
-                            程序状态</label>
+                    <td style="width: 200px; height: 50%">
+                        <label class="labelContent">程序状态</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            IO控制器</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED1屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED2屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent" >LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器1</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器2</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">车号识别2</label>
                     </td>
                     <td style="width: 520px;">
-                        <label class="labelContent">
-                            升降杆</label>
+                        <label class="labelContent">道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -782,10 +836,10 @@
                         <img id="Weighter7_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter7_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
@@ -794,38 +848,30 @@
         <div id="Div8" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/Weighter_ico.png" /><br />
-                        <label class="labelHead">
-                            #8汽车衡</label>
+                        <label class="labelHead">#8汽车衡</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
-                        <label class="labelContent">
-                            程序状态</label>
+                    <td style="width: 200px; height: 50%">
+                        <label class="labelContent">程序状态</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            IO控制器</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED1屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED2屏</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent" style="color:#2c3e48">LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器1</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent">车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器2</label>
+                    <td style="width: 200px;">
+                        <label class="labelContent" style="color:#2c3e48">车号识别2</label>
                     </td>
                     <td style="width: 520px;">
-                        <label class="labelContent">
-                            升降杆</label>
+                        <label class="labelContent">道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -839,125 +885,61 @@
                         <img id="Weighter8_State3" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter8_State4" alt="" src="Resources/images/Light_green.png" />
+                       <!-- <img id="Weighter8_State4" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
                         <img id="Weighter8_State5" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img id="Weighter8_State6" alt="" src="Resources/images/Light_green.png" />
+                     <!--   <img id="Weighter8_State6" alt="" src="Resources/images/Light_green.png" />-->
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Down2')" src="Resources/images/Down_btn.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Up1')" src="Resources/images/东升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Down1')" src="Resources/images/东降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Up2')" src="Resources/images/西升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter8_Down2')" src="Resources/images/西降杆.png" />
                     </td>
                 </tr>
             </table>
         </div>
-        <!--#9汽车衡-->
-        <div id="Div9" class="divContent">
-            <table class="table">
-                <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
-                        <img alt="" src="Resources/images/Weighter_ico.png" /><br />
-                        <label class="labelHead">
-                            #9汽车衡</label>
-                    </td>
-                    <td style="width: 175px; height: 50%">
-                        <label class="labelContent">
-                            程序状态</label>
-                    </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            IO控制器</label>
-                    </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED1屏</label>
-                    </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            LED2屏</label>
-                    </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器1</label>
-                    </td>
-                    <td style="width: 175px;">
-                        <label class="labelContent">
-                            读卡器2</label>
-                    </td>
-                    <td style="width: 520px;">
-                        <label class="labelContent">
-                            升降杆</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img id="Weighter9_State1" alt="" src="Resources/images/Light_green.png" />
-                    </td>
-                    <td>
-                        <img id="Weighter9_State2" alt="" src="Resources/images/Light_green.png" />
-                    </td>
-                    <td>
-                        <img id="Weighter9_State3" alt="" src="Resources/images/Light_green.png" />
-                    </td>
-                    <td>
-                        <img id="Weighter9_State4" alt="" src="Resources/images/Light_green.png" />
-                    </td>
-                    <td>
-                        <img id="Weighter9_State5" alt="" src="Resources/images/Light_green.png" />
-                    </td>
-                    <td>
-                        <img id="Weighter9_State6" alt="" src="Resources/images/Light_green.png" />
-                    </td>
-                    <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter9_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter9_Down1')" src="Resources/images/Down_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter9_Up2')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Weighter9_Down2')" src="Resources/images/Down_btn.png" />
-                    </td>
-                </tr>
-            </table>
-        </div>
+        
+   
         <!--出厂排队-->
         <div id="Div10" class="divContent">
             <table class="table">
                 <tr class="trTitle">
-                    <td rowspan="2" style="width: 175px;">
+                    <td rowspan="2" style="width: 200px;">
                         <img alt="" src="Resources/images/OutInfactory_ico.png" /><br />
                         <label class="labelHead">
                             出厂排队</label>
                     </td>
-                    <td style="width: 175px; height: 50%">
+                    <td style="width: 200px; height: 50%">
                         <label class="labelContent">
                             程序状态</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             IO控制器</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED1屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
                             LED2屏</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器1</label>
+                            车号识别1</label>
                     </td>
-                    <td style="width: 175px;">
+                    <td style="width: 200px;">
                         <label class="labelContent">
-                            读卡器2</label>
+                            车号识别2</label>
                     </td>
                     <td style="width: 520px;">
                         <label class="labelContent">
-                            升降杆</label>
+                            道闸</label>
                     </td>
                 </tr>
                 <tr>
@@ -980,8 +962,10 @@
                         <img id="Outfactory_State6" alt="" src="Resources/images/Light_green.png" />
                     </td>
                     <td>
-                        <img class="imgBtn" alt="" onclick="SendCmd('Outfactory_Up1')" src="Resources/images/Up_btn.png" />
-                        <img class="imgBtn" alt="" onclick="SendCmd('Outfactory_Down1')" src="Resources/images/Down_btn.png" />
+                    <img class="imgBtn" alt="" onclick="SendCmd('Outfactory_Up1')" src="Resources/images/北升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Outfactory_Down1')" src="Resources/images/北降杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Outfactory_Up2')" src="Resources/images/南升杆.png" />
+                        <img class="imgBtn" alt="" onclick="SendCmd('Outfactory_Down2')" src="Resources/images/南降杆.png" />
                     </td>
                 </tr>
             </table>

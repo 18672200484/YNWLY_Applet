@@ -45,8 +45,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.cmbEquipment = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -108,8 +106,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.panel1.Controls.Add(this.buttonX1);
-            this.panel1.Controls.Add(this.labelX3);
-            this.panel1.Controls.Add(this.cmbEquipment);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.labelX2);
             this.panel1.Controls.Add(this.labelX1);
@@ -135,41 +131,6 @@
             this.buttonX1.TabIndex = 17;
             this.buttonX1.Text = "返 回";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // labelX3
-            // 
-            this.labelX3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelX3.AutoSize = true;
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.labelX3.ForeColor = System.Drawing.Color.White;
-            this.labelX3.Location = new System.Drawing.Point(600, 8);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(70, 24);
-            this.labelX3.TabIndex = 16;
-            this.labelX3.Text = "识别设备";
-            // 
-            // cmbEquipment
-            // 
-            this.cmbEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEquipment.DisplayMember = "Text";
-            this.cmbEquipment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEquipment.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmbEquipment.ForeColor = System.Drawing.Color.White;
-            this.cmbEquipment.FormattingEnabled = true;
-            this.cmbEquipment.ItemHeight = 21;
-            this.cmbEquipment.Location = new System.Drawing.Point(676, 7);
-            this.cmbEquipment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbEquipment.Name = "cmbEquipment";
-            this.cmbEquipment.Size = new System.Drawing.Size(104, 27);
-            this.cmbEquipment.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbEquipment.TabIndex = 15;
             // 
             // btnSearch
             // 
@@ -219,7 +180,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(70, 24);
             this.labelX1.TabIndex = 11;
-            this.labelX1.Text = "入厂时间";
+            this.labelX1.Text = "入场时间";
             // 
             // dateTimeInput2
             // 
@@ -381,75 +342,75 @@
             gridColumn1.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn1.Name = "";
             gridColumn1.Width = 80;
-            gridColumn2.CellStyles.Default.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            gridColumn2.DefaultNewRowCellValue = "抓拍";
-            gridColumn2.HeaderText = "";
+            gridColumn2.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn2.DataPropertyName = "TrainType";
+            gridColumn2.HeaderText = "车型";
             gridColumn2.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn2.Name = "";
-            gridColumn2.NullString = "抓拍";
-            gridColumn2.Width = 32;
-            gridColumn3.CellStyles.Default.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline);
-            gridColumn3.DefaultNewRowCellValue = "装车线";
+            gridColumn2.Width = 80;
+            gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn3.DataPropertyName = "";
+            gridColumn3.HeaderText = "入场时间";
             gridColumn3.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn3.Name = "";
-            gridColumn3.NullString = "装车线";
-            gridColumn3.Width = 45;
+            gridColumn3.Name = "cellGrossTime";
+            gridColumn3.Width = 200;
             gridColumn4.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn4.DataPropertyName = "TrainType";
-            gridColumn4.HeaderText = "车型";
+            gridColumn4.DataPropertyName = "";
+            gridColumn4.HeaderText = "矿发量(吨)";
             gridColumn4.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn4.Name = "";
+            gridColumn4.Name = "cellTicketWeight";
             gridColumn4.Width = 80;
             gridColumn5.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn5.DataPropertyName = "GrossTime";
-            gridColumn5.HeaderText = "入厂时间";
+            gridColumn5.DataPropertyName = "";
+            gridColumn5.HeaderText = "毛重(吨)";
             gridColumn5.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn5.Name = "";
-            gridColumn5.Width = 130;
-            gridColumn6.DataPropertyName = "SupplierName";
-            gridColumn6.HeaderText = "供煤单位";
+            gridColumn5.Name = "cellGrossWeight";
+            gridColumn5.Width = 80;
+            gridColumn6.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn6.DataPropertyName = "";
+            gridColumn6.HeaderText = "皮重(吨)";
             gridColumn6.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn6.Name = "";
-            gridColumn6.Width = 140;
-            gridColumn7.DataPropertyName = "StationName";
-            gridColumn7.HeaderText = "发站";
+            gridColumn6.Name = "cellSkinWeight";
+            gridColumn6.Width = 80;
+            gridColumn7.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn7.DataPropertyName = "";
+            gridColumn7.HeaderText = "净重(吨)";
             gridColumn7.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn7.Name = "";
-            gridColumn8.DataPropertyName = "FuelKind";
-            gridColumn8.HeaderText = "煤种";
+            gridColumn7.Name = "cellStandardWeight";
+            gridColumn7.Width = 80;
+            gridColumn8.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gridColumn8.DataPropertyName = "";
+            gridColumn8.HeaderText = "车速(米/秒)";
             gridColumn8.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn8.Name = "";
+            gridColumn8.Name = "cellSpeed";
             gridColumn8.Width = 80;
-            gridColumn9.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn9.DataPropertyName = "TicketWeight";
-            gridColumn9.HeaderText = "矿发量(吨)";
+            gridColumn9.DataPropertyName = "SupplierName";
+            gridColumn9.HeaderText = "供煤单位";
             gridColumn9.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn9.Name = "";
-            gridColumn9.Width = 80;
-            gridColumn10.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn10.DataPropertyName = "TicketWeight";
-            gridColumn10.HeaderText = "毛重(吨)";
+            gridColumn9.Width = 200;
+            gridColumn10.DataPropertyName = "StationName";
+            gridColumn10.HeaderText = "发站";
             gridColumn10.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn10.Name = "";
-            gridColumn10.Width = 80;
-            gridColumn11.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn11.DataPropertyName = "GrossWeight";
-            gridColumn11.HeaderText = "毛重(吨)";
+            gridColumn11.DataPropertyName = "FuelKind";
+            gridColumn11.HeaderText = "煤种";
             gridColumn11.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn11.Name = "";
             gridColumn11.Width = 80;
-            gridColumn12.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn12.DataPropertyName = "StandardWeight";
-            gridColumn12.HeaderText = "净重(吨)";
+            gridColumn12.CellStyles.Default.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            gridColumn12.DefaultNewRowCellValue = "抓拍";
+            gridColumn12.HeaderText = "";
             gridColumn12.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn12.Name = "";
-            gridColumn12.Width = 80;
-            gridColumn13.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            gridColumn13.DataPropertyName = "Speed";
-            gridColumn13.HeaderText = "车速(米/秒)";
+            gridColumn12.NullString = "抓拍";
+            gridColumn12.Width = 32;
+            gridColumn13.CellStyles.Default.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Underline);
+            gridColumn13.DefaultNewRowCellValue = "装车线";
             gridColumn13.InfoImageAlignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             gridColumn13.Name = "";
-            gridColumn13.Width = 80;
+            gridColumn13.NullString = "装车线";
+            gridColumn13.Width = 45;
             gridColumn14.DataPropertyName = "Id";
             gridColumn14.Name = "clmId";
             gridColumn14.Visible = false;
@@ -474,6 +435,7 @@
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.CellMouseDown += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellMouseEventArgs>(this.superGridControl1_CellMouseDown);
             this.superGridControl1.CellValidated += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValidatedEventArgs>(this.superGridControl1_CellValidated);
+            this.superGridControl1.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.superGridControl1_DataBindingComplete);
             this.superGridControl1.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl1_BeginEdit);
             this.superGridControl1.GetCellFormattedValue += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetCellFormattedValueEventArgs>(this.superGridControl1_GetCellFormattedValue);
             this.superGridControl1.GetRowHeaderText += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridGetRowHeaderTextEventArgs>(this.superGridControl1_GetRowHeaderText);
@@ -635,8 +597,6 @@
         private DevComponents.DotNetBar.ButtonX btnFirst;
         private DevComponents.DotNetBar.ButtonX btnLast;
         private DevComponents.DotNetBar.ButtonX btnNext;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbEquipment;
         private DevComponents.DotNetBar.ButtonX buttonX1;
 
 

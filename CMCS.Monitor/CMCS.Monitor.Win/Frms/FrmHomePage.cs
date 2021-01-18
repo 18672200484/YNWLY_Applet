@@ -101,34 +101,34 @@ namespace CMCS.Monitor.Win.Frms
 
             datas.Add(new HtmlDataItem("#1动态衡今日进出厂数量", string.Format("进厂:{0}节  出厂:{1}节", commonDAO.GetSignalDataValue(GlobalVars.MachineCode_GDH_1, "今日进厂数量"), commonDAO.GetSignalDataValue(GlobalVars.MachineCode_GDH_1, "今日出厂数量")), eHtmlDataItemType.svg_text));
 
-            datas.Add(new HtmlDataItem("#1火车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2火车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1火车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2火车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_HCJXCYJ_2, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1翻车机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2翻车机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1翻车机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2翻车机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_TrunOver_2, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_InPDCYJ_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_InPDCYJ_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_InPDCYJ_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2皮带采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_InPDCYJ_2, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1重车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2重车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1重车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2重车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_2, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1轻车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_3, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2轻车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_4, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1轻车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_3, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2轻车衡", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Weighter_4, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1汽车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_JxSampler_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2汽车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_JxSampler_2, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1汽车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2汽车机械采样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QCJXCYJ_2, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1全自动制样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QZDZYJ_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#1智能存样柜", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_CYG1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1全自动制样机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QZDZYJ_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1智能存样柜", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_CYG1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
-            string XMJS_QD_Color = ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QD, eSignalDataName.系统.ToString()));
+            string XMJS_QD_Color = ConvertMachineStatusToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QD, eSignalDataName.程序状态.ToString()));
             datas.Add(new HtmlDataItem("#1气动传输_气动站1", XMJS_QD_Color, eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#1气动传输_气动站2", XMJS_QD_Color, eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#1气动传输_气动站3", XMJS_QD_Color, eHtmlDataItemType.svg_color));
 
-            datas.Add(new HtmlDataItem("#1斗轮机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue("#1斗轮机", eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
-            datas.Add(new HtmlDataItem("#2斗轮机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue("#2斗轮机", eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#1斗轮机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue("#1斗轮机", eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("#2斗轮机", ConvertMachineStatusToColor(commonDAO.GetSignalDataValue("#2斗轮机", eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
 
             datas.Add(new HtmlDataItem("#1皮带秤", commonDAO.GetSignalDataValueDouble("#1皮带秤", eSignalDataName.瞬时流量.ToString()) > 0 ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(EquipmentStatusColors.BeReady), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("#2皮带秤", commonDAO.GetSignalDataValueDouble("#2皮带秤", eSignalDataName.瞬时流量.ToString()) > 0 ? ColorTranslator.ToHtml(EquipmentStatusColors.Working) : ColorTranslator.ToHtml(EquipmentStatusColors.BeReady), eHtmlDataItemType.svg_color));
@@ -189,20 +189,22 @@ namespace CMCS.Monitor.Win.Frms
         {
             if (message.Name == "OpenTrainBeltSampler")
                 SelfVars.MainFrameForm.OpenTrainBeltSampler();
+            if (message.Name == "OpenOutTrainBeltSampler")
+                SelfVars.MainFrameForm.OpenOutTrainBeltSampler();
             //else if (message.Name == "OpenTrainMachinerySampler")
             //SelfVars.MainFrameForm.OpenTrainMachinerySampler();
             else if (message.Name == "OpenAutoMaker")
-                SelfVars.MainFrameForm.OpenAutoMaker();
+                SelfVars.MainFrameForm.OpenAutoMaker("");
             else if (message.Name == "OpenTrainTipper")
-                SelfVars.MainFrameForm.OpenTrainTipper();
+                SelfVars.MainFrameForm.OpenTrainTipper("");
             else if (message.Name == "OpenWeightBridgeLoadToday")
                 SelfVars.MainFrameForm.OpenWeightBridgeLoadToday();
             else if (message.Name == "OpenTruckWeighter")
                 SelfVars.MainFrameForm.OpenTruckWeighter();
             else if (message.Name == "OpenTruckMachinerySampler")
-                SelfVars.MainFrameForm.OpenTruckMachinerySampler();
+                SelfVars.MainFrameForm.OpenTruckMachinerySampler("");
             else if (message.Name == "OpenAutoCupboardPneumaticTransfer")
-                SelfVars.MainFrameForm.OpenAutoCupboardPneumaticTransfer();
+                SelfVars.MainFrameForm.OpenAutoCupboardPneumaticTransfer("");
             else if (message.Name == "OpenAssayManage")
                 SelfVars.MainFrameForm.OpenAssayManage();
 

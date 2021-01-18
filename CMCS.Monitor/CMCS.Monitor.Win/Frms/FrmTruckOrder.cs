@@ -58,7 +58,7 @@ namespace CMCS.Monitor.Win.Frms
         {
             timer1.Enabled = true;
 
-            RequestData();
+            //RequestData();
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace CMCS.Monitor.Win.Frms
 
             datas.Clear();
 
-            datas.Add(new HtmlDataItem("过衡程序_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Order_1, eSignalDataName.系统.ToString())), eHtmlDataItemType.svg_color));
+            datas.Add(new HtmlDataItem("过衡程序_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Order_1, eSignalDataName.程序状态.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("IO控制器_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Order_1, eSignalDataName.IO控制器_连接状态.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("LED屏1_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Order_1, eSignalDataName.LED屏1_连接状态.ToString())), eHtmlDataItemType.svg_color));
             datas.Add(new HtmlDataItem("LED屏2_信号灯", ConvertBooleanToColor(commonDAO.GetSignalDataValue(GlobalVars.MachineCode_QC_Order_1, eSignalDataName.LED屏2_连接状态.ToString())), eHtmlDataItemType.svg_color));
@@ -116,7 +116,7 @@ namespace CMCS.Monitor.Win.Frms
                             tare = transport.TareWeight;
                         }
                     }
-                    if (autotruck.CarType == eCarType.入场煤.ToString())
+                    if (autotruck.CarType == eCarType.销售煤.ToString())
                     {
                         CmcsSaleFuelTransport transport = commonDAO.SelfDber.Get<CmcsSaleFuelTransport>(currentTransportId);
                         if (transport != null)

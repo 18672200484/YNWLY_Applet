@@ -54,14 +54,14 @@
             this.tlPanelMain.Controls.Add(this.plnMain, 0, 1);
             this.tlPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlPanelMain.ForeColor = System.Drawing.Color.Black;
-            this.tlPanelMain.Location = new System.Drawing.Point(0, 1);
+            this.tlPanelMain.Location = new System.Drawing.Point(1, 1);
             this.tlPanelMain.Name = "tlPanelMain";
             this.tlPanelMain.RowCount = 3;
             this.tlPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tlPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlPanelMain.Size = new System.Drawing.Size(316, 178);
+            this.tlPanelMain.Size = new System.Drawing.Size(315, 178);
             this.tlPanelMain.TabIndex = 0;
             // 
             // flPanelButton
@@ -79,7 +79,7 @@
             this.plnMain.ForeColor = System.Drawing.Color.Black;
             this.plnMain.Location = new System.Drawing.Point(3, 30);
             this.plnMain.Name = "plnMain";
-            this.plnMain.Size = new System.Drawing.Size(310, 105);
+            this.plnMain.Size = new System.Drawing.Size(309, 105);
             this.plnMain.TabIndex = 1;
             // 
             // wbMessage
@@ -90,26 +90,26 @@
             this.wbMessage.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbMessage.Name = "wbMessage";
             this.wbMessage.ScrollBarsEnabled = false;
-            this.wbMessage.Size = new System.Drawing.Size(310, 105);
+            this.wbMessage.Size = new System.Drawing.Size(309, 105);
             this.wbMessage.TabIndex = 0;
             // 
             // metroShell1
             // 
-            this.metroShell1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
+            this.metroShell1.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.metroShell1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.metroShell1.CaptionVisible = true;
             this.metroShell1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroShell1.ForeColor = System.Drawing.Color.White;
+            this.metroShell1.ForeColor = System.Drawing.Color.Black;
             this.metroShell1.HelpButtonText = null;
             this.metroShell1.HelpButtonVisible = false;
             this.metroShell1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
-            this.metroShell1.Location = new System.Drawing.Point(0, 1);
+            this.metroShell1.Location = new System.Drawing.Point(1, 1);
             this.metroShell1.Name = "metroShell1";
             this.metroShell1.SettingsButtonVisible = false;
-            this.metroShell1.Size = new System.Drawing.Size(316, 27);
+            this.metroShell1.Size = new System.Drawing.Size(315, 27);
             this.metroShell1.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
             this.metroShell1.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
             this.metroShell1.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
@@ -128,20 +128,19 @@
             this.metroShell1.TabIndex = 2;
             this.metroShell1.TabStripFont = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // Frm_SysMsg
+            // FrmSysMsg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 180);
             this.Controls.Add(this.metroShell1);
             this.Controls.Add(this.tlPanelMain);
-            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(317, 180);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(317, 180);
-            this.Name = "Frm_SysMsg";
+            this.Name = "FrmSysMsg";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
