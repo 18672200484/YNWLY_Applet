@@ -271,13 +271,15 @@ namespace CMCS.WeighCheck.DAO
 				handSampling.SamplingId = sampleId;
 				handSampling.MakeReceivePle = makeReceivePle;
 				handSampling.MakeReceiveDate = makeReceiveDate;
-				CmcsRCMake make = Dbers.GetInstance().SelfDber.Entity<CmcsRCMake>("where SamplingId=:SamplingId order by Createdate desc", new { SamplingId = sampleId });
-				if (make != null)
-				{
-					make.IsHandOver = 1;
-					Dbers.GetInstance().SelfDber.Update(make);
-				}
 				return Dbers.GetInstance().SelfDber.Insert(handSampling) > 0;
+			}
+			CmcsRCMake make = Dbers.GetInstance().SelfDber.Entity<CmcsRCMake>("where SamplingId=:SamplingId order by Createdate desc", new { SamplingId = sampleId });
+			if (make != null)
+			{
+				make.GetPle = makeReceivePle;
+				make.GetDate = makeReceiveDate;
+				make.IsHandOver = 1;
+				Dbers.GetInstance().SelfDber.Update(make);
 			}
 			handSampling.MakeReceivePle = makeReceivePle;
 			handSampling.MakeReceiveDate = makeReceiveDate;

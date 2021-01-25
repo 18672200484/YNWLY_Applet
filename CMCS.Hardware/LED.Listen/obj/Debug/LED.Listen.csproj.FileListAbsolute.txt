@@ -1,0 +1,12 @@
+D:\工作文档\Project\豫能鹤淇\YNHQ_Applet\CMCS.Hardware\LED.Listen\bin\LED.Listen.dll
+D:\工作文档\Project\豫能鹤淇\YNHQ_Applet\CMCS.Hardware\LED.Listen\bin\LED.Listen.pdb
+D:\工作文档\Project\豫能鹤淇\YNHQ_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.csprojResolveAssemblyReference.cache
+D:\工作文档\Project\豫能鹤淇\YNHQ_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.csproj.CoreCompileInputs.cache
+D:\工作文档\Project\豫能鹤淇\YNHQ_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.dll
+D:\工作文档\Project\豫能鹤淇\YNHQ_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.pdb
+D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Hardware\LED.Listen\bin\LED.Listen.dll
+D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Hardware\LED.Listen\bin\LED.Listen.pdb
+D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.csprojResolveAssemblyReference.cache
+D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.csproj.CoreCompileInputs.cache
+D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.dll
+D:\工作文档\Project\豫能物流园\YNWLY_Applet\CMCS.Hardware\LED.Listen\obj\Debug\LED.Listen.pdb

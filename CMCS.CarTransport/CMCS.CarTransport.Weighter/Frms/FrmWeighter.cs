@@ -437,6 +437,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			}
 		}
 
+		string LEDType = "上海灵信";
 		#endregion
 
 		/// <summary>
@@ -780,30 +781,36 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 				if (!this.LED1ConnectStatus) return;
 				if (this.LED1PrevLedFileContent == value1 + value2) return;
-
-				string ledContent = GenerateFillLedContent12(value1) + GenerateFillLedContent12(value2);
-
-				File.WriteAllText(this.LED1TempFile, ledContent, Encoding.UTF8);
-
-				if (LED1m_bSendBusy == false)
+				if (LEDType == "上海灵信")
 				{
-					LED1m_bSendBusy = true;
-
-					int nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED1nScreenNo, this.LED1DYArea_ID);
-					if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
-					{
-						// 初始化成功
-						this.LED1ConnectStatus = true;
-					}
-					else
-					{
-						this.LED1ConnectStatus = false;
-					}
-					if (nResult != YB14DynamicAreaLeder.RETURN_NOERROR) Log4Neter.Error("更新LED动态区域", new Exception(YB14DynamicAreaLeder.GetErrorMessage("SendDynamicAreaInfoCommand", nResult)));
-
-					LED1m_bSendBusy = false;
+					Hardwarer.LedListenCYJ1.SendMultiLineTextToImageTextArea(value1 + Environment.NewLine + value2, 0, 0, 96, 64, 10, LED.Listen.Enums.eInitStyle.立即显示, 1, 2);
+					Hardwarer.LedListenCYJ1.Send(true);
 				}
+				else
+				{
+					string ledContent = GenerateFillLedContent12(value1) + GenerateFillLedContent12(value2);
 
+					File.WriteAllText(this.LED1TempFile, ledContent, Encoding.UTF8);
+
+					if (LED1m_bSendBusy == false)
+					{
+						LED1m_bSendBusy = true;
+
+						int nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED1nScreenNo, this.LED1DYArea_ID);
+						if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+						{
+							// 初始化成功
+							this.LED1ConnectStatus = true;
+						}
+						else
+						{
+							this.LED1ConnectStatus = false;
+						}
+						if (nResult != YB14DynamicAreaLeder.RETURN_NOERROR) Log4Neter.Error("更新LED动态区域", new Exception(YB14DynamicAreaLeder.GetErrorMessage("SendDynamicAreaInfoCommand", nResult)));
+
+						LED1m_bSendBusy = false;
+					}
+				}
 				this.LED1PrevLedFileContent = value1 + value2;
 			}
 			catch (Exception ex)
@@ -874,20 +881,26 @@ namespace CMCS.CarTransport.Weighter.Frms
 #endif
 			if (!this.LED2ConnectStatus) return;
 			if (this.LED2PrevLedFileContent == value1 + value2) return;
-
-			string ledContent = GenerateFillLedContent12(value1) + GenerateFillLedContent12(value2);
-
-			File.WriteAllText(this.LED2TempFile, ledContent, Encoding.UTF8);
-
-			if (LED2m_bSendBusy == false)
+			if (LEDType == "上海灵信")
 			{
-				LED2m_bSendBusy = true;
-				int nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED2nScreenNo, this.LED2DYArea_ID);
-				if (nResult != YB14DynamicAreaLeder.RETURN_NOERROR) Log4Neter.Error("更新LED动态区域", new Exception(YB14DynamicAreaLeder.GetErrorMessage("SendDynamicAreaInfoCommand", nResult)));
-
-				LED2m_bSendBusy = false;
+				Hardwarer.LedListenCYJ1.SendMultiLineTextToImageTextArea(value1 + Environment.NewLine + value2, 0, 0, 96, 64, 10, LED.Listen.Enums.eInitStyle.立即显示, 1, 2);
+				Hardwarer.LedListenCYJ2.Send(true);
 			}
+			else
+			{
+				string ledContent = GenerateFillLedContent12(value1) + GenerateFillLedContent12(value2);
 
+				File.WriteAllText(this.LED2TempFile, ledContent, Encoding.UTF8);
+
+				if (LED2m_bSendBusy == false)
+				{
+					LED2m_bSendBusy = true;
+					int nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED2nScreenNo, this.LED2DYArea_ID);
+					if (nResult != YB14DynamicAreaLeder.RETURN_NOERROR) Log4Neter.Error("更新LED动态区域", new Exception(YB14DynamicAreaLeder.GetErrorMessage("SendDynamicAreaInfoCommand", nResult)));
+
+					LED2m_bSendBusy = false;
+				}
+			}
 			this.LED2PrevLedFileContent = value1 + value2;
 		}
 
@@ -1043,7 +1056,6 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 		#endregion
 
-
 		#region 通通停车
 
 		/// <summary>
@@ -1118,7 +1130,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 				this.InductorCoil3Port = commonDAO.GetAppletConfigInt32("IO控制器_地感3端口");
 				this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");
 				this.InfraredSensor2Port = commonDAO.GetAppletConfigInt32("IO控制器_对射2端口");
-
+				LEDType = commonDAO.GetAppletConfigString("LED显示屏类型");
 				this.WbMinWeight = commonDAO.GetAppletConfigDouble("地磅仪表_最小称重");
 
 				// IO控制器
@@ -1193,95 +1205,112 @@ namespace CMCS.CarTransport.Weighter.Frms
 
 				#endregion
 
-				#region LED控制卡1
-
-				string led1SocketIP = commonDAO.GetAppletConfigString("LED显示屏1_IP地址");
-				if (!string.IsNullOrEmpty(led1SocketIP) && commonDAO.TestPing(led1SocketIP))
+				if (LEDType == "上海灵信")
 				{
-					int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED1nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 64, 1, 1, "", 0, led1SocketIP, 5005, "");
-					if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+					success = Hardwarer.LedListenCYJ1.Init(commonDAO.GetAppletConfigString("LED显示屏1_IP地址"));
+					success = Hardwarer.LedListenCYJ1.InitProgram();
+					if (!success) MessageBoxEx.Show("LED1控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					else this.LED1ConnectStatus = true;
+
+					if (commonDAO.GetAppletConfigString("双向磅") != "0")
 					{
-						nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED1nScreenNo, this.LED1DYArea_ID, 1, 10, 1, "", 0, 0, 0, 96, 64, 255, 0, 255, 7, 6, 1);
+						success = Hardwarer.LedListenCYJ2.Init(commonDAO.GetAppletConfigString("LED显示屏2_IP地址"));
+						success = Hardwarer.LedListenCYJ2.InitProgram();
+						if (!success) MessageBoxEx.Show("LED2控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						else this.LED2ConnectStatus = true;
+					}
+				}
+				else
+				{
+					#region LED控制卡1
+
+					string led1SocketIP = commonDAO.GetAppletConfigString("LED显示屏1_IP地址");
+					if (!string.IsNullOrEmpty(led1SocketIP) && commonDAO.TestPing(led1SocketIP))
+					{
+						int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED1nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 64, 1, 1, "", 0, led1SocketIP, 5005, "");
 						if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
 						{
-							nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED1nScreenNo, this.LED1DYArea_ID, this.LED1TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
+							nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED1nScreenNo, this.LED1DYArea_ID, 1, 10, 1, "", 0, 0, 0, 96, 64, 255, 0, 255, 7, 6, 1);
 							if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
 							{
-								nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED1nScreenNo, this.LED1DYArea_ID);
+								nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED1nScreenNo, this.LED1DYArea_ID, this.LED1TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
 								if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
 								{
-									// 初始化成功
-									this.LED1ConnectStatus = true;
-									UpdateLed1Show("  等待上磅");
+									nResult = YB14DynamicAreaLeder.SendDynamicAreaInfoCommand(this.LED1nScreenNo, this.LED1DYArea_ID);
+									if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+									{
+										// 初始化成功
+										this.LED1ConnectStatus = true;
+										UpdateLed1Show("  等待上磅");
+									}
+								}
+								else
+								{
+									this.LED1ConnectStatus = false;
+									Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
+									MessageBoxEx.Show("LED1控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 								}
 							}
 							else
 							{
 								this.LED1ConnectStatus = false;
-								Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
+								Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
 								MessageBoxEx.Show("LED1控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 							}
 						}
 						else
 						{
 							this.LED1ConnectStatus = false;
-							Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
+							Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreen", nResult)));
 							MessageBoxEx.Show("LED1控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						}
 					}
-					else
-					{
-						this.LED1ConnectStatus = false;
-						Log4Neter.Error("初始化LED1控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreen", nResult)));
-						MessageBoxEx.Show("LED1控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					}
-				}
 
-				#endregion
+					#endregion
 
-				#region LED控制卡2
-				if (commonDAO.GetAppletConfigString("双向磅") != "0")
-				{
-					string led2SocketIP = commonDAO.GetAppletConfigString("LED显示屏2_IP地址");
-					if (!string.IsNullOrEmpty(led2SocketIP) && commonDAO.TestPing(led2SocketIP))
+					#region LED控制卡2
+					if (commonDAO.GetAppletConfigString("双向磅") != "0")
 					{
-						int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED2nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 64, 1, 1, "", 57600, led2SocketIP, 5005, "");
-						if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+						string led2SocketIP = commonDAO.GetAppletConfigString("LED显示屏2_IP地址");
+						if (!string.IsNullOrEmpty(led2SocketIP) && commonDAO.TestPing(led2SocketIP))
 						{
-							nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED2nScreenNo, this.LED2DYArea_ID, 0, 10, 1, "", 0, 0, 0, 96, 64, 255, 0, 255, 7, 6, 1);
+							int nResult = YB14DynamicAreaLeder.AddScreen(YB14DynamicAreaLeder.CONTROLLER_BX_5E1, this.LED2nScreenNo, YB14DynamicAreaLeder.SEND_MODE_NETWORK, 96, 64, 1, 1, "", 57600, led2SocketIP, 5005, "");
 							if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
 							{
-								nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED2nScreenNo, this.LED2DYArea_ID, this.LED2TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
+								nResult = YB14DynamicAreaLeder.AddScreenDynamicArea(this.LED2nScreenNo, this.LED2DYArea_ID, 0, 10, 1, "", 0, 0, 0, 96, 64, 255, 0, 255, 7, 6, 1);
 								if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
 								{
-									// 初始化成功
-									this.LED2ConnectStatus = true;
-									UpdateLed2Show("  等待上磅");
+									nResult = YB14DynamicAreaLeder.AddScreenDynamicAreaFile(this.LED2nScreenNo, this.LED2DYArea_ID, this.LED2TempFile, 0, "宋体", 12, 0, 120, 1, 3, 0);
+									if (nResult == YB14DynamicAreaLeder.RETURN_NOERROR)
+									{
+										// 初始化成功
+										this.LED2ConnectStatus = true;
+										UpdateLed2Show("  等待上磅");
+									}
+									else
+									{
+										this.LED2ConnectStatus = false;
+										Log4Neter.Error("初始化LED2控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
+										MessageBoxEx.Show("LED2控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+									}
 								}
 								else
 								{
 									this.LED2ConnectStatus = false;
-									Log4Neter.Error("初始化LED2控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicAreaFile", nResult)));
+									Log4Neter.Error("初始化LED2控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
 									MessageBoxEx.Show("LED2控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 								}
 							}
 							else
 							{
 								this.LED2ConnectStatus = false;
-								Log4Neter.Error("初始化LED2控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreenDynamicArea", nResult)));
+								Log4Neter.Error("初始化LED2控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreen", nResult)));
 								MessageBoxEx.Show("LED2控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 							}
 						}
-						else
-						{
-							this.LED2ConnectStatus = false;
-							Log4Neter.Error("初始化LED2控制卡", new Exception(YB14DynamicAreaLeder.GetErrorMessage("AddScreen", nResult)));
-							MessageBoxEx.Show("LED2控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-						}
 					}
+					#endregion
 				}
-				#endregion
-
 				timer1.Enabled = true;
 				iocControler.GreenLight1();
 				iocControler.GreenLight2();

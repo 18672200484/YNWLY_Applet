@@ -629,12 +629,12 @@ namespace CMCS.UnloadSampler.Frms
 			}
 
 			// 检测卸料机系统的状态
-			string UnLoadSystemStatue = commonDAO.GetSignalDataValue(this.currentSampler.EquipmentCode + GlobalVars.XLJ_Machine, eSignalDataName.设备状态.ToString());
-			if (UnLoadSystemStatue != eUnLoadState.就绪待机.ToString())
-			{
-				MessageBoxEx.Show("卸样机系统未就绪，禁止卸样", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
-			}
+			//string UnLoadSystemStatue = commonDAO.GetSignalDataValue(this.currentSampler.EquipmentCode + GlobalVars.XLJ_Machine, eSignalDataName.设备状态.ToString());
+			//if (UnLoadSystemStatue != eUnLoadState.就绪待机.ToString())
+			//{
+			//	MessageBoxEx.Show("卸样机系统未就绪，禁止卸样", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			//	return;
+			//}
 
 			// 检测制样机系统状态
 			string makerSystemStatus = commonDAO.GetSignalDataValue(this.makerMachineCode, eSignalDataName.设备状态.ToString());

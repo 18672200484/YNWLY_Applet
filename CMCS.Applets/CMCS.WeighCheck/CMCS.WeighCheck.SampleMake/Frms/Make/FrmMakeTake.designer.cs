@@ -737,6 +737,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			this.Controls.Add(this.pnlExMain);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.KeyPreview = true;
 			this.Name = "FrmMakeTake";

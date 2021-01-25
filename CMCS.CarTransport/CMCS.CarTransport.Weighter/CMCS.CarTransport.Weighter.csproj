@@ -186,6 +186,10 @@
       <Project>{A41DA131-E0C5-46DF-B550-1A5A36C51B64}</Project>
       <Name>IOC.JMDM20DIOV2</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CMCS.Hardware\LED.Listen\LED.Listen.csproj">
+      <Project>{99df0733-9886-441d-9750-70c6e2f6b836}</Project>
+      <Name>LED.Listen</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CMCS.Hardware\LED.YB14\LED.YB14.csproj">
       <Project>{85632121-2FB7-46EF-8F72-150DCC71E472}</Project>
       <Name>LED.YB14</Name>
