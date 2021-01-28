@@ -437,7 +437,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 			}
 		}
 
-		string LEDType = "上海灵信";
+		string LEDType = "上海仰邦";
 		#endregion
 
 		/// <summary>
@@ -783,7 +783,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 				if (this.LED1PrevLedFileContent == value1 + value2) return;
 				if (LEDType == "上海灵信")
 				{
-					Hardwarer.LedListenCYJ1.SendMultiLineTextToImageTextArea(value1 + Environment.NewLine + value2, 0, 0, 96, 64, 10, LED.Listen.Enums.eInitStyle.立即显示, 1, 2);
+					Hardwarer.LedListenCYJ1.InitProgram();
+					Hardwarer.LedListenCYJ1.SendMultiLineTextToImageTextArea(value1.TrimStart(' ') + Environment.NewLine + value2, 0, 0, 96, 64, 12, LED.Listen.Enums.eInitStyle.立即显示, 1, 2);
 					Hardwarer.LedListenCYJ1.Send(true);
 				}
 				else
@@ -883,7 +884,8 @@ namespace CMCS.CarTransport.Weighter.Frms
 			if (this.LED2PrevLedFileContent == value1 + value2) return;
 			if (LEDType == "上海灵信")
 			{
-				Hardwarer.LedListenCYJ1.SendMultiLineTextToImageTextArea(value1 + Environment.NewLine + value2, 0, 0, 96, 64, 10, LED.Listen.Enums.eInitStyle.立即显示, 1, 2);
+				Hardwarer.LedListenCYJ2.InitProgram();
+				Hardwarer.LedListenCYJ2.SendMultiLineTextToImageTextArea(value1.TrimStart(' ') + Environment.NewLine + value2, 0, 0, 96, 64, 12, LED.Listen.Enums.eInitStyle.立即显示, 1, 2);
 				Hardwarer.LedListenCYJ2.Send(true);
 			}
 			else
@@ -1130,7 +1132,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 				this.InductorCoil3Port = commonDAO.GetAppletConfigInt32("IO控制器_地感3端口");
 				this.InfraredSensor1Port = commonDAO.GetAppletConfigInt32("IO控制器_对射1端口");
 				this.InfraredSensor2Port = commonDAO.GetAppletConfigInt32("IO控制器_对射2端口");
-				LEDType = commonDAO.GetAppletConfigString("LED显示屏类型");
+				LEDType = string.IsNullOrEmpty(commonDAO.GetAppletConfigString("LED显示屏类型")) ? "上海仰邦" : commonDAO.GetAppletConfigString("LED显示屏类型");
 				this.WbMinWeight = commonDAO.GetAppletConfigDouble("地磅仪表_最小称重");
 
 				// IO控制器
@@ -1210,14 +1212,21 @@ namespace CMCS.CarTransport.Weighter.Frms
 					success = Hardwarer.LedListenCYJ1.Init(commonDAO.GetAppletConfigString("LED显示屏1_IP地址"));
 					success = Hardwarer.LedListenCYJ1.InitProgram();
 					if (!success) MessageBoxEx.Show("LED1控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-					else this.LED1ConnectStatus = true;
-
+					else
+					{
+						this.LED1ConnectStatus = true;
+						UpdateLed1Show("  等待车辆");
+					}
 					if (commonDAO.GetAppletConfigString("双向磅") != "0")
 					{
 						success = Hardwarer.LedListenCYJ2.Init(commonDAO.GetAppletConfigString("LED显示屏2_IP地址"));
 						success = Hardwarer.LedListenCYJ2.InitProgram();
 						if (!success) MessageBoxEx.Show("LED2控制卡连接失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-						else this.LED2ConnectStatus = true;
+						else
+						{
+							this.LED2ConnectStatus = true;
+							UpdateLed2Show("  等待车辆");
+						}
 					}
 				}
 				else
@@ -1241,7 +1250,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 									{
 										// 初始化成功
 										this.LED1ConnectStatus = true;
-										UpdateLed1Show("  等待上磅");
+										UpdateLed1Show("  等待车辆");
 									}
 								}
 								else
@@ -1285,7 +1294,7 @@ namespace CMCS.CarTransport.Weighter.Frms
 									{
 										// 初始化成功
 										this.LED2ConnectStatus = true;
-										UpdateLed2Show("  等待上磅");
+										UpdateLed2Show("  等待车辆");
 									}
 									else
 									{

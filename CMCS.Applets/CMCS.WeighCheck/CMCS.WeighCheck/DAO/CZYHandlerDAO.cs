@@ -398,7 +398,7 @@ namespace CMCS.WeighCheck.DAO
 					CmcsRCMake rCMake = new CmcsRCMake()
 					{
 						SamplingId = rCSampling.Id,
-						MakeStyle = "机器制样",
+						MakeStyle = eMakeType.机器制样.ToString(),
 						MakeType = assayType,
 						MakeStartTime = DateTime.Now,
 						MakeEndTime = DateTime.Now,
@@ -510,7 +510,7 @@ namespace CMCS.WeighCheck.DAO
 		/// <param name="rCMakeDetailId">制样明细记录Id</param>
 		/// <param name="weight">重量</param>
 		/// <returns></returns>
-		public bool UpdateMakeDetailCheckWeight(string rCMakeDetailId, double weight)
+		public bool UpdateMakeDetailCheckWeight(string rCMakeDetailId, decimal weight)
 		{
 			return Dbers.GetInstance().SelfDber.Execute("update " + EntityReflectionUtil.GetTableName<CmcsRCMakeDetail>() + " set CheckWeight=:CheckWeight where Id=:Id", new { Id = rCMakeDetailId, CheckWeight = weight }) > 0;
 		}
@@ -665,8 +665,8 @@ namespace CMCS.WeighCheck.DAO
 			CmcsRCMakeDetail rCMakeDetail = Dbers.GetInstance().SelfDber.Get<CmcsRCMakeDetail>(makeDetailId);
 			if (rCMakeDetail != null)
 			{
-				rCMakeDetail.IsCheck = 1;
-				rCMakeDetail.CheckUser = CheckUser;
+				rCMakeDetail.IsCheck = isCheck ? 1 : 0;
+				//rCMakeDetail.CheckUser = CheckUser;
 				return Dbers.GetInstance().SelfDber.Update(rCMakeDetail) > 0;
 			}
 			return false;

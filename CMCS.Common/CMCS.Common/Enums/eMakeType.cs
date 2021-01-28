@@ -11,7 +11,7 @@ namespace CMCS.Common.Enums
     public enum eMakeType
     {
         人工制样,
-        机械制样,
+        机器制样,
 
         全水分样6mm1 = 1,
         全水分样6mm2 = 2,

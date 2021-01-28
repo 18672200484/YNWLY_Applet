@@ -16,7 +16,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 {
     public partial class FrmSetting : DevComponents.DotNetBar.Metro.MetroForm
     {
-        CommonDAO commonDAO = CommonDAO.GetInstance();
+        CommonDAO commonDAO = CommonDAO.GetInstance();	
         CommonAppConfig commonAppConfig = CommonAppConfig.GetInstance();
 
         string Old_Param = string.Empty;

@@ -343,7 +343,7 @@ namespace CMCS.DumblyConcealer.Tasks.HighBeltWeight
 			catch (Exception ex)
 			{
 				SetListenerState(false);
-				if (this.OutPut != null) OutPut(string.Format("{0}连接断开", this.FacilityNumber), eOutputType.Error);
+				if (this.OutPut != null) OutPut(string.Format("{0}连接断开:{1}", this.FacilityNumber, ex.Message), eOutputType.Error);
 				//if (this.OutPut != null) OutPut(string.Format("发送请求失败,原因:{0}", ex.ToString()), eOutputType.Error);
 			}
 			finally

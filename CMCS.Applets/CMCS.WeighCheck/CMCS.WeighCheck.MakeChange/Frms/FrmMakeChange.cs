@@ -110,8 +110,8 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 			this._CodePrinter = new CodePrinter(printDocument1);
 			this._QRCodePrinter = new QRCodePrinter(printDocument1);
 
-			OverWeight_2mm = commonDAO.GetAppletConfigDouble("0.2mm超差重");
-			OverWeight_6mm = commonDAO.GetAppletConfigDouble("6mm超差重");
+			OverWeight_2mm = commonDAO.GetCommonAppletConfigDouble("0.2mm超差重");
+			OverWeight_6mm = commonDAO.GetCommonAppletConfigDouble("6mm超差重");
 			LoadRCMakeDetail();
 		}
 
@@ -171,11 +171,11 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 		/// </summary>
 		WB.XiangPing.Balance.XiangPing_Balance wber = new WB.XiangPing.Balance.XiangPing_Balance(3);
 
-		double currentWeight = 0;
+		decimal currentWeight = 0;
 		/// <summary>
 		/// 电子天平当前重量
 		/// </summary>
-		public double CurrentWeight
+		public decimal CurrentWeight
 		{
 			get { return currentWeight; }
 			set
@@ -211,11 +211,11 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 			set { wbSteady = value; }
 		}
 
-		double wbMinWeight = 0;
+		decimal wbMinWeight = 0;
 		/// <summary>
 		/// 电子秤最小称重 单位：吨
 		/// </summary>
-		public double WbMinWeight
+		public decimal WbMinWeight
 		{
 			get { return wbMinWeight; }
 			set
@@ -254,7 +254,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 		/// 实时重量
 		/// </summary>
 		/// <param name="status"></param>
-		void wber_OnWeightChange(double weight)
+		void wber_OnWeightChange(decimal weight)
 		{
 			// 接收设备状态 
 			InvokeEx(() =>
@@ -283,7 +283,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 				// 初始化-电子秤 
 				if (IsUseWeight)
 				{
-					this.WbMinWeight = commonDAO.GetAppletConfigDouble("电子秤最小重量");
+					this.WbMinWeight = commonDAO.GetAppletConfigDecimal("电子秤最小重量");
 
 					// 电子秤仪表1
 					wber.OnStatusChange += new WB.XiangPing.Balance.XiangPing_Balance.StatusChangeHandler(Wber_OnStatusChange);
@@ -341,7 +341,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 						// 重量大于最小称重且稳定
 						if (wber.Status && wber.Weight > WbMinWeight && WbSteady)
 						{
-							czyHandlerDAO.UpdateMakeDetailCheckWeight(this.CurrentMakeDetail.Id, wber.Weight);
+							//czyHandlerDAO.UpdateMakeDetailCheckWeight(this.CurrentMakeDetail.Id, wber.Weight);
 							ShowMessage("校验完成，重量为：" + wber.Weight.ToString(), eOutputType.Normal);
 
 							if (WeightCheck())
@@ -372,19 +372,19 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 			switch (this.CurrentMakeDetail.SampleType)
 			{
 				case "0.2mm分析样":
-					if (Math.Abs(this.CurrentMakeDetail.Weight - wber.Weight) <= commonDAO.GetCommonAppletConfigDouble("0.2mm超差重"))
+					if (Math.Abs(this.CurrentMakeDetail.Weight - (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("0.2mm样罐重"))) <= commonDAO.GetCommonAppletConfigDecimal("0.2mm超差重") && (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("0.2mm样罐重")) > 0m)
 						check = true;
 					break;
 				case "0.2mm存查样":
-					if (Math.Abs(this.CurrentMakeDetail.Weight - wber.Weight) <= commonDAO.GetCommonAppletConfigDouble("0.2mm超差重"))
+					if (Math.Abs(this.CurrentMakeDetail.Weight - (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("0.2mm样罐重"))) <= commonDAO.GetCommonAppletConfigDecimal("0.2mm超差重") && (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("0.2mm样罐重")) > 0m)
 						check = true;
 					break;
 				case "3mm存查样":
-					if (Math.Abs(this.CurrentMakeDetail.Weight - wber.Weight) <= commonDAO.GetCommonAppletConfigDouble("3mm超差重"))
+					if (Math.Abs(this.CurrentMakeDetail.Weight - (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("3mm样罐重"))) <= commonDAO.GetCommonAppletConfigDecimal("3mm超差重") && (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("3mm超差重")) > 0m)
 						check = true;
 					break;
 				case "6mm全水样":
-					if (Math.Abs(this.CurrentMakeDetail.Weight - wber.Weight) <= commonDAO.GetCommonAppletConfigDouble("6mm超差重"))
+					if (Math.Abs(this.CurrentMakeDetail.Weight - (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("6mm样罐重"))) <= commonDAO.GetCommonAppletConfigDecimal("6mm超差重") && (wber.Weight - commonDAO.GetCommonAppletConfigDecimal("6mm超差重")) > 0m)
 						check = true;
 					break;
 				default:
@@ -393,12 +393,12 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 			if (check)
 			{
 				ShowMessage("校验成功，重量为：" + wber.Weight.ToString(), eOutputType.Normal);
-				btnPrint.Enabled = true;
+				//btnPrint.Enabled = true;
 			}
 			else
 			{
 				ShowMessage("校验失败，重量为：" + wber.Weight.ToString(), eOutputType.Normal);
-				btnPrint.Enabled = false;
+				//btnPrint.Enabled = false;
 			}
 			return check;
 		}
@@ -432,14 +432,14 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 
 			if (this.picEncode.Image == null) return;
 
-			if (MessageBoxEx.Show("样品类型：" + this.CurrentMakeDetail.SampleType + "，立刻打印化验码？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-			{
-				btnPrint_Click(null, null);
+			//if (MessageBoxEx.Show("样品类型：" + this.CurrentMakeDetail.SampleType + "，立刻打印化验码？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			//{
+			//	btnPrint_Click(null, null);
 
-				Restet();
-			}
-			else
-				Restet();
+			//	Restet();
+			//}
+			//else
+			//	Restet();
 		}
 
 		#endregion
@@ -987,7 +987,16 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 						this.CurrentMakeDetail.CheckType = this.CheckType;
 						this.CurrentMakeDetail.CheckUser = SelfVars.LoginUserNames;
 						this.CurrentMakeDetail.IsCheck = 1;
-
+						if (this.IsUseWeight)
+						{
+							if (CurrentMakeDetail.SampleType.Contains("0.2"))
+								this.CurrentMakeDetail.CheckWeight = this.CurrentWeight - commonDAO.GetCommonAppletConfigDecimal("0.2mm样罐重");
+							else if (CurrentMakeDetail.SampleType.Contains("3"))
+								this.CurrentMakeDetail.CheckWeight = this.CurrentWeight - commonDAO.GetCommonAppletConfigDecimal("3mm样罐重");
+							else if (CurrentMakeDetail.SampleType.Contains("6"))
+								this.CurrentMakeDetail.CheckWeight = this.CurrentWeight - commonDAO.GetCommonAppletConfigDecimal("6mm样罐重");
+							this.CurrentMakeDetail.CheckTime = DateTime.Now;
+						}
 						commonDAO.SelfDber.Update(this.CurrentMakeDetail);
 						czyHandlerDAO.RelieveAssay(this.CurrentMakeDetail, this.CurrentMakeDetail.TheRCMake.MakePle, SelfVars.LoginUserNames);
 					}
@@ -1280,8 +1289,6 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 			}
 		}
 		#endregion
-
-
 	}
 
 	class MakeDetail
