@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using CMCS.Common;
+//
 using CMCS.Common.DAO;
-using CMCS.Common.Entities;
-using CMCS.Common.Enums;
+using CMCS.Common.Entities.Fuel;
+using CMCS.Common.Entities.iEAA;
+using CMCS.Common.Utilities;
 using CMCS.WeighCheck.DAO;
+using CMCS.WeighCheck.SampleMake.Core;
+using CMCS.WeighCheck.SampleMake.Enums;
+using CMCS.WeighCheck.SampleMake.Utilities;
 using DevComponents.DotNetBar;
 using DevComponents.DotNetBar.Controls;
 using DevComponents.DotNetBar.Metro;
-using CMCS.WeighCheck.SampleMake.Enums;
-using CMCS.Common.Utilities;
-using CMCS.WeighCheck.SampleMake.Frms;
-using CMCS.Forms.UserControls;
-using CMCS.Common.Entities.Fuel;
 using DevComponents.DotNetBar.SuperGrid;
-using CMCS.Common.Entities.iEAA;
 using RW.HFReader;
-using CMCS.WeighCheck.SampleMake.Utilities;
-using CMCS.WeighCheck.SampleMake.Core;
 
 namespace CMCS.WeighCheck.SampleMake.Frms.Make
 {
@@ -120,11 +113,11 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 
 		#region 电子天平
 
-		double currentWeight = 0;
+		decimal currentWeight = 0;
 		/// <summary>
 		/// 电子天平当前重量
 		/// </summary>
-		public double CurrentWeight
+		public decimal CurrentWeight
 		{
 			get { return currentWeight; }
 			set
@@ -164,11 +157,11 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			}
 		}
 
-		double wbMinWeight = 0;
+		decimal wbMinWeight = 0;
 		/// <summary>
 		/// 电子天平仪表最小称重 单位：吨
 		/// </summary>
-		public double WbMinWeight
+		public decimal WbMinWeight
 		{
 			get { return wbMinWeight; }
 			set
@@ -207,7 +200,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 		/// 实时重量
 		/// </summary>
 		/// <param name="status"></param>
-		void wber_OnWeightChange(double weight)
+		void wber_OnWeightChange(decimal weight)
 		{
 			// 接收设备状态 
 			InvokeEx(() =>
@@ -427,7 +420,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 				// 初始化-电子天平
 				if (IsUseWeight)
 				{
-					this.WbMinWeight = commonDAO.GetAppletConfigDouble("电子天平最小重量");
+					this.WbMinWeight = commonDAO.GetAppletConfigDecimal("电子天平最小重量");
 
 					Hardwarer.Wber_min.OnStatusChange += new WB.XiangPing.Balance.XiangPing_Balance.StatusChangeHandler(Wber_OnStatusChange);
 					Hardwarer.Wber_min.OnSteadyChange += new WB.XiangPing.Balance.XiangPing_Balance.SteadyChangeEventHandler(Wber_OnSteadyChange);

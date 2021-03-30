@@ -56,6 +56,7 @@ namespace CMCS.WeighCheck.DAO
 				if (make != null)
 				{
 					make.MakePle = userName;
+					make.MakeEndTime = DateTime.Now;
 					Dbers.GetInstance().SelfDber.Update(make);
 				}
 				return Dbers.GetInstance().SelfDber.Update(assay) > 0;
@@ -70,7 +71,7 @@ namespace CMCS.WeighCheck.DAO
 		/// </summary>
 		/// <param name="sampleId"></param>
 		/// <returns></returns>
-		public bool SaveSampleDetail(string sampleId, double weight)
+		public bool SaveSampleDetail(string sampleId, decimal weight)
 		{
 			CmcsRCSampling sample = Dbers.GetInstance().SelfDber.Get<CmcsRCSampling>(sampleId);
 			if (sample != null)
@@ -79,7 +80,7 @@ namespace CMCS.WeighCheck.DAO
 				sampleBarrel.SamplingId = sampleId;
 				sampleBarrel.BarrellingTime = DateTime.Now;
 				sampleBarrel.SampSecondCode = CommonDAO.GetInstance().CreateSampleDetailCode(sample.SampleCode);
-				sampleBarrel.BarrelWeight = weight;
+				sampleBarrel.BarrelWeight = (double)weight;
 				sampleBarrel.SampleCode = sample.SampleCode;
 				sampleBarrel.SampleType = "人工采样";
 				sampleBarrel.SampleMachine = "人工";
@@ -173,7 +174,7 @@ namespace CMCS.WeighCheck.DAO
 		/// </summary>
 		/// <param name="entity"></param>
 		/// <returns></returns>
-		public bool UpdateRCSampleBarrelHandWeight(string rCSampleBarrelId, double weight, string user)
+		public bool UpdateRCSampleBarrelHandWeight(string rCSampleBarrelId, decimal weight, string user)
 		{
 			return Dbers.GetInstance().SelfDber.Execute("update " + EntityReflectionUtil.GetTableName<CmcsRCSampleBarrel>() + " set HandWeight=:HandWeight,HandDate=sysdate,HandUser=:HandUser where Id=:Id", new { HandWeight = weight, HandUser = user, Id = rCSampleBarrelId }) > 0;
 		}
@@ -322,7 +323,7 @@ namespace CMCS.WeighCheck.DAO
 		/// </summary>
 		/// <param name="entity"></param>
 		/// <returns></returns>
-		public bool UpdateRCSampleBarrelCheckSampleWeight(string rCSampleBarrelId, double weight, string user)
+		public bool UpdateRCSampleBarrelCheckSampleWeight(string rCSampleBarrelId, decimal weight, string user)
 		{
 			if (weight > 0)
 				return Dbers.GetInstance().SelfDber.Execute("update " + EntityReflectionUtil.GetTableName<CmcsRCSampleBarrel>() + " set CheckSampleWeight=:CheckSampleWeight,CheckDate=sysdate,CheckUser=:CheckUser,SampleWeight=(:CheckSampleWeight-BarrelWeight) where Id=:Id", new { CheckSampleWeight = weight, CheckUser = user, Id = rCSampleBarrelId }) > 0;
@@ -372,7 +373,7 @@ namespace CMCS.WeighCheck.DAO
 		/// <param name="weight">重量</param>
 		/// <param name="barrelCode">样罐编码</param>
 		/// <returns></returns>
-		public bool UpdateMakeDetailWeightAndBarrelCode(string rCMakeDetailId, double weight, string barrelCode)
+		public bool UpdateMakeDetailWeightAndBarrelCode(string rCMakeDetailId, decimal weight, string barrelCode)
 		{
 			return Dbers.GetInstance().SelfDber.Execute("update " + EntityReflectionUtil.GetTableName<CmcsRCMakeDetail>() + " set Weight=:Weight,BarrelCode=:BarrelCode where Id=:Id", new { Id = rCMakeDetailId, Weight = weight, BarrelCode = barrelCode }) > 0;
 		}

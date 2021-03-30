@@ -288,7 +288,7 @@ namespace CMCS.ADGS.Win
 				item.SampleWeight = entity.Sample;
 				item.WaterType = entity.Content.Contains("全水") ? "全水分" : "分析水";
 				item.WaterPer = entity.Moisture;
-				if (item.WaterType == "全水分") item.WaterPer += Convert.ToDecimal(GetCommonAppletConfig("全水补正值"));
+				//if (item.WaterType == "全水分") item.WaterPer += Convert.ToDecimal(GetCommonAppletConfig("全水补正值"));
 				item.AssayUser = entity.Operator;
 				item.IsEffective = 0;
 				item.PKID = entity.PKID;

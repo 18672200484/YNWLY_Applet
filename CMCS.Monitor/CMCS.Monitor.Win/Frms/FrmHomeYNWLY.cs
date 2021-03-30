@@ -247,8 +247,9 @@ namespace CMCS.Monitor.Win.Frms
             {
                 foreach (DataRow dr in dt1.Rows)
                 {
-                    string sql2 = string.Format(@"select distinct a.startpoint,a.endpoint,a.name,a.qtyhave,a.fuelstorageid from VIEW_STORAGEJKSY a where a.qtyhave> 0 and a.fuelstorageid = '{0}' order by a.startpoint", dr["id"].ToString());
-                    List<point> dicPoints = new List<point>();
+                    //string sql2 = string.Format(@"select distinct a.startpoint,a.endpoint,a.name,a.qtyhave,a.fuelstorageid from VIEW_STORAGEJKSY a where a.qtyhave> 0 and a.fuelstorageid = '{0}' order by a.startpoint", dr["id"].ToString());
+					string sql2 = string.Format(@"select distinct a.startpoint,a.endpoint,a.minename,a.qtyhave,a.fuelstorageid from view_storageplane_top a where a.qtyhave> 0 and a.fuelstorageid = '{0}' order by a.startpoint", dr["id"].ToString());
+					List<point> dicPoints = new List<point>();
                     #region 设置煤块起始点
                     DataTable dt2 = commonDAO.SelfDber.ExecuteDataTable(sql2);
                   
@@ -257,7 +258,7 @@ namespace CMCS.Monitor.Win.Frms
                         foreach (DataRow dr2 in dt2.Rows)
                         {
                             point Points2 = new point();
-                            string MineName = dr2["name"].ToString();
+                            string MineName = dr2["minename"].ToString();
                             decimal StartPoint = Convert.ToDecimal(dr2["startpoint"].ToString());
                             decimal EndPoint = Convert.ToDecimal(dr2["endpoint"].ToString());
                             decimal qtyhave = Convert.ToDecimal(dr2["qtyhave"].ToString());

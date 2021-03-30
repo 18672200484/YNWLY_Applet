@@ -166,7 +166,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms.Sys
 					{
 						if (FingerCheckCount == 1)
 						{
-							ShowToolTip("匹配成功监督人进行指纹验证");
+							ShowToolTip("匹配成功，监督人进行指纹验证");
 							SelfVars.LoginUser = user;
 							GrossCheck = true;
 							FingerCheckCount = 2;
@@ -175,7 +175,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms.Sys
 						else if (FingerCheckCount == 2)
 						{
 							SelfVars.LoginUser2 = commonDao.SelfDber.Get<User>(item.UserId);
-							if (SelfVars.LoginUser2 == SelfVars.LoginUser)
+							if (SelfVars.LoginUser2.UserName == SelfVars.LoginUser.UserName)
 							{
 								ShowToolTip("指纹不能与登录人一样");
 								break;

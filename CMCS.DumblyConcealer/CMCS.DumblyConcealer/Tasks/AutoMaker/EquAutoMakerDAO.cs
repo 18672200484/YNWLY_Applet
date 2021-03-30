@@ -237,7 +237,7 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 		{
 			int res = 0;
 
-			foreach (ZY_Record_Tb entity in this.EquDber.Entities<ZY_Record_Tb>("where DataStatus=0 order by StartTime asc"))
+			foreach (ZY_Record_Tb entity in this.EquDber.Entities<ZY_Record_Tb>("where DataStatus=0 and PackCode!=0 order by StartTime desc"))
 			{
 				if (SyncToRCMakeDetail(entity))
 				{
@@ -282,6 +282,14 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 				{
 					rCMake.GetDate = DateTime.Now;
 					rCMake.MakeStartTime = makeDetail.StartTime;
+				}
+				if (rCMake.MakeStartTime < makeDetail.StartTime)
+				{
+					rCMake.MakeStartTime = makeDetail.StartTime;
+				}
+				if (rCMake.MakeEndTime < makeDetail.EndTime)
+				{
+					rCMake.MakeEndTime = makeDetail.EndTime;
 				}
 				commonDAO.SelfDber.Update(rCMake);
 

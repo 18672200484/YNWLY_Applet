@@ -61,13 +61,13 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 
 		private string resMessage = string.Empty;
 
-		private double currentWeight;
+		private decimal currentWeight;
 
 		private bool isUseWeight = true;
 
 		private bool wbSteady;
 
-		private double wbMinWeight;
+		private decimal wbMinWeight;
 
 		public eFlowFlag CurrentFlowFlag
 		{
@@ -136,7 +136,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			}
 		}
 
-		public double CurrentWeight
+		public decimal CurrentWeight
 		{
 			get
 			{
@@ -177,7 +177,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			}
 		}
 
-		public double WbMinWeight
+		public decimal WbMinWeight
 		{
 			get
 			{
@@ -241,7 +241,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			});
 		}
 
-		private void wber_OnWeightChange(double weight)
+		private void wber_OnWeightChange(decimal weight)
 		{
 			this.InvokeEx(delegate
 			{
@@ -255,7 +255,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			{
 				if (this.IsUseWeight)
 				{
-					this.WbMinWeight = this.commonDAO.GetAppletConfigDouble("电子秤最小重量");
+					this.WbMinWeight = this.commonDAO.GetAppletConfigDecimal("电子秤最小重量");
 					Hardwarer.Wber.OnStatusChange += new XiangPing_Balance.StatusChangeHandler(this.Wber_OnStatusChange);
 					Hardwarer.Wber.OnSteadyChange += new XiangPing_Balance.SteadyChangeEventHandler(this.Wber_OnSteadyChange);
 					Hardwarer.Wber.OnWeightChange += new XiangPing_Balance.WeightChangeEventHandler(this.wber_OnWeightChange);
@@ -345,7 +345,7 @@ namespace CMCS.WeighCheck.SampleMake.Frms.Make
 			this.RCSampleBarrel = null;
 			this.brotherRCSampleBarrels.Clear();
 			this.IsScanedRCSampleBarrelId.Clear();
-			this.CurrentWeight = 0.0;
+			this.CurrentWeight = 0;
 			this.btnSendMakePlan.Enabled = false;
 			this.txtInputSampleCode.ResetText();
 			this.rtxtOutputInfo.ResetText();

@@ -74,6 +74,7 @@
 			this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
 			this.timer2 = new System.Windows.Forms.Timer(this.components);
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.btnTestPrint = new DevComponents.DotNetBar.ButtonX();
 			this.pnlExMain.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panelEx1.SuspendLayout();
@@ -255,6 +256,7 @@
 			// 
 			this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelEx2.Controls.Add(this.btnTestPrint);
 			this.panelEx2.Controls.Add(this.btnReset);
 			this.panelEx2.Controls.Add(this.btnReadRf);
 			this.panelEx2.Controls.Add(this.btnPrint);
@@ -278,7 +280,7 @@
 			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
 			this.btnReset.Location = new System.Drawing.Point(1123, 5);
 			this.btnReset.Name = "btnReset";
-			this.btnReset.Size = new System.Drawing.Size(86, 39);
+			this.btnReset.Size = new System.Drawing.Size(96, 39);
 			this.btnReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
 			this.btnReset.TabIndex = 224;
 			this.btnReset.Text = "重   置";
@@ -531,6 +533,20 @@
 			this.timer1.Interval = 2000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// btnTestPrint
+			// 
+			this.btnTestPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnTestPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnTestPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+			this.btnTestPrint.Location = new System.Drawing.Point(1123, 54);
+			this.btnTestPrint.Name = "btnTestPrint";
+			this.btnTestPrint.Size = new System.Drawing.Size(96, 38);
+			this.btnTestPrint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.btnTestPrint.TabIndex = 227;
+			this.btnTestPrint.Text = "测试打印";
+			this.btnTestPrint.Tooltip = "只打印化验码 不进行记录";
+			this.btnTestPrint.Click += new System.EventHandler(this.btnTestPrint_Click);
+			// 
 			// FrmMakeChange
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +556,7 @@
 			this.Controls.Add(this.pnlExMain);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.KeyPreview = true;
@@ -589,6 +606,7 @@
         private System.Windows.Forms.Label lbl_CurrentWeight;
         private System.Windows.Forms.Label lblweight;
         private System.Windows.Forms.Label label1;
-    }
+		private DevComponents.DotNetBar.ButtonX btnTestPrint;
+	}
 }
 

@@ -1014,6 +1014,29 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 		}
 
 		/// <summary>
+		/// 打印二维码 测试
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnTestPrint_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!string.IsNullOrEmpty(this.txtInputAssayCode.Text.Trim()))
+				{
+					_CodePrinter.Print(this.txtInputAssayCode.Text.Trim());
+					LoadRCMakeDetail();
+					FoucsAndSelect();
+				}
+				else
+					MessageBoxEx.Show("请先转换出化验码", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+			catch (Exception ex)
+			{
+				Log4Neter.Error("打印事件", ex);
+			}
+		}
+		/// <summary>
 		/// 重置
 		/// </summary>
 		/// <param name="sender"></param>
@@ -1163,7 +1186,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 					else
 					{
 						CmcsRCMakeDetail entity = rCMakeDetail.Where(a => a.MakeId == item.MakeId).FirstOrDefault();
-						if (entity != null && entity.TheRCMake.TheRcAssay.AssayType == "外样化验")
+						if (entity != null && entity.TheRCMake.TheRcAssay.AssayWay == "外样化验")
 							makeDetail.BackBatchDate = entity.TheRCMake.GetDate.ToString("yyyy-MM-dd");
 						else
 							makeDetail.BackBatchDate = entity.TheRCMake.UseTime.ToString("yyyy-MM-dd");
@@ -1221,6 +1244,8 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 				makeDetail.AssayId = assay.Id;
 				if (!string.IsNullOrEmpty(assay.AssayPoint)) makeDetail.AssayPoint = assay.AssayPoint;
 				makeDetail.BackBatchDate = batch != null ? batch.BACKBATCHDATE.ToString("yyyy-MM-dd") : rCMakeDetail.TheRCMake.UseTime.ToString("yyyy-MM-dd");
+				if (rCMakeDetail.TheRCMake.MakeType == "外样制样")
+					makeDetail.BackBatchDate = rCMakeDetail.TheRCMake.GetDate.ToString("yyyy-MM-dd");
 				makeDetail.AssayCode = assay.AssayCode;
 				if (rCMakeDetail.SampleType == "0.2mm分析样" || rCMakeDetail.SampleType == "0.2mm存查样")
 				{
@@ -1289,6 +1314,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 			}
 		}
 		#endregion
+
 	}
 
 	class MakeDetail

@@ -87,12 +87,8 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 		public Socket Listener
 		{
 			get { return listener; }
+			set { listener = value; }
 		}
-
-		/// <summary>
-		/// 等待进程
-		/// </summary>
-		private ManualResetEvent allDone = new ManualResetEvent(false);
 
 		private Action<string, eOutputType> output = null;
 		/// <summary>
@@ -114,15 +110,6 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 		/// </summary>
 		public string Type { get { return type; } }
 
-		private bool isListener = false;
-		/// <summary>
-		/// 监听状态 true 正在监听中 false 监听已断开
-		/// </summary>
-		public bool IsListener
-		{
-			get { return isListener; }
-			set { isListener = value; }
-		}
 		#endregion
 
 		#region Class
@@ -145,22 +132,6 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 		#region Method
 
 		/// <summary>
-		/// 设置当前连接状态
-		/// </summary>
-		/// <param name="state"></param>
-		/// <returns></returns>
-		public void SetListenerState(bool state)
-		{
-			this.IsListener = state;
-			if (!state && Listener != null)
-			{
-				timer1.Enabled = false;
-				this.Listener.Close();
-				this.Listener.Dispose();
-			}
-		}
-
-		/// <summary>
 		/// 初始化Socket通信对象
 		/// </summary>
 		/// <param name="ip"></param>
@@ -172,13 +143,14 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 		{
 			IPAddress ipAddress = IPAddress.Parse(ip);
 			serverEndPoint = new IPEndPoint(ipAddress, port);
-			//IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Parse(GetIp()), localport);
 
 			this.FacilityNumber = facilityNumber;
 			this.Ip = ip;
 			this.Port = port;
 			this.DelDay = delday;
 			this.output = output;
+			this.Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			Listener.Connect(serverEndPoint);
 			if (this.OutPut != null) OutPut(string.Format("{0}初始化成功", this.FacilityNumber), eOutputType.Important);
 		}
 
@@ -199,7 +171,6 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 
 			timer1.Interval = 200;
 			timer1.Elapsed += new System.Timers.ElapsedEventHandler(timer1_Elapsed);
-			//timer1.Enabled = true;
 		}
 
 		/// <summary>
@@ -211,7 +182,7 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 		{
 			try
 			{
-				if (!this.IsListener) return;
+				if (!this.listener.Connected) return;
 				timer1.Stop();
 
 				#region 异步监听
@@ -242,7 +213,7 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 			}
 			catch
 			{
-				SetListenerState(false);
+
 			}
 			finally
 			{
@@ -260,24 +231,24 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 			try
 			{
 				timer2.Stop();
-				if (!this.IsListener)
+				if (!Listener.Connected)
 				{
-					this.listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-					listener.Connect(serverEndPoint);
-
-
-					SetListenerState(true);
-					if (this.OutPut != null) OutPut(string.Format("{0}连接成功", this.FacilityNumber), eOutputType.Important);
-					timer1_Elapsed(null, null);
+					Listener.Close();
+					Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+					Listener.Connect(serverEndPoint);
 				}
-				Send(this.type);//先发送预警状态的命令 再发送温湿度的命令
-				this.type = this.type == "04" ? "03" : "04";
+				if (listener.Connected)
+				{
+					timer1_Elapsed(null, null);
+
+					Send(this.type);//先发送预警状态的命令 再发送温湿度的命令
+					this.type = this.type == "04" ? "03" : "04";
+				}
 				if (DateTime.Now.Hour == 00 && DateTime.Now.Minute < 5)//清除数据
 					DelData(this.DelDay, this.FacilityNumber);
 			}
 			catch (Exception ex)
 			{
-				SetListenerState(false);
 				if (this.OutPut != null) OutPut(string.Format("{0}连接断开:{1}", this.FacilityNumber, ex.Message), eOutputType.Error);
 			}
 			finally
@@ -328,9 +299,7 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 			}
 			catch (Exception ex)
 			{
-				SetListenerState(false);
-				if (this.OutPut != null) OutPut(string.Format("{0}连接断开", this.FacilityNumber), eOutputType.Error);
-				//if (this.OutPut != null) OutPut(string.Format("ReadCallback,原因:{0}", ex.ToString()), eOutputType.Error);
+				if (this.OutPut != null) OutPut(string.Format("{0}数据解析错误:{1}", this.FacilityNumber, ex.Message), eOutputType.Error);
 			}
 		}
 
@@ -449,7 +418,6 @@ namespace CMCS.DumblyConcealer.Tasks.TemperatureHumidityInstrument
 			this.timer1.Stop();
 			this.timer2.Enabled = false;
 			this.timer2.Stop();
-			SetListenerState(false);
 			if (this.OutPut != null) OutPut(string.Format("{0}关闭连接", this.FacilityNumber), eOutputType.Error);
 		}
 

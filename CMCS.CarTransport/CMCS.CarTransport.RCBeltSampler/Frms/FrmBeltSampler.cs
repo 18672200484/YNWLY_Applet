@@ -578,7 +578,7 @@ namespace CMCS.CarTransport.RCBeltSampler.Frms
 
         private void BindRCSampling(SuperGridControl superGridControl)
         {
-            List<View_RCSampling> list = beltSamplerDAO.GetViewRCSampling("where trunc(SamplingDate)=trunc(:SamplingDate) and BatchType='»ð³µ' order by  SamplingDate", new { SamplingDate = DateTime.Now.Date });
+            List<View_RCSampling> list = beltSamplerDAO.GetViewRCSampling("where trunc(SamplingDate)>=trunc(:SamplingDate)-3 and BatchType='»ð³µ' order by  SamplingDate", new { SamplingDate = DateTime.Now.Date });
             superGridControl.PrimaryGrid.DataSource = list;
         }
 
