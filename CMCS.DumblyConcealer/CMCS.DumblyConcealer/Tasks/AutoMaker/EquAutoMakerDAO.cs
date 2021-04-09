@@ -327,12 +327,12 @@ namespace CMCS.DumblyConcealer.Tasks.AutoMaker
 		public void SyncXLCmd(Action<string, eOutputType> output)
 		{
 			int res = 0;
-			foreach (InfMakerUnLoad item in Dbers.GetInstance().SelfDber.Entities<InfMakerUnLoad>("where SyncFlag=0"))
+			foreach (InfMakerUnLoad item in Dbers.GetInstance().SelfDber.Entities<InfMakerUnLoad>("where MachineCode=:MachineCode and SyncFlag=0", new { MachineCode = this.MachineCode }))
 			{
 				XL_Cmd_Tb cmd = this.EquDber.Entity<XL_Cmd_Tb>();
 				if (cmd == null)
 				{
-					cmd.MachineCode = item.MachineCode;
+					cmd.MachineCode = DataToKYMachine(item.MachineCode);
 					cmd.CmdCode = item.CmdCode;
 					cmd.ResultCode = eEquInfCmdResultCode.默认.ToString();
 					cmd.DataFlag = 0;
