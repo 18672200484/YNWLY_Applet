@@ -789,6 +789,61 @@ namespace CMCS.WeighCheck.DAO
 				CmcsRCAssay assay_new = CommonDAO.GetInstance().SelfDber.Entity<CmcsRCAssay>("where MakeId=:MakeId order by CreateDate desc", new { MakeId = make.Id });
 				if (assay_new != null)
 					quality_new = (CmcsFuelQuality)Clone(assay_new.TheFuelQuality);
+				quality_new.CreateDate = quality_new.OperDate = DateTime.Now;
+				if (assayPoint.Contains("全水分") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.Mar = 0;
+				}
+				if (assayPoint.Contains("空干基水分") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.Mad = 0;
+					quality_new.FCad = 0;
+				}
+				if (assayPoint.Contains("灰分") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.Aad = 0;
+					quality_new.Ad = 0;
+					quality_new.Aar = 0;
+					quality_new.FCad = 0;
+				}
+				if (assayPoint.Contains("挥发分") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.Vad = 0;
+					quality_new.Vdaf = 0;
+					quality_new.Vd = 0;
+					quality_new.Var = 0;
+					quality_new.FCad = 0;
+				}
+				if (assayPoint.Contains("全硫") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.Stad = 0;
+					quality_new.Star = 0;
+					quality_new.Std = 0;
+					quality_new.Sd = 0;
+				}
+				if (assayPoint.Contains("热值") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.QbAd = 0;
+					quality_new.Qgrad = 0;
+					quality_new.Qgrar = 0;
+					quality_new.Qgrd = 0;
+					quality_new.QCal = 0;
+					quality_new.QJ = 0;
+				}
+				if (assayPoint.Contains("氢值") || assayPoint.Contains("全指标") || assayPoint.Contains("日常分析"))
+				{
+					quality_new.Hd = 0;
+					quality_new.Had = 0;
+					quality_new.Har = 0;
+				}
+				if (assayPoint.Contains("灰熔融") || assayPoint.Contains("全指标"))
+				{
+					quality_new.DT = 0;
+					quality_new.HT = 0;
+					quality_new.FT = 0;
+					quality_new.ST = 0;
+				}
+
 				quality_new.Id = Guid.NewGuid().ToString();
 				quality_new.CreateUser = userAccount;
 				quality_new.OperUser = userAccount;

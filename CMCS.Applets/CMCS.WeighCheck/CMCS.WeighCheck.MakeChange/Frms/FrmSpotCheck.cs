@@ -214,7 +214,8 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 				MakeDetails = DataChange(rCMakeDetails);
 				superGridControl1.PrimaryGrid.DataSource = MakeDetails;
 				int index = MakeDetails.Select(a => a.AssayId).ToList().IndexOf(this.CurrentSpotAssay.AssayId);
-				((GridRow)superGridControl1.PrimaryGrid.Rows[index]).CellStyles.Default.TextColor = Color.Blue;
+				if (index > 0)
+					((GridRow)superGridControl1.PrimaryGrid.Rows[index]).CellStyles.Default.TextColor = Color.Blue;
 			}
 		}
 		#endregion
@@ -503,6 +504,8 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 		{
 			this.CurrentAssay.GetPle = SelfVars.LoginUserNames;
 			this.CurrentAssay.GetDate = DateTime.Now;
+			this.CurrentAssay.PrintTime = DateTime.Now;
+			this.CurrentAssay.PrintCount++;
 			commonDAO.SelfDber.Update(this.CurrentAssay);
 			_CodePrinter.Print(this.txtInputSpotAssayCode.Text.Trim());
 			LoadDetail();
@@ -589,7 +592,7 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 				entity.CheckUser = item.AssayPle;
 				entity.SpotCount = czyHandlerDAO.GetSpotCountBySpotMakeId(item.TheRcMake.Id, item.AssayCode);
 				entity.CheckUser = item.AssayPle;
-
+				entity.PrintTime = item.PrintTime.ToString("yyyy-MM-dd HH:mm:ss");
 				spotAssays.Add(entity);
 			}
 
@@ -682,6 +685,11 @@ namespace CMCS.WeighCheck.MakeChange.Frms
 		/// 操作人
 		/// </summary>
 		public string CheckUser { get; set; }
+
+		/// <summary>
+		/// 打印时间
+		/// </summary>
+		public string PrintTime { get; set; }
 
 		private string _AssayPoint = "日常分析";
 		/// <summary>
